@@ -18,8 +18,12 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 /*
@@ -129,9 +133,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ImageView mStage06ApexImageView;
 
     // Game views
+    // Stage label
+    private ImageView mGameMainStageImageView;
+
+    // Progress marker
     private ImageView mGameLevelMarkerImageView;
 
-    //
+    // Power icons
     private ImageView mGamePower01ImageView;
     private ImageView mGamePower02ImageView;
     private ImageView mGamePower03ImageView;
@@ -139,30 +147,40 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ImageView mGamePower05ImageView;
     private ImageView mGamePower06ImageView;
 
-    //
+    // Creatures
     private ImageButton mGameCreature01ImageButton;
     private ImageButton mGameCreature02ImageButton;
     private ImageButton mGameCreature03ImageButton;
     private ImageButton mGameCreature04ImageButton;
     private ImageButton mGameCreature05ImageButton;
 
-    //
+    // Boss
     private ImageButton mGameBossImageButton;
 
-    //
+    // Creature playground
     private FrameLayout mGameCreatureLayout;
 
-    //
+    // Boss playground
     private FrameLayout mGameBossLayout;
 
-    //
-    private ImageView mGameBoltImageView;
+    // Tap icon
+    private ImageView mGameTapImageView;
 
-    //
+    // Stage border
+    private RelativeLayout mGameBorderLayout;
+
+    // Stage boss sneak
     private RelativeLayout mGameTunnelVisionLayout;
 
     // Results views
-    private ImageView mResultsStageImageView;
+    //
+    private LinearLayout mResultsMainBGImageView;
+
+    //
+    private ImageView mResultsSubStageImageView;
+
+    //
+    private ImageView mResultsStageCardImageView;
 
     //
     private TextView mResultsAccuracyTextView;
@@ -268,13 +286,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private static int mTurn;
 
     //
-    private static int mBossHeath;
+    private static int mBossHealth;
 
     //
     private static int mStageIndex;
     private static String mStageAccuracy;
     private static String mStagePredator;
     private static boolean mStageApex;
+
+    //
+    private static List<Integer> mStageBGImages = new ArrayList<>();
+    private static int mEnvironmentID;
 
     // Audio definitions
     private static final int CHOMP = R.raw.chomp_audio_01;
@@ -287,6 +309,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private static final int DARK_OUTRO = R.raw.results_main_bg_audio;
     private static final int BG_AUDIO = R.raw.game_main_bg_audio_alt_01;
     private static final int THUNDER_AUDIO = R.raw.game_main_thunder_audio;
+    private static final int CROW_AUDIO = R.raw.crow_caw;
 
 //-- ONCREATE METHOD -->
 
@@ -357,9 +380,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mStage06ApexImageView = findViewById(R.id.select_stage_06_apex_image_view);
 
         // Game views
+        // Stage label
+        mGameMainStageImageView = findViewById(R.id.game_main_stage_image_view);
+
+        // Progress marker
         mGameLevelMarkerImageView = findViewById(R.id.game_main_level_marker_image_view);
 
-        //
+        // Power icons
         mGamePower01ImageView = findViewById(R.id.game_main_power_01_image_view);
         mGamePower02ImageView = findViewById(R.id.game_main_power_02_image_view);
         mGamePower03ImageView = findViewById(R.id.game_main_power_03_image_view);
@@ -367,30 +394,44 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mGamePower05ImageView = findViewById(R.id.game_main_power_05_image_view);
         mGamePower06ImageView = findViewById(R.id.game_main_power_06_image_view);
 
-        //
+        // Creatures
         mGameCreature01ImageButton = findViewById(R.id.game_main_creature_01_image_button);
         mGameCreature02ImageButton = findViewById(R.id.game_main_creature_02_image_button);
         mGameCreature03ImageButton = findViewById(R.id.game_main_creature_03_image_button);
         mGameCreature04ImageButton = findViewById(R.id.game_main_creature_04_image_button);
         mGameCreature05ImageButton = findViewById(R.id.game_main_creature_05_image_button);
 
-        //
+        // Boss
         mGameBossImageButton = findViewById(R.id.game_main_boss_image_button);
 
-        //
-        mGameBossLayout = findViewById(R.id.game_main_boss_layout);
+        // Playgrounds
         mGameCreatureLayout = findViewById(R.id.game_main_creature_layout);
+        mGameBossLayout = findViewById(R.id.game_main_boss_layout);
 
-        //
-        mGameBoltImageView = findViewById(R.id.game_main_bolt_image_view);
+        // Tap icon
+        mGameTapImageView = findViewById(R.id.game_main_tap_image_view);
 
-        //
+        // Stage camoflauge
+        mGameBorderLayout = findViewById(R.id.game_main_silhouette_border_layout);
+
+        // Boss sneak
         mGameTunnelVisionLayout = findViewById(R.id.game_main_tunnel_vision_layout);
 
         // Results views
-        mResultsStageImageView = findViewById(R.id.results_sub_stage_image_view);
+        //
+        mResultsMainBGImageView = findViewById(R.id.results_screen_main_layout);
+
+        //
+        mResultsSubStageImageView = findViewById(R.id.results_sub_stage_image_view);
+
+        //
+        mResultsStageCardImageView = findViewById(R.id.results_main_stage_card_image_view);
+
+        //
         mResultsAccuracyTextView = findViewById(R.id.results_main_score_accuracy_title_text_view);
         mResultsPredatorTextView = findViewById(R.id.results_sub_score_predator_title_text_view);
+
+        //
         mResultsApexImageView = findViewById(R.id.results_sub_apex_score_image_view);
 
         // Eaten views
@@ -579,6 +620,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.entry_main_continue_image_button:
                 Log.d(TAG, "onClick: entry screen - continue button");
 
+                //
+                playAudio(RUN);
+
                 // Switch to stage select screen
                 if (continue_game) {
                     switchScreen(R.id.stage_select_screen_main_layout);
@@ -597,6 +641,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     alertNewGame();
 
                 } else {
+
+                    //
+                    playAudio(RUN);
 
                     // Switch to stage select screen
                     switchScreen(R.id.stage_select_screen_main_layout);
@@ -617,6 +664,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.entry_main_tutorial_image_button:
                 Log.d(TAG, "onClick: entry screen - tutorial button");
 
+                //
+                playAudio(RUN);
+
                 // Switch to help screen
                 switchScreen(R.id.help_screen_main_layout);
 
@@ -628,6 +678,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.help_main_return_image_button:
                 Log.d(TAG, "onClick: help screen - return button");
 
+                //
+                playAudio(RUN);
+
                 // Switch to entry screen
                 switchScreen(R.id.entry_screen_main_layout);
 
@@ -636,7 +689,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             // Help - Exit Button Event
             case R.id.help_main_exit_image_button:
                 Log.d(TAG, "onClick: help screen - exit button");
-                
+
+                //
+                playAudio(RUN);
+
                 // Exit game
                 finish();
 
@@ -657,6 +713,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.stage_select_return_image_button:
                 Log.d(TAG, "onClick: stage select - return");
 
+                //
+                playAudio(RUN);
+
                 // Switch to entry screen
                 switchScreen(R.id.entry_screen_main_layout);
 
@@ -664,6 +723,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             // Select stage - Exit event
             case R.id.select_stage_exit_image_button:
+
+                //
+                playAudio(RUN);
 
                 // End
                 this.finish();
@@ -740,7 +802,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Log.d(TAG, "onClick: game - exit button");
 
                 //
-                alertExitLostProgress();
+                alertExitLoseProgress();
 
                 break;
 
@@ -1002,6 +1064,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.results_main_return_image_button:
                 Log.d(TAG, "onClick: results - return");
 
+                //
+                playAudio(RUN);
+
                 // Switch to entry screen
                 switchScreen(R.id.entry_screen_main_layout);
 
@@ -1010,6 +1075,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             // Results - Exit Game Event
             case R.id.results_main_exit_image_button:
                 Log.d(TAG, "onClick: results - exit");
+
+                //
+                playAudio(RUN);
 
                 // Exit game
                 this.finish();
@@ -1020,6 +1088,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.results_footer_restart_image_button:
                 Log.d(TAG, "onClick: results - restart button");
 
+                //
+                playAudio(RUN);
+
                 // Restart level
                 startGame(mStageIndex);
 
@@ -1028,6 +1099,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             // Results - Next Stage Event
             case R.id.results_footer_next_image_button:
                 Log.d(TAG, "onClick: results - next button");
+
+                //
+                playAudio(RUN);
 
                 // Restart stage
                 switchScreen(R.id.stage_select_screen_main_layout);
@@ -1040,6 +1114,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.eaten_main_return_image_button:
                 Log.d(TAG, "onClick: eaten - return");
 
+                //
+                playAudio(RUN);
+
                 // Return
                 switchScreen(R.id.stage_select_screen_main_layout);
 
@@ -1048,6 +1125,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             // Eaten - Exit
             case R.id.eaten_main_exit_image_button:
                 Log.d(TAG, "onClick: eaten - exit");
+
+                //
+                playAudio(RUN);
 
                 // Exit
                 this.finish();
@@ -1067,6 +1147,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.eaten_footer_tutorial_image_button:
                 Log.d(TAG, "onClick: eaten - give up");
 
+                //
+                playAudio(RUN);
+
                 // Tutorial
                 switchScreen(R.id.help_screen_main_layout);
 
@@ -1077,17 +1160,197 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     // Initiate game state - forest
     public void startGame(int stage_index) {
 
-        // Switch to select stage screen [pass stage to startGame function and outsource switchScreen]
+        // Switch to select stage screen --> [pass stage to startGame function and outsource switchScreen]
         switchScreen(R.id.game_screen_main_layout);
 
         // Check toggle
         playAudio(RUN);
 
         // Reset variables
-        resetVars();
+        resetVars(stage_index);
 
         //
         if (stage_index != -1) { mStageIndex = stage_index; }
+
+        //
+        switch(mStageIndex) {
+            case 1:
+                //
+                for (int bg : FOREST_SCENES) {
+
+                    //
+                    mStageBGImages.add(bg);
+                }
+
+                //
+                mGameMainStageImageView.setBackground(versionCheck(R.drawable.stage_01_title_image));
+
+                //
+                mResultsSubStageImageView.setBackground(versionCheck(R.drawable.stage_01_title_image));
+                mResultsStageCardImageView.setBackground(versionCheck(R.drawable.select_stage_card_bg_01));
+
+                //
+                mGameBorderLayout.setBackground(versionCheck(R.drawable.main_rain_image));
+
+                //
+                mGameTapImageView.setBackground(versionCheck(R.drawable.bolt));
+
+                //
+                mGameBossImageButton.setBackground(versionCheck(R.drawable.game_main_boss_wolf_image_sm));
+
+                //
+                mGameBossLayout.setBackground(versionCheck(R.drawable.dark_forest_bg_02));
+
+                //
+                mResultsMainBGImageView.setBackground(versionCheck(R.drawable.results_forest_bg_image));
+
+                break;
+
+            case 2:
+
+                //
+                for (int bg : OCEAN_SCENES) {
+
+                    //
+                    mStageBGImages.add(bg);
+                }
+
+                //
+                mGameMainStageImageView.setBackground(versionCheck(R.drawable.stage_02_title_image));
+
+                mResultsSubStageImageView.setBackground(versionCheck(R.drawable.stage_02_title_image));
+                mResultsStageCardImageView.setBackground(versionCheck(R.drawable.select_stage_card_bg_02));
+
+                //
+                mGameBorderLayout.setBackground(versionCheck(R.drawable.game_main_ocean_border_image_03));
+
+                //
+                mGameTapImageView.setBackground(versionCheck(R.drawable.whirlpool));
+
+                //
+                mGameBossImageButton.setBackground(versionCheck(R.drawable.game_main_boss_shark_image_sm));
+
+                //
+                mGameBossLayout.setBackground(versionCheck(R.drawable.dark_ocean_bg_03));
+
+                //
+                mResultsMainBGImageView.setBackground(versionCheck(R.drawable.results_ocean_bg_image));
+
+                break;
+            case 3:
+
+                //
+                for (int bg : MOUNTAIN_SCENES) {
+
+                    //
+                    mStageBGImages.add(bg);
+                }
+
+                //
+                mGameMainStageImageView.setBackground(versionCheck(R.drawable.stage_03_title_image));
+
+                mResultsSubStageImageView.setBackground(versionCheck(R.drawable.stage_03_title_image));
+                mResultsStageCardImageView.setBackground(versionCheck(R.drawable.select_stage_card_bg_03));
+
+                //
+                mGameBorderLayout.setBackground(versionCheck(R.drawable.mist_image_02));
+
+                //
+                mGameTapImageView.setBackground(versionCheck(R.drawable.earthquake));
+
+                //
+                mGameBossImageButton.setBackground(versionCheck(R.drawable.game_main_boss_eagle_image));
+
+                //
+                mGameBossLayout.setBackground(versionCheck(R.drawable.game_main_mountain_border_image_05));
+
+                //
+                mResultsMainBGImageView.setBackground(versionCheck(R.drawable.results_mountain_bg_image));
+
+                break;
+            case 4:
+
+                //
+                for (int bg : DESERT_SCENES) {
+
+                    //
+                    mStageBGImages.add(bg);
+                }
+
+                //
+                mGameMainStageImageView.setBackground(versionCheck(R.drawable.stage_04_title_image));
+
+                mResultsSubStageImageView.setBackground(versionCheck(R.drawable.stage_04_title_image));
+                mResultsStageCardImageView.setBackground(versionCheck(R.drawable.select_stage_card_bg_04));
+
+                //
+                mGameBorderLayout.setBackground(versionCheck(R.drawable.results_main_desert_border_01_image));
+
+                //
+                mGameTapImageView.setBackground(versionCheck(R.drawable.twister));
+
+                //
+                mGameBossImageButton.setBackground(versionCheck(R.drawable.game_main_boss_scorpion_image_sm));
+
+                //
+                //mGameBossLayout.setBackground(versionCheck(R.drawable.dark_desert_01));
+
+                //
+                mResultsMainBGImageView.setBackground(versionCheck(R.drawable.results_desert_bg_image));
+
+                break;
+            case 5:
+
+                //
+                for (int bg : JUNGLE_SCENES) {
+
+                    //
+                    mStageBGImages.add(bg);
+                }
+
+                //
+                mGameMainStageImageView.setBackground(versionCheck(R.drawable.stage_05_title_image));
+
+                mResultsSubStageImageView.setBackground(versionCheck(R.drawable.stage_05_title_image));
+                mResultsStageCardImageView.setBackground(versionCheck(R.drawable.select_stage_card_bg_05));
+
+                //
+                mGameBorderLayout.setBackground(versionCheck(R.drawable.game_main_jungle_border_image));
+
+                //
+                mGameTapImageView.setBackground(versionCheck(R.drawable.volcano));
+
+                //
+                mResultsMainBGImageView.setBackground(versionCheck(R.drawable.results_jungle_bg_image));
+
+                break;
+            case 6:
+
+                //
+                for (int bg : TUNDRA_SCENES) {
+
+                    //
+                    mStageBGImages.add(bg);
+                }
+
+                //
+                mGameMainStageImageView.setBackground(versionCheck(R.drawable.stage_06_title_image));
+
+                mResultsSubStageImageView.setBackground(versionCheck(R.drawable.stage_06_title_image));
+                mResultsStageCardImageView.setBackground(versionCheck(R.drawable.select_stage_card_bg_06));
+
+                //
+                mGameBorderLayout.setBackground(versionCheck(R.drawable.game_main_tundra_border_image_03));
+
+                //
+                mGameTapImageView.setBackground(versionCheck(R.drawable.avalanche));
+
+                //
+                mResultsMainBGImageView.setBackground(versionCheck(R.drawable.results_tundra_bg_image));
+
+                break;
+
+        }
 
         // Reset progress marker
         resetLevelMarkers();
@@ -1095,8 +1358,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // Initial background
         switchEnvironment(R.id.game_main_pg_creature_canvas_layout);
 
-        // Initial sprite rotation
-        setStage();
+        // Initial sprite rotation --> [rotation in switchEnvironment()]
+        //setStage();
 
         // Run timer through executable task
         final Handler h = new Handler();
@@ -1138,25 +1401,29 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void inflateTapper() {
 
         // Inflate tap variable
-        mTapCount = mTapCount + 6;
+        mTapCount = mTapCount + 3;
 
         // Check target
-        if (mTapCount > mTapBarrel) { tapOut(); }
+        if (mTapCount > mTapBarrel) {
 
-        // Update bolt
-        if (mTapCount < BOLT_FADE.length) { updateBolt(); }
+            //
+            ++mPower01Meter;
+
+            //
+            mTapCount = 0;
+
+            //
+            playAudio(THUNDER_AUDIO);
+        }
+
+        // Update bolt, whirlpool, etc.
+        if (mTapCount < TAP_FADE.length) { updateTap(); }
     }
 
     private void tapOut() {
 
         //
         mPauseGame = true;
-
-        //
-        switchEnvironment(R.id.game_main_pg_creature_canvas_layout);
-
-        //
-        mPauseGame = false;
 
         //
         playAudio(THUNDER_AUDIO);
@@ -1167,30 +1434,35 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //
         ++mAggressionScore;
 
-        // Reset bold image
+        // Reset tunnel image
         mGameTunnelVisionLayout.setAlpha((float) 0);
 
-        // Check boss ready
-        if (mTapTotal < 6) {
+        //
+        if (!mStageBGImages.isEmpty()) {
+
+            //
+            mStageBGImages.remove(mStageBGImages.indexOf(mEnvironmentID));
+
+            //
+            switchEnvironment(R.id.game_main_pg_creature_canvas_layout);
 
             //
             mGameLevelMarkerImageView.setBackground(versionCheck(LEVEL_MARKERS[mTapTotal]));
+
+            mPauseGame = false;
 
         } else {
 
             //
             startBoss();
-
-            //
-             switchCreature(R.id.game_main_boss_image_button, R.id.game_main_pg_boss_canvas_layout);
         }
     }
 
-    private void updateBolt() {
+    private void updateTap() {
 
         //
-        double opacity = BOLT_FADE[mTapCount];
-        mGameBoltImageView.setAlpha((float) opacity);
+        double opacity = TAP_FADE[mTapCount];
+        mGameTapImageView.setAlpha((float) opacity);
     }
 
     // Increment game
@@ -1215,7 +1487,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     mGameTunnelVisionLayout.setAlpha(0);
                 }
 
-
             } else {
 
                 //
@@ -1229,7 +1500,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 --mTapCount;
             }
 
-            updateBolt();
+            updateTap();
 
             // Play heartbeat
             playAudio(HEARTBEAT);
@@ -1243,6 +1514,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         // Ensure there is still time
         if (mHungerMeter <= 0) {
+
+            //
             return;
         }
 
@@ -1250,9 +1523,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mGameTunnelVisionLayout.setAlpha((float) 0);
 
         // Increment hit counter
-        ++mPower01Meter;
-        ++mPower03Meter;
-        ++mPower05Meter;
+        ++mPower02Meter;
 
         //
         ++mSpeciesScore;
@@ -1263,10 +1534,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         //
         ++mHungerMeter;
-
-        // Accelerate timer
-        double speedComponent = (mSpeedIndex * .1);
-        mSpeedIndex = mSpeedIndex - (long) speedComponent;
     }
 
     // Miss sprite
@@ -1274,25 +1541,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         // Ensure there is still time
         if (mHungerMeter <= 0) {
+
+            //
             return;
         }
 
         //
-        updateBolt();
+        updateTap();
 
         // Increment miss counter
-        ++mPower06Meter;
-        ++mPower04Meter;
-        ++mPower02Meter;
 
-        ++mAggressionScore;
         ++mTurn;
 
         // Play miss noise
         playAudio(MISS);
-
-        //
-        --mHungerMeter;
 
         // Accelerate timer
         double speedComponent = (mSpeedIndex * .2);
@@ -1319,7 +1581,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     mSpeedIndex = mSpeedIndex - (long) speedComponent01;
 
                     //
-                    switchEnvironment(R.id.game_main_pg_creature_canvas_layout);
+                    tapOut();
 
                     break;
 
@@ -1328,9 +1590,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     //
                     mPower02Meter = 0;
                     mPower02Target += 1;
-
-                    // Reset bold image
-                    mGameTunnelVisionLayout.setAlpha((float) 0);
 
                     //
                     mHungerMeter = 50;
@@ -1343,6 +1602,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     mPower03Meter = 0;
                     mPower03Target += 1;
 
+                    // Kill all
+                    switchEnvironment(R.id.game_main_pg_creature_canvas_layout);
+
                     break;
 
                 case 4:
@@ -1350,6 +1612,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     //
                     mPower04Meter = 0;
                     mPower04Target += 1;
+
+                    //
+                    mGameBorderLayout.setVisibility(View.GONE);
 
                     break;
 
@@ -1359,6 +1624,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     mPower05Meter = 0;
                     mPower05Target += 1;
 
+                    //
+                    setStage();
+
                     break;
 
                 case 6:
@@ -1367,12 +1635,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     mPower06Meter = 0;
                     mPower06Target += 1;
 
-                    // Accelerate timer
-                    double speedComponent06 = (mSpeedIndex * .2);
-                    mSpeedIndex = mSpeedIndex - (long) speedComponent06;
-
                     //
                     setStage();
+
+                    scorePoint();
+                    scorePoint();
+                    scorePoint();
+                    scorePoint();
+                    scorePoint();
 
                     break;
             }
@@ -1392,6 +1662,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //
         mPauseGame = true;
         mStageApex = true;
+
+        //
         mStagePredator = getAggressionScore(mAggressionScore) + getSpeciesScore(mSpeciesScore);
         mStageAccuracy = getPercentage(mTurn, mSpeciesScore);
 
@@ -1413,10 +1685,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void attackBoss() {
 
         //
-        if (mBossHeath > 0) {
+        if (mBossHealth > 0) {
 
             //
-            --mBossHeath;
+            --mBossHealth;
 
             //
             playAudio(CHOMP);
@@ -1517,15 +1789,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mGameBossImageButton.setVisibility(View.GONE);
 
         //
-        getResults(getPercentage(mTurn, mSpeciesScore), getAggressionScore(mAggressionScore) + getSpeciesScore(mSpeciesScore), mStageApex);
+        postResults(getPercentage(mTurn, mSpeciesScore), getAggressionScore(mAggressionScore) + getSpeciesScore(mSpeciesScore), mStageApex);
 
         //
         setGameData();
+
+        //
         getGameData();
     }
 
     // Reset game variables
-    private void resetVars() {
+    private void resetVars(int stage_index) {
 
         //
         mHungerMeter = 50;
@@ -1553,7 +1827,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mSpeciesScore = 0;
 
         //
-        mTapBarrel = 14;
+        mTapBarrel = 18;
         mTapCount = 0;
         mTapTotal = 0;
 
@@ -1561,25 +1835,29 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mPauseGame = false;
 
         //
-        mBossHeath = 2;
+        mBossHealth = 2;
 
         //
         mStageIndex = -1;
         mStageApex = false;
         mStageAccuracy = null;
         mStagePredator = null;
+
+        mStageBGImages.clear();
     }
 
     // Reset saved game data
     public void clearGameData() {
 
         //
-        SharedPreferences mUserPref = getPreferences(Context.MODE_PRIVATE);
-        SharedPreferences.Editor mEditor = mUserPref.edit();
+        SharedPreferences mUserPrefReset = getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences.Editor mEditor = mUserPrefReset.edit();
 
         //
         mEditor.clear();
         mEditor.apply();
+
+        getGameData();
     }
 
     // UI navigation to hide and show layouts
@@ -1656,62 +1934,82 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 // Power 1
                 if (mPower01Meter > mPower01Target) {
 
-                    mGamePower01ImageView.setBackground(versionCheck(R.drawable.game_main_power_01_red_image_view));
+                    mGamePower01ImageView.setVisibility(View.VISIBLE);
 
                 } else {
 
-                    mGamePower01ImageView.setBackground(versionCheck(R.drawable.game_main_power_01_black_image_view));
+                    mGamePower01ImageView.setVisibility(View.INVISIBLE);
                 }
 
                 // Power 2
-                if (mPower02Meter > mPower02Target) {
+                if (stage_01_complete) {
 
-                    mGamePower02ImageView.setBackground(versionCheck(R.drawable.game_main_power_02_red_image_view));
+                    if (mPower02Meter > mPower02Target) {
 
-                } else {
+                        mGamePower02ImageView.setVisibility(View.VISIBLE);
 
-                    mGamePower02ImageView.setBackground(versionCheck(R.drawable.game_main_power_02_black_image_view));
-                }
+                    } else {
+
+                        mGamePower02ImageView.setVisibility(View.INVISIBLE);
+                    }
+
+                } else { mGamePower02ImageView.setVisibility(View.GONE); }
 
                 // Power 3
-                if (mPower03Meter > mPower03Target) {
+                if (stage_02_complete) {
 
-                    mGamePower03ImageView.setBackground(versionCheck(R.drawable.game_main_power_03_red_image_view));
+                    if (mPower03Meter > mPower03Target) {
 
-                } else {
+                        mGamePower03ImageView.setVisibility(View.VISIBLE);
 
-                    mGamePower03ImageView.setBackground(versionCheck(R.drawable.game_main_power_03_black_image_view));
-                }
+                    } else {
+
+                        mGamePower03ImageView.setVisibility(View.INVISIBLE);
+                    }
+
+                } else { mGamePower03ImageView.setVisibility(View.GONE); }
 
                 // Power 4
-                if (mPower04Meter > mPower04Target) {
+                if (stage_03_complete) {
 
-                    mGamePower04ImageView.setBackground(versionCheck(R.drawable.game_main_power_04_red_image_view));
+                    if (mPower04Meter > mPower04Target) {
 
-                } else {
+                        mGamePower04ImageView.setVisibility(View.VISIBLE);
 
-                    mGamePower04ImageView.setBackground(versionCheck(R.drawable.game_main_power_04_black_image_view));
-                }
+                    } else {
+
+                        mGamePower04ImageView.setVisibility(View.INVISIBLE);
+                    }
+
+                } else { mGamePower04ImageView.setVisibility(View.GONE); }
 
                 // Power 5
-                if (mPower05Meter > mPower05Target) {
+                if (stage_04_complete) {
 
-                    mGamePower05ImageView.setBackground(versionCheck(R.drawable.game_main_power_05_red_image_view));
+                    if (mPower05Meter > mPower05Target) {
 
-                } else {
+                        mGamePower05ImageView.setVisibility(View.VISIBLE);
 
-                    mGamePower05ImageView.setBackground(versionCheck(R.drawable.game_main_power_05_black_image_view));
-                }
+                    } else {
+
+                        mGamePower05ImageView.setVisibility(View.INVISIBLE);
+                    }
+
+                } else { mGamePower05ImageView.setVisibility(View.GONE); }
 
                 // Power 6
-                if (mPower06Meter > mPower06Target) {
+                if (stage_05_complete) {
 
-                    mGamePower06ImageView.setBackground(versionCheck(R.drawable.game_main_power_06_red_image_view));
+                    if (mPower06Meter > mPower06Target) {
 
-                } else {
+                        mGamePower06ImageView.setVisibility(View.VISIBLE);
 
-                    mGamePower06ImageView.setBackground(versionCheck(R.drawable.game_main_power_06_black_image_view));
-                }
+                    } else {
+
+                        mGamePower06ImageView.setVisibility(View.INVISIBLE);
+                    }
+
+                } else { mGamePower06ImageView.setVisibility(View.GONE); }
 
                 break;
 
@@ -1719,7 +2017,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Log.d(TAG, "drawScreen: results");
 
                 //
-                mResultsStageImageView.setVisibility(View.VISIBLE);
+                mResultsSubStageImageView.setVisibility(View.VISIBLE);
 
                 break;
 
@@ -1738,28 +2036,32 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 	private void switchEnvironment(int canvas) {
 
         //
-        mHungerMeter = 50;
-        mSpeedIndex = 1000;
+        if (!mStageBGImages.isEmpty()) {
 
-        //
-        setStage();
+            //
+            mHungerMeter = 50;
+            mSpeedIndex = 1000;
 
-        //
-        resetTapper();
+            //
+            setStage();
 
-        // Play bg audio
-        playAudio(BG_AUDIO);
+            //
+            resetTapper();
 
-        // Random selection from array
-        Random r = new Random();
+            // Play bg audio
+            playAudio(BG_AUDIO);
 
-        //
-        int mEnvironmentID = ENVIRONMENTS[r.nextInt(18)];
-        Drawable mEnvironmentDrawable;
+            // Random selection from array
+            Random r = new Random();
 
-        //
-        mEnvironmentDrawable = versionCheck(mEnvironmentID);
-        findViewById(canvas).setBackground(mEnvironmentDrawable);
+            //
+            mEnvironmentID = mStageBGImages.get(r.nextInt(mStageBGImages.size()));
+            Drawable mEnvironmentDrawable;
+
+            //
+            mEnvironmentDrawable = versionCheck(mEnvironmentID);
+            findViewById(canvas).setBackground(mEnvironmentDrawable);
+        }
     }
 
 	// Randomly select and position sprites
@@ -1821,10 +2123,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 	// Initial creature spread
 	private void setStage() {
 
-            //
-            for (int creature : CREATURE_BUTTONS) {
-                switchCreature(creature, R.id.game_main_pg_creature_canvas_layout);
-            }
+        //
+        for (int creature : CREATURE_BUTTONS) {
+            switchCreature(creature, R.id.game_main_pg_creature_canvas_layout);
+        }
     }
 
     private void alertNewGame() {
@@ -1841,7 +2143,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         restartBuilder.setNegativeButton("No Way", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
+
+                //
                 dialogInterface.cancel();
+
+                //
+                playAudio(MISS);
+
             }
         });
 
@@ -1853,16 +2161,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 // Reset saved data
                 clearGameData();
 
-                // Reinstantiate game state data
-                getGameData();
-
                 // Start game - stage select
                 switchScreen(R.id.stage_select_screen_main_layout);
+
+                //
+                playAudio(ROAR);
             }
         });
 
         // Display
         restartBuilder.show();
+
+        //
+        playAudio(CROW_AUDIO);
     }
 
     // Dialog to edit settings
@@ -1872,7 +2183,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         AlertDialog.Builder settingsBuilder = new AlertDialog.Builder(this);
 
         // Set title
+        settingsBuilder.setCancelable(true);
         settingsBuilder.setTitle("Settings");
+        settingsBuilder.setTitle("Adjust game settings.");
 
         // Pass checked states
         boolean[] mChecked = {play_audio, play_haptic};
@@ -1892,10 +2205,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         play_audio = b;
 
                         //
-                        setGameData();
+                        playAudio(MISS);
 
                         //
-                        getGameData();
+                        setGameData();
 
                         break;
 
@@ -1906,10 +2219,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         play_haptic = b;
 
                         //
-                        setGameData();
+                        playHaptic();
 
                         //
-                        getGameData();
+                        setGameData();
 
                         break;
 
@@ -1917,8 +2230,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
+        // Set positive button
+        settingsBuilder.setPositiveButton("Yeah", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+                //
+                playAudio(HEARTBEAT);
+            }
+        });
+
         // Display
         settingsBuilder.show();
+
+        //
+        playAudio(CROW_AUDIO);
     }
 
     // Dialog to alert return lose progress
@@ -1941,6 +2267,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onClick(DialogInterface dialogInterface, int i) {
 
                 //
+                playAudio(MISS);
+
+                //
                 mPauseGame = false;
                 dialogInterface.cancel();
             }
@@ -1952,6 +2281,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onClick(DialogInterface dialogInterface, int i) {
 
                 //
+                playAudio(RUN);
+
+                //
                 switchScreen(R.id.stage_select_screen_main_layout);
 
             }
@@ -1959,10 +2291,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         //
         mReturnAlert.show();
+
+        //
+        playAudio(CROW_AUDIO);
     }
 
     // Dialog to alert exit lose progress
-    private void alertExitLostProgress() {
+    private void alertExitLoseProgress() {
 
         // Pause
         mPauseGame = true;
@@ -1981,6 +2316,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onClick(DialogInterface dialogInterface, int i) {
 
                 //
+                playAudio(MISS);
+
+                //
                 mPauseGame = false;
                 dialogInterface.cancel();
             }
@@ -1992,12 +2330,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onClick(DialogInterface dialogInterface, int i) {
 
                 //
+                playAudio(RUN);
+
+                //
                 finish();
             }
         });
 
         //
         mReturnAlert.show();
+
+        //
+        playAudio(CROW_AUDIO);
     }
 
     // Method to return drawable resource
@@ -2092,7 +2436,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             //
             mStage01PredatorTextView.setVisibility(View.VISIBLE);
             mStage01PredatorTextView.setText(stage_01_predator);
+
         } else {
+
             mStage01PredatorTextView.setVisibility(View.GONE);
         }
 
@@ -2102,34 +2448,35 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             //
             mStage02LockedImageButton.setVisibility(View.GONE);
 
-            // Check stage 2 scores
-            if (stage_02_apex) {
-                mStage02ApexImageView.setVisibility(View.VISIBLE);
-            } else {
-                mStage02ApexImageView.setVisibility(View.GONE);
-            }
+            // Check stage 2 apex
+            if (stage_02_apex) { mStage02ApexImageView.setVisibility(View.VISIBLE); }
 
-            //
+            else { mStage02ApexImageView.setVisibility(View.GONE); }
+
+            // Check stage 2 accuracy
             if (stage_02_accuracy != null) {
 
                 //
                 mStage02AccuracyTextView.setVisibility(View.VISIBLE);
                 mStage02AccuracyTextView.setText(stage_02_accuracy);
-            } else {
-                mStage02AccuracyTextView.setVisibility(View.GONE);
-            }
 
-            //
+            } else { mStage02AccuracyTextView.setVisibility(View.GONE); }
+
+            // Check stage 2 predator
             if (stage_02_predator != null) {
 
                 //
                 mStage02PredatorTextView.setVisibility(View.VISIBLE);
                 mStage02PredatorTextView.setText(stage_02_predator);
-            } else {
-                mStage02PredatorTextView.setVisibility(View.GONE);
-            }
+
+            } else { mStage02PredatorTextView.setVisibility(View.GONE); }
+
         } else {
+
             mStage02LockedImageButton.setVisibility(View.VISIBLE);
+            mStage02ApexImageView.setVisibility(View.GONE);
+            mStage02AccuracyTextView.setVisibility(View.GONE);
+            mStage02PredatorTextView.setVisibility(View.GONE);
         }
 
         // Check stage 3 progress
@@ -2166,6 +2513,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         } else {
             mStage03LockedImageButton.setVisibility(View.VISIBLE);
+            mStage03ApexImageView.setVisibility(View.GONE);
+            mStage03AccuracyTextView.setVisibility(View.GONE);
+            mStage03PredatorTextView.setVisibility(View.GONE);
         }
 
         // Check stage 4 progress
@@ -2202,6 +2552,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         } else {
             mStage04LockedImageButton.setVisibility(View.VISIBLE);
+            mStage04ApexImageView.setVisibility(View.GONE);
+            mStage04AccuracyTextView.setVisibility(View.GONE);
+            mStage04PredatorTextView.setVisibility(View.GONE);
         }
 
         // Check stage 5 progress
@@ -2238,6 +2591,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         } else {
             mStage05LockedImageButton.setVisibility(View.VISIBLE);
+            mStage05ApexImageView.setVisibility(View.GONE);
+            mStage05AccuracyTextView.setVisibility(View.GONE);
+            mStage05PredatorTextView.setVisibility(View.GONE);
         }
 
         // Check stage 6 progress
@@ -2274,6 +2630,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         } else {
             mStage06LockedImageButton.setVisibility(View.VISIBLE);
+            mStage06ApexImageView.setVisibility(View.GONE);
+            mStage06AccuracyTextView.setVisibility(View.GONE);
+            mStage06PredatorTextView.setVisibility(View.GONE);
         }
     }
 
@@ -2332,19 +2691,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 		// Classify predator
 		if (species < 15) {
-			speciesScore = "newborn tadpole";
+			speciesScore = "tadpole";
 		} else if (species < 20) {
-            speciesScore = "field mouse";
+            speciesScore = "mouse";
         } else if (species < 25) {
-            speciesScore = "bull frog";
+            speciesScore = "toad";
 		} else if (species < 30) {
-            speciesScore = "city pigeon";
+            speciesScore = "pigeon";
         } else if (species < 35) {
-            speciesScore = "soft-shelled crab";
+            speciesScore = "crab";
 		} else if (species < 40) {
-            speciesScore = "jack rabbit";
+            speciesScore = "rabbit";
 		} else if (species < 50) {
-            speciesScore = "lazy sloth";
+            speciesScore = "sloth";
 		} else {
             speciesScore = "???";
 		}
@@ -2361,7 +2720,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 	// Method to end game
-	private void getResults(String stage_accuracy_score, String stage_predator_score, boolean stage_apex_score) {
+	private void postResults(String stage_accuracy_score, String stage_predator_score, boolean stage_apex_score) {
 
         // Switch to results screen
 		switchScreen(R.id.results_screen_main_layout);
@@ -2465,13 +2824,45 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     };
 
     // Array list of background images [forest]
-    final private static int[] ENVIRONMENTS = {
+    final private static int[] FOREST_SCENES = {
 
             //
-            R.drawable.test_bg_01, R.drawable.test_bg_02, R.drawable.test_bg_03, R.drawable.test_bg_04, R.drawable.test_bg_05,
-            R.drawable.test_bg_06, R.drawable.test_bg_07, R.drawable.test_bg_08, R.drawable.test_bg_09, R.drawable.test_bg_10,
-            R.drawable.test_bg_11, R.drawable.test_bg_12, R.drawable.test_bg_13, R.drawable.test_bg_14, R.drawable.test_bg_15,
-            R.drawable.test_bg_16, R.drawable.test_bg_17, R.drawable.test_bg_18, R.drawable.test_bg_19
+            R.drawable.dark_forest_bg_01, R.drawable.dark_forest_bg_02, R.drawable.dark_forest_bg_03
+    };
+
+    // Array list of background images [ocean]
+    final private static int[] OCEAN_SCENES = {
+
+            //
+            R.drawable.dark_ocean_bg_01, R.drawable.dark_ocean_bg_02, R.drawable.dark_ocean_bg_03
+    };
+
+    // Array list of background images [mountain]
+    final private static int[] MOUNTAIN_SCENES = {
+
+            //
+            R.drawable.dark_mountain_bg_01, R.drawable.dark_mountain_bg_02, R.drawable.dark_mountain_bg_03
+    };
+
+    // Array list of background images [desert]
+    final private static int[] DESERT_SCENES = {
+
+            //
+            R.drawable.dark_desert_bg_01, R.drawable.dark_desert_bg_02, R.drawable.game_main_desert_bg_image_04
+    };
+
+    // Array list of background images [jungle]
+    final private static int[] JUNGLE_SCENES = {
+
+            //
+            R.drawable.dark_jungle_bg_01, R.drawable.dark_jungle_bg_02, R.drawable.dark_jungle_bg_03
+    };
+
+    // Array list of background images [tundra]
+    final private static int[] TUNDRA_SCENES = {
+
+            //
+            R.drawable.dark_tundra_bg_01, R.drawable.dark_tundra_bg_02, R.drawable.dark_tundra_bg_03
     };
 
     // Array list of sprite images
@@ -2497,7 +2888,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     };
 
     // Array list of alphas for bolt image
-    final private static double[] BOLT_FADE = {
+    final private static double[] TAP_FADE = {
 
             //
             .0, .0, .1, .12, .13, .14, .15, .17, .2, .25, .3, .35, .4, .45, .5, .6, .7, .8, .9, .99, 1
