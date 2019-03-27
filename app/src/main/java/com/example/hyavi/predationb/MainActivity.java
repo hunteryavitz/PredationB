@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.os.Build;
@@ -23,14 +24,14 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
-/*
+/*****************************************
     PREDATION BETA - EAT OR BE EATEN
-*/
+******************************************/
 
 // Main activity
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -49,108 +50,542 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     // Settings
     private static final String AUDIO_SAVED_STATE = "audio_saved_state";
     private static final String HAPTIC_SAVED_STATE = "haptic_saved_state";
+    private static final String TUTORIAL_SAVED_STATE = "tutorial_saved_state";
 
-    // Stage progress / scores
+    // Stage 1
     private static final String STAGE_01_COMPLETE = "stage_01_complete";
+    private static final String STAGE_01_ATTEMPTS = "stage_01_attempts";
+    private static final String STAGE_01_BOSS_KILLS = "stage_01_boss_kills";
+    private static final String STAGE_01_CREATURE_KILLS = "stage_01_creature_kills";
+    private static final String STAGE_01_HIGHEST_STREAK = "stage_01_highest_streak";
+    private static final String STAGE_01_CLOSEST_DEATH = "stage_01_closest_death";
+    private static final String STAGE_01_LONGEST_FRENZY = "stage_01_longest_frenzy";
+    private static final String STAGE_01_MOST_CALM = "stage_01_most_calm";
+    private static final String STAGE_01_MOST_FRANTIC = "stage_01_most_frantic";
+    private static final String STAGE_01_TOTAL_TIME = "stage_01_total_time";
+    private static final String STAGE_01_BEST_TIME = "stage_01_best_time";
     private static final String STAGE_01_PREDATOR = "stage_01_predator";
     private static final String STAGE_01_ACCURACY = "stage_01_accuracy";
     private static final String STAGE_01_APEX = "stage_01_apex";
+    private static final String STAGE_01_COLLECTION = "stage_01_collection";
+
+    //
+    private static final String STAGE_01_CREATURE_01 = "stage_01_creature_01";
+    private static final String STAGE_01_CREATURE_02 = "stage_01_creature_02";
+    private static final String STAGE_01_CREATURE_03 = "stage_01_creature_03";
+    private static final String STAGE_01_CREATURE_04 = "stage_01_creature_04";
+    private static final String STAGE_01_CREATURE_05 = "stage_01_creature_05";
+    private static final String STAGE_01_CREATURE_06 = "stage_01_creature_06";
+    private static final String STAGE_01_CREATURE_07 = "stage_01_creature_07";
+    private static final String STAGE_01_CREATURE_08 = "stage_01_creature_08";
+    private static final String STAGE_01_CREATURE_09 = "stage_01_creature_09";
+    private static final String STAGE_01_CREATURE_10 = "stage_01_creature_10";
+    private static final String STAGE_01_CREATURE_11 = "stage_01_creature_11";
+    private static final String STAGE_01_CREATURE_12 = "stage_01_creature_12";
+    private static final String STAGE_01_CREATURE_13 = "stage_01_creature_13";
+    private static final String STAGE_01_CREATURE_14 = "stage_01_creature_14";
+    private static final String STAGE_01_CREATURE_15 = "stage_01_creature_15";
+    private static final String STAGE_01_CREATURE_16 = "stage_01_creature_16";
+    private static final String STAGE_01_CREATURE_17 = "stage_01_creature_17";
+    private static final String STAGE_01_CREATURE_18 = "stage_01_creature_18";
+    private static final String STAGE_01_CREATURE_19 = "stage_01_creature_19";
+    private static final String STAGE_01_CREATURE_20 = "stage_01_creature_20";
+    private static final String STAGE_01_CREATURE_21 = "stage_01_creature_21";
+    private static final String STAGE_01_CREATURE_22 = "stage_01_creature_22";
+    private static final String STAGE_01_CREATURE_23 = "stage_01_creature_23";
+    private static final String STAGE_01_CREATURE_24 = "stage_01_creature_24";
+    private static final String STAGE_01_CREATURE_25 = "stage_01_creature_25";
+    private static final String STAGE_01_CREATURE_26 = "stage_01_creature_26";
+    private static final String STAGE_01_CREATURE_27 = "stage_01_creature_27";
+    private static final String STAGE_01_CREATURE_28 = "stage_01_creature_28";
+    private static final String STAGE_01_CREATURE_29 = "stage_01_creature_29";
+    private static final String STAGE_01_CREATURE_30 = "stage_01_creature_30";
+    private static final String STAGE_01_CREATURE_31 = "stage_01_creature_31";
+    private static final String STAGE_01_CREATURE_32 = "stage_01_creature_32";
 
     // Stage 2
     private static final String STAGE_02_COMPLETE = "stage_02_complete";
+    private static final String STAGE_02_ATTEMPTS = "stage_02_attempts";
+    private static final String STAGE_02_BOSS_KILLS = "stage_02_boss_kills";
+    private static final String STAGE_02_CREATURE_KILLS = "stage_02_creature_kills";
+    private static final String STAGE_02_HIGHEST_STREAK = "stage_02_highest_streak";
+    private static final String STAGE_02_CLOSEST_DEATH = "stage_02_closest_death";
+    private static final String STAGE_02_LONGEST_FRENZY = "stage_02_longest_frenzy";
+    private static final String STAGE_02_MOST_CALM = "stage_02_most_calm";
+    private static final String STAGE_02_MOST_FRANTIC = "stage_02_most_frantic";
+    private static final String STAGE_02_TOTAL_TIME = "stage_02_total_time";
+    private static final String STAGE_02_BEST_TIME = "stage_02_best_time";
     private static final String STAGE_02_PREDATOR = "stage_02_predator";
     private static final String STAGE_02_ACCURACY = "stage_02_accuracy";
     private static final String STAGE_02_APEX = "stage_02_apex";
+    private static final String STAGE_02_COLLECTION = "stage_02_collection";
+
+    //
+    private static final String STAGE_02_CREATURE_01 = "stage_01_creature_01";
+    private static final String STAGE_02_CREATURE_02 = "stage_01_creature_02";
+    private static final String STAGE_02_CREATURE_03 = "stage_01_creature_03";
+    private static final String STAGE_02_CREATURE_04 = "stage_01_creature_04";
+    private static final String STAGE_02_CREATURE_05 = "stage_01_creature_05";
+    private static final String STAGE_02_CREATURE_06 = "stage_01_creature_06";
+    private static final String STAGE_02_CREATURE_07 = "stage_01_creature_07";
+    private static final String STAGE_02_CREATURE_08 = "stage_01_creature_08";
+    private static final String STAGE_02_CREATURE_09 = "stage_01_creature_09";
+    private static final String STAGE_02_CREATURE_10 = "stage_01_creature_10";
+    private static final String STAGE_02_CREATURE_11 = "stage_01_creature_11";
+    private static final String STAGE_02_CREATURE_12 = "stage_01_creature_12";
+    private static final String STAGE_02_CREATURE_13 = "stage_01_creature_13";
+    private static final String STAGE_02_CREATURE_14 = "stage_01_creature_14";
+    private static final String STAGE_02_CREATURE_15 = "stage_01_creature_15";
+    private static final String STAGE_02_CREATURE_16 = "stage_01_creature_16";
+    private static final String STAGE_02_CREATURE_17 = "stage_01_creature_17";
+    private static final String STAGE_02_CREATURE_18 = "stage_01_creature_18";
+    private static final String STAGE_02_CREATURE_19 = "stage_01_creature_19";
+    private static final String STAGE_02_CREATURE_20 = "stage_01_creature_20";
+    private static final String STAGE_02_CREATURE_21 = "stage_01_creature_21";
+    private static final String STAGE_02_CREATURE_22 = "stage_01_creature_22";
+    private static final String STAGE_02_CREATURE_23 = "stage_01_creature_23";
+    private static final String STAGE_02_CREATURE_24 = "stage_01_creature_24";
+    private static final String STAGE_02_CREATURE_25 = "stage_01_creature_25";
+    private static final String STAGE_02_CREATURE_26 = "stage_01_creature_26";
+    private static final String STAGE_02_CREATURE_27 = "stage_01_creature_27";
+    private static final String STAGE_02_CREATURE_28 = "stage_01_creature_28";
+    private static final String STAGE_02_CREATURE_29 = "stage_01_creature_29";
+    private static final String STAGE_02_CREATURE_30 = "stage_01_creature_30";
+    private static final String STAGE_02_CREATURE_31 = "stage_01_creature_31";
+    private static final String STAGE_02_CREATURE_32 = "stage_01_creature_32";
 
     // Stage 3
     private static final String STAGE_03_COMPLETE = "stage_03_complete";
+    private static final String STAGE_03_ATTEMPTS = "stage_03_attempts";
+    private static final String STAGE_03_BOSS_KILLS = "stage_03_boss_kills";
+    private static final String STAGE_03_CREATURE_KILLS = "stage_03_creature_kills";
+    private static final String STAGE_03_HIGHEST_STREAK = "stage_03_highest_streak";
+    private static final String STAGE_03_CLOSEST_DEATH = "stage_03_closest_death";
+    private static final String STAGE_03_LONGEST_FRENZY = "stage_03_longest_frenzy";
+    private static final String STAGE_03_MOST_CALM = "stage_03_most_calm";
+    private static final String STAGE_03_MOST_FRANTIC = "stage_03_most_frantic";
+    private static final String STAGE_03_TOTAL_TIME = "stage_03_total_time";
+    private static final String STAGE_03_BEST_TIME = "stage_03_best_time";
     private static final String STAGE_03_PREDATOR = "stage_03_predator";
     private static final String STAGE_03_ACCURACY = "stage_03_accuracy";
     private static final String STAGE_03_APEX = "stage_03_apex";
+    private static final String STAGE_03_COLLECTION = "stage_03_collection";
+
+    //
+    private static final String STAGE_03_CREATURE_01 = "stage_01_creature_01";
+    private static final String STAGE_03_CREATURE_02 = "stage_01_creature_02";
+    private static final String STAGE_03_CREATURE_03 = "stage_01_creature_03";
+    private static final String STAGE_03_CREATURE_04 = "stage_01_creature_04";
+    private static final String STAGE_03_CREATURE_05 = "stage_01_creature_05";
+    private static final String STAGE_03_CREATURE_06 = "stage_01_creature_06";
+    private static final String STAGE_03_CREATURE_07 = "stage_01_creature_07";
+    private static final String STAGE_03_CREATURE_08 = "stage_01_creature_08";
+    private static final String STAGE_03_CREATURE_09 = "stage_01_creature_09";
+    private static final String STAGE_03_CREATURE_10 = "stage_01_creature_10";
+    private static final String STAGE_03_CREATURE_11 = "stage_01_creature_11";
+    private static final String STAGE_03_CREATURE_12 = "stage_01_creature_12";
+    private static final String STAGE_03_CREATURE_13 = "stage_01_creature_13";
+    private static final String STAGE_03_CREATURE_14 = "stage_01_creature_14";
+    private static final String STAGE_03_CREATURE_15 = "stage_01_creature_15";
+    private static final String STAGE_03_CREATURE_16 = "stage_01_creature_16";
+    private static final String STAGE_03_CREATURE_17 = "stage_01_creature_17";
+    private static final String STAGE_03_CREATURE_18 = "stage_01_creature_18";
+    private static final String STAGE_03_CREATURE_19 = "stage_01_creature_19";
+    private static final String STAGE_03_CREATURE_20 = "stage_01_creature_20";
+    private static final String STAGE_03_CREATURE_21 = "stage_01_creature_21";
+    private static final String STAGE_03_CREATURE_22 = "stage_01_creature_22";
+    private static final String STAGE_03_CREATURE_23 = "stage_01_creature_23";
+    private static final String STAGE_03_CREATURE_24 = "stage_01_creature_24";
+    private static final String STAGE_03_CREATURE_25 = "stage_01_creature_25";
+    private static final String STAGE_03_CREATURE_26 = "stage_01_creature_26";
+    private static final String STAGE_03_CREATURE_27 = "stage_01_creature_27";
+    private static final String STAGE_03_CREATURE_28 = "stage_01_creature_28";
+    private static final String STAGE_03_CREATURE_29 = "stage_01_creature_29";
+    private static final String STAGE_03_CREATURE_30 = "stage_01_creature_30";
+    private static final String STAGE_03_CREATURE_31 = "stage_01_creature_31";
+    private static final String STAGE_03_CREATURE_32 = "stage_01_creature_32";
 
     // Stage 4
     private static final String STAGE_04_COMPLETE = "stage_04_complete";
+    private static final String STAGE_04_ATTEMPTS = "stage_04_attempts";
+    private static final String STAGE_04_BOSS_KILLS = "stage_04_boss_kills";
+    private static final String STAGE_04_CREATURE_KILLS = "stage_04_creature_kills";
+    private static final String STAGE_04_HIGHEST_STREAK = "stage_04_highest_streak";
+    private static final String STAGE_04_CLOSEST_DEATH = "stage_04_closest_death";
+    private static final String STAGE_04_LONGEST_FRENZY = "stage_04_longest_frenzy";
+    private static final String STAGE_04_MOST_CALM = "stage_04_most_calm";
+    private static final String STAGE_04_MOST_FRANTIC = "stage_04_most_frantic";
+    private static final String STAGE_04_TOTAL_TIME = "stage_04_total_time";
+    private static final String STAGE_04_BEST_TIME = "stage_04_best_time";
     private static final String STAGE_04_PREDATOR = "stage_04_predator";
     private static final String STAGE_04_ACCURACY = "stage_04_accuracy";
     private static final String STAGE_04_APEX = "stage_04_apex";
+    private static final String STAGE_04_COLLECTION = "stage_04_collection";
+
+    //
+    private static final String STAGE_04_CREATURE_01 = "stage_01_creature_01";
+    private static final String STAGE_04_CREATURE_02 = "stage_01_creature_02";
+    private static final String STAGE_04_CREATURE_03 = "stage_01_creature_03";
+    private static final String STAGE_04_CREATURE_04 = "stage_01_creature_04";
+    private static final String STAGE_04_CREATURE_05 = "stage_01_creature_05";
+    private static final String STAGE_04_CREATURE_06 = "stage_01_creature_06";
+    private static final String STAGE_04_CREATURE_07 = "stage_01_creature_07";
+    private static final String STAGE_04_CREATURE_08 = "stage_01_creature_08";
+    private static final String STAGE_04_CREATURE_09 = "stage_01_creature_09";
+    private static final String STAGE_04_CREATURE_10 = "stage_01_creature_10";
+    private static final String STAGE_04_CREATURE_11 = "stage_01_creature_11";
+    private static final String STAGE_04_CREATURE_12 = "stage_01_creature_12";
+    private static final String STAGE_04_CREATURE_13 = "stage_01_creature_13";
+    private static final String STAGE_04_CREATURE_14 = "stage_01_creature_14";
+    private static final String STAGE_04_CREATURE_15 = "stage_01_creature_15";
+    private static final String STAGE_04_CREATURE_16 = "stage_01_creature_16";
+    private static final String STAGE_04_CREATURE_17 = "stage_01_creature_17";
+    private static final String STAGE_04_CREATURE_18 = "stage_01_creature_18";
+    private static final String STAGE_04_CREATURE_19 = "stage_01_creature_19";
+    private static final String STAGE_04_CREATURE_20 = "stage_01_creature_20";
+    private static final String STAGE_04_CREATURE_21 = "stage_01_creature_21";
+    private static final String STAGE_04_CREATURE_22 = "stage_01_creature_22";
+    private static final String STAGE_04_CREATURE_23 = "stage_01_creature_23";
+    private static final String STAGE_04_CREATURE_24 = "stage_01_creature_24";
+    private static final String STAGE_04_CREATURE_25 = "stage_01_creature_25";
+    private static final String STAGE_04_CREATURE_26 = "stage_01_creature_26";
+    private static final String STAGE_04_CREATURE_27 = "stage_01_creature_27";
+    private static final String STAGE_04_CREATURE_28 = "stage_01_creature_28";
+    private static final String STAGE_04_CREATURE_29 = "stage_01_creature_29";
+    private static final String STAGE_04_CREATURE_30 = "stage_01_creature_30";
+    private static final String STAGE_04_CREATURE_31 = "stage_01_creature_31";
+    private static final String STAGE_04_CREATURE_32 = "stage_01_creature_32";
 
     // Stage 5
     private static final String STAGE_05_COMPLETE = "stage_05_complete";
+    private static final String STAGE_05_ATTEMPTS = "stage_05_attempts";
+    private static final String STAGE_05_BOSS_KILLS = "stage_05_boss_kills";
+    private static final String STAGE_05_CREATURE_KILLS = "stage_05_creature_kills";
+    private static final String STAGE_05_HIGHEST_STREAK = "stage_05_highest_streak";
+    private static final String STAGE_05_CLOSEST_DEATH = "stage_05_closest_death";
+    private static final String STAGE_05_LONGEST_FRENZY = "stage_05_longest_frenzy";
+    private static final String STAGE_05_MOST_CALM = "stage_05_most_calm";
+    private static final String STAGE_05_MOST_FRANTIC = "stage_05_most_frantic";
+    private static final String STAGE_05_TOTAL_TIME = "stage_05_total_time";
+    private static final String STAGE_05_BEST_TIME = "stage_05_best_time";
     private static final String STAGE_05_PREDATOR = "stage_05_predator";
     private static final String STAGE_05_ACCURACY = "stage_05_accuracy";
     private static final String STAGE_05_APEX = "stage_05_apex";
+    private static final String STAGE_05_COLLECTION = "stage_05_collection";
+
+    //
+    private static final String STAGE_05_CREATURE_01 = "stage_01_creature_01";
+    private static final String STAGE_05_CREATURE_02 = "stage_01_creature_02";
+    private static final String STAGE_05_CREATURE_03 = "stage_01_creature_03";
+    private static final String STAGE_05_CREATURE_04 = "stage_01_creature_04";
+    private static final String STAGE_05_CREATURE_05 = "stage_01_creature_05";
+    private static final String STAGE_05_CREATURE_06 = "stage_01_creature_06";
+    private static final String STAGE_05_CREATURE_07 = "stage_01_creature_07";
+    private static final String STAGE_05_CREATURE_08 = "stage_01_creature_08";
+    private static final String STAGE_05_CREATURE_09 = "stage_01_creature_09";
+    private static final String STAGE_05_CREATURE_10 = "stage_01_creature_10";
+    private static final String STAGE_05_CREATURE_11 = "stage_01_creature_11";
+    private static final String STAGE_05_CREATURE_12 = "stage_01_creature_12";
+    private static final String STAGE_05_CREATURE_13 = "stage_01_creature_13";
+    private static final String STAGE_05_CREATURE_14 = "stage_01_creature_14";
+    private static final String STAGE_05_CREATURE_15 = "stage_01_creature_15";
+    private static final String STAGE_05_CREATURE_16 = "stage_01_creature_16";
+    private static final String STAGE_05_CREATURE_17 = "stage_01_creature_17";
+    private static final String STAGE_05_CREATURE_18 = "stage_01_creature_18";
+    private static final String STAGE_05_CREATURE_19 = "stage_01_creature_19";
+    private static final String STAGE_05_CREATURE_20 = "stage_01_creature_20";
+    private static final String STAGE_05_CREATURE_21 = "stage_01_creature_21";
+    private static final String STAGE_05_CREATURE_22 = "stage_01_creature_22";
+    private static final String STAGE_05_CREATURE_23 = "stage_01_creature_23";
+    private static final String STAGE_05_CREATURE_24 = "stage_01_creature_24";
+    private static final String STAGE_05_CREATURE_25 = "stage_01_creature_25";
+    private static final String STAGE_05_CREATURE_26 = "stage_01_creature_26";
+    private static final String STAGE_05_CREATURE_27 = "stage_01_creature_27";
+    private static final String STAGE_05_CREATURE_28 = "stage_01_creature_28";
+    private static final String STAGE_05_CREATURE_29 = "stage_01_creature_29";
+    private static final String STAGE_05_CREATURE_30 = "stage_01_creature_30";
+    private static final String STAGE_05_CREATURE_31 = "stage_01_creature_31";
+    private static final String STAGE_05_CREATURE_32 = "stage_01_creature_32";
 
     // Stage 6
     private static final String STAGE_06_COMPLETE = "stage_06_complete";
+    private static final String STAGE_06_ATTEMPTS = "stage_06_attempts";
+    private static final String STAGE_06_BOSS_KILLS = "stage_06_boss_kills";
+    private static final String STAGE_06_CREATURE_KILLS = "stage_06_creature_kills";
+    private static final String STAGE_06_HIGHEST_STREAK = "stage_06_highest_streak";
+    private static final String STAGE_06_CLOSEST_DEATH = "stage_06_closest_death";
+    private static final String STAGE_06_LONGEST_FRENZY = "stage_06_longest_frenzy";
+    private static final String STAGE_06_MOST_CALM = "stage_06_most_calm";
+    private static final String STAGE_06_MOST_FRANTIC = "stage_06_most_frantic";
+    private static final String STAGE_06_TOTAL_TIME = "stage_06_total_time";
+    private static final String STAGE_06_BEST_TIME = "stage_06_best_time";
     private static final String STAGE_06_PREDATOR = "stage_06_predator";
     private static final String STAGE_06_ACCURACY = "stage_06_accuracy";
     private static final String STAGE_06_APEX = "stage_06_apex";
+    private static final String STAGE_06_COLLECTION = "stage_06_collection";
 
-    // Final stage
-    private static final String STAGE_FINAL_BOSS_COMPLETE = "stage_final_boss_complete";
-    private static final String STAGE_FINAL_BOSS_APEX = "stage_final_boss_complete";
+    //
+    private static final String STAGE_06_CREATURE_01 = "stage_01_creature_01";
+    private static final String STAGE_06_CREATURE_02 = "stage_01_creature_02";
+    private static final String STAGE_06_CREATURE_03 = "stage_01_creature_03";
+    private static final String STAGE_06_CREATURE_04 = "stage_01_creature_04";
+    private static final String STAGE_06_CREATURE_05 = "stage_01_creature_05";
+    private static final String STAGE_06_CREATURE_06 = "stage_01_creature_06";
+    private static final String STAGE_06_CREATURE_07 = "stage_01_creature_07";
+    private static final String STAGE_06_CREATURE_08 = "stage_01_creature_08";
+    private static final String STAGE_06_CREATURE_09 = "stage_01_creature_09";
+    private static final String STAGE_06_CREATURE_10 = "stage_01_creature_10";
+    private static final String STAGE_06_CREATURE_11 = "stage_01_creature_11";
+    private static final String STAGE_06_CREATURE_12 = "stage_01_creature_12";
+    private static final String STAGE_06_CREATURE_13 = "stage_01_creature_13";
+    private static final String STAGE_06_CREATURE_14 = "stage_01_creature_14";
+    private static final String STAGE_06_CREATURE_15 = "stage_01_creature_15";
+    private static final String STAGE_06_CREATURE_16 = "stage_01_creature_16";
+    private static final String STAGE_06_CREATURE_17 = "stage_01_creature_17";
+    private static final String STAGE_06_CREATURE_18 = "stage_01_creature_18";
+    private static final String STAGE_06_CREATURE_19 = "stage_01_creature_19";
+    private static final String STAGE_06_CREATURE_20 = "stage_01_creature_20";
+    private static final String STAGE_06_CREATURE_21 = "stage_01_creature_21";
+    private static final String STAGE_06_CREATURE_22 = "stage_01_creature_22";
+    private static final String STAGE_06_CREATURE_23 = "stage_01_creature_23";
+    private static final String STAGE_06_CREATURE_24 = "stage_01_creature_24";
+    private static final String STAGE_06_CREATURE_25 = "stage_01_creature_25";
+    private static final String STAGE_06_CREATURE_26 = "stage_01_creature_26";
+    private static final String STAGE_06_CREATURE_27 = "stage_01_creature_27";
+    private static final String STAGE_06_CREATURE_28 = "stage_01_creature_28";
+    private static final String STAGE_06_CREATURE_29 = "stage_01_creature_29";
+    private static final String STAGE_06_CREATURE_30 = "stage_01_creature_30";
+    private static final String STAGE_06_CREATURE_31 = "stage_01_creature_31";
+    private static final String STAGE_06_CREATURE_32 = "stage_01_creature_32";
 
-    // Game complete
-    private static final String GAME_COMPLETE = "game_complete";
+    // Stage 7
+    private static final String STAGE_07_COMPLETE = "stage_07_complete";
+    private static final String STAGE_07_ATTEMPTS = "stage_07_attempts";
+    private static final String STAGE_07_BOSS_KILLS = "stage_07_boss_kills";
+    private static final String STAGE_07_CREATURE_KILLS = "stage_07_creature_kills";
+    private static final String STAGE_07_HIGHEST_STREAK = "stage_07_highest_streak";
+    private static final String STAGE_07_CLOSEST_DEATH = "stage_07_closest_death";
+    private static final String STAGE_07_LONGEST_FRENZY = "stage_07_longest_frenzy";
+    private static final String STAGE_07_MOST_CALM = "stage_07_most_calm";
+    private static final String STAGE_07_MOST_FRANTIC = "stage_07_most_frantic";
+    private static final String STAGE_07_TOTAL_TIME = "stage_07_total_time";
+    private static final String STAGE_07_BEST_TIME = "stage_07_best_time";
+    private static final String STAGE_07_PREDATOR = "stage_07_predator";
+    private static final String STAGE_07_ACCURACY = "stage_07_accuracy";
+    private static final String STAGE_07_APEX = "stage_07_apex";
+    private static final String STAGE_07_COLLECTION = "stage_07_collection";
 
-//-- DECLARE GLOBAL DYNAMIC VIEWS -->
+    //
+    private static final String STAGE_07_CREATURE_01 = "stage_01_creature_01";
+    private static final String STAGE_07_CREATURE_02 = "stage_01_creature_02";
+    private static final String STAGE_07_CREATURE_03 = "stage_01_creature_03";
+    private static final String STAGE_07_CREATURE_04 = "stage_01_creature_04";
+    private static final String STAGE_07_CREATURE_05 = "stage_01_creature_05";
+    private static final String STAGE_07_CREATURE_06 = "stage_01_creature_06";
+    private static final String STAGE_07_CREATURE_07 = "stage_01_creature_07";
+    private static final String STAGE_07_CREATURE_08 = "stage_01_creature_08";
+    private static final String STAGE_07_CREATURE_09 = "stage_01_creature_09";
+    private static final String STAGE_07_CREATURE_10 = "stage_01_creature_10";
+    private static final String STAGE_07_CREATURE_11 = "stage_01_creature_11";
+    private static final String STAGE_07_CREATURE_12 = "stage_01_creature_12";
+    private static final String STAGE_07_CREATURE_13 = "stage_01_creature_13";
+    private static final String STAGE_07_CREATURE_14 = "stage_01_creature_14";
+    private static final String STAGE_07_CREATURE_15 = "stage_01_creature_15";
+    private static final String STAGE_07_CREATURE_16 = "stage_01_creature_16";
+    private static final String STAGE_07_CREATURE_17 = "stage_01_creature_17";
+    private static final String STAGE_07_CREATURE_18 = "stage_01_creature_18";
+    private static final String STAGE_07_CREATURE_19 = "stage_01_creature_19";
+    private static final String STAGE_07_CREATURE_20 = "stage_01_creature_20";
+    private static final String STAGE_07_CREATURE_21 = "stage_01_creature_21";
+    private static final String STAGE_07_CREATURE_22 = "stage_01_creature_22";
+    private static final String STAGE_07_CREATURE_23 = "stage_01_creature_23";
+    private static final String STAGE_07_CREATURE_24 = "stage_01_creature_24";
+    private static final String STAGE_07_CREATURE_25 = "stage_01_creature_25";
+    private static final String STAGE_07_CREATURE_26 = "stage_01_creature_26";
+    private static final String STAGE_07_CREATURE_27 = "stage_01_creature_27";
+    private static final String STAGE_07_CREATURE_28 = "stage_01_creature_28";
+    private static final String STAGE_07_CREATURE_29 = "stage_01_creature_29";
+    private static final String STAGE_07_CREATURE_30 = "stage_01_creature_30";
+    private static final String STAGE_07_CREATURE_31 = "stage_01_creature_31";
+    private static final String STAGE_07_CREATURE_32 = "stage_01_creature_32";
 
-    // Intro views
-    private ImageView mIntroImageView;
+//-- GLOBAL DYNAMIC VIEWS -->
 
+//-- INTRO -->
+    // Intro / Outro views
+    private ImageView mCreditsImageView; // logos, etc.
+
+//-- ENTRY -->
     // Entry views
+    private LinearLayout mEntryScoreApexLayout;
+    private LinearLayout mEntryMainControlLayout;
     private ImageButton mEntryContinueImageButton;
-    private ImageButton mEntryTutorialImageButton;
+    private ImageButton mEntryCreditsImageButton;
 
-    // Stage views
-    private TextView mStage01PredatorTextView;
-    private TextView mStage01AccuracyTextView;
-    private ImageView mStage01ApexImageView;
+//-- STAGE SELECT -->
+    // Stage select toggle views
+    private ImageButton mStageSelectScorecardImageButton;
+    private LinearLayout mStageSelectScorecardLayout;
+    private LinearLayout mStageSelectStagecardLayout;
 
-    // Stage 2
-    private ImageButton mStage02LockedImageButton;
-    private TextView mStage02PredatorTextView;
-    private TextView mStage02AccuracyTextView;
-    private ImageView mStage02ApexImageView;
+    // Stage select top scores
+    private ImageView mEOBEApexScoreImageView;
+    private TextView mEOBEPredatorScoreTextView;
+    private TextView mEOBEAccuracyScoreTextView;
+    private TextView mEOBETimeBestScoreTextView;
+    private TextView mEOBETimeTotalScoreTextView;
+    private TextView mEOBECollectionScoreTextView;
+    private TextView mEOBEAttemptsScoreTextView;
+    private TextView mEOBEBossKillsScoreTextView;
+    private TextView mEOBECreatureKillsScoreTextView;
+    private TextView mEOBEHighestStreakScoreTextView;
+    private TextView mEOBEClosestDeathScoreTextView;
+    private TextView mEOBELongestFrenzyScoreTextView;
+    private TextView mEOBEMostCalmScoreTextView;
+    private TextView mEOBEMostFranticTextView;
 
-    // Stage 3
-    private ImageButton mStage03LockedImageButton;
-    private TextView mStage03PredatorTextView;
-    private TextView mStage03AccuracyTextView;
-    private ImageView mStage03ApexImageView;
+    // Stage card layouts
+    //private LinearLayout mStage01CardLayout;
+    //private LinearLayout mStage02CardLayout;
+    //private LinearLayout mStage03CardLayout;
+    //private LinearLayout mStage04CardLayout;
+    //private LinearLayout mStage05CardLayout;
+    //private LinearLayout mStage06CardLayout;
+    //private LinearLayout mStage07CardLayout;
 
-    // Stage 4
-    private ImageButton mStage04LockedImageButton;
-    private TextView mStage04PredatorTextView;
-    private TextView mStage04AccuracyTextView;
-    private ImageView mStage04ApexImageView;
+    // Stage card titles
+    //private ImageView mStage01TitleImageView;
+    //private ImageView mStage02TitleImageView;
+    //private ImageView mStage03TitleImageView;
+    //private ImageView mStage04TitleImageView;
+    //private ImageView mStage05TitleImageView;
+    //private ImageView mStage06TitleImageView;
+    //private ImageView mStage07TitleImageView;
 
-    // Stage 5
-    private ImageButton mStage05LockedImageButton;
-    private TextView mStage05PredatorTextView;
-    private TextView mStage05AccuracyTextView;
-    private ImageView mStage05ApexImageView;
+    // Stage card status
+    //private ImageView mStage01StatusImageView;
+    //private ImageView mStage02StatusImageView;
+    //private ImageView mStage03StatusImageView;
+    //private ImageView mStage04StatusImageView;
+    //private ImageView mStage05StatusImageView;
+    //private ImageView mStage06StatusImageView;
+    //private ImageView mStage07StatusImageView;
 
-    // Stage 6
-    private ImageButton mStage06LockedImageButton;
-    private TextView mStage06PredatorTextView;
-    private TextView mStage06AccuracyTextView;
-    private ImageView mStage06ApexImageView;
+    // Stage card icons
+    //private ImageButton mStage01StatusImageButton;
+    //private ImageButton mStage02StatusImageButton;
+    //private ImageButton mStage03StatusImageButton;
+    //private ImageButton mStage04StatusImageButton;
+    //private ImageButton mStage05StatusImageButton;
+    //private ImageButton mStage06StatusImageButton;
+    //private ImageButton mStage07StatusImageButton;
 
-    // Final stage
-    private ImageButton mStageFinalBossLockedImageButton;
-    private ImageView mStageFinalBossApexImageView;
+//-- STAGE CARD -->
+    // Stage card titles / icons
+    private ImageView mStageCardStatusImageView; // To change (ready / complete / locked)
+    private ImageButton mStageCardTopScoreImageButton; // To flip visibility
 
-    // Game views
-    private ImageView mGameMainStageImageView;
+    //
+    private LinearLayout mStageCardScreenBodyLayout; // To change stage background
 
-    // Stage advance
-    private ImageView mGameAdvanceImageView;
+    //
+    private LinearLayout mStageCardContentTitleLayout; // To change background color
+    private ImageButton mStageCardContentTitleImageButton; // To change stage name
 
-    // Progress marker
+    //
+    private LinearLayout mStageCardContentBossLayout; // To change disaster image
+    private ImageView mStageCardBossImageView; // To change boss image
+
+    //
+    private LinearLayout mStageCardScorecardLayout; // To flip visibility / stage complete
+
+    //
+    private LinearLayout mStageCardTopScoreLayout; // Toggle visibility
+
+    // StageCard ready views - Stage ready (play again) [high scores]
+    private TextView mStageTotalAttemptsTextView;
+    private TextView mStageTotalBossKillsTextView;
+    private TextView mStageTotalCreatureKillsTextView;
+    private TextView mStageTopHighestStreakTextView;
+    private TextView mStageTopClosestDeathTextView;
+    private TextView mStageTopLongestFrenzyTextView;
+    private TextView mStageTopMostCalmTextView;
+    private TextView mStageTopMostFranticTextView;
+    private TextView mStageTotalTimeTextView;
+    private TextView mStageTopBestTimeTextView;
+    private TextView mStageTopPredatorTextView;
+    private TextView mStageTopAccuracyTextView;
+    private TextView mStageTopApexPredatorTextView;
+    private TextView mStageTotalCollectionTextView;
+
+    // StageCard complete views - Stage complete [stage scores]
+    private TextView mStageApexPredatorTextView;
+    private TextView mStagePredatorTextView;
+    private TextView mStageAccuracyTextView;
+    private TextView mStageTimeTextView;
+    private TextView mStageCreatureKillsTextView;
+    private TextView mStageCollectionTextView;
+    private TextView mStageHighestStreakTextView;
+    private TextView mStageClosestDeathTextView;
+    private TextView mStageLongestFrenzyTextView;
+    private TextView mStageMostCalmTextView;
+    private TextView mStageMostFranticTextView;
+
+    // StageCard creature collection - Stage top scores
+    private ImageView mCreature01ImageView;
+    private ImageView mCreature02ImageView;
+    private ImageView mCreature03ImageView;
+    private ImageView mCreature04ImageView;
+    private ImageView mCreature05ImageView;
+    private ImageView mCreature06ImageView;
+    private ImageView mCreature07ImageView;
+    private ImageView mCreature08ImageView;
+    private ImageView mCreature09ImageView;
+    private ImageView mCreature10ImageView;
+    private ImageView mCreature11ImageView;
+    private ImageView mCreature12ImageView;
+    private ImageView mCreature13ImageView;
+    private ImageView mCreature14ImageView;
+    private ImageView mCreature15ImageView;
+    private ImageView mCreature16ImageView;
+    private ImageView mCreature17ImageView;
+    private ImageView mCreature18ImageView;
+    private ImageView mCreature19ImageView;
+    private ImageView mCreature20ImageView;
+    private ImageView mCreature21ImageView;
+    private ImageView mCreature22ImageView;
+    private ImageView mCreature23ImageView;
+    private ImageView mCreature24ImageView;
+    private ImageView mCreature25ImageView;
+    private ImageView mCreature26ImageView;
+    private ImageView mCreature27ImageView;
+    private ImageView mCreature28ImageView;
+    private ImageView mCreature29ImageView;
+    private ImageView mCreature30ImageView;
+    private ImageView mCreature31ImageView;
+    private ImageView mCreature32ImageView;
+
+    // StageCard switch card controls
+    private ImageButton mStageCardControlPrevImageButton;
+    private ImageButton mStageCardControlNextImageButton;
+    private ImageButton mStageCardControlPlayImageButton;
+
+//-- GAME -->
+    // Game titles
+    private LinearLayout mGameControlLayout;
+
+    private ImageView mGameStageImageView;
+    private ImageView mGameSceneImageView;
+    private TextView mGameSceneTextView;
+
+    // Game user interfaces
+    private LinearLayout mGameLevelMarkerLayout;
+    private LinearLayout mGamePowersLayout;
+
+    // Game progress markers
     private ImageView mGameLevelMarkerImageView;
 
-    // Power icons
+    // Game power icons
     private ImageView mGamePower01ImageView;
     private ImageView mGamePower02ImageView;
     private ImageView mGamePower03ImageView;
@@ -158,138 +593,218 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ImageView mGamePower05ImageView;
     private ImageView mGamePower06ImageView;
 
-    // Creatures
+    // Game stage advances
+    private ImageButton mGameScenePrevImageButton;
+    private ImageButton mGameSceneNextImageButton;
+    private ImageView mStageDisasterImageView;
+
+    // Game creatures
     private ImageButton mGameCreature01ImageButton;
     private ImageButton mGameCreature02ImageButton;
     private ImageButton mGameCreature03ImageButton;
     private ImageButton mGameCreature04ImageButton;
     private ImageButton mGameCreature05ImageButton;
 
-    // Boss
+    // Game boss
     private ImageButton mGameBossImageButton;
 
-    // Final boss sprite
-    private ImageView mFinalBossImageView;
-
-    // Creature playground
+    // Game creature playground
     private FrameLayout mGameCreatureLayout;
 
-    // Boss playground
+    // Game boss playground
     private FrameLayout mGameBossLayout;
 
-    // Stage border
+    // Game stage border
     private RelativeLayout mGameBorderLayout;
 
-    // Stage tunnel vision
+    // Game stage tunnel
     private RelativeLayout mGameTunnelVisionLayout;
 
-    // Results views
-    private LinearLayout mResultsMainBGImageView;
+//-- EATEN -->
+    //
+    private ImageView mEatenMainTitleImageView;
+    private LinearLayout mEatenSubTitleLayout;
 
-    // Stage title
-    private ImageView mResultsSubStageImageView;
+    //
+    private TextView mEatenStageNameTextView;
+    private TextView mEatenStageTimeTextView;
 
-    // Stage image
-    private ImageView mResultsStageCardImageView;
-
-    // Stage scores
-    private TextView mResultsAccuracyTextView;
-    private TextView mResultsPredatorTextView;
-
-    // Apex score
-    private ImageView mResultsApexImageView;
-
-    // Eaten views
-    private ImageView mEatenStageImageView;
-
-    // Credits
-    private ImageView mOutroImageView;
-
-//-- INITIAL DATA STORE - NEW GAME -->
-
+//-- LOCAL DATA STORE  -->
     // Variables to store saved game data
     private static boolean continue_game;
 
     // Settings toggle for audio and haptic feedback
     private static boolean play_audio;
     private static boolean play_haptic;
+    private static boolean play_tutorial;
 
 //-- SUPPLEMENTARY DATA STORE - KILL BOSS -->
-
-    // Variables to save / restore gamestate
+    //
     private static boolean stage_01_complete; // -> if (stage_01_complete) {boolean stage_02_unlocked = true;}
-    private static String stage_01_predator;
-    private static String stage_01_accuracy;
+
+    // Top scores - stage 1
+    private static int stage_01_attempts;
+    private static int stage_01_boss_kills;
+    private static int stage_01_creature_kills;
+    private static int stage_01_highest_streak;
+    private static int stage_01_closest_death;
+    private static int stage_01_longest_frenzy;
+    private static long stage_01_most_calm;
+    private static long stage_01_most_frantic;
+    private static int stage_01_total_time;
+    private static int stage_01_best_time;
+    private static int stage_01_predator;
+    private static float stage_01_accuracy;
     private static boolean stage_01_apex;
+    private static int stage_01_collection;
+    private static int[] stage_01_trophy_case;
 
-    // Stage 2
-    private static boolean stage_02_unlocked; // -> see above
     private static boolean stage_02_complete; // -> if (stage_02_complete) {boolean stage_03_unlocked = true;}
-    private static String stage_02_predator;
-    private static String stage_02_accuracy;
+
+    // Top scores - stage 2
+    private static int stage_02_attempts;
+    private static int stage_02_boss_kills;
+    private static int stage_02_creature_kills;
+    private static int stage_02_highest_streak;
+    private static int stage_02_closest_death;
+    private static int stage_02_longest_frenzy;
+    private static long stage_02_most_calm;
+    private static long stage_02_most_frantic;
+    private static int stage_02_total_time;
+    private static int stage_02_best_time;
+    private static int stage_02_predator;
+    private static float stage_02_accuracy;
     private static boolean stage_02_apex;
+    private static int stage_02_collection;
 
-    // Stage 3
-    private static boolean stage_03_unlocked; // -> see above
     private static boolean stage_03_complete; // -> if (stage_03_complete) {boolean stage_04_unlocked = true;}
-    private static String stage_03_predator;
-    private static String stage_03_accuracy;
+
+    // Top scores - stage 3
+    private static int stage_03_attempts;
+    private static int stage_03_boss_kills;
+    private static int stage_03_creature_kills;
+    private static int stage_03_highest_streak;
+    private static int stage_03_closest_death;
+    private static int stage_03_longest_frenzy;
+    private static long stage_03_most_calm;
+    private static long stage_03_most_frantic;
+    private static int stage_03_total_time;
+    private static int stage_03_best_time;
+    private static int stage_03_predator;
+    private static float stage_03_accuracy;
     private static boolean stage_03_apex;
+    private static int stage_03_collection;
 
-    // Stage 4
-    private static boolean stage_04_unlocked; // -> see above
     private static boolean stage_04_complete; // -> if (stage_04_complete) {boolean stage_05_unlocked = true;}
-    private static String stage_04_predator;
-    private static String stage_04_accuracy;
+
+    // Top scores - stage 4
+    private static int stage_04_attempts;
+    private static int stage_04_boss_kills;
+    private static int stage_04_creature_kills;
+    private static int stage_04_highest_streak;
+    private static int stage_04_closest_death;
+    private static int stage_04_longest_frenzy;
+    private static long stage_04_most_calm;
+    private static long stage_04_most_frantic;
+    private static int stage_04_total_time;
+    private static int stage_04_best_time;
+    private static int stage_04_predator;
+    private static float stage_04_accuracy;
     private static boolean stage_04_apex;
+    private static int stage_04_collection;
 
-    // Stage 5
-    private static boolean stage_05_unlocked; // -> see above
     private static boolean stage_05_complete; // -> if (stage_05_complete) {boolean stage_06_unlocked = true;}
-    private static String stage_05_predator;
-    private static String stage_05_accuracy;
+
+    // Top scores - stage 5
+    private static int stage_05_attempts;
+    private static int stage_05_boss_kills;
+    private static int stage_05_creature_kills;
+    private static int stage_05_highest_streak;
+    private static int stage_05_closest_death;
+    private static int stage_05_longest_frenzy;
+    private static long stage_05_most_calm;
+    private static long stage_05_most_frantic;
+    private static int stage_05_total_time;
+    private static int stage_05_best_time;
+    private static int stage_05_predator;
+    private static float stage_05_accuracy;
     private static boolean stage_05_apex;
+    private static int stage_05_collection;
 
-    // Stage 6
-    private static boolean stage_06_unlocked; // -> see above
     private static boolean stage_06_complete; // -> if (stage_06_complete) {boolean stage_final_boss_unlocked = true;}
-    private static String stage_06_predator;
-    private static String stage_06_accuracy;
-    private static boolean stage_06_apex;
 
-    // Final stage
-    private static boolean stage_final_boss_unlocked; // -> see above
-    private static boolean stage_final_boss_complete; // -> if (stage_final_boss_complete) {boolean game_complete = true;}
-    private static boolean stage_final_boss_apex;
+    // Top scores - stage 6
+    private static int stage_06_attempts;
+    private static int stage_06_boss_kills;
+    private static int stage_06_creature_kills;
+    private static int stage_06_highest_streak;
+    private static int stage_06_closest_death;
+    private static int stage_06_longest_frenzy;
+    private static long stage_06_most_calm;
+    private static long stage_06_most_frantic;
+    private static int stage_06_total_time;
+    private static int stage_06_best_time;
+    private static int stage_06_predator;
+    private static float stage_06_accuracy;
+    private static boolean stage_06_apex;
+    private static int stage_06_collection;
+
+    private static boolean stage_07_complete; // -> if (stage_final_boss_complete) {boolean game_complete = true;}
+
+    // Top scores - stage 7
+    private static int stage_07_attempts;
+    private static int stage_07_boss_kills;
+    private static int stage_07_creature_kills;
+    private static int stage_07_highest_streak;
+    private static int stage_07_closest_death;
+    private static int stage_07_longest_frenzy;
+    private static long stage_07_most_calm;
+    private static long stage_07_most_frantic;
+    private static int stage_07_total_time;
+    private static int stage_07_best_time;
+    private static int stage_07_predator;
+    private static float stage_07_accuracy;
+    private static boolean stage_07_apex;
+    private static int stage_07_collection;
 
     // Game complete
     private static boolean game_complete; // -> see above
 
 // GAME VARIABLES
-
     // Variable to stop timers
     private static boolean mPauseGame;
+    private static boolean mCreatureGameOver;
+    private static boolean mBossGameOver;
 
     // Null screen state
     private static int mCurScreen = -1;
-    private static int mCurEnvironment = -1;
+    private static int mStageIndex = -1;
+    private static boolean mTopScores = false;
+
+    // Stage ready [1 = Locked, 2 = Ready, 3 = Complete]
+    private static int mStageReady = 1;
+    private static boolean mStageComplete = false;
+
+    //
+    private static int mStageFrenzy;
 
     // Variables for tap meter
     private static int mTapBarrel;
     private static int mTapCount;
     private static int mTapTotal;
 
-    // Border barrel
+    // Border timer
     private static int mBorderBarrel;
 
-    // Pause timer
+    // Timers
     private static int mPauseTimer;
+    private static int mStageTimer;
 
     // Universal variables
     private static long mSpeedIndex;
     private static int mHungerMeter = 0;
-    private static int mStageAdvanceMeter;
-    private static int mStageAdvanceTarget;
+    //private static int mStageAdvanceMeter;
+    //private static int mStageAdvanceTarget;
 
     // Power variables
     private static int mPower01Meter;
@@ -305,71 +820,59 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private static int mPower06Meter;
     private static int mPower06Target;
 
-    //
-    private static int mAggressionScore;
-    private static int mSpeciesScore;
-    private static int mTotalEatScore;
+    // Stage scores - calculate at end stage
+    private static int mStagePredator;
+    private static float mStageAccuracy;
+    private static int mStageTime;
+    private static int mStageCreatureKills;
+    private static int mStageCollection;
+    private static int mStageHighestStreak;
+    private static int mStageClosestDeath;
+    private static int mStageLongestFrenzy;
+    private static long mStageMostCalm;
+    private static long mStageMostFrantic;
+    private static boolean mStageApex = false;
 
-    //
-    private static int mGameTotalHit;
-    private static int mGameTotalMiss;
-    private static double mGameTotalAverage;
-
-    //
-    private static int mGameTotalAttempts;
-    private static int mGameTotalTime;
-
-    //
-    private static int mEOBETotalAttempts;
-    private static int mEOBETotalTime;
-
-    //
-    private static int mGameStreakRecord;
-    private static int mEOBEStreakRecord;
-
-    //
-    private static int mGameTotalBlackoutTime;
-    private static int mGameBlackoutRecoveryRecord;
-
-    //
-    private static int mEOBETotalBlackoutTime;
-    private static int mEOBEBlackoutRecoveryRecord;
-
-    //
-    private static int mGameAdrenalineRecord;
-    private static int mEOBEAdrenalineRecord;
-
-    //
-    private static int mGameTapTotal;
-    private static int mEOBETapTotal;
-
-    //
-    private static int mGameFastestTap;
-    private static int mEOBEFastestTap;
-
-    //
-    private static int mEOBETotalHit;
-    private static int mEOBETotalMiss;
-    private static int mEOBETotalAverage;
+    // Global scores - calculate at screen load
+    private static int mGameAttempts;
+    private static int mGameBossKills;
+    private static int mGameCreatureKills;
+    private static int mGameHighestStreak;
+    private static int mGameClosestDeath;
+    private static int mGameLongestFrenzy;
+    private static long mGameMostCalm;
+    private static long mGameMostFrantic;
+    private static int mGameTimeBest;
+    private static int mGameTimeTotal;
+    private static int mGamePredator;
+    private static float mGameAccuracy;
+    private static boolean mGameApex;
+    private static int mGameCollection;
 
     //
     private static int mTurn;
-    private static int mTotalTurn;
-    private static int mEOBETotalTurn;
 
     //
     private static int mBossHealth;
-    private static boolean mKillBoss;
 
     //
-    private static int mStageIndex;
-    private static String mStageAccuracy;
-    private static String mStagePredator;
-    private static boolean mStageApex;
-
-    //
-    private static List<Integer> mStageBGImages = new ArrayList<>();
+    private static List<Integer> mStageSceneImages = new ArrayList<>();
+    private static List<String> mStageSceneNames = new ArrayList<>();
     private static int mEnvironmentID;
+
+    //
+    private static List<Integer> mStageCreatureBox = new ArrayList<>();
+    private static int mStageCreatureID;
+    private static int mStageCreature01ID;
+    private static int mStageCreature02ID;
+    private static int mStageCreature03ID;
+    private static int mStageCreature04ID;
+    private static int mStageCreature05ID;
+    private static int mCreatureID;
+
+    //
+    private static List<Integer> mGameCreditsImages = new ArrayList<>();
+    private static int mCreditSpinner;
 
     //
     private static int mGameTapAudio;
@@ -405,21 +908,179 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private static final int FRENZY = R.raw.power_05_audio;
     private static final int FREEZE = R.raw.power_06_audio;
     private static final int FLASH_BANG = R.raw.flash_bang;
-    private static final int ERROR_DRONE = R.raw.error_drone;
     private static final int BAMBOO_CLICK = R.raw.bamboo_click_audio;
     private static final int FLUTE_TRILL_LONG = R.raw.flute_trill_long_audio;
-    private static final int FLUTE_TRILL_SHORT = R.raw.pan_flute_short_audio;
+    //private static final int FLUTE_TRILL_SHORT = R.raw.pan_flute_short_audio;
     private static final int GROWL_ALERT = R.raw.game_main_growl_alert_audio;
+    private static final int REVERSE_PING = R.raw.reverse_ding_10;
 
     // Run timer through executable task
-    final Handler h = new Handler();
+    final Handler h1 = new Handler();
+    final Handler h2 = new Handler();
+    final Handler h3 = new Handler();
+    final Handler h4 = new Handler();
 
-//-- ONCREATE METHOD -->
+    // Intro credits runnable
+    final Runnable r1 = new Runnable() {
+
+            // Run task
+            @Override
+            public void run() {
+                Log.d(TAG, "run: R1");
+
+                // Check pause game
+                if (!mPauseGame) {
+
+                    // Check incremental - 2 intro slides
+                    if (mCreditSpinner < mGameCreditsImages.size()) {
+
+                        // Increment intro images
+                        mCreditsImageView.setBackground(versionCheck(mGameCreditsImages.get(mCreditSpinner)));
+
+                        //
+                        fadeTitles(mCreditsImageView.getId());
+
+                        //
+                        h1.postDelayed(this, 5000);
+
+                        //
+                        ++mCreditSpinner;
+
+                        //
+                        playAudio(INTRO_01);
+
+                    } else {
+
+                        //
+                        mCreditSpinner = 0;
+
+                        // Switch the entry
+                        switchScreen(R.id.entry_screen_main_layout);
+
+                        // Play audio
+                        playAudio(DARK_INTRO);
+                    }
+                }
+            }
+    };
+
+    // Game on runnable
+    final Runnable r2 = new Runnable() {
+
+        // Run task
+        @Override
+        public void run() {
+            Log.d(TAG, "run: R2");
+
+            // If game is NOT paused, or if it IS paused with countdown
+            if (!mPauseGame) {
+                Log.d(TAG, "run: not paused");
+
+                // Increment game
+                Log.d(TAG, "run: Game On");
+                gameOn();
+
+            } else {
+
+                // Decrement / disable pause timer
+                if (mPauseTimer > 0) {
+                    Log.d(TAG, "run: paused with countdown " + mPauseTimer);
+
+                    //
+                    --mPauseTimer;
+
+                } else if (mPauseTimer != -1) {
+                    Log.d(TAG, "run: pause countdown finish");
+
+                    //
+                    mPauseGame = false;
+                    mPauseTimer = -1;
+                }
+            }
+
+            // Check creature game not expired
+            if (!mCreatureGameOver) {
+                Log.d(TAG, "run: not creature game over");
+
+                // Increment timer
+                h2.postDelayed(this, mSpeedIndex);
+
+            } else {
+                Log.d(TAG, "run: creature game over");
+
+                // End game - change from playerEaten to stageEnd
+                creatureStageEnd();
+            }
+        }
+    };
+
+    // Boss runnable
+    final Runnable r3 = new Runnable() {
+
+        // Run task
+        @Override
+        public void run() {
+            Log.d(TAG, "run: R3");
+
+            // Check game paused
+            if (!mPauseGame) {
+
+                // Check boss game not expired
+                if (!mBossGameOver) {
+
+                    //
+                    if (mHungerMeter > 0) {
+
+                        //
+                        playAudio(mGameBossCry);
+
+                        // Increment timer
+                        h3.postDelayed(this, 1000);
+                        --mHungerMeter;
+
+                    } else {
+
+                        //
+                        bossStageEnd();
+                    }
+
+                } else {
+
+                    //
+                    bossStageEnd();
+                }
+            }
+        }
+    };
+
+    // Control runnable
+    final Runnable r4 = new Runnable() {
+
+        // Run task
+        @Override
+        public void run() {
+            Log.d(TAG, "run: R4");
+
+            //
+            if (!mBossGameOver && !mCreatureGameOver) {
+
+                //
+                h4.postDelayed(this, 1000);
+
+                //
+                ++mStageTimer;
+            }
+        }
+    };
 
     // OnCreate method
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        // Call super
         super.onCreate(savedInstanceState);
+
+        // Set layout
         setContentView(R.layout.activity_main);
 
         // Instantiate views
@@ -432,71 +1093,131 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         getGameData();
 
         // Enter game
-        playIntroCredits();
+        playCredits(1);
     }
 
     // Assign dynamic views
     public void assignViews() {
 
-        // Intro views
-        mIntroImageView = findViewById(R.id.intro_main_logo_image_view);
+        // Credits view
+        mCreditsImageView = findViewById(R.id.credits_image_view);
 
         // Entry views
+        mEntryScoreApexLayout = findViewById(R.id.entry_score_apex_layout);
+        mEntryMainControlLayout = findViewById(R.id.entry_main_control_layout);
         mEntryContinueImageButton = findViewById(R.id.entry_main_continue_image_button);
-        mEntryTutorialImageButton = findViewById(R.id.entry_main_tutorial_image_button);
+        mEntryCreditsImageButton = findViewById(R.id.entry_main_credits_image_button);
 
-        // Stage views
+        // Stage select toggle views
+        mStageSelectScorecardImageButton = findViewById(R.id.select_stage_scorecard_image_button);
+        mStageSelectScorecardLayout = findViewById(R.id.stage_select_scorecard_layout);
+        mStageSelectStagecardLayout = findViewById(R.id.stage_select_stagecard_layout);
 
-        // 1
-        mStage01PredatorTextView = findViewById(R.id.select_stage_01_predator_text_view);
-        mStage01AccuracyTextView = findViewById(R.id.select_stage_01_accuracy_text_view);
-        mStage01ApexImageView = findViewById(R.id.select_stage_01_apex_image_view);
+        // EOBE top scores
+        mEOBEApexScoreImageView = findViewById(R.id.stage_select_apex_image_view);
+        mEOBEPredatorScoreTextView = findViewById(R.id.stage_select_predator_score_text_view);
+        mEOBEAccuracyScoreTextView = findViewById(R.id.stage_select_accuracy_score_text_view);
+        mEOBETimeBestScoreTextView = findViewById(R.id.stage_select_time_best_score_text_view);
+        mEOBETimeTotalScoreTextView = findViewById(R.id.stage_select_time_total_score_text_view);
+        mEOBECollectionScoreTextView = findViewById(R.id.stage_select_collection_score_text_view);
+        mEOBEAttemptsScoreTextView = findViewById(R.id.stage_select_attempts_score_text_view);
+        mEOBEBossKillsScoreTextView = findViewById(R.id.stage_select_boss_score_text_view);
+        mEOBECreatureKillsScoreTextView = findViewById(R.id.stage_select_creature_score_text_view);
+        mEOBEHighestStreakScoreTextView = findViewById(R.id.stage_select_streak_score_text_view);
+        mEOBEClosestDeathScoreTextView = findViewById(R.id.stage_select_death_score_text_view);
+        mEOBELongestFrenzyScoreTextView = findViewById(R.id.stage_select_frenzy_score_text_view);
+        mEOBEMostCalmScoreTextView = findViewById(R.id.stage_select_calm_score_text_view);
+        mEOBEMostFranticTextView = findViewById(R.id.stage_select_frantic_score_text_view);
 
-        // 2
-        mStage02LockedImageButton = findViewById(R.id.stage_select_card_02_image_button);
-        mStage02PredatorTextView = findViewById(R.id.select_stage_02_predator_text_view);
-        mStage02AccuracyTextView = findViewById(R.id.select_stage_02_accuracy_text_view);
-        mStage02ApexImageView = findViewById(R.id.select_stage_02_apex_image_view);
+        // Creature collection views
+        mCreature01ImageView = findViewById(R.id.creature_01_image_view);
+        mCreature02ImageView = findViewById(R.id.creature_02_image_view);
+        mCreature03ImageView = findViewById(R.id.creature_03_image_view);
+        mCreature04ImageView = findViewById(R.id.creature_04_image_view);
+        mCreature05ImageView = findViewById(R.id.creature_05_image_view);
+        mCreature06ImageView = findViewById(R.id.creature_06_image_view);
+        mCreature07ImageView = findViewById(R.id.creature_07_image_view);
+        mCreature08ImageView = findViewById(R.id.creature_08_image_view);
+        mCreature09ImageView = findViewById(R.id.creature_09_image_view);
+        mCreature10ImageView = findViewById(R.id.creature_10_image_view);
+        mCreature11ImageView = findViewById(R.id.creature_11_image_view);
+        mCreature12ImageView = findViewById(R.id.creature_12_image_view);
+        mCreature13ImageView = findViewById(R.id.creature_13_image_view);
+        mCreature14ImageView = findViewById(R.id.creature_14_image_view);
+        mCreature15ImageView = findViewById(R.id.creature_15_image_view);
+        mCreature16ImageView = findViewById(R.id.creature_16_image_view);
+        mCreature17ImageView = findViewById(R.id.creature_17_image_view);
+        mCreature18ImageView = findViewById(R.id.creature_18_image_view);
+        mCreature19ImageView = findViewById(R.id.creature_19_image_view);
+        mCreature20ImageView = findViewById(R.id.creature_20_image_view);
+        mCreature21ImageView = findViewById(R.id.creature_21_image_view);
+        mCreature22ImageView = findViewById(R.id.creature_22_image_view);
+        mCreature23ImageView = findViewById(R.id.creature_23_image_view);
+        mCreature24ImageView = findViewById(R.id.creature_24_image_view);
+        mCreature25ImageView = findViewById(R.id.creature_25_image_view);
+        mCreature26ImageView = findViewById(R.id.creature_26_image_view);
+        mCreature27ImageView = findViewById(R.id.creature_27_image_view);
+        mCreature28ImageView = findViewById(R.id.creature_28_image_view);
+        mCreature29ImageView = findViewById(R.id.creature_29_image_view);
+        mCreature30ImageView = findViewById(R.id.creature_30_image_view);
+        mCreature31ImageView = findViewById(R.id.creature_31_image_view);
+        mCreature32ImageView = findViewById(R.id.creature_32_image_view);
 
-        // 3
-        mStage03LockedImageButton = findViewById(R.id.stage_select_card_03_image_button);
-        mStage03PredatorTextView = findViewById(R.id.select_stage_03_predator_text_view);
-        mStage03AccuracyTextView = findViewById(R.id.select_stage_03_accuracy_text_view);
-        mStage03ApexImageView = findViewById(R.id.select_stage_03_apex_image_view);
+        // Stage card layouts
+        //mStage01CardLayout = findViewById(R.id.stage_select_card_01_image_layout);
+        //mStage02CardLayout = findViewById(R.id.stage_select_card_02_image_layout);
+        //mStage03CardLayout = findViewById(R.id.stage_select_card_03_image_layout);
+        //mStage04CardLayout = findViewById(R.id.stage_select_card_04_image_layout);
+        //mStage05CardLayout = findViewById(R.id.stage_select_card_05_image_layout);
+        //mStage06CardLayout = findViewById(R.id.stage_select_card_06_image_layout);
+        //mStage07CardLayout = findViewById(R.id.stage_select_card_07_image_layout);
 
-        // 4
-        mStage04LockedImageButton = findViewById(R.id.stage_select_card_04_image_button);
-        mStage04PredatorTextView = findViewById(R.id.select_stage_04_predator_text_view);
-        mStage04AccuracyTextView = findViewById(R.id.select_stage_04_accuracy_text_view);
-        mStage04ApexImageView = findViewById(R.id.select_stage_04_apex_image_view);
+        // Stage title image views
+        //mStage01TitleImageView = findViewById(R.id.select_stage_title_01_image_view);
+        //mStage02TitleImageView = findViewById(R.id.select_stage_title_02_image_view);
+        //mStage03TitleImageView = findViewById(R.id.select_stage_title_03_image_view);
+        //mStage04TitleImageView = findViewById(R.id.select_stage_title_04_image_view);
+        //mStage05TitleImageView = findViewById(R.id.select_stage_title_05_image_view);
+        //mStage06TitleImageView = findViewById(R.id.select_stage_title_06_image_view);
+        //mStage07TitleImageView = findViewById(R.id.select_stage_title_07_image_view);
 
-        // 5
-        mStage05LockedImageButton = findViewById(R.id.stage_select_card_05_image_button);
-        mStage05PredatorTextView = findViewById(R.id.select_stage_05_predator_text_view);
-        mStage05AccuracyTextView = findViewById(R.id.select_stage_05_accuracy_text_view);
-        mStage05ApexImageView = findViewById(R.id.select_stage_05_apex_image_view);
+        // Stage status image views
+        //mStage01StatusImageView = findViewById(R.id.select_stage_status_01_image_view);
+        //mStage02StatusImageView = findViewById(R.id.select_stage_status_02_image_view);
+        //mStage03StatusImageView = findViewById(R.id.select_stage_status_03_image_view);
+        //mStage04StatusImageView = findViewById(R.id.select_stage_status_04_image_view);
+        //mStage05StatusImageView = findViewById(R.id.select_stage_status_05_image_view);
+        //mStage06StatusImageView = findViewById(R.id.select_stage_status_06_image_view);
+        //mStage07StatusImageView = findViewById(R.id.select_stage_status_07_image_view);
 
-        // 6
-        mStage06LockedImageButton = findViewById(R.id.stage_select_card_06_image_button);
-        mStage06PredatorTextView = findViewById(R.id.select_stage_06_predator_text_view);
-        mStage06AccuracyTextView = findViewById(R.id.select_stage_06_accuracy_text_view);
-        mStage06ApexImageView = findViewById(R.id.select_stage_06_apex_image_view);
+        // Stage status icon image buttons
+        //mStage01StatusImageButton = findViewById(R.id.select_stage_status_01_icon_image_button);
+        //mStage02StatusImageButton = findViewById(R.id.select_stage_status_02_icon_image_button);
+        //mStage03StatusImageButton = findViewById(R.id.select_stage_status_03_icon_image_button);
+        //mStage04StatusImageButton = findViewById(R.id.select_stage_status_04_icon_image_button);
+        //mStage05StatusImageButton = findViewById(R.id.select_stage_status_05_icon_image_button);
+        //mStage06StatusImageButton = findViewById(R.id.select_stage_status_06_icon_image_button);
+        //mStage07StatusImageButton = findViewById(R.id.select_stage_status_07_icon_image_button);
 
-        // Final
-        mStageFinalBossApexImageView = findViewById(R.id.select_stage_final_boss_apex_image_view);
+        // Game control layout
+        mGameControlLayout = findViewById(R.id.game_main_title_image_layout);
 
-        //
-        mFinalBossImageView = findViewById(R.id.game_main_boss_image_button);
-
-        // Game views
         // Stage label
-        mGameMainStageImageView = findViewById(R.id.game_main_stage_image_view);
+        mGameStageImageView = findViewById(R.id.game_main_stage_image_view);
+        mGameSceneImageView = findViewById(R.id.game_main_scene_image_view);
+        mGameSceneTextView = findViewById(R.id.game_main_scene_text_view);
 
-        //
-        mGameAdvanceImageView = findViewById(R.id.game_main_stage_advance_image_view);
+        // Stage UI
+        mGameLevelMarkerLayout = findViewById(R.id.game_main_level_marker_layout);
+        mGamePowersLayout = findViewById(R.id.game_main_powers_layout);
 
         // Progress marker
         mGameLevelMarkerImageView = findViewById(R.id.game_main_level_marker_image_view);
+
+        //
+        mGameScenePrevImageButton = findViewById(R.id.game_scene_prev_image_button);
+        mGameSceneNextImageButton = findViewById(R.id.game_scene_next_image_button);
+        mStageDisasterImageView = findViewById(R.id.game_main_stage_advance_image_view);
 
         // Power icons
         mGamePower01ImageView = findViewById(R.id.game_main_power_01_image_view);
@@ -506,7 +1227,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mGamePower05ImageView = findViewById(R.id.game_main_power_05_image_view);
         mGamePower06ImageView = findViewById(R.id.game_main_power_06_image_view);
 
-        // Creatures
+        //
         mGameCreature01ImageButton = findViewById(R.id.game_main_creature_01_image_button);
         mGameCreature02ImageButton = findViewById(R.id.game_main_creature_02_image_button);
         mGameCreature03ImageButton = findViewById(R.id.game_main_creature_03_image_button);
@@ -526,28 +1247,70 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // Boss sneak
         mGameTunnelVisionLayout = findViewById(R.id.game_main_tunnel_vision_layout);
 
-        // Results views
-        //
-        mResultsMainBGImageView = findViewById(R.id.results_screen_main_layout);
+        // Stage card views
+        mStageCardStatusImageView = findViewById(R.id.stage_card_status_image_view);
+        mStageCardTopScoreImageButton = findViewById(R.id.stage_card_top_score_image_button);
 
         //
-        mResultsSubStageImageView = findViewById(R.id.results_sub_stage_image_view);
+        mStageCardScreenBodyLayout = findViewById(R.id.stage_card_screen_body_layout);
 
         //
-        mResultsStageCardImageView = findViewById(R.id.results_main_stage_card_image_view);
+        mStageCardContentTitleLayout = findViewById(R.id.stage_card_content_title_layout);
+        mStageCardContentTitleImageButton = findViewById(R.id.stage_card_content_title_image_button);
 
         //
-        mResultsAccuracyTextView = findViewById(R.id.results_main_score_accuracy_title_text_view);
-        mResultsPredatorTextView = findViewById(R.id.results_sub_score_predator_title_text_view);
+        mStageCardContentBossLayout = findViewById(R.id.stage_card_content_boss_layout);
+        mStageCardBossImageView = findViewById(R.id.stage_card_boss_image_view);
 
         //
-        mResultsApexImageView = findViewById(R.id.results_sub_apex_score_image_view);
+        mStageCardScorecardLayout = findViewById(R.id.stage_card_scorecard_layout);
+
+        //
+        mStageCardTopScoreLayout = findViewById(R.id.stage_card_top_score_layout);
+
+        // stage complete
+        mStagePredatorTextView = findViewById(R.id.stage_card_predator_score_text_view);
+        mStageAccuracyTextView = findViewById(R.id.stage_card_accuracy_score_text_view);
+        mStageApexPredatorTextView = findViewById(R.id.stage_card_apex_predator_score_text_view);
+
+        // stage complete
+        mStageTimeTextView = findViewById(R.id.stage_card_time_score_text_view);
+        mStageCreatureKillsTextView = findViewById(R.id.stage_card_eaten_score_text_view);
+        mStageCollectionTextView = findViewById(R.id.stage_card_collection_score_text_view);
+
+        // stage complete
+        mStageHighestStreakTextView = findViewById(R.id.stage_card_streak_score_text_view);
+        mStageClosestDeathTextView = findViewById(R.id.stage_card_death_score_text_view);
+        mStageLongestFrenzyTextView = findViewById(R.id.stage_card_frenzy_score_text_view);
+        mStageMostCalmTextView = findViewById(R.id.stage_card_calm_score_text_view);
+        mStageMostFranticTextView = findViewById(R.id.stage_card_frantic_score_text_view);
+
+        // top scores
+        mStageTopApexPredatorTextView = findViewById(R.id.stage_card_top_apex_score_text_view);
+        mStageTotalAttemptsTextView = findViewById(R.id.stage_card_total_attempts_score_text_view);
+        mStageTotalBossKillsTextView = findViewById(R.id.stage_card_total_boss_kills_score_text_view);
+        mStageTotalCreatureKillsTextView = findViewById(R.id.stage_card_total_creature_kills_score_text_view);
+        mStageTopHighestStreakTextView = findViewById(R.id.stage_card_top_highest_streak_score_text_view);
+        mStageTopClosestDeathTextView = findViewById(R.id.stage_card_top_closest_death_score_text_view);
+        mStageTopLongestFrenzyTextView = findViewById(R.id.stage_card_top_longest_frenzy_score_text_view);
+        mStageTopMostCalmTextView = findViewById(R.id.stage_card_top_most_calm_score_text_view);
+        mStageTopMostFranticTextView = findViewById(R.id.stage_card_top_most_frantic_score_text_view);
+        mStageTotalTimeTextView = findViewById(R.id.stage_card_total_time_score_text_view);
+        mStageTopBestTimeTextView = findViewById(R.id.stage_card_top_best_time_score_text_view);
+        mStageTopPredatorTextView = findViewById(R.id.stage_card_top_predator_score_text_view);
+        mStageTopAccuracyTextView = findViewById(R.id.stage_card_top_accuracy_score_text_view);
+        mStageTotalCollectionTextView = findViewById(R.id.stage_card_total_collection_score_text_view);
+
+        // Stage card - switch ui
+        mStageCardControlPrevImageButton = findViewById(R.id.stage_card_control_prev_image_button);
+        mStageCardControlNextImageButton = findViewById(R.id.stage_card_control_next_image_button);
+        mStageCardControlPlayImageButton = findViewById(R.id.stage_card_ready_play_here_image_button);
 
         // Eaten views
-        mEatenStageImageView = findViewById(R.id.eaten_sub_stage_image_view);
-
-        //
-        mOutroImageView = findViewById(R.id.outro_main_logo_image_view);
+        mEatenMainTitleImageView = findViewById(R.id.eaten_main_title_image_view);
+        mEatenSubTitleLayout = findViewById(R.id.eaten_sub_title_layout);
+        mEatenStageNameTextView = findViewById(R.id.eaten_stage_name_text_view);
+        mEatenStageTimeTextView = findViewById(R.id.eaten_stage_time_text_view);
     }
 
     // Save game state data
@@ -559,51 +1322,196 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         //
         mEditorSet.putBoolean(CONTINUE_SAVED_STATE, continue_game);
-        mEditorSet.putBoolean(GAME_COMPLETE, game_complete);
 
         //
         mEditorSet.putBoolean(AUDIO_SAVED_STATE, play_audio);
         mEditorSet.putBoolean(HAPTIC_SAVED_STATE, play_haptic);
+        mEditorSet.putBoolean(TUTORIAL_SAVED_STATE, play_tutorial);
+
+        // Top scores
+        mEditorSet.putInt(STAGE_01_ATTEMPTS, stage_01_attempts); // local variable into constant
+        mEditorSet.putInt(STAGE_01_BOSS_KILLS, stage_01_boss_kills);
+        mEditorSet.putInt(STAGE_01_CREATURE_KILLS, stage_01_creature_kills);
+
+        //
+        mEditorSet.putInt(STAGE_01_HIGHEST_STREAK, stage_01_highest_streak);
+        mEditorSet.putInt(STAGE_01_CLOSEST_DEATH, stage_01_closest_death);
+        mEditorSet.putInt(STAGE_01_LONGEST_FRENZY, stage_01_longest_frenzy);
+        mEditorSet.putLong(STAGE_01_MOST_CALM, stage_01_most_calm);
+        mEditorSet.putLong(STAGE_01_MOST_FRANTIC, stage_01_most_frantic);
+
+        //
+        mEditorSet.putInt(STAGE_01_TOTAL_TIME, stage_01_total_time);
+        mEditorSet.putInt(STAGE_01_BEST_TIME, stage_01_best_time);
+
+        //
+        mEditorSet.putInt(STAGE_01_COLLECTION, stage_01_collection);
 
         //
         mEditorSet.putBoolean(STAGE_01_COMPLETE, stage_01_complete);
-        mEditorSet.putString(STAGE_01_PREDATOR, stage_01_predator);
-        mEditorSet.putString(STAGE_01_ACCURACY, stage_01_accuracy);
+        mEditorSet.putInt(STAGE_01_PREDATOR, stage_01_predator);
+        mEditorSet.putFloat(STAGE_01_ACCURACY, stage_01_accuracy);
         mEditorSet.putBoolean(STAGE_01_APEX, stage_01_apex);
+
+        // 2
+        mEditorSet.putInt(STAGE_02_ATTEMPTS, stage_02_attempts);
+        mEditorSet.putInt(STAGE_02_BOSS_KILLS, stage_02_boss_kills);
+        mEditorSet.putInt(STAGE_02_CREATURE_KILLS, stage_02_creature_kills);
+
+        //
+        mEditorSet.putInt(STAGE_02_HIGHEST_STREAK, stage_02_highest_streak);
+        mEditorSet.putInt(STAGE_02_CLOSEST_DEATH, stage_02_closest_death);
+        mEditorSet.putInt(STAGE_02_LONGEST_FRENZY, stage_02_longest_frenzy);
+        mEditorSet.putLong(STAGE_02_MOST_CALM, stage_02_most_calm);
+        mEditorSet.putLong(STAGE_02_MOST_FRANTIC, stage_02_most_frantic);
+
+        //
+        mEditorSet.putInt(STAGE_02_TOTAL_TIME, stage_02_total_time);
+        mEditorSet.putInt(STAGE_02_BEST_TIME, stage_02_best_time);
+
+        //
+        mEditorSet.putInt(STAGE_02_COLLECTION, stage_02_collection);
 
         //
         mEditorSet.putBoolean(STAGE_02_COMPLETE, stage_02_complete);
-        mEditorSet.putString(STAGE_02_PREDATOR, stage_02_predator);
-        mEditorSet.putString(STAGE_02_ACCURACY, stage_02_accuracy);
+        mEditorSet.putInt(STAGE_02_PREDATOR, stage_02_predator);
+        mEditorSet.putFloat(STAGE_02_ACCURACY, stage_02_accuracy);
         mEditorSet.putBoolean(STAGE_02_APEX, stage_02_apex);
+
+        // 3
+        mEditorSet.putInt(STAGE_03_ATTEMPTS, stage_03_attempts);
+        mEditorSet.putInt(STAGE_03_BOSS_KILLS, stage_03_boss_kills);
+        mEditorSet.putInt(STAGE_03_CREATURE_KILLS, stage_03_creature_kills);
+
+        //
+        mEditorSet.putInt(STAGE_03_HIGHEST_STREAK, stage_03_highest_streak);
+        mEditorSet.putInt(STAGE_03_CLOSEST_DEATH, stage_03_closest_death);
+        mEditorSet.putInt(STAGE_03_LONGEST_FRENZY, stage_03_longest_frenzy);
+
+        //
+        mEditorSet.putLong(STAGE_03_MOST_CALM, stage_03_most_calm);
+        mEditorSet.putLong(STAGE_03_MOST_FRANTIC, stage_03_most_frantic);
+
+        //
+        mEditorSet.putInt(STAGE_03_TOTAL_TIME, stage_03_total_time);
+        mEditorSet.putInt(STAGE_03_BEST_TIME, stage_03_best_time);
+
+        //
+        mEditorSet.putInt(STAGE_03_COLLECTION, stage_03_collection);
 
         //
         mEditorSet.putBoolean(STAGE_03_COMPLETE, stage_03_complete);
-        mEditorSet.putString(STAGE_03_PREDATOR, stage_03_predator);
-        mEditorSet.putString(STAGE_03_ACCURACY, stage_03_accuracy);
+        mEditorSet.putInt(STAGE_03_PREDATOR, stage_03_predator);
+        mEditorSet.putFloat(STAGE_03_ACCURACY, stage_03_accuracy);
         mEditorSet.putBoolean(STAGE_03_APEX, stage_03_apex);
+
+        // 4
+        mEditorSet.putInt(STAGE_04_ATTEMPTS, stage_04_attempts);
+        mEditorSet.putInt(STAGE_04_BOSS_KILLS, stage_04_boss_kills);
+        mEditorSet.putInt(STAGE_04_CREATURE_KILLS, stage_04_creature_kills);
+
+        //
+        mEditorSet.putInt(STAGE_04_HIGHEST_STREAK, stage_04_highest_streak);
+        mEditorSet.putInt(STAGE_04_CLOSEST_DEATH, stage_04_closest_death);
+        mEditorSet.putInt(STAGE_04_LONGEST_FRENZY, stage_04_longest_frenzy);
+
+        //
+        mEditorSet.putLong(STAGE_04_MOST_CALM, stage_04_most_calm);
+        mEditorSet.putLong(STAGE_04_MOST_FRANTIC, stage_04_most_frantic);
+
+        //
+        mEditorSet.putInt(STAGE_04_TOTAL_TIME, stage_04_total_time);
+        mEditorSet.putInt(STAGE_04_BEST_TIME, stage_04_best_time);
+
+        //
+        mEditorSet.putInt(STAGE_04_COLLECTION, stage_04_collection);
 
         //
         mEditorSet.putBoolean(STAGE_04_COMPLETE, stage_04_complete);
-        mEditorSet.putString(STAGE_04_PREDATOR, stage_04_predator);
-        mEditorSet.putString(STAGE_04_ACCURACY, stage_04_accuracy);
+        mEditorSet.putInt(STAGE_04_PREDATOR, stage_04_predator);
+        mEditorSet.putFloat(STAGE_04_ACCURACY, stage_04_accuracy);
         mEditorSet.putBoolean(STAGE_04_APEX, stage_04_apex);
+
+        // 5
+        mEditorSet.putInt(STAGE_05_ATTEMPTS, stage_05_attempts);
+        mEditorSet.putInt(STAGE_05_BOSS_KILLS, stage_05_boss_kills);
+        mEditorSet.putInt(STAGE_05_CREATURE_KILLS, stage_05_creature_kills);
+
+        //
+        mEditorSet.putInt(STAGE_05_HIGHEST_STREAK, stage_05_highest_streak);
+        mEditorSet.putInt(STAGE_05_CLOSEST_DEATH, stage_05_closest_death);
+        mEditorSet.putInt(STAGE_05_LONGEST_FRENZY, stage_05_longest_frenzy);
+
+        //
+        mEditorSet.putLong(STAGE_05_MOST_CALM, stage_05_most_calm);
+        mEditorSet.putLong(STAGE_05_MOST_FRANTIC, stage_05_most_frantic);
+
+        //
+        mEditorSet.putInt(STAGE_05_TOTAL_TIME, stage_05_total_time);
+        mEditorSet.putInt(STAGE_05_BEST_TIME, stage_05_best_time);
+
+        //
+        mEditorSet.putInt(STAGE_05_COLLECTION, stage_05_collection);
 
         //
         mEditorSet.putBoolean(STAGE_05_COMPLETE, stage_05_complete);
-        mEditorSet.putString(STAGE_05_PREDATOR, stage_05_predator);
-        mEditorSet.putString(STAGE_05_ACCURACY, stage_05_accuracy);
+        mEditorSet.putInt(STAGE_05_PREDATOR, stage_05_predator);
+        mEditorSet.putFloat(STAGE_05_ACCURACY, stage_05_accuracy);
         mEditorSet.putBoolean(STAGE_05_APEX, stage_05_apex);
+
+        // 6
+        mEditorSet.putInt(STAGE_06_ATTEMPTS, stage_06_attempts);
+        mEditorSet.putInt(STAGE_06_BOSS_KILLS, stage_06_boss_kills);
+        mEditorSet.putInt(STAGE_06_CREATURE_KILLS, stage_06_creature_kills);
+
+        //
+        mEditorSet.putInt(STAGE_06_HIGHEST_STREAK, stage_06_highest_streak);
+        mEditorSet.putInt(STAGE_06_CLOSEST_DEATH, stage_06_closest_death);
+        mEditorSet.putInt(STAGE_06_LONGEST_FRENZY, stage_06_longest_frenzy);
+
+        //
+        mEditorSet.putLong(STAGE_06_MOST_CALM, stage_06_most_calm);
+        mEditorSet.putLong(STAGE_06_MOST_FRANTIC, stage_06_most_frantic);
+
+        //
+        mEditorSet.putInt(STAGE_06_TOTAL_TIME, stage_06_total_time);
+        mEditorSet.putInt(STAGE_06_BEST_TIME, stage_06_best_time);
+
+        //
+        mEditorSet.putInt(STAGE_06_COLLECTION, stage_06_collection);
 
         //
         mEditorSet.putBoolean(STAGE_06_COMPLETE, stage_06_complete);
-        mEditorSet.putString(STAGE_06_PREDATOR, stage_06_predator);
-        mEditorSet.putString(STAGE_06_ACCURACY, stage_06_accuracy);
+        mEditorSet.putInt(STAGE_06_PREDATOR, stage_06_predator);
+        mEditorSet.putFloat(STAGE_06_ACCURACY, stage_06_accuracy);
         mEditorSet.putBoolean(STAGE_06_APEX, stage_06_apex);
 
+        // 7
+        mEditorSet.putInt(STAGE_07_ATTEMPTS, stage_07_attempts);
+        mEditorSet.putInt(STAGE_07_BOSS_KILLS, stage_07_boss_kills);
+        mEditorSet.putInt(STAGE_07_CREATURE_KILLS, stage_07_creature_kills);
+
         //
-        mEditorSet.putBoolean(STAGE_FINAL_BOSS_COMPLETE, stage_final_boss_complete);
-        mEditorSet.putBoolean(STAGE_FINAL_BOSS_APEX, stage_final_boss_apex);
+        mEditorSet.putInt(STAGE_07_HIGHEST_STREAK, stage_07_highest_streak);
+        mEditorSet.putInt(STAGE_07_CLOSEST_DEATH, stage_07_closest_death);
+        mEditorSet.putInt(STAGE_07_LONGEST_FRENZY, stage_07_longest_frenzy);
+
+        //
+        mEditorSet.putLong(STAGE_07_MOST_CALM, stage_07_most_calm);
+        mEditorSet.putLong(STAGE_07_MOST_FRANTIC, stage_07_most_frantic);
+
+        //
+        mEditorSet.putInt(STAGE_07_TOTAL_TIME, stage_07_total_time);
+        mEditorSet.putInt(STAGE_07_BEST_TIME, stage_07_best_time);
+
+        //
+        mEditorSet.putInt(STAGE_07_COLLECTION, stage_07_collection);
+
+        //
+        mEditorSet.putBoolean(STAGE_07_COMPLETE, stage_07_complete);
+        mEditorSet.putInt(STAGE_07_PREDATOR, stage_07_predator);
+        mEditorSet.putFloat(STAGE_07_ACCURACY, stage_07_accuracy);
+        mEditorSet.putBoolean(STAGE_07_APEX, stage_07_apex);
 
         //
         mEditorSet.apply();
@@ -615,70 +1523,445 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // Instantiate variables
         SharedPreferences mUserPrefGet = getPreferences(Context.MODE_PRIVATE);
 
-        //
-        continue_game = mUserPrefGet.getBoolean(CONTINUE_SAVED_STATE, false);
-
-        //
+        // Game settings
         play_audio = mUserPrefGet.getBoolean(AUDIO_SAVED_STATE, true);
         play_haptic = mUserPrefGet.getBoolean(HAPTIC_SAVED_STATE, true);
+        play_tutorial = mUserPrefGet.getBoolean(TUTORIAL_SAVED_STATE, true);
 
         //
         stage_01_complete = mUserPrefGet.getBoolean(STAGE_01_COMPLETE, false);
-        stage_01_predator = mUserPrefGet.getString(STAGE_01_PREDATOR, null);
-        stage_01_accuracy = mUserPrefGet.getString(STAGE_01_ACCURACY, null);
+
+        //
+        stage_01_attempts = mUserPrefGet.getInt(STAGE_01_ATTEMPTS, 0);
+        stage_01_boss_kills = mUserPrefGet.getInt(STAGE_01_BOSS_KILLS, 0);
+        stage_01_creature_kills = mUserPrefGet.getInt(STAGE_01_CREATURE_KILLS, 0);
+        stage_01_collection = mUserPrefGet.getInt(STAGE_01_COLLECTION, 0);
+
+
+
+
+
+
+//-------------------------------->
+        //public boolean saveArray(String[] array, String arrayName, Context mContext) {
+            //SharedPreferences prefs = mContext.getSharedPreferences("preferencename", 0);
+            //SharedPreferences.Editor editor = prefs.edit();
+            //editor.putInt(arrayName +"_size", array.length);
+            //for(int i=0;i<array.length;i++)
+                //editor.putString(arrayName + "_" + i, array[i]);
+            //return editor.commit();
+        //}
+// -------------------------------->
+
+        //
+        stage_01_highest_streak = mUserPrefGet.getInt(STAGE_01_HIGHEST_STREAK, 0);
+        stage_01_closest_death = mUserPrefGet.getInt(STAGE_01_CLOSEST_DEATH, 30);
+        stage_01_longest_frenzy = mUserPrefGet.getInt(STAGE_01_LONGEST_FRENZY, 0);
+        stage_01_most_calm = mUserPrefGet.getLong(STAGE_01_MOST_CALM, 1000);
+        stage_01_most_frantic = mUserPrefGet.getLong(STAGE_01_MOST_FRANTIC, 1000);
+
+        //
+        stage_01_total_time = mUserPrefGet.getInt(STAGE_01_TOTAL_TIME, 0);
+        stage_01_best_time = mUserPrefGet.getInt(STAGE_01_BEST_TIME, 0);
+
+        //
+        stage_01_predator = mUserPrefGet.getInt(STAGE_01_PREDATOR, 0);
+        stage_01_accuracy = mUserPrefGet.getFloat(STAGE_01_ACCURACY, 0);
         stage_01_apex = mUserPrefGet.getBoolean(STAGE_01_APEX, false);
 
         //
-        stage_02_unlocked = stage_01_complete;
+        continue_game = stage_01_complete;
+
+        //
+        //
+        // -> see above
+        //boolean stage_02_unlocked = stage_01_complete;
 
         //
         stage_02_complete = mUserPrefGet.getBoolean(STAGE_02_COMPLETE, false);
-        stage_02_predator = mUserPrefGet.getString(STAGE_02_PREDATOR, null);
-        stage_02_accuracy = mUserPrefGet.getString(STAGE_02_ACCURACY, null);
+
+        //
+        stage_02_attempts = mUserPrefGet.getInt(STAGE_02_ATTEMPTS, 0);
+        stage_02_boss_kills = mUserPrefGet.getInt(STAGE_02_BOSS_KILLS, 0);
+        stage_02_creature_kills = mUserPrefGet.getInt(STAGE_02_CREATURE_KILLS, 0);
+        stage_02_collection = mUserPrefGet.getInt(STAGE_02_COLLECTION, 0);
+
+        //
+        stage_02_highest_streak = mUserPrefGet.getInt(STAGE_02_HIGHEST_STREAK, 0);
+        stage_02_closest_death = mUserPrefGet.getInt(STAGE_02_CLOSEST_DEATH, 30);
+        stage_02_longest_frenzy = mUserPrefGet.getInt(STAGE_02_LONGEST_FRENZY, 0);
+        stage_02_most_calm = mUserPrefGet.getLong(STAGE_02_MOST_CALM, 1000);
+        stage_02_most_frantic = mUserPrefGet.getLong(STAGE_02_MOST_FRANTIC, 1000);
+
+        //
+        stage_02_total_time = mUserPrefGet.getInt(STAGE_02_TOTAL_TIME, 0);
+        stage_02_best_time = mUserPrefGet.getInt(STAGE_02_BEST_TIME, 0);
+
+        //
+        stage_02_predator = mUserPrefGet.getInt(STAGE_02_PREDATOR, 0);
+        stage_02_accuracy = mUserPrefGet.getFloat(STAGE_02_ACCURACY, 0);
         stage_02_apex = mUserPrefGet.getBoolean(STAGE_02_APEX, false);
 
         //
-        stage_03_unlocked = stage_02_complete;
+        //
+        // -> see above
+        //boolean stage_03_unlocked = stage_02_complete;
 
         //
         stage_03_complete = mUserPrefGet.getBoolean(STAGE_03_COMPLETE, false);
-        stage_03_predator = mUserPrefGet.getString(STAGE_03_PREDATOR, null);
-        stage_03_accuracy = mUserPrefGet.getString(STAGE_03_ACCURACY, null);
+
+        //
+        stage_03_attempts = mUserPrefGet.getInt(STAGE_03_ATTEMPTS, 0);
+        stage_03_boss_kills = mUserPrefGet.getInt(STAGE_03_BOSS_KILLS, 0);
+        stage_03_creature_kills = mUserPrefGet.getInt(STAGE_03_CREATURE_KILLS, 0);
+        stage_03_collection = mUserPrefGet.getInt(STAGE_03_COLLECTION, 0);
+
+        //
+        stage_03_highest_streak = mUserPrefGet.getInt(STAGE_03_HIGHEST_STREAK, 0);
+        stage_03_closest_death = mUserPrefGet.getInt(STAGE_03_CLOSEST_DEATH, 30);
+        stage_03_longest_frenzy = mUserPrefGet.getInt(STAGE_03_LONGEST_FRENZY, 0);
+        stage_03_most_calm = mUserPrefGet.getLong(STAGE_03_MOST_CALM, 1000);
+        stage_03_most_frantic = mUserPrefGet.getLong(STAGE_03_MOST_FRANTIC, 1000);
+
+        //
+        stage_03_total_time = mUserPrefGet.getInt(STAGE_03_TOTAL_TIME, 0);
+        stage_03_best_time = mUserPrefGet.getInt(STAGE_03_BEST_TIME, 0);
+
+        //
+        stage_03_predator = mUserPrefGet.getInt(STAGE_03_PREDATOR, 0);
+        stage_03_accuracy = mUserPrefGet.getFloat(STAGE_03_ACCURACY, 0);
         stage_03_apex = mUserPrefGet.getBoolean(STAGE_03_APEX, false);
 
         //
-        stage_04_unlocked = stage_03_complete;
+        //
+        // -> see above
+        //boolean stage_04_unlocked = stage_03_complete;
 
         //
         stage_04_complete = mUserPrefGet.getBoolean(STAGE_04_COMPLETE, false);
-        stage_04_predator = mUserPrefGet.getString(STAGE_04_PREDATOR, null);
-        stage_04_accuracy = mUserPrefGet.getString(STAGE_04_ACCURACY, null);
+
+        //
+        stage_04_attempts = mUserPrefGet.getInt(STAGE_04_ATTEMPTS, 0);
+        stage_04_boss_kills = mUserPrefGet.getInt(STAGE_04_BOSS_KILLS, 0);
+        stage_04_creature_kills = mUserPrefGet.getInt(STAGE_04_CREATURE_KILLS, 0);
+        stage_04_collection = mUserPrefGet.getInt(STAGE_04_COLLECTION, 0);
+
+        //
+        stage_04_highest_streak = mUserPrefGet.getInt(STAGE_04_HIGHEST_STREAK, 0);
+        stage_04_closest_death = mUserPrefGet.getInt(STAGE_04_CLOSEST_DEATH, 30);
+        stage_04_longest_frenzy = mUserPrefGet.getInt(STAGE_04_LONGEST_FRENZY, 0);
+        stage_04_most_calm = mUserPrefGet.getLong(STAGE_04_MOST_CALM, 1000);
+        stage_04_most_frantic = mUserPrefGet.getLong(STAGE_04_MOST_FRANTIC, 1000);
+
+        //
+        stage_04_total_time = mUserPrefGet.getInt(STAGE_04_TOTAL_TIME, 0);
+        stage_04_best_time = mUserPrefGet.getInt(STAGE_04_BEST_TIME, 0);
+
+        //
+        stage_04_predator = mUserPrefGet.getInt(STAGE_04_PREDATOR, 0);
+        stage_04_accuracy = mUserPrefGet.getFloat(STAGE_04_ACCURACY, 0);
         stage_04_apex = mUserPrefGet.getBoolean(STAGE_04_APEX, false);
 
         //
-        stage_05_unlocked = stage_04_complete;
+        //
+        // -> see above
+        //boolean stage_05_unlocked = stage_04_complete;
 
         //
         stage_05_complete = mUserPrefGet.getBoolean(STAGE_05_COMPLETE, false);
-        stage_05_predator = mUserPrefGet.getString(STAGE_05_PREDATOR, null);
-        stage_05_accuracy = mUserPrefGet.getString(STAGE_05_ACCURACY, null);
+
+        //
+        stage_05_attempts = mUserPrefGet.getInt(STAGE_05_ATTEMPTS, 0);
+        stage_05_boss_kills = mUserPrefGet.getInt(STAGE_05_BOSS_KILLS, 0);
+        stage_05_creature_kills = mUserPrefGet.getInt(STAGE_05_CREATURE_KILLS, 0);
+        stage_05_collection = mUserPrefGet.getInt(STAGE_05_COLLECTION, 0);
+
+        //
+        stage_05_highest_streak = mUserPrefGet.getInt(STAGE_05_HIGHEST_STREAK, 0);
+        stage_05_closest_death = mUserPrefGet.getInt(STAGE_05_CLOSEST_DEATH, 30);
+        stage_05_longest_frenzy = mUserPrefGet.getInt(STAGE_05_LONGEST_FRENZY, 0);
+        stage_05_most_calm = mUserPrefGet.getLong(STAGE_05_MOST_CALM, 1000);
+        stage_05_most_frantic = mUserPrefGet.getLong(STAGE_05_MOST_FRANTIC, 1000);
+
+        //
+        stage_05_total_time = mUserPrefGet.getInt(STAGE_05_TOTAL_TIME, 0);
+        stage_05_best_time = mUserPrefGet.getInt(STAGE_05_BEST_TIME, 0);
+
+        //
+        stage_05_predator = mUserPrefGet.getInt(STAGE_05_PREDATOR, 0);
+        stage_05_accuracy = mUserPrefGet.getFloat(STAGE_05_ACCURACY, 0);
         stage_05_apex = mUserPrefGet.getBoolean(STAGE_05_APEX, false);
 
         //
-        stage_06_unlocked = stage_05_complete;
+        //
+        // -> see above
+        //boolean stage_06_unlocked = stage_05_complete;
 
         //
         stage_06_complete = mUserPrefGet.getBoolean(STAGE_06_COMPLETE, false);
-        stage_06_predator = mUserPrefGet.getString(STAGE_06_PREDATOR, null);
-        stage_06_accuracy = mUserPrefGet.getString(STAGE_06_ACCURACY, null);
+
+        //
+        stage_06_attempts = mUserPrefGet.getInt(STAGE_06_ATTEMPTS, 0);
+        stage_06_boss_kills = mUserPrefGet.getInt(STAGE_06_BOSS_KILLS, 0);
+        stage_06_creature_kills = mUserPrefGet.getInt(STAGE_06_CREATURE_KILLS, 0);
+        stage_07_collection = mUserPrefGet.getInt(STAGE_07_COLLECTION, 0);
+
+        //
+        stage_06_highest_streak = mUserPrefGet.getInt(STAGE_06_HIGHEST_STREAK, 0);
+        stage_06_closest_death = mUserPrefGet.getInt(STAGE_06_CLOSEST_DEATH, 30);
+        stage_06_longest_frenzy = mUserPrefGet.getInt(STAGE_06_LONGEST_FRENZY, 0);
+        stage_06_most_calm = mUserPrefGet.getLong(STAGE_06_MOST_CALM, 1000);
+        stage_06_most_frantic = mUserPrefGet.getLong(STAGE_06_MOST_FRANTIC, 1000);
+
+        //
+        stage_06_total_time = mUserPrefGet.getInt(STAGE_06_TOTAL_TIME, 0);
+        stage_06_best_time = mUserPrefGet.getInt(STAGE_06_BEST_TIME, 0);
+
+        //
+        stage_06_predator = mUserPrefGet.getInt(STAGE_06_PREDATOR, 0);
+        stage_06_accuracy = mUserPrefGet.getFloat(STAGE_06_ACCURACY, 0);
         stage_06_apex = mUserPrefGet.getBoolean(STAGE_06_APEX, false);
 
         //
-        stage_final_boss_complete = mUserPrefGet.getBoolean(STAGE_FINAL_BOSS_COMPLETE, false);
-        stage_final_boss_apex = mUserPrefGet.getBoolean(STAGE_FINAL_BOSS_APEX, false);
+        //
+        // -> see above
+        //boolean stage_07_unlocked = stage_06_complete;
 
         //
-        game_complete = stage_final_boss_complete;
+        stage_07_complete = mUserPrefGet.getBoolean(STAGE_07_COMPLETE, false);
+
+        //
+        stage_07_attempts = mUserPrefGet.getInt(STAGE_07_ATTEMPTS, 0);
+        stage_07_boss_kills = mUserPrefGet.getInt(STAGE_07_BOSS_KILLS, 0);
+        stage_07_creature_kills = mUserPrefGet.getInt(STAGE_07_CREATURE_KILLS, 0);
+        stage_07_highest_streak = mUserPrefGet.getInt(STAGE_07_HIGHEST_STREAK, 0);
+        stage_07_closest_death = mUserPrefGet.getInt(STAGE_07_CLOSEST_DEATH, 30);
+        stage_07_longest_frenzy = mUserPrefGet.getInt(STAGE_07_LONGEST_FRENZY, 0);
+        stage_07_most_calm = mUserPrefGet.getLong(STAGE_07_MOST_CALM, 1000);
+        stage_07_most_frantic = mUserPrefGet.getLong(STAGE_07_MOST_FRANTIC, 1000);
+
+        //
+        stage_07_total_time = mUserPrefGet.getInt(STAGE_07_TOTAL_TIME, 0);
+        stage_07_best_time = mUserPrefGet.getInt(STAGE_07_BEST_TIME, 0);
+
+        //
+        stage_07_predator = mUserPrefGet.getInt(STAGE_07_PREDATOR, 0);
+        stage_07_accuracy = mUserPrefGet.getFloat(STAGE_07_ACCURACY, 0);
+        stage_07_apex = mUserPrefGet.getBoolean(STAGE_07_APEX, false);
+
+        //
+        game_complete = stage_07_complete;
+
+        // Assign - total attempts
+        mGameAttempts = stage_01_attempts + stage_02_attempts + stage_03_attempts + stage_04_attempts + stage_05_attempts + stage_06_attempts + stage_07_attempts;
+
+        // Assign - total boss kills
+        mGameBossKills = stage_01_boss_kills + stage_02_boss_kills + stage_03_boss_kills + stage_04_boss_kills + stage_05_boss_kills + stage_06_boss_kills + stage_07_boss_kills;
+
+        // Assign - total creature kills
+        mGameCreatureKills = stage_01_creature_kills + stage_02_creature_kills + stage_03_creature_kills + stage_04_creature_kills + stage_05_creature_kills + stage_06_creature_kills + stage_07_creature_kills;
+
+        // Int score
+        int hiScore;
+
+        // long score
+        long highScore;
+
+        // Accuracy iteration
+        int i;
+
+        // Accuracy accumulation
+        float mAccumulativeAccuracy;
+
+        // Reset - highest streak
+        hiScore = 0;
+        i = 1;
+
+        //
+        int[] top_scores_highest_streak = {
+
+                //
+                stage_01_highest_streak, stage_02_highest_streak, stage_03_highest_streak, stage_04_highest_streak, stage_05_highest_streak, stage_06_highest_streak, stage_07_highest_streak
+        };
+
+        // Extract - highest streak
+        for (int score : top_scores_highest_streak) {
+
+            // Compare - highest streak
+            if (score >= hiScore) { hiScore = score; }
+            i++;
+        }
+
+        // Assign - highest streak
+        mGameHighestStreak = hiScore;
+
+        // Reset - closest death
+        hiScore = 30;
+        i = 1;
+
+        //
+        int[] top_scores_closest_death = {
+
+                //
+                stage_01_closest_death, stage_02_closest_death, stage_03_closest_death, stage_04_closest_death, stage_05_closest_death, stage_06_closest_death, stage_07_closest_death
+        };
+
+        // Extract - closest death
+        for (int score : top_scores_closest_death) {
+
+            // Compare - closest death
+            if (score <= hiScore && score != 30) { hiScore = score; }
+            i++;
+        }
+
+        // Assign - highest streak
+        mGameClosestDeath = hiScore;
+
+        // Reset - longest frenzy
+        hiScore = 0;
+        i = 1;
+
+        //
+        int[] top_scores_longest_frenzy = {
+
+                //
+                stage_01_longest_frenzy, stage_02_longest_frenzy, stage_03_longest_frenzy, stage_04_longest_frenzy, stage_05_longest_frenzy, stage_06_longest_frenzy, stage_07_longest_frenzy
+        };
+
+        // Extract - longest frenzy
+        for (int score : top_scores_longest_frenzy) {
+
+            // Compare - longest frenzy
+            if (score >= hiScore || score != 0) { hiScore = score; }
+            i++;
+        }
+
+        // Assign - longest frenzy
+        mGameLongestFrenzy = hiScore;
+
+        // Reset - most calm
+        highScore = 1000;
+        i = 1;
+
+        //
+        long[] top_scores_most_calm = {
+
+                //
+                stage_01_most_calm, stage_02_most_calm, stage_03_most_calm, stage_04_most_calm, stage_05_most_calm, stage_06_most_calm, stage_07_most_calm
+        };
+
+        // Extract - most calm
+        for (long score : top_scores_most_calm) {
+
+            // Compare - most calm
+            if (score >= highScore || score != 1000) { highScore = score; }
+            i++;
+        }
+
+        // Assign - most calm
+        mGameMostCalm = highScore;
+
+        // Reset - most frantic
+        highScore = 1000;
+        i = 1;
+
+        //
+        long[] top_scores_most_frantic = {
+
+                //
+                stage_01_most_frantic, stage_02_most_frantic, stage_03_most_frantic, stage_04_most_frantic, stage_05_most_frantic, stage_06_most_frantic, stage_07_most_frantic
+        };
+
+        // Extract - most frantic
+        for (long score : top_scores_most_frantic) {
+
+            // Compare - most frantic
+            if (score <= highScore || score != 1000) { highScore = score; }
+            i++;
+        }
+
+        // Assign - most frantic
+        mGameMostFrantic = highScore;
+
+        // Reset - best time
+        hiScore = 1000;
+        i = 1;
+
+        //
+        int[] top_scores_best_time = {
+
+                //
+                stage_01_best_time, stage_02_best_time, stage_03_best_time, stage_04_best_time, stage_05_best_time, stage_06_best_time, stage_07_best_time
+        };
+
+        // Extract - best time
+        for (int score : top_scores_best_time) {
+
+            // Compare - best time
+            if (score != 0 && score <= hiScore) {
+
+                // Assign - local
+                hiScore = score;
+            }
+            i++;
+        }
+
+        // Assign - best time
+        mGameTimeBest = hiScore;
+
+        // Assign - top predator
+        mGamePredator = (stage_01_predator + stage_02_predator + stage_03_predator + stage_04_predator + stage_05_predator + stage_06_predator + stage_07_predator);
+
+        // Reset - top accuracy
+        mAccumulativeAccuracy = 0;
+        i = 0;
+
+        //
+        float[] top_scores_top_accuracy = {
+
+                //
+                stage_01_accuracy, stage_02_accuracy, stage_03_accuracy, stage_04_accuracy, stage_05_accuracy, stage_06_accuracy, stage_07_accuracy
+        };
+
+        // Extract - top accuracy
+        for (float score : top_scores_top_accuracy) {
+
+            // Compare - top accuracy
+            if (score > 0 ) {
+
+                // Assign - local
+                mAccumulativeAccuracy += score;
+                ++i;
+
+                // Assign - top accuracy
+                mGameAccuracy = mAccumulativeAccuracy / i;
+            }
+        }
+
+        // Reset - top apex
+        mGameApex = true;
+        i = 1;
+
+        //
+        boolean[] top_scores_top_apex = {
+
+                //
+                stage_01_apex, stage_02_apex, stage_03_apex, stage_04_apex, stage_05_apex, stage_06_apex, stage_07_apex
+        };
+
+        // Extract - top apex
+        for (boolean score : top_scores_top_apex) {
+
+            // Compare - top apex
+            if (!score) { mGameApex = false; }
+            i++;
+        }
+
+        // Assign - total time
+        mGameTimeTotal = stage_01_total_time + stage_02_total_time + stage_03_total_time + stage_04_total_time + stage_05_total_time + stage_06_total_time + stage_07_total_time;
+
+        // Assign - total collection
+        mGameCollection = stage_01_collection + stage_02_collection + stage_03_collection + stage_04_collection + stage_05_collection + stage_06_collection + stage_07_collection;
     }
 
     // Set click listeners
@@ -688,100 +1971,58 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         for (int id : CLICKABLES) { findViewById(id).setOnClickListener(this); }
     }
 
-    // Play intro credits
-    public void playIntroCredits() {
+    // Play credits
+    public void playCredits(int mode) {
+        Log.d(TAG, "playCredits:");
+
+        // Pause game
+        mPauseGame = true;
 
         // Switch to intro screen
-        switchScreen(R.id.intro_screen_main_layout);
+        switchScreen(R.id.credits_screen_main_layout);
 
-        // Run timer through executable task - background activities
-        final Handler h = new Handler();
+        // Clear array
+        mGameCreditsImages.clear();
 
-        h.postDelayed(new Runnable() {
+        // Clear spinner
+        mCreditSpinner = 0;
 
-            // Incremental - 2 images, intro[].length
-            int i = 0;
+        // Switch intro [1] / outro [2]
+        switch (mode) {
 
-            // Run task
-            @Override
-            public void run() {
+            //
+            case 1:
 
                 //
-                Log.d(TAG, "run: fade in>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
-                fadeOut(mIntroImageView.getId());
-
-                playAudio(INTRO_01);
-                // Check incremental - 2 intro slides
-                if (i < INTRO.length) {
+                for (int id : INTRO) {
 
                     //
-                    Log.d(TAG, "run: <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<fade out");
-                    fadeIn(mIntroImageView.getId());
+                    mGameCreditsImages.add(id);
+                }
 
-                    // Increment intro images
-                    mIntroImageView.setBackground(versionCheck(INTRO[i]));
+                break;
 
-                    // Increment timer
-                    h.postDelayed(this, 5000);
-                    i++;
+            //
+            case 2:
 
-                    // Entry
-                } else {
+                //
+                for (int id : OUTRO) {
 
                     //
-
-
-                    // Switch the entry
-                    switchScreen(R.id.entry_screen_main_layout);
-
-                    // Play audio
-                    playAudio(DARK_INTRO);
+                    mGameCreditsImages.add(id);
                 }
-            }
-        }, 1000);
-    }
 
-    // Play outro credits
-    public void playOutroCredits() {
+                break;
+        }
 
-        // Switch to intro screen
-        switchScreen(R.id.outro_screen_main_layout);
-        findViewById(R.id.outro_screen_main_layout).setVisibility(View.VISIBLE);
+        // Play chomp
+        playAudio(HIT);
 
-        // Run timer through executable task - background activities
-        final Handler h = new Handler();
-        h.postDelayed(new Runnable() {
+        // Undo pause game
+        mPauseGame = false;
 
-            // Incremental - 2 images, intro[].length
-            int i = 0;
-
-            // Run task
-            @Override
-            public void run() {
-
-                playAudio(INTRO_01);
-
-                // Check incremental - 2 intro slides
-                if (i < OUTRO.length) {
-
-                    // Increment intro images
-                    mOutroImageView.setBackground(versionCheck(OUTRO[i]));
-
-                    // Increment timer
-                    h.postDelayed(this, 5000);
-                    i++;
-
-                    // Entry
-                } else {
-
-                    // Switch the entry
-                    switchScreen(R.id.entry_screen_main_layout);
-
-                    // Play audio
-                    playAudio(DARK_INTRO);
-                }
-            }
-        }, 1000);
+        // Run timer through executable
+        h1.postDelayed(r1, 1000);
     }
 
     // Click events
@@ -790,11 +2031,32 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // Get view clicked
         switch (v.getId()) {
 
-//--ENTRY-->
+//--CREDITS-->
+            // Credits - skip intro / outro
+            case R.id.credits_screen_main_layout:
+                Log.d(TAG, "onClick: credit screen - touch screen");
 
+                // Pause game
+                mPauseGame = true;
+
+                // Touch to skip
+                mCreditSpinner = mGameCreditsImages.size();
+
+                // Play audio
+                playAudio(MISS);
+
+                // Undo pause game
+                mPauseGame = false;
+
+                break;
+
+//--ENTRY-->
             // Entry - Continue Button Event
             case R.id.entry_main_continue_image_button:
                 Log.d(TAG, "onClick: entry screen - continue button");
+
+                // Pause game
+                mPauseGame = true;
 
                 // Switch to stage select screen
                 if (continue_game) {
@@ -803,11 +2065,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     switchScreen(R.id.stage_select_screen_main_layout);
                 }
 
+                // Play audio
+                playAudio(MISS);
+
+                // Undo pause game
+                mPauseGame = false;
+
                 break;
 
             // Entry - New Button Event
             case R.id.entry_main_new_image_button:
                 Log.d(TAG, "onClick: entry screen - new game button");
+
+                // Pause game
+                mPauseGame = true;
 
                 // Check previous data
                 if (continue_game) {
@@ -821,14 +2092,29 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     switchScreen(R.id.stage_select_screen_main_layout);
                 }
 
+                // Play audio
+                playAudio(MISS);
+
+                // Undo pause game
+                mPauseGame = false;
+
                 break;
 
             // Entry - Settings Button Event
             case R.id.entry_main_settings_image_button:
                 Log.d(TAG, "onClick: entry screen - settings button");
 
+                // Pause game
+                mPauseGame = true;
+
                 // Dialog to edit settings
                 alertEditSettings();
+
+                // Play audio
+                playAudio(CROW_AUDIO);
+
+                // Undo pause game
+                mPauseGame = false;
 
                 break;
 
@@ -836,71 +2122,93 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.entry_main_tutorial_image_button:
                 Log.d(TAG, "onClick: entry screen - tutorial button");
 
-                // Switch to help screen
-                switchScreen(R.id.help_screen_main_layout);
+                // Pause game
+                mPauseGame = true;
 
-                //
+                // Dialog to toggle tutorial
+                alertToggleTutorial();
+
+                // Play audio
+                playAudio(CROW_AUDIO);
+
+                // Undo pause game
+                mPauseGame = false;
+
+                break;
+
+            // Entry - Credits Button Event
+            case R.id.entry_main_credits_image_button:
+                Log.d(TAG, "onClick: entry screen - credits button");
+
+                // Pause game
+                mPauseGame = true;
+
+                // Switch to credits
+                playCredits(2);
+
+                // Play audio
                 playAudio(RUN);
 
-                break;
-
-//--HELP-->
-
-            // Help - Return Button Event
-            case R.id.help_main_return_image_button:
-                Log.d(TAG, "onClick: help screen - return button");
-
-                // Switch to entry screen
-                switchScreen(R.id.entry_screen_main_layout);
-
-                //
-                playAudio(MISS);
-
-                break;
-
-            // Help - Exit Button Event
-            case R.id.help_main_exit_image_button:
-                Log.d(TAG, "onClick: help screen - exit button");
-
-                //
-                playAudio(RUN);
-
-                // Exit game
-                finish();
-
-                break;
-
-            // Help - Tutorial Button Event
-            case R.id.help_main_tutorial_image_button:
-                Log.d(TAG, "onClick: help screen - tour button");
-
-                // Start tutorial
-                playAudio(THUNDER_AUDIO);
+                // Undo pause game
+                mPauseGame = false;
 
                 break;
 
 //--STAGE SELECT-->
-
             // Stage select - Return event
             case R.id.stage_select_return_image_button:
                 Log.d(TAG, "onClick: stage select - return");
 
+                // Pause game
+                mPauseGame = true;
+
                 // Switch to entry screen
                 switchScreen(R.id.entry_screen_main_layout);
 
-                //
-                playAudio(MISS);
+                // Play audio
+                playAudio(RUN);
+
+                // Undo pause game
+                mPauseGame = false;
 
                 break;
 
-            // Select stage - Exit event
-            case R.id.select_stage_exit_image_button:
+            // Select stage - Scorecard event
+            case R.id.select_stage_scorecard_image_button:
+                Log.d(TAG, "onClick: stage select - scorecard");
 
-                //
-                playAudio(RUN);
+                // Check scores present
+                if (stage_01_complete) {
 
-                // End
-                this.finish();
+                    // Pause game
+                    mPauseGame = true;
+
+                    // Display scorecard
+                    if (mTopScores) {
+
+                        //
+                        mTopScores = false;
+
+                        //
+                        mStageSelectScorecardLayout.setVisibility(View.GONE);
+                        mStageSelectStagecardLayout.setVisibility(View.VISIBLE);
+
+                    } else {
+
+                        //
+                        mTopScores = true;
+
+                        //
+                        mStageSelectScorecardLayout.setVisibility(View.VISIBLE);
+                        mStageSelectStagecardLayout.setVisibility(View.GONE);
+                    }
+
+                    // Play audio
+                    playAudio(CROW_AUDIO);
+
+                    // Undo pause game
+                    mPauseGame = false;
+                }
 
                 break;
 
@@ -908,19 +2216,33 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.stage_select_card_01_image_layout:
                 Log.d(TAG, "onClick: stage select - stage 1");
 
-                // Start game - forest [startStage(forest)]
-                //startGame(1);
+                // Pause game
+                mPauseGame = true;
 
-                // Modify - Switch to results
+                // Set stage card - forest [index for resources]
+                mStageIndex = 1;
+                mStageApex = false;
 
-                //
+                // Initial stage status - stage 1 is always ready, all others set to 1, then test for ready
+                mStageReady = 2;
+                
+                // Check stage complete
+                mStageComplete = stage_01_complete;
+                Log.d(TAG, "onClick: stage complete : " + stage_01_complete);
+
+                // Load images, audio, scores
+                loadStageProps(mStageIndex);
+
+                // Switch stage card screen
+                //startStageCard();
+                // Switch to SCREEN(STAGE_CARD)
+                switchScreen(R.id.stage_card_screen_main_layout);
+
+                // Play audio
                 playAudio(CHOMP);
 
-                // Load images, audio, etc.
-                loadStageProps(1);
-
-                //
-                postResults(mStageAccuracy, mStagePredator, mStageApex);
+                // Undo pause game
+                mPauseGame = false;
 
                 break;
 
@@ -928,21 +2250,35 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.stage_select_card_02_image_layout:
                 Log.d(TAG, "onClick: stage select - stage 2");
 
-                // Start game - ocean [startStage(ocean)]
-                if (stage_02_unlocked) {
+                // Pause game
+                mPauseGame = true;
 
-                    //
-                    //startGame(2);
+                // Set stage card - ocean
+                mStageIndex = 2;
+                mStageApex = false;
 
-                    //
-                    playAudio(CHOMP);
+                // Initial stage status - locked
+                mStageReady = 1;
+                    
+                // Test for ready
+                if (stage_01_complete) { mStageReady = 2; }
 
-                    // Load images, audio, etc.
-                    loadStageProps(2);
+                // Check stage complete
+                mStageComplete = stage_02_complete;
 
-                    //
-                    postResults(mStageAccuracy, mStagePredator, mStageApex);
-                }
+                // Load images, audio, scores
+                loadStageProps(mStageIndex);
+
+                // Switch stage card screen
+                //startStageCard();
+                // Switch to SCREEN(STAGE_CARD)
+                switchScreen(R.id.stage_card_screen_main_layout);
+
+                // Play audio
+                playAudio(CHOMP);
+
+                // Undo pause game
+                mPauseGame = false;
 
                 break;
 
@@ -950,21 +2286,35 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.stage_select_card_03_image_layout:
                 Log.d(TAG, "onClick: stage select - stage 3");
 
-                // Start game - mountain [startStage(mountain)]
-                if (stage_03_unlocked) {
+                // Pause game
+                mPauseGame = true;
 
-                    //
-                    //startGame(3);
+                // Set stage card - mountain
+                mStageIndex = 3;
+                mStageApex = false;
 
-                    //
-                    playAudio(CHOMP);
+                // Initial stage status - locked
+                mStageReady = 1;
 
-                    // Load images, audio, etc.
-                    loadStageProps(3);
+                // Test for ready
+                if (stage_02_complete) { mStageReady = 2; }
 
-                    //
-                    postResults(mStageAccuracy, mStagePredator, mStageApex);
-                }
+                // Check stage complete
+                mStageComplete = stage_03_complete;
+
+                // Load images, audio, scores
+                loadStageProps(mStageIndex);
+
+                // Switch stage card screen
+                //startStageCard();
+                // Switch to SCREEN(STAGE_CARD)
+                switchScreen(R.id.stage_card_screen_main_layout);
+
+                // Play audio
+                playAudio(CHOMP);
+
+                // Undo pause game
+                mPauseGame = false;
 
                 break;
 
@@ -972,21 +2322,35 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.stage_select_card_04_image_layout:
                 Log.d(TAG, "onClick: stage select - stage 4");
 
-                // Start game - desert [startStage(desert)]
-                if (stage_04_unlocked) {
+                // Pause game
+                mPauseGame = true;
 
-                    //
-                    //startGame(4);
+                // Set stage card - desert
+                mStageIndex = 4;
+                mStageApex = false;
 
-                    //
-                    playAudio(CHOMP);
+                // Initial stage status - locked
+                mStageReady = 1;
 
-                    // Load images, audio, etc.
-                    loadStageProps(4);
+                // Test for ready
+                if (stage_03_complete) { mStageReady = 2; }
 
-                    //
-                    postResults(mStageAccuracy, mStagePredator, mStageApex);
-                }
+                // Check stage complete
+                mStageComplete = stage_04_complete;
+
+                // Load images, audio, scores
+                loadStageProps(mStageIndex);
+
+                // Switch stage card screen
+                //startStageCard();
+                // Switch to SCREEN(STAGE_CARD)
+                switchScreen(R.id.stage_card_screen_main_layout);
+
+                // Play audio
+                playAudio(CHOMP);
+
+                // Undo pause game
+                mPauseGame = false;
 
                 break;
 
@@ -994,21 +2358,35 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.stage_select_card_05_image_layout:
                 Log.d(TAG, "onClick: stage select - stage 5");
 
-                //
-                if (stage_05_unlocked) {
+                // Pause game
+                mPauseGame = true;
 
-                    //
-                    //startGame(5);
+                // Set stage card - jungle
+                mStageIndex = 5;
+                mStageApex = false;
 
-                    //
-                    playAudio(CHOMP);
+                // Initial stage status - locked
+                mStageReady = 1;
 
-                    // Load images, audio, etc.
-                    loadStageProps(5);
+                // Test for ready
+                if (stage_04_complete) { mStageReady = 2; }
 
-                    //
-                    postResults(mStageAccuracy, mStagePredator, mStageApex);
-                }
+                // Check stage complete
+                mStageComplete = stage_05_complete;
+
+                // Load images, audio, scores
+                loadStageProps(mStageIndex);
+
+                // Switch stage card screen
+                //startStageCard();
+                // Switch to SCREEN(STAGE_CARD)
+                switchScreen(R.id.stage_card_screen_main_layout);
+
+                // Play audio
+                playAudio(CHOMP);
+
+                // Undo pause game
+                mPauseGame = false;
 
                 break;
 
@@ -1016,44 +2394,215 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.stage_select_card_06_image_layout:
                 Log.d(TAG, "onClick: stage select - stage 6");
 
-                // Start game - tundra [ startStage(tundra)]
-                if (stage_06_unlocked) {
+                // Pause game
+                mPauseGame = true;
+
+                // Set stage card - tundra
+                mStageIndex = 6;
+                mStageApex = false;
+
+                // Initial stage status - locked
+                mStageReady = 1;
+
+                // Test for ready
+                if (stage_05_complete) { mStageReady = 2; }
+
+                // Check stage complete
+                mStageComplete = stage_06_complete;
+
+                // Load images, audio, scores
+                loadStageProps(mStageIndex);
+
+                // Switch stage card screen
+                //startStageCard();
+                // Switch to SCREEN(STAGE_CARD)
+                switchScreen(R.id.stage_card_screen_main_layout);
+
+                // Play audio
+                playAudio(CHOMP);
+
+                // Undo pause game
+                mPauseGame = false;
+
+                break;
+
+            case R.id.stage_select_card_07_image_layout:
+                Log.d(TAG, "onClick: stage select - final boss");
+
+                // Pause game
+                mPauseGame = true;
+
+                // Set stage card - final
+                mStageIndex = 7;
+                mStageApex = false;
+
+                // Initial stage status - locked
+                mStageReady = 1;
+
+                // Test for ready
+                if (stage_06_complete) { mStageReady = 2; }
+
+                // Check stage complete
+                mStageComplete = stage_07_complete;
+
+                // Load images, audio, scores
+                loadStageProps(mStageIndex);
+
+                // Switch stage card screen
+                //startStageCard();
+                // Switch to SCREEN(STAGE_CARD)
+                switchScreen(R.id.stage_card_screen_main_layout);
+
+                // Play audio
+                playAudio(GROWL_ALERT);
+
+                // Undo pause game
+                mPauseGame = false;
+
+                break;
+
+//--STAGE CARD-->
+            // Stage card - Header return
+            case R.id.stage_card_header_return_image_button:
+                Log.d(TAG, "onClick: return to stage select");
+
+                //
+                mStageApex = false;
+                mStageIndex = -1;
+                mStageReady = 1;
+                mStageComplete = false;
+
+                //
+                resetCreatureCollection();
+
+                //
+                switchScreen(R.id.stage_select_screen_main_layout);
+
+                break;
+
+            // Stage card - Header collection
+            case R.id.stage_card_top_score_image_button:
+                Log.d(TAG, "onClick: top score image button - mTopScores = " + mTopScores);
+
+                //
+                if (mTopScores) {
 
                     //
-                    //startGame(6);
+                    if (mStageReady == 2) {
+
+                        //
+                        mTopScores = false;
+
+                        //
+                        mStageCardContentBossLayout.setVisibility(View.VISIBLE);
+                        mStageCardTopScoreLayout.setVisibility(View.GONE);
+                        mStageCardScorecardLayout.setVisibility(View.GONE);
+                        mStageCardContentTitleLayout.setBackgroundColor(STAGE_COLOR[mStageIndex - 1]);
+
+                    } else {
+
+                        //
+                        mTopScores = false;
+
+                        //
+                        mStageCardContentBossLayout.setVisibility(View.GONE);
+                        mStageCardTopScoreLayout.setVisibility(View.GONE);
+                        mStageCardScorecardLayout.setVisibility(View.VISIBLE);
+                        mStageCardContentTitleLayout.setBackgroundColor(STAGE_COLOR[mStageIndex - 1]);
+                    }
+
+                } else {
 
                     //
-                    playAudio(CHOMP);
+                    if (mStageReady == 2) {
 
-                    // Load images, audio, etc.
-                    loadStageProps(6);
+                        //
+                        mTopScores = true;
 
-                    //
-                    postResults(mStageAccuracy, mStagePredator, mStageApex);
+                        //
+                        mStageCardContentBossLayout.setVisibility(View.GONE);
+                        mStageCardTopScoreLayout.setVisibility(View.VISIBLE);
+                        mStageCardScorecardLayout.setVisibility(View.GONE);
+                        mStageCardContentTitleLayout.setBackgroundColor(STAGE_COLOR[mStageIndex - 1]);
+
+                    } else {
+
+                        //
+                        mTopScores = true;
+
+                        //
+                        mStageCardContentBossLayout.setVisibility(View.GONE);
+                        mStageCardTopScoreLayout.setVisibility(View.VISIBLE);
+                        mStageCardScorecardLayout.setVisibility(View.GONE);
+                        mStageCardContentTitleLayout.setBackgroundColor(STAGE_COLOR[mStageIndex - 1]);
+
+                    }
                 }
 
                 break;
 
-            case R.id.stage_select_card_final_boss_image_layout:
-                Log.d(TAG, "onClick: stage select - final boss");
+            // Stage card - Content title
+            case R.id.stage_card_content_title_image_button:
 
-                // Stage game - final boss [ stageBoss(final_boss)]
-                if (stage_06_complete) {
+                //
+                playAudio(mGameTapAudio);
+                findViewById(R.id.stage_card_content_title_layout).setBackgroundColor(getResources().getColor(R.color.color_palette_fade_01));
+
+                break;
+
+            // Stage card - Control prev
+            case R.id.stage_card_control_prev_image_button:
+
+                //
+                if (mStageIndex != 0) {
 
                     //
-                    startBoss();
+                    switchStageCard(0);
                 }
+
+                break;
+
+            // Stage card - Control next
+            case R.id.stage_card_control_next_image_button:
+
+                //
+                if (mStageIndex != 7) {
+
+                    //
+                    switchStageCard(1);
+                }
+
+                break;
+
+            // Stage card - Footer play here
+            case R.id.stage_card_ready_play_here_image_button:
+                Log.d(TAG, "onClick: Play Here");
+
+                //
+                //switchScreen(R.id.game_screen_main_layout);
+
+                //
+                loadStageProps(mStageIndex);
+                startGame();
 
                 break;
 
 //--GAME-->
+            // Game - Settings Event
+            case R.id.game_settings_alert_image_button:
+                Log.d(TAG, "onClick: game - settings alert button");
 
-            // Game - Return Event
-            case R.id.game_main_return_image_button:
-                Log.d(TAG, "onClick: game - return button");
+                // Pause game
+                mPauseGame = true;
 
-                // Dialog to confirm lose progress
-                alertReturnLoseProgress();
+                // Settings dialogue
+                alertEditSettings();
+
+                // Play audio
+                playAudio(CROW_AUDIO);
+
+                // Undo pause game
+                //mPauseGame = false; --> in method
 
                 break;
 
@@ -1061,164 +2610,75 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.game_main_exit_image_button:
                 Log.d(TAG, "onClick: game - exit button");
 
-                //
+                // Pause game
+                mPauseGame = true;
+
+                // Exit dialogue
                 alertExitLoseProgress();
 
+                // Play audio
+                playAudio(RUN);
+
+                // Undo pause game
+                //mPauseGame = false; --> in method
+
                 break;
 
             //
-            case R.id.stage_advance_image:
+            case R.id.game_scene_prev_image_button:
                 Log.d(TAG, "onClick: game - stage advance");
 
-                // Advance stage bg
-                if (mStageAdvanceMeter >= mStageAdvanceTarget) {
-
-                    //
-                    playAudio(FLUTE_TRILL_SHORT);
-
-                    //
-                    tapOut();
-                }
-                break;
-
-            // Game - Miss Event
-            case R.id.game_main_pg_creature_canvas_layout:
-                Log.d(TAG, "onClick: game - miss [+1 MissNRoar]");
+                // Pause game
+                mPauseGame = true;
 
                 //
-                if (!mPauseGame || mPauseTimer != -1) {
-
-                    //
-                    if (mTapCount > 1) {
+                //if (mStageAdvanceMeter >= mStageAdvanceTarget) {
 
                         //
-                        playAudio(FLASH_BANG);
-                    }
-                    // Reset tapper
-                    resetTapper();
+                        tapOut();
 
-                    // Tally miss
-                    missPoint();
+                    //
+                    mCurScreen = R.id.game_screen_main_layout;
+                    drawScreen();
 
-                    // Housekeeping
-                    drawScreen(R.id.game_screen_main_layout);
-                }
+                    //
+                    playAudio(FLUTE_TRILL_LONG);
+                //}
 
-                break;
-
-            // Game - Hit Events
-            case R.id.game_main_creature_01_image_button:
-                Log.d(TAG, "onClick: game - hit creature 1 [+1 EatNRun]");
-
-                //
-                if (!mPauseGame || mPauseTimer != -1) {
-
-                    // Inflate tapper
-                    inflateTapper();
-
-                    // Tally point
-                    scorePoint();
-
-                    // Housekeeping
-                    drawScreen(R.id.game_screen_main_layout);
-
-                    // Regenerate creature
-                    switchCreature(R.id.game_main_creature_01_image_button, R.id.game_main_pg_creature_canvas_layout);
-                }
+                // Undo pause game
+                mPauseGame = false;
 
                 break;
 
             //
-            case R.id.game_main_creature_02_image_button:
-                Log.d(TAG, "onClick: game - hit creature 2 [+1 EatNRun]");
+            case R.id.game_scene_next_image_button:
+                Log.d(TAG, "onClick: game - stage advance");
+
+                // Pause game
+                mPauseGame = true;
 
                 //
-                if (!mPauseGame || mPauseTimer != -1) {
+                //if (mStageAdvanceMeter >= mStageAdvanceTarget) {
 
-                    // Inflate tapper
-                    inflateTapper();
+                        //
+                        tapOut();
 
-                    // Tally point
-                    scorePoint();
+                    //
+                    mCurScreen = R.id.game_screen_main_layout;
+                    drawScreen();
 
-                    // Housekeeping
-                    drawScreen(R.id.game_screen_main_layout);
+                    //
+                    playAudio(FLUTE_TRILL_LONG);
+                //}
 
-                    // Regenerate creature
-                    switchCreature(R.id.game_main_creature_02_image_button, R.id.game_main_pg_creature_canvas_layout);
-                }
-
-                break;
-
-            //
-            case R.id.game_main_creature_03_image_button:
-                Log.d(TAG, "onClick: game - hit creature 3 [+1 EatNRun]");
-
-                //
-                if (!mPauseGame || mPauseTimer != -1) {
-
-                    // Inflate tapper
-                    inflateTapper();
-
-                    // Tally point
-                    scorePoint();
-
-                    // Housekeeping
-                    drawScreen(R.id.game_screen_main_layout);
-
-                    // Regenerate creature
-                    switchCreature(R.id.game_main_creature_03_image_button, R.id.game_main_pg_creature_canvas_layout);
-                }
-
-                break;
-
-            //
-            case R.id.game_main_creature_04_image_button:
-                Log.d(TAG, "onClick: game - hit creature 4 [+1 EatNRun]");
-
-                //
-                if (!mPauseGame || mPauseTimer != -1) {
-
-                    // Inflate tapper
-                    inflateTapper();
-
-                    // Tally point
-                    scorePoint();
-
-                    // Housekeeping
-                    drawScreen(R.id.game_screen_main_layout);
-
-                    // Regenerate creature
-                    switchCreature(R.id.game_main_creature_04_image_button, R.id.game_main_pg_creature_canvas_layout);
-                }
-
-                break;
-
-            //
-            case R.id.game_main_creature_05_image_button:
-                Log.d(TAG, "onClick: game - hit creature 5 [+1 EatNRun]");
-
-                //
-                if (!mPauseGame || mPauseTimer != -1) {
-
-                    // Inflate tapper
-                    inflateTapper();
-
-                    // Tally point
-                    scorePoint();
-
-                    // Housekeeping
-                    drawScreen(R.id.game_screen_main_layout);
-
-                    // Regenerate creature
-                    switchCreature(R.id.game_main_creature_05_image_button, R.id.game_main_pg_creature_canvas_layout);
-                }
+                // Undo pause game
+                mPauseGame = false;
 
                 break;
 
             // Game - Run Event
             case R.id.game_main_power_01_image_view:
-                Log.d(TAG, "onClick: game - Run [reset EatNRun]");
+                Log.d(TAG, "onClick: game - power 1");
 
                 //
                 if (!mPauseGame || mPauseTimer != -1) {
@@ -1283,7 +2743,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             // Game - Roar Event
             case R.id.game_main_power_06_image_view:
-                Log.d(TAG, "onClick: game - Roar [reset MissNRoar]");
+                Log.d(TAG, "onClick: game - power 6");
 
                 //
                 if (!mPauseGame || mPauseTimer != -1) {
@@ -1294,15 +2754,167 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 break;
 
+            // Game - Miss Event
+            case R.id.game_main_pg_creature_canvas_layout:
+                Log.d(TAG, "onClick: game - miss [+1 MissNRoar]");
+
+                //
+                if (!mPauseGame || mPauseTimer != -1) {
+
+                    //
+                    if (mTapCount > 2) {
+
+                        //
+                        playAudio(FLASH_BANG);
+                    }
+
+                    // Reset tapper
+                    resetTapper();
+
+                    // Tally miss
+                    missPoint();
+
+                    // Housekeeping
+                    drawScreen();
+                }
+
+                break;
+
+            // Game - Hit Events
+            case R.id.game_main_creature_01_image_button:
+                Log.d(TAG, "onClick: game - hit creature 1 [+1 EatNRun]");
+
+                //
+                if (!mPauseGame || mPauseTimer != -1) {
+
+                    //
+                    mStageCreatureID = mStageCreature01ID;
+
+                    // Inflate tapper
+                    inflateTapper();
+
+                    // Tally point
+                    scorePoint();
+
+                    // Housekeeping
+                    drawScreen();
+
+                    // Regenerate creature
+                    switchCreature(R.id.game_main_creature_01_image_button);
+                }
+
+                break;
+
+            //
+            case R.id.game_main_creature_02_image_button:
+                Log.d(TAG, "onClick: game - hit creature 2 [+1 EatNRun]");
+
+                //
+                if (!mPauseGame || mPauseTimer != -1) {
+
+                    //
+                    mStageCreatureID = mStageCreature02ID;
+
+                    // Inflate tapper
+                    inflateTapper();
+
+                    // Tally point
+                    scorePoint();
+
+                    // Housekeeping
+                    drawScreen();
+
+                    // Regenerate creature
+                    switchCreature(R.id.game_main_creature_02_image_button);
+                }
+
+                break;
+
+            //
+            case R.id.game_main_creature_03_image_button:
+                Log.d(TAG, "onClick: game - hit creature 3 [+1 EatNRun]");
+
+                //
+                if (!mPauseGame || mPauseTimer != -1) {
+
+                    //
+                    mStageCreatureID = mStageCreature03ID;
+
+                    // Inflate tapper
+                    inflateTapper();
+
+                    // Tally point
+                    scorePoint();
+
+                    // Housekeeping
+                    drawScreen();
+
+                    // Regenerate creature
+                    switchCreature(R.id.game_main_creature_03_image_button);
+                }
+
+                break;
+
+            //
+            case R.id.game_main_creature_04_image_button:
+                Log.d(TAG, "onClick: game - hit creature 4 [+1 EatNRun]");
+
+                //
+                if (!mPauseGame || mPauseTimer != -1) {
+
+                    //
+                    mStageCreatureID = mStageCreature04ID;
+
+                    // Inflate tapper
+                    inflateTapper();
+
+                    // Tally point
+                    scorePoint();
+
+                    // Housekeeping
+                    drawScreen();
+
+                    // Regenerate creature
+                    switchCreature(R.id.game_main_creature_04_image_button);
+                }
+
+                break;
+
+            //
+            case R.id.game_main_creature_05_image_button:
+                Log.d(TAG, "onClick: game - hit creature 5 [+1 EatNRun]");
+
+                //
+                if (!mPauseGame || mPauseTimer != -1) {
+
+                    //
+                    mStageCreatureID = mStageCreature05ID;
+
+                    // Inflate tapper
+                    inflateTapper();
+
+                    // Tally point
+                    scorePoint();
+
+                    // Housekeeping
+                    drawScreen();
+
+                    // Regenerate creature
+                    switchCreature(R.id.game_main_creature_05_image_button);
+                }
+
+                break;
+
             //
             case R.id.game_main_boss_image_button:
                 Log.d(TAG, "onClick: game - Boss Tap [-1 mBossHealth]");
 
-                // Attack boss
-                attackBoss();
+                // Check pause game
+                if (!mPauseGame || mPauseTimer != -1) {
 
-                // Move boss
-                moveCreature(R.id.game_main_boss_image_button, R.id.game_main_pg_boss_canvas_layout);
+                    // Attack boss
+                    attackBoss();
+                }
 
                 break;
 
@@ -1310,80 +2922,48 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.game_main_pg_boss_canvas_layout:
                 Log.d(TAG, "onClick: game - Boss Miss [no apex]");
 
-                //
-                playAudio(MISS);
+                // Check pause game
+                if (!mPauseGame || mPauseTimer != -1) {
 
-                //
-                mStageApex = false;
+                    //
+                    playAudio(MISS);
 
-                break;
-
-//--RESULTS-->
-
-            // Results - Return Game Event
-            case R.id.results_main_return_image_button:
-                Log.d(TAG, "onClick: results - return");
-
-                // Switch to entry screen
-                switchScreen(R.id.entry_screen_main_layout);
-
-                //
-                playAudio(MISS);
-
-                break;
-
-            // Results - Exit Game Event
-            case R.id.results_main_exit_image_button:
-                Log.d(TAG, "onClick: results - exit");
-
-                //
-                playAudio(RUN);
-
-                // Exit game
-                this.finish();
-
-                break;
-
-            // Results - Restart Game Event
-            // -- Modify to 'start' -->
-            case R.id.results_footer_restart_image_button:
-                Log.d(TAG, "onClick: results - restart button");
-
-                //
-                playAudio(ROAR);
-
-                // -- Refer to stage props to load level -->
-
-                // Restart level
-                startGame(mStageIndex);
-
-                break;
-
-            // Results - Next Stage Event
-            case R.id.results_footer_next_image_button:
-                Log.d(TAG, "onClick: results - next button");
-
-                // -- Reset stage props -->
-
-                // Restart stage
-                switchScreen(R.id.stage_select_screen_main_layout);
-
-                //
-                playAudio(RUN);
+                    //
+                    mStageApex = false;
+                }
 
                 break;
 
 //--EATEN-->
-
             // Eaten - Return
             case R.id.eaten_main_return_image_button:
                 Log.d(TAG, "onClick: eaten - return");
 
-                // Return
-                switchScreen(R.id.stage_select_screen_main_layout);
+                boolean[] stage_complete = {
+
+                        //
+                        stage_01_complete, stage_02_complete, stage_03_complete, stage_04_complete, stage_05_complete, stage_06_complete, stage_07_complete
+
+                };
 
                 //
                 playAudio(MISS);
+
+                // Initial stage status - locked
+                mStageReady = 1;
+
+                // Test for ready
+                if (stage_complete[mStageIndex - 1]) { mStageReady = 2; }
+
+                mStageComplete = stage_complete[mStageIndex - 1];
+
+                // Load images, audio, scores
+                //loadStageProps(mStageIndex);
+
+                // Switch stage card screen
+                //startStageCard();
+                // Switch to SCREEN(STAGE_CARD)
+                switchScreen(R.id.stage_card_screen_main_layout);
 
                 break;
 
@@ -1403,20 +2983,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.eaten_footer_try_again_image_button:
                 Log.d(TAG, "onClick: eaten - try again");
 
-                // Try again
-                if (mStageIndex != -1) {
-
-                    //
-                    startGame(mStageIndex);
-
-                } else {
-
-                    //
-                    startBoss();
-                }
-
                 //
-                playAudio(ROAR);
+                loadStageProps(mStageIndex);
+                startGame();
 
                 break;
 
@@ -1425,7 +2994,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Log.d(TAG, "onClick: eaten - give up");
 
                 // Tutorial
-                switchScreen(R.id.help_screen_main_layout);
+                alertToggleTutorial();
 
                 //
                 playAudio(RUN);
@@ -1435,186 +3004,290 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     // Initiate game state
-    public void startGame(int stage_index) {
-        Log.d(TAG, "startGame: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" + stage_index + "<<<<<<<<<<<<<<<<<<<<<<<<");
+    public void startGame() {
+        Log.d(TAG, "startGame: Start Game stage ");
 
-        //
-        playAudio(BG_AUDIO);
+        // Pause game
+        mPauseGame = true;
 
-        //
-        mStageIndex = stage_index;
+        // Pass stage ID
+        //mStageIndex = stage_index;
+
+        // Switch boss layout with creature layout
+        mGameBossLayout.setVisibility(View.GONE);
+        mGameCreatureLayout.setVisibility(View.VISIBLE);
+        mGameControlLayout.setVisibility(View.VISIBLE);
+
+        // Increment stage attempts
+        switch (mStageIndex) {
+
+            //
+            case 1:
+
+                //
+                ++stage_01_attempts;
+
+                break;
+
+            //
+            case 2:
+
+                //
+                ++stage_02_attempts;
+
+                break;
+
+            //
+            case 3:
+
+                //
+                ++stage_03_attempts;
+
+                break;
+
+            //
+            case 4:
+
+                //
+                ++stage_04_attempts;
+
+                break;
+
+            //
+            case 5:
+
+                //
+                ++stage_05_attempts;
+
+                break;
+
+            //
+            case 6:
+
+                //
+                ++stage_06_attempts;
+
+                break;
+
+            //
+            case 7:
+
+                //
+                ++stage_07_attempts;
+
+                break;
+        }
 
         // Reset variables
         resetVars();
 
-        // Reset progress marker
-        resetLevelMarkers();
-
-        // Initial background
-        switchEnvironment(R.id.game_main_pg_creature_canvas_layout);
-
         // Switch to game screen
         switchScreen(R.id.game_screen_main_layout);
 
+        // Initial background
+        switchEnvironment();
 
-//       final Runnable runnable = new Runnable() {
-//            @Override
-//            public void run() {
-//            }
-//        };
+        // Play bg audio
+        playAudio(BG_AUDIO);
 
-        h.postDelayed(new Runnable() {
+        // Undo pause game
+        mPauseGame = false;
 
-            @Override
-            public void run() {
-
-                // If game is NOT paused, or if it IS paused with countdown
-                if (!mPauseGame) {
-
-                    // Increment game
-                    gameOn();
-
-                } else {
-
-                    //
-                    if (mPauseTimer > 0) {
-
-                        //
-                        --mPauseTimer;
-
-                    } else if (mPauseTimer != -1) {
-
-                        //
-                        mPauseGame = false;
-                        mPauseTimer = -1;
-
-                    }
-                }
-
-                // Check timer is not expired
-                if (mHungerMeter > 0) {
-
-                    // Increment timer
-                    h.postDelayed(this, mSpeedIndex);
-
-                } else {
-
-                    // End game
-                    playerEaten();
-                }
-            }
-        }, 1);
+        // Start runnable
+        h2.postDelayed(r2, 1000);
+        h4.postDelayed(r4, 1000);
     }
 
     // Game on
     private void gameOn() {
+        Log.d(TAG, "gameOn:");
+
+        // Score most calm
+        if (mSpeedIndex > mStageMostCalm) { mStageMostCalm = mSpeedIndex; }
+
+        // Score most frantic
+        if (mSpeedIndex < mStageMostFrantic) { mStageMostFrantic = mSpeedIndex; }
 
         // Check timer end game if expired, if not increment game
         if (mHungerMeter > 0) {
 
-            //
+            // Decrement hunger
             --mHungerMeter;
 
-            //
-            ++mPower02Meter;
+            // Score closest death
+            if (mHungerMeter < mStageClosestDeath) { mStageClosestDeath = mHungerMeter; }
+
+        } else {
+
+            // Terminate game mode
+            mCreatureGameOver = true;
+
+            // Return
+            return;
+        }
+
+        // Add stopwatch
+        if (mHungerMeter < 10) {
+
+            // Update stopwatch
+            //updatePower06();
+            updatePower(6);
 
             //
-            updatePower06();
+            ++mStageFrenzy;
+            Log.d(TAG, "gameOn: mStageFrenzy : " + mStageFrenzy);
+
+            // Score longest frenzy
+            if (mStageFrenzy > mStageLongestFrenzy) { mStageLongestFrenzy = mStageFrenzy; }
+            Log.d(TAG, "gameOn: mStageLongestFrenzy : " + mStageLongestFrenzy);
 
         } else {
 
             //
-            return;
+            mStageFrenzy = 0;
         }
 
-        //
-        updatePower05();
+        // Add heart
+        //updatePower02();
+        updatePower(2);
 
-        //
+        // Update bolt
+        //updatePower05();
+        updatePower(5);
+
+        // Update tunnel vision
         updateTunnel();
 
-        //
+        // Decrement border fade
         if (mBorderBarrel > 0) {
 
             //
             --mBorderBarrel;
         }
 
-        //
+        // Update border fade
         updateBorder();
 
-        //
+        // Decrement tapper
         if (mTapCount > 1) {
 
             //
             --mTapCount;
         }
 
-        //
+        // Update tapper
         updateTapper();
 
-        // Play heartbeat
+        // Play audio heartbeat
         playAudio(HEARTBEAT);
 
-        //
+        // Play haptic heartbeat
         playHaptic();
     }
 
-    // Update power 1
-    private void updatePower01() {
+    // Update powers
+    private void updatePower(int power) {
 
         //
-        ++mPower01Meter;
-    };
+        switch (power) {
+
+            case 1:
+
+                //
+                ++mPower01Meter;
+
+                break;
+
+            case 2:
+
+                //
+                mPower02Meter = mPower02Meter + 5;
+
+                break;
+
+            //
+            case 3:
+
+                //
+                ++mPower03Meter;
+
+                break;
+
+            //
+            case 4:
+
+                //
+                ++mPower04Meter;
+
+                break;
+
+            //
+            case 5:
+
+                // Check speed index
+                if (mSpeedIndex < 500) {
+
+                    // Add bolt
+                    ++mPower05Meter;
+                }
+
+                break;
+
+            //
+            case 6:
+
+                //
+                ++mPower06Meter;
+
+                break;
+        }
+    }
+
+    // Update power 1
+    //private void updatePower01() {
+
+        //
+        //++mPower01Meter;
+    //}
 
     // Update power 2
-    private void updatePower02() {
+    //private void updatePower02() {
 
         //
-        mPower02Meter = mPower02Meter + 5;
-    };
+        //mPower02Meter = mPower02Meter + 5;
+    //}
 
     // Update power 3
-    private void updatePower03() {
+    //private void updatePower03() {
 
         //
-        ++mSpeciesScore;
-        if (mSpeciesScore > 5) {
-
-            //
-            ++mPower03Meter;
-            mSpeciesScore = 0;
-        }
-    };
+        //++mPower03Meter;
+    //}
 
     // Update power 4
-    private void updatePower04() {
+    //private void updatePower04() {
 
         //
-        ++mPower04Meter;
-    };
+        //++mPower04Meter;
+    //}
 
     // Update power 5
-    private void updatePower05() {
+    //private void updatePower05() {
 
-        //
-        if (mSpeedIndex < 500) {
+        // Check speed index
+        //if (mSpeedIndex < 500) {
 
-            //
-            ++mPower05Meter;
-        }
-    }
+            // Add bolt
+            //++mPower05Meter;
+        //}
+    //}
 
     // Update power 6
-    private void updatePower06() {
+    //private void updatePower06() {
 
         //
-        if (mHungerMeter < 10 && !mPauseGame) {
-
-            //
-            ++mPower06Meter;
-        }
-    }
+        //++mPower06Meter;
+    //}
 
     // Hit sprite
     private void scorePoint() {
@@ -1627,16 +3300,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         //
-        updatePower01();
+        //updatePower01();
+        updatePower(1);
 
         //
-        updatePower03();
+        //updatePower03();
+        updatePower(3);
 
         // Increment hit counter
-        ++mTotalEatScore;
+        ++mStageCreatureKills;
+
+        // Check collection
+        checkCreatureBox();
 
         //
         ++mTurn;
+
+        // Accelerate timer
+        double speedComponent = (mSpeedIndex * .0015);
+        mSpeedIndex = mSpeedIndex + (long) speedComponent;
 
         //
         ++mHungerMeter;
@@ -1645,15 +3327,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         playAudio(HIT);
 
         //
-        if (mTapCount > 3 && mTapCount < 13) {
+        if (mTapCount > 0 && mTapCount < 10
+                ) {
 
             //
-            playAudio(PINGS[mTapCount - 3]);
+            playAudio(PINGS[mTapCount]);
         }
 
         // Reset bold image
-        if (mHungerMeter < TUNNEL_FADE.length) {
-            mGameTunnelVisionLayout.setAlpha((float) TUNNEL_FADE[mHungerMeter]);
+        if (mHungerMeter < ALPHA_INDEX.length) {
+            mGameTunnelVisionLayout.setAlpha((float) ALPHA_INDEX[mHungerMeter]);
         }
     }
 
@@ -1673,22 +3356,54 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             //
             playAudio(FLASH_BANG);
 
+        } else {
+
+            // Play miss noise
+            playAudio(MISS);
         }
-        //
-        updateTapper();
 
         //
-        updatePower04();
+        //updatePower04();
+        updatePower(4);
 
         //
         ++mTurn;
 
-        // Play miss noise
-        playAudio(MISS);
-
         // Accelerate timer
-        double speedComponent = (mSpeedIndex * .15);
+        double speedComponent = (mSpeedIndex * .1);
         mSpeedIndex = mSpeedIndex - (long) speedComponent;
+    }
+
+    // Check creature box
+    private void checkCreatureBox() {
+        Log.d(TAG, "checkCreatureBox: Checking empty... ");
+
+        // Check creature box is not empty
+        if (!mStageCreatureBox.isEmpty()) {
+            Log.d(TAG, "checkCreatureBox: Checking contains " + mCreatureID + "...");
+
+            // Check if creature is already in box
+            if (!mStageCreatureBox.contains(mStageCreatureID)) {
+                Log.d(TAG, "checkCreatureBox: Adding creature " + mCreatureID + "...");
+
+                // Add creature to box
+                mStageCreatureBox.add(mStageCreatureID);
+                buildCreatureCollection(mStageCreatureID, mStageCreatureBox.size());
+            } else {
+                Log.d(TAG, "checkCreatureBox: Looks like it's already there " + mCreatureID + "...");
+            }
+        } else {
+            Log.d(TAG, "checkCreatureBox: Since it's empty, we'll start with " + mCreatureID + "...");
+            // Add creature to box
+            mStageCreatureBox.add(mStageCreatureID);
+            buildCreatureCollection(mStageCreatureID, mStageCreatureBox.size());
+        }
+        // List contents of box
+        for (int creature : mStageCreatureBox) {
+
+            // Display
+            Log.d(TAG, "checkCreatureBox: contains - " + creature + " - ");
+        }
     }
 
     // Use power
@@ -1708,6 +3423,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     mPower01Target += 1;
 
                     //
+                    ++mStagePredator;
+
+                    //
                     setStage();
 
                     //
@@ -1721,8 +3439,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     mPower02Meter = 0;
                     mPower02Target += 1;
 
-                    //
-                    mSpeedIndex = 2000;
+                    // Accelerate timer
+                    double speedComponent = (mSpeedIndex * .5);
+                    mSpeedIndex = mSpeedIndex + (long) speedComponent;
 
                     //
                     playAudio(BREATH);
@@ -1736,7 +3455,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     mPower03Target += 1;
 
                     //
-                    switchEnvironment(mGameCreatureLayout.getId());
+                    switchEnvironment();
 
                     //
                     playAudio(RUN);
@@ -1771,47 +3490,57 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                         // Inflate tapper
                         inflateTapper();
+                        //h4.postDelayed(r4, 1000);
 
                         // Inflate tapper
                         inflateTapper();
+                        //h4.postDelayed(r4, 1000);
 
                         // Inflate tapper
                         inflateTapper();
+                        //h4.postDelayed(r4, 1000);
 
                         // Inflate tapper
                         inflateTapper();
+                        //h4.postDelayed(r4, 1000);
 
                         // Inflate tapper
                         inflateTapper();
+                        //h4.postDelayed(r4, 1000);
 
                         // Increment hit counter
-                        updatePower02();
+                        //updatePower02();
+                        updatePower(2);
 
                         //
-                        mSpeciesScore = mSpeciesScore + 5;
                         ++mTurn;
 
                         // Play bite noise
                         playAudio(FRENZY);
 
                         // Accelerate timer
-                        double speedComponent = (mSpeedIndex * .25);
-                        mSpeedIndex = mSpeedIndex + (long) speedComponent;
+                        double speedComponentAlt = (mSpeedIndex * .25);
+                        mSpeedIndex = mSpeedIndex + (long) speedComponentAlt;
 
                         // Regenerate creature
-                        switchCreature(R.id.game_main_creature_01_image_button, R.id.game_main_pg_creature_canvas_layout);
+                        switchCreature(R.id.game_main_creature_01_image_button);
+                        //h4.postDelayed(r4, 1000);
 
                         // Regenerate creature
-                        switchCreature(R.id.game_main_creature_02_image_button, R.id.game_main_pg_creature_canvas_layout);
+                        switchCreature(R.id.game_main_creature_02_image_button);
+                        //h4.postDelayed(r4, 1000);
 
                         // Regenerate creature
-                        switchCreature(R.id.game_main_creature_03_image_button, R.id.game_main_pg_creature_canvas_layout);
+                        switchCreature(R.id.game_main_creature_03_image_button);
+                        //h4.postDelayed(r4, 1000);
 
                         // Regenerate creature
-                        switchCreature(R.id.game_main_creature_04_image_button, R.id.game_main_pg_creature_canvas_layout);
+                        switchCreature(R.id.game_main_creature_04_image_button);
+                        //h4.postDelayed(r4, 1000);
 
                         // Regenerate creature
-                        switchCreature(R.id.game_main_creature_05_image_button, R.id.game_main_pg_creature_canvas_layout);
+                        switchCreature(R.id.game_main_creature_05_image_button);
+                        //h4.postDelayed(r4, 1000);
                     }
 
                     break;
@@ -1833,7 +3562,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
 
             // Housekeeping
-            drawScreen(R.id.game_screen_main_layout);
+            drawScreen();
         }
     }
 
@@ -1841,102 +3570,51 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void startBoss() {
         Log.d(TAG, "startBoss: start boss");
 
-        //
+        // Pause game
         mPauseGame = true;
+
+        //
         mStageApex = true;
-        mKillBoss = false;
+        mBossGameOver = false;
 
         //
         mBossHealth = 4;
+        mHungerMeter = 10;
 
         //
-        //playAudio(mGameBossCry);
-
-        //
-        if (stage_06_complete && mStageIndex == -1) {
-
-            //
-            switchScreen(R.id.game_screen_main_layout);
-
-            //
-            mGameBossImageButton.setBackground(versionCheck(R.drawable.final_boss));
-
-            //
-            mGameBossLayout.setBackground(versionCheck(R.drawable.final_boss_bg));
-            mGameBossLayout.setVisibility(View.GONE);
-            mGameCreatureLayout.setVisibility(View.VISIBLE);
-
-            //
-            mGameMainStageImageView.setBackground(versionCheck(R.drawable.final_boss_title_image));
-
-            //
-            findViewById(R.id.game_main_level_marker_layout).setVisibility(View.GONE);
-            findViewById(R.id.game_main_power_layouts).setVisibility(View.GONE);
-
-            //
-            mGameBossCry = ROAR;
-
-            //
-            //mResultsSubStageImageView.setBackground(versionCheck(R.drawable.final_boss_title_image));
-            mEatenStageImageView.setBackground(versionCheck(R.drawable.final_boss_title_image));
-
-            //
-            mGameTapAudio = THUNDER_AUDIO;
-
-            //
-            //mResultsMainBGImageView.setBackground(versionCheck(R.drawable.results_main_final_boss_bg_image));
-
-        } else {
-
-            //
-            mStagePredator = getAggressionScore(mAggressionScore) + getSpeciesScore(mSpeciesScore);
-            mStageAccuracy = String.valueOf(mTotalEatScore);
-            //getPercentage(mTurn, mSpeciesScore);
-        }
+        mGameBossLayout.setVisibility(View.VISIBLE);
+        mGameCreatureLayout.setVisibility(View.GONE);
+        mGameControlLayout.setVisibility(View.GONE);
 
         //
         mGameCreatureLayout.setVisibility(View.GONE);
-        mGameBossLayout.setVisibility(View.VISIBLE);
+        mGameCreature01ImageButton.setVisibility(View.GONE);
+        mGameCreature02ImageButton.setVisibility(View.GONE);
+        mGameCreature03ImageButton.setVisibility(View.GONE);
+        mGameCreature04ImageButton.setVisibility(View.GONE);
+        mGameCreature05ImageButton.setVisibility(View.GONE);
+
+        //
+        moveCreature(R.id.game_main_boss_image_button, R.id.game_main_pg_boss_canvas_layout);
 
         //
         mGameBossImageButton.setVisibility(View.VISIBLE);
 
         //
-        drawScreen(R.id.game_screen_main_layout);
+        drawScreen();
+
+        // Undo pause game
+        mPauseGame = false;
 
         // Run timer through executable task - background activities
-        final Handler h = new Handler();
-        h.postDelayed(new Runnable() {
-
-            // Incremental
-            int i = 0;
-
-            // Run task
-            @Override
-            public void run() {
-
-                // Check incremental
-                if (!mKillBoss) {
-                    if (i < 3) {
-
-                        playAudio(mGameBossCry);
-
-                        // Increment timer
-                        h.postDelayed(this, 2000);
-                        i++;
-
-                        //
-                    } else {
-                        // Eaten
-                        playerEaten();
-                    }
-                }
-            }
-        }, 1000);
+        h3.postDelayed(r3, 1000);
     }
 
     // Attack boss
     private void attackBoss() {
+
+        //
+        mGameBossImageButton.setVisibility(View.INVISIBLE);
 
         //
         playAudio(ROAR);
@@ -1950,146 +3628,423 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else {
 
             //
-            killBoss();
+            mBossGameOver = true;
+        }
+
+        // Move boss
+        if (!mBossGameOver) {
+
+            //
+            moveCreature(R.id.game_main_boss_image_button, R.id.game_main_pg_boss_canvas_layout);
         }
 
         //
-        drawScreen(R.id.game_screen_main_layout);
+        drawScreen();
     }
 
     // Kill boss
-    private void killBoss() {
+    private void killBoss()    {
         Log.d(TAG, "killBoss: kill boss");
 
+        // Pause game
+        mPauseGame = true;
+
+        // Get time score
+        mStageTime = mStageTimer;
+
         //
+        mStageComplete = true;
+
+        // Extract stage scores
+        extractScores();
+        
+        // Set data
+        setGameData();
+
+        // Get data
+        getGameData();
+
+        // Built stage scores
+        buildStageScores();
+
+        // Load stage card
+        mStageReady = 3;
+        //startStageCard();
+        // Switch to SCREEN(STAGE_CARD)
+        switchScreen(R.id.stage_card_screen_main_layout);
+
+        // Play audio
         playAudio(mGameTapAudio);
-        //
-        continue_game = true;
 
-        //
-        mKillBoss = true;
+        // Undo pause game
+        //mPauseGame = false;
+    }
 
+    // Extract stage scores
+    private void extractScores() {
+        
         //
         if (mStageIndex != -1) {
+            Log.d(TAG, "extractScores: mStageIndex " + mStageIndex);
 
-            //
+            // Switch stage case
             switch (mStageIndex) {
 
-                //
+                // Forest
                 case 1:
 
+                    // Kill boss
+
+                    ++stage_01_boss_kills;
+
+                    // Stage complete
+                    stage_01_complete = mStageComplete;
+
+                    // Scores apex, predator, and accuracy
+                    if (!stage_01_apex) { stage_01_apex = mStageApex; } // Replace if not already true, if it's false, it won't matter anyway.
+                    
                     //
-                    stage_01_complete = true;
-                    stage_01_apex = mStageApex;
-                    stage_01_predator = mStagePredator;
-                    stage_01_accuracy = mStageAccuracy;
+                    if (mStagePredator > stage_01_predator) { stage_01_predator = mStagePredator; } // Replace if better - maintain top scores at top
+                    
+                    //
+                    mStageAccuracy = getPercentage(mTurn, mStageCreatureKills);
+                    if (mStageAccuracy > stage_01_accuracy) { stage_01_accuracy = mStageAccuracy; } // Replace if better
+                    Log.d(TAG, "extractScores: saved accuracy to mStageAccuracy and stage_01_accuracy : " + mStageAccuracy + " : " + stage_01_accuracy);
+
+                    // Scores best time and total time
+                    if (mStageTime < stage_01_best_time || stage_01_best_time == 0) { stage_01_best_time = mStageTime; } // Replace if better
+                    stage_01_total_time += mStageTime; // This will accumulate regardless
+
+                    // Scores creature kills and collection
+                    stage_01_creature_kills += mStageCreatureKills; // This will accumulate regardless
+
+                    //
+                    mStageCollection = mStageCreatureBox.size();
+
+                    //
+
+
+
+                    //
+                    if (mStageCollection > stage_01_collection) { stage_01_collection = mStageCollection; } // Need to parse this programmatically
+
+                    // Top scores
+                    if (mStageHighestStreak > stage_01_highest_streak) { stage_01_highest_streak = mStageHighestStreak; } // Replace if better
+                    if (mStageClosestDeath < stage_01_closest_death) { stage_01_closest_death = mStageClosestDeath; } // Replace if better
+                    if (mStageLongestFrenzy > stage_01_longest_frenzy) { stage_01_longest_frenzy = mStageLongestFrenzy; } // Replace if better
+                    if (mStageMostCalm > stage_01_most_calm) { stage_01_most_calm = mStageMostCalm; } // Replace if better
+                    if (mStageMostFrantic < stage_01_most_frantic) { stage_01_most_frantic = mStageMostFrantic; } // Replace if better
 
                     break;
 
-                //
+                // Ocean
                 case 2:
 
+                    // Kill boss
+
+                    ++stage_02_boss_kills;
+
+                    // Stage complete
+                    stage_02_complete = mStageComplete;
+
+                    // Scores apex, predator, and accuracy
+                    if (!stage_02_apex) { stage_02_apex = mStageApex; } // Replace if not already true, if it's false, it won't matter anyway.
+
                     //
-                    stage_02_complete = true;
-                    stage_02_apex = mStageApex;
-                    stage_02_predator = mStagePredator;
-                    stage_02_accuracy = mStageAccuracy;
+                    if (mStagePredator > stage_02_predator) { stage_02_predator = mStagePredator; } // Replace if better - maintain top scores at top
+
+                    //
+                    mStageAccuracy = getPercentage(mTurn, mStageCreatureKills);
+                    if (mStageAccuracy > stage_02_accuracy) { stage_02_accuracy = mStageAccuracy; } // Replace if better
+
+                    // Scores best time and total time
+                    if (mStageTime < stage_02_best_time || stage_02_best_time == 0) { stage_02_best_time = mStageTime; } // Replace if better
+                    stage_02_total_time += mStageTime; // This will accumulate regardless
+
+
+                    // Scores creature kills and collection
+                    stage_02_creature_kills += mStageCreatureKills; // This will accumulate regardless
+
+                    //
+                    mStageCollection = mStageCreatureBox.size();
+                    if (mStageCollection > stage_02_collection) { stage_02_collection = mStageCollection; } // Need to parse this programmatically
+
+                    // Top scores
+                    if (mStageHighestStreak > stage_02_highest_streak) { stage_02_highest_streak = mStageHighestStreak; } // Replace if better
+                    if (mStageClosestDeath < stage_02_closest_death) { stage_02_closest_death = mStageClosestDeath; } // Replace if better
+                    if (mStageLongestFrenzy > stage_02_longest_frenzy) { stage_02_longest_frenzy = mStageLongestFrenzy; } // Replace if better
+                    if (mStageMostCalm > stage_02_most_calm) { stage_02_most_calm = mStageMostCalm; } // Replace if better
+                    if (mStageMostFrantic < stage_02_most_frantic) { stage_02_most_frantic = mStageMostFrantic; } // Replace if better
 
                     break;
 
-                //
+                // Mountain
                 case 3:
 
+                    // Kill boss
+
+                    ++stage_03_boss_kills;
+
+                    // Stage complete
+                    stage_03_complete = mStageComplete;
+
+                    // Scores apex, predator, and accuracy
+                    if (!stage_03_apex) { stage_03_apex = mStageApex; } // Replace if not already true, if it's false, it won't matter anyway.
+
                     //
-                    stage_03_complete = true;
-                    stage_03_apex = mStageApex;
-                    stage_03_predator = mStagePredator;
-                    stage_03_accuracy = mStageAccuracy;
+                    if (mStagePredator > stage_03_predator) { stage_03_predator = mStagePredator; } // Replace if better - maintain top scores at top
+
+                    //
+                    mStageAccuracy = getPercentage(mTurn, mStageCreatureKills);
+                    if (mStageAccuracy > stage_03_accuracy) { stage_03_accuracy = mStageAccuracy; } // Replace if better
+
+                    // Scores best time and total time
+                    if (mStageTime < stage_03_best_time || stage_03_best_time == 0) { stage_03_best_time = mStageTime; } // Replace if better
+                    stage_03_total_time += mStageTime; // This will accumulate regardless
+
+
+                    // Scores creature kills and collection
+                    stage_03_creature_kills += mStageCreatureKills; // This will accumulate regardless
+
+                    //
+                    mStageCollection = mStageCreatureBox.size();
+                    if (mStageCollection > stage_03_collection) { stage_03_collection = mStageCollection; } // Need to parse this programmatically
+
+                    // Top scores
+                    if (mStageHighestStreak > stage_03_highest_streak) { stage_03_highest_streak = mStageHighestStreak; } // Replace if better
+                    if (mStageClosestDeath < stage_03_closest_death) { stage_03_closest_death = mStageClosestDeath; } // Replace if better
+                    if (mStageLongestFrenzy > stage_03_longest_frenzy) { stage_03_longest_frenzy = mStageLongestFrenzy; } // Replace if better
+                    if (mStageMostCalm > stage_03_most_calm) { stage_03_most_calm = mStageMostCalm; } // Replace if better
+                    if (mStageMostFrantic < stage_03_most_frantic) { stage_03_most_frantic = mStageMostFrantic; } // Replace if better
 
                     break;
 
-                //
+                // Desert
                 case 4:
 
+                    // Kill boss
+
+                    ++stage_04_boss_kills;
+
+                    // Stage complete
+                    stage_04_complete = mStageComplete;
+
+                    // Scores apex, predator, and accuracy
+                    if (!stage_04_apex) { stage_04_apex = mStageApex; } // Replace if not already true, if it's false, it won't matter anyway.
+
                     //
-                    stage_04_complete = true;
-                    stage_04_apex = mStageApex;
-                    stage_04_predator = mStagePredator;
-                    stage_04_accuracy = mStageAccuracy;
+                    if (mStagePredator > stage_04_predator) { stage_04_predator = mStagePredator; } // Replace if better - maintain top scores at top
+
+                    //
+                    mStageAccuracy = getPercentage(mTurn, mStageCreatureKills);
+                    if (mStageAccuracy > stage_04_accuracy) { stage_04_accuracy = mStageAccuracy; } // Replace if better
+
+                    // Scores best time and total time
+                    if (mStageTime < stage_04_best_time || stage_04_best_time == 0) { stage_04_best_time = mStageTime; } // Replace if better
+                    stage_04_total_time += mStageTime; // This will accumulate regardless
+
+
+                    // Scores creature kills and collection
+                    stage_04_creature_kills += mStageCreatureKills; // This will accumulate regardless
+
+                    //
+                    mStageCollection = mStageCreatureBox.size();
+                    if (mStageCollection > stage_04_collection) { stage_04_collection = mStageCollection; } // Need to parse this programmatically
+
+                    // Top scores
+                    if (mStageHighestStreak > stage_04_highest_streak) { stage_04_highest_streak = mStageHighestStreak; } // Replace if better
+                    if (mStageClosestDeath < stage_04_closest_death) { stage_04_closest_death = mStageClosestDeath; } // Replace if better
+                    if (mStageLongestFrenzy > stage_04_longest_frenzy) { stage_04_longest_frenzy = mStageLongestFrenzy; } // Replace if better
+                    if (mStageMostCalm > stage_04_most_calm) { stage_04_most_calm = mStageMostCalm; } // Replace if better
+                    if (mStageMostFrantic < stage_04_most_frantic) { stage_04_most_frantic = mStageMostFrantic; } // Replace if better
 
                     break;
 
-                //
+                // Jungle
                 case 5:
 
+                    // Kill boss
+
+                    ++stage_05_boss_kills;
+
+                    // Stage complete
+                    stage_05_complete = mStageComplete;
+
+                    // Scores apex, predator, and accuracy
+                    if (!stage_05_apex) { stage_05_apex = mStageApex; } // Replace if not already true, if it's false, it won't matter anyway.
+
                     //
-                    stage_05_complete = true;
-                    stage_05_apex = mStageApex;
-                    stage_05_predator = mStagePredator;
-                    stage_05_accuracy = mStageAccuracy;
+                    if (mStagePredator > stage_05_predator) { stage_05_predator = mStagePredator; } // Replace if better - maintain top scores at top
+
+                    //
+                    mStageAccuracy = getPercentage(mTurn, mStageCreatureKills);
+                    if (mStageAccuracy > stage_05_accuracy) { stage_05_accuracy = mStageAccuracy; } // Replace if better
+
+                    // Scores best time and total time
+                    if (mStageTime < stage_05_best_time || stage_05_best_time == 0) { stage_05_best_time = mStageTime; } // Replace if better
+                    stage_05_total_time += mStageTime; // This will accumulate regardless
+
+
+                    // Scores creature kills and collection
+                    stage_05_creature_kills += mStageCreatureKills; // This will accumulate regardless
+
+                    //
+                    mStageCollection = mStageCreatureBox.size();
+                    if (mStageCollection > stage_05_collection) { stage_05_collection = mStageCollection; } // Need to parse this programmatically
+
+                    // Top scores
+                    if (mStageHighestStreak > stage_05_highest_streak) { stage_05_highest_streak = mStageHighestStreak; } // Replace if better
+                    if (mStageClosestDeath < stage_05_closest_death) { stage_05_closest_death = mStageClosestDeath; } // Replace if better
+                    if (mStageLongestFrenzy > stage_05_longest_frenzy) { stage_05_longest_frenzy = mStageLongestFrenzy; } // Replace if better
+                    if (mStageMostCalm > stage_05_most_calm) { stage_05_most_calm = mStageMostCalm; } // Replace if better
+                    if (mStageMostFrantic < stage_05_most_frantic) { stage_05_most_frantic = mStageMostFrantic; } // Replace if better
 
                     break;
 
-                //
+                // Tundra
                 case 6:
 
+                    // Kill boss
+
+                    ++stage_06_boss_kills;
+
+                    // Stage complete
+                    stage_06_complete = mStageComplete;
+
+                    // Scores apex, predator, and accuracy
+                    if (!stage_06_apex) { stage_06_apex = mStageApex; } // Replace if not already true, if it's false, it won't matter anyway.
+
                     //
-                    stage_06_complete = true;
-                    stage_06_apex = mStageApex;
-                    stage_06_predator = mStagePredator;
-                    stage_06_accuracy = mStageAccuracy;
+                    if (mStagePredator > stage_06_predator) { stage_06_predator = mStagePredator; } // Replace if better - maintain top scores at top
+
+                    //
+                    mStageAccuracy = getPercentage(mTurn, mStageCreatureKills);
+                    if (mStageAccuracy > stage_06_accuracy) { stage_06_accuracy = mStageAccuracy; } // Replace if better
+
+                    // Scores best time and total time
+                    if (mStageTime < stage_06_best_time || stage_06_best_time == 0) { stage_06_best_time = mStageTime; } // Replace if better
+                    stage_06_total_time += mStageTime; // This will accumulate regardless
+
+
+                    // Scores creature kills and collection
+                    stage_06_creature_kills += mStageCreatureKills; // This will accumulate regardless
+
+                    //
+                    mStageCollection = mStageCreatureBox.size();
+                    if (mStageCollection > stage_06_collection) { stage_06_collection = mStageCollection; } // Need to parse this programmatically
+
+                    // Top scores
+                    if (mStageHighestStreak > stage_06_highest_streak) { stage_06_highest_streak = mStageHighestStreak; } // Replace if better
+                    if (mStageClosestDeath < stage_06_closest_death) { stage_06_closest_death = mStageClosestDeath; } // Replace if better
+                    if (mStageLongestFrenzy > stage_06_longest_frenzy) { stage_06_longest_frenzy = mStageLongestFrenzy; } // Replace if better
+                    if (mStageMostCalm > stage_06_most_calm) { stage_06_most_calm = mStageMostCalm; } // Replace if better
+                    if (mStageMostFrantic < stage_06_most_frantic) { stage_06_most_frantic = mStageMostFrantic; } // Replace if better
 
                     break;
 
+                // Final
+                case 7:
+
+                    // Kill boss
+
+                    ++stage_07_boss_kills;
+
+                    // Stage complete
+                    stage_07_complete = mStageComplete;
+
+                    // Scores apex, predator, and accuracy
+                    if (!stage_07_apex) { stage_07_apex = mStageApex; } // Replace if not already true, if it's false, it won't matter anyway.
+
+                    //
+                    if (mStagePredator > stage_07_predator) { stage_07_predator = mStagePredator; } // Replace if better - maintain top scores at top
+
+                    //
+                    mStageAccuracy = getPercentage(mTurn, mStageCreatureKills);
+                    if (mStageAccuracy > stage_07_accuracy) { stage_07_accuracy = mStageAccuracy; } // Replace if better
+
+                    // Scores best time and total time
+                    if (mStageTime < stage_07_best_time || stage_07_best_time == 0) { stage_07_best_time = mStageTime; } // Replace if better
+                    stage_07_total_time += mStageTime; // This will accumulate regardless
+
+
+                    // Scores creature kills and collection
+                    stage_07_creature_kills += mStageCreatureKills; // This will accumulate regardless
+
+                    //
+                    mStageCollection = mStageCreatureBox.size();
+                    if (mStageCollection > stage_07_collection) { stage_07_collection = mStageCollection; } // Need to parse this programmatically
+
+                    // Top scores
+                    if (mStageHighestStreak > stage_07_highest_streak) { stage_07_highest_streak = mStageHighestStreak; } // Replace if better
+                    if (mStageClosestDeath < stage_07_closest_death) { stage_07_closest_death = mStageClosestDeath; } // Replace if better
+                    if (mStageLongestFrenzy > stage_07_longest_frenzy) { stage_07_longest_frenzy = mStageLongestFrenzy; } // Replace if better
+                    if (mStageMostCalm > stage_07_most_calm) { stage_07_most_calm = mStageMostCalm; } // Replace if better
+                    if (mStageMostFrantic < stage_07_most_frantic) { stage_07_most_frantic = mStageMostFrantic; } // Replace if better
+
+                    break;
             }
+        }
+    }
+    
+    // Creature stage end
+    private void creatureStageEnd() {
+        Log.d(TAG, "creatureStageEnd: hunger is " + mHungerMeter);
+
+        //
+        if (mHungerMeter > 0) {
+            Log.d(TAG, "creatureStageEnd: bing - startboss");
+
+            //
+            startBoss();
+
+        } else {
+            Log.d(TAG, "creatureStageEnd: bang - playereaten");
+
+            //
+            mGameCreatureLayout.setVisibility(View.GONE);
+            mGameBossLayout.setVisibility(View.VISIBLE);
+
+            //
+            playerEaten();
+        }
+    }
+
+    // Boss stage end
+    private void bossStageEnd() {
+
+        //
+        if (mHungerMeter > 0) {
+
+            //
+            killBoss();
 
         } else {
 
             //
-            game_complete = true;
-            stage_final_boss_apex = mStageApex;
-
-            //
-            switchScreen(SCREENS[7]);
-            //
-            playOutroCredits();
-
+            playerEaten();
         }
-
-        //
-        mGameBossLayout.setVisibility(View.GONE);
-        mGameCreatureLayout.setVisibility(View.VISIBLE);
-
-        //
-        mGameBossImageButton.setVisibility(View.GONE);
-
-        //
-        if (mStageIndex != -1) {
-
-            //
-            postResults(getPercentage(mTurn, mSpeciesScore), getAggressionScore(mAggressionScore) + getSpeciesScore(mSpeciesScore), mStageApex);
-        }
-        //
-        setGameData();
-
-        //
-        getGameData();
     }
 
     // Reset game variables
     private void resetVars() {
 
+        // Reset progress marker
+        resetLevelMarkers();
+
         //
-        mHungerMeter = 21;
+        mHungerMeter = 30;
         mSpeedIndex = 1000;
-        mStageAdvanceMeter = 0;
-        mStageAdvanceTarget = 1;
+        //mStageAdvanceMeter = 0;
+        //mStageAdvanceTarget = 1;
+
+        //
+        mStageFrenzy = 0;
 
         //
         mPower01Meter = 0;
         mPower01Target = 5;
         mPower02Meter = 0;
-        mPower02Target = 10;
+        mPower02Target = 20;
         mPower03Meter = 0;
         mPower03Target = 5;
         mPower04Meter = 0;
@@ -2103,300 +4058,89 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mTurn = 0;
 
         //
-        mAggressionScore = 0;
-        mSpeciesScore = 0;
-        mTotalEatScore = 0;
-
-        //
-        mTapBarrel = 10;
+        mTapBarrel = 3;
         mTapCount = 0;
         mTapTotal = 0;
 
         //
         mBorderBarrel = 0;
         mPauseTimer = -1;
+        mStageTimer = 0;
+        mStageTime = 0;
 
         //
         mPauseGame = false;
+        mCreatureGameOver = false;
+        mBossGameOver = false;
 
         //
-        mBossHealth = 4;
-        mKillBoss = false;
+        mBossHealth = 0;
 
         //
-        mStageApex = false;
-        mStageAccuracy = null;
-        mStagePredator = null;
+        mStagePredator = 0;
+        mStageAccuracy = 0f;
 
+        //
+        mStageCreatureKills = 0;
+        mStageCollection = 0;
+        mStageCreatureBox.clear();
+
+        //
+        mStageHighestStreak = 0;
+        mStageClosestDeath = 30;
+        mStageLongestFrenzy = 0;
+        mStageMostCalm = 1000;
+        mStageMostFrantic = 1000;
     }
 
-    // Load props
+    // Load / unload stage props
     public void loadStageProps(int stage_index) {
+        Log.d(TAG, "loadStageProps: " + stage_index);
+
+        // Load scene images and names
+        mStageSceneImages.clear();
+        //mStageSceneImages.add(android.R.color.transparent);
+        mStageSceneNames.clear();
+
+        // Ready stage creature collection array
+        mStageCreatureBox.clear();
 
         //
-        mStageBGImages.clear();
+        mStageCreatureID = -1;
 
-        //
-        switch(stage_index) {
+        // Load stage scene images
+        for (int scene : STAGE_SCENES[stage_index - 1]) {
 
-            case 1:
-
-                //
-                for (int bg : FOREST_SCENES) {
-
-                    //
-                    mStageBGImages.add(bg);
-                }
-
-                //
-                mGameMainStageImageView.setBackground(versionCheck(R.drawable.stage_01_title_image));
-
-                //
-                mResultsSubStageImageView.setBackground(versionCheck(R.drawable.stage_01_title_image));
-                mResultsStageCardImageView.setBackground(versionCheck(R.drawable.forest_card));
-                mEatenStageImageView.setBackground(versionCheck(R.drawable.stage_01_title_image));
-
-                //
-                mGameBorderLayout.setBackground(versionCheck(R.drawable.forest_border));
-                mGameBorderLayout.setVisibility(View.VISIBLE);
-
-                //
-                mGameAdvanceImageView.setBackground(versionCheck(R.drawable.forest_tap));
-
-                //
-                mGameTapAudio = THUNDER_AUDIO;
-
-                //
-                mGameBossCry = WOLF_CRY;
-
-                //
-                mGameBossImageButton.setBackground(versionCheck(R.drawable.forest_boss));
-
-                //
-                mGameBossLayout.setBackground(versionCheck(R.drawable.forest_bg_boss));
-                mGameBossLayout.setVisibility(View.GONE);
-                mGameCreatureLayout.setVisibility(View.VISIBLE);
-
-                //
-                mResultsMainBGImageView.setBackground(versionCheck(R.drawable.results_forest_bg_image));
-
-                break;
-
-            case 2:
-
-                //
-                for (int bg : OCEAN_SCENES) {
-
-                    //
-                    mStageBGImages.add(bg);
-                }
-
-                //
-                mGameMainStageImageView.setBackground(versionCheck(R.drawable.stage_02_title_image));
-
-                //
-                mResultsSubStageImageView.setBackground(versionCheck(R.drawable.stage_02_title_image));
-                mResultsStageCardImageView.setBackground(versionCheck(R.drawable.ocean_card));
-                mEatenStageImageView.setBackground(versionCheck(R.drawable.stage_02_title_image));
-
-                //
-                mGameBorderLayout.setBackground(versionCheck(R.drawable.ocean_border));
-                mGameBorderLayout.setVisibility(View.VISIBLE);
-
-                //
-                mGameAdvanceImageView.setBackground(versionCheck(R.drawable.ocean_tap));
-
-                //
-                mGameTapAudio = SPLASH_AUDIO;
-
-                //
-                mGameBossCry = SHARK_CRY;
-
-                //
-                mGameBossImageButton.setBackground(versionCheck(R.drawable.ocean_boss));
-
-                //
-                mGameBossLayout.setBackground(versionCheck(R.drawable.ocean_bg_boss));
-                mGameBossLayout.setVisibility(View.GONE);
-                mGameCreatureLayout.setVisibility(View.VISIBLE);
-
-                //
-                mResultsMainBGImageView.setBackground(versionCheck(R.drawable.results_ocean_bg_image));
-
-                break;
-
-            case 3:
-
-                //
-                for (int bg : MOUNTAIN_SCENES) {
-
-                    //
-                    mStageBGImages.add(bg);
-                }
-
-                //
-                mGameMainStageImageView.setBackground(versionCheck(R.drawable.stage_03_title_image));
-
-                //
-                mResultsSubStageImageView.setBackground(versionCheck(R.drawable.stage_03_title_image));
-                mResultsStageCardImageView.setBackground(versionCheck(R.drawable.mountain_card));
-                mEatenStageImageView.setBackground(versionCheck(R.drawable.stage_03_title_image));
-
-                //
-                mGameBorderLayout.setBackground(versionCheck(R.drawable.mountain_border));
-                mGameBorderLayout.setVisibility(View.VISIBLE);
-
-                //
-                mGameAdvanceImageView.setBackground(versionCheck(R.drawable.mountain_tap));
-
-                //
-                mGameTapAudio = EARTHQUAKE_AUDIO;
-
-                //
-                mGameBossCry = HAWK_CRY;
-
-                //
-                mGameBossImageButton.setBackground(versionCheck(R.drawable.mountain_boss));
-
-                //
-                mGameBossLayout.setBackground(versionCheck(R.drawable.mountain_bg_boss));
-                mGameBossLayout.setVisibility(View.GONE);
-                mGameCreatureLayout.setVisibility(View.VISIBLE);
-
-                //
-                mResultsMainBGImageView.setBackground(versionCheck(R.drawable.results_mountain_bg_image));
-
-                break;
-
-            case 4:
-
-                //
-                for (int bg : DESERT_SCENES) {
-
-                    //
-                    mStageBGImages.add(bg);
-                }
-
-                //
-                mGameMainStageImageView.setBackground(versionCheck(R.drawable.stage_04_title_image));
-
-                //
-                mResultsSubStageImageView.setBackground(versionCheck(R.drawable.stage_04_title_image));
-                mResultsStageCardImageView.setBackground(versionCheck(R.drawable.desert_card));
-                mEatenStageImageView.setBackground(versionCheck(R.drawable.stage_04_title_image));
-
-                //
-                mGameBorderLayout.setBackground(versionCheck(R.drawable.desert_border));
-                mGameBorderLayout.setVisibility(View.VISIBLE);
-
-                //
-                mGameAdvanceImageView.setBackground(versionCheck(R.drawable.desert_tap));
-
-                //
-                mGameTapAudio = TORNADO_AUDIO;
-
-                //
-                mGameBossCry = SCORPION_CRY;
-
-                //
-                mGameBossImageButton.setBackground(versionCheck(R.drawable.desert_boss));
-
-                //
-                mGameBossLayout.setBackground(versionCheck(R.drawable.desert_bg_boss));
-                mGameBossLayout.setVisibility(View.GONE);
-                mGameCreatureLayout.setVisibility(View.VISIBLE);
-
-                //
-                mResultsMainBGImageView.setBackground(versionCheck(R.drawable.results_desert_bg_image));
-
-                break;
-
-            case 5:
-
-                //
-                for (int bg : JUNGLE_SCENES) {
-
-                    //
-                    mStageBGImages.add(bg);
-                }
-
-                //
-                mGameMainStageImageView.setBackground(versionCheck(R.drawable.stage_05_title_image));
-
-                //
-                mResultsSubStageImageView.setBackground(versionCheck(R.drawable.stage_05_title_image));
-                mResultsStageCardImageView.setBackground(versionCheck(R.drawable.jungle_card));
-                mEatenStageImageView.setBackground(versionCheck(R.drawable.stage_05_title_image));
-
-                //
-                mGameBorderLayout.setBackground(versionCheck(R.drawable.jungle_border));
-                mGameBorderLayout.setVisibility(View.VISIBLE);
-
-                //
-                mGameAdvanceImageView.setBackground(versionCheck(R.drawable.jungle_tap));
-
-                //
-                mGameTapAudio = VOLCANO_AUDIO;
-
-                //
-                mGameBossCry = SNAKE_CRY;
-
-                //
-                mGameBossImageButton.setBackground(versionCheck(R.drawable.jungle_boss));
-
-                //
-                mGameBossLayout.setBackground(versionCheck(R.drawable.jungle_bg_boss));
-                mGameBossLayout.setVisibility(View.GONE);
-                mGameCreatureLayout.setVisibility(View.VISIBLE);
-
-                //
-                mResultsMainBGImageView.setBackground(versionCheck(R.drawable.results_jungle_bg_image));
-
-                break;
-
-            case 6:
-
-                //
-                for (int bg : TUNDRA_SCENES) {
-
-                    //
-                    mStageBGImages.add(bg);
-                }
-
-                //
-                mGameMainStageImageView.setBackground(versionCheck(R.drawable.stage_06_title_image));
-
-                //
-                mResultsSubStageImageView.setBackground(versionCheck(R.drawable.stage_06_title_image));
-                mResultsStageCardImageView.setBackground(versionCheck(R.drawable.tundra_card));
-                mEatenStageImageView.setBackground(versionCheck(R.drawable.stage_06_title_image));
-
-                //
-                mGameBorderLayout.setBackground(versionCheck(R.drawable.tundra_border));
-                mGameBorderLayout.setVisibility(View.VISIBLE);
-
-                //
-                mGameAdvanceImageView.setBackground(versionCheck(R.drawable.tundra_tap));
-
-                //
-                mGameTapAudio = AVALANCHE_AUDIO;
-
-                //
-                mGameBossCry = YETI_CRY;
-
-                //
-                mGameBossImageButton.setBackground(versionCheck(R.drawable.tundra_boss));
-
-                //
-                mGameBossLayout.setBackground(versionCheck(R.drawable.tundra_bg_boss));
-                mGameBossLayout.setVisibility(View.GONE);
-                mGameCreatureLayout.setVisibility(View.VISIBLE);
-
-                //
-                mResultsMainBGImageView.setBackground(versionCheck(R.drawable.results_tundra_bg_image));
-
-                break;
+            //
+            mStageSceneImages.add(scene);
         }
+
+        // Load scene names
+        mStageSceneNames.addAll(Arrays.asList(STAGE_SCENE_NAMES[stage_index - 1]));
+
+        // Assign stage color
+        mGameSceneTextView.setBackgroundColor(STAGE_COLOR[stage_index - 1]);
+
+        // Load stage name
+        mGameStageImageView.setBackground(versionCheck(STAGE_NAMES[stage_index - 1]));
+
+        // Load stage border image
+        mGameBorderLayout.setBackground(versionCheck(STAGE_BORDERS[stage_index - 1]));
+
+        // Load stage disaster image
+        mStageDisasterImageView.setBackground(versionCheck(STAGE_DISASTERS[stage_index - 1]));
+
+        // Load stage disaster audio
+        mGameTapAudio = STAGE_DISASTER_AUDIO[stage_index - 1];
+
+        // Load boss cry
+        mGameBossCry = BOSS_CRY_AUDIO[stage_index - 1];
+
+        // Load boss image button
+        mGameBossImageButton.setBackground(versionCheck(BOSS_IMAGES[stage_index - 1]));
+
+        // Load boss scene image
+        mGameBossLayout.setBackground(versionCheck(BOSS_SCENE_IMAGES[stage_index - 1]));
     }
 
     // Reset saved game data
@@ -2410,165 +4154,586 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mEditor.clear();
         mEditor.apply();
 
+        //
         getGameData();
     }
 
     // UI navigation to hide and show layouts
     private void switchScreen(int mScreenID) {
+        Log.d(TAG, "switchScreen: >" + mScreenID);
+
+        // Show screen
+        if (mScreenID != -1) {
+            for (int id : SCREENS) {
+                findViewById(id).setVisibility(mScreenID == id ? View.VISIBLE : View.GONE);
+            }
+        }
 
         // ID screen
         mCurScreen = mScreenID;
 
-        // Show screen
-        if (mCurScreen != -1) {
-            for (int id : SCREENS) {
-                findViewById(id).setVisibility(mCurScreen == id ? View.VISIBLE : View.GONE);
-            }
-        }
-
         // Draw screen
-        drawScreen(mCurScreen);
+        drawScreen();
+
     }
 
     // Draw screen
-    public void drawScreen(int mScreenID) {
+    @SuppressLint({"SetTextI18n", "DefaultLocale"})
+    public void drawScreen() {
+        Log.d(TAG, "drawScreen: START " + mCurScreen);
 
         //
-        switch (mScreenID) {
+        setGameData();
+
+        //
+        getGameData();
+
+        //
+        mTopScores = false;
+
+        //
+        switch (mCurScreen) {
 
             //
-            case R.id.intro_screen_main_layout:
+            case R.id.credits_screen_main_layout:
+                Log.d(TAG, "drawScreen: credit_screen " + mCurScreen);
 
-                // Reset image view
-                //mIntroImageView.setBackground(versionCheck(INTRO[0]));
-                //mIntroImageView.setAlpha((float) 0);
-                //fadeIn(mIntroImageView.getId());
+                //
+                mCreditsImageView.setVisibility(View.VISIBLE);
 
                 break;
 
             //
             case R.id.entry_screen_main_layout:
-                Log.d(TAG, "drawScreen: entry");
+                Log.d(TAG, "drawScreen: entry_screen " + mCurScreen);
+
+                //
+                mEntryMainControlLayout.setVisibility(View.VISIBLE);
 
                 //
                 if (continue_game) {
+
+                    //
                     mEntryContinueImageButton.setVisibility(View.VISIBLE);
+
                 } else {
+
+                    //
                     mEntryContinueImageButton.setVisibility(View.GONE);
                 }
 
                 //
                 if (game_complete) {
-                    mEntryTutorialImageButton.setVisibility(View.GONE);
+
+                    //
+                    mEntryCreditsImageButton.setVisibility(View.VISIBLE);
+
                 } else {
-                    mEntryTutorialImageButton.setVisibility(View.VISIBLE);
+
+                    //
+                    mEntryCreditsImageButton.setVisibility(View.GONE);
                 }
 
-                break;
-
-            case R.id.help_screen_main_layout:
-                Log.d(TAG, "drawScreen: help");
-
                 //
-                playAudio(THUNDER_AUDIO);
+                if (mGameApex) {
+
+                    //
+                    mEntryScoreApexLayout.setVisibility(View.VISIBLE);
+
+                } else {
+
+                    //
+                    mEntryScoreApexLayout.setVisibility(View.GONE);
+                }
 
                 break;
 
             case R.id.stage_select_screen_main_layout:
-                Log.d(TAG, "drawScreen: stage select");
+                Log.d(TAG, "drawScreen: stage_select " + mCurScreen);
+
+                // Reset stage index
+                mStageIndex = -1;
+                mStageReady = -1;
+                mStageApex = false;
+                mStageComplete = false;
+
+                // Reset scorecard display toggle
+                mTopScores = false;
+
+                // Reset scorecard display
+                mStageSelectScorecardLayout.setVisibility(View.GONE);
+
+                // Hide top scores if none
+                if (!stage_01_complete) { mStageSelectScorecardImageButton.setVisibility(View.INVISIBLE); }
+                else { mStageSelectScorecardImageButton.setVisibility(View.VISIBLE); }
+
+                // Set game high scores
+                if (mGameApex) { mEOBEApexScoreImageView.setVisibility(View.VISIBLE); }
+                else { mEOBEApexScoreImageView.setVisibility(View.INVISIBLE); }
 
                 //
-                mStageIndex = -1;
+                mEOBEPredatorScoreTextView.setText(Integer.toString(mGamePredator));
+                mEOBEAccuracyScoreTextView.setText(String.format("%.2f", mGameAccuracy));
 
-                // Check score data for cards
-                checkCardData();
+                //
+                mEOBETimeBestScoreTextView.setText(Integer.toString(mGameTimeBest));
+                mEOBETimeTotalScoreTextView.setText(Integer.toString(mGameTimeTotal));
+                mEOBECollectionScoreTextView.setText(Integer.toString(mGameCollection));
+                mEOBEAttemptsScoreTextView.setText(Integer.toString(mGameAttempts));
+                mEOBEBossKillsScoreTextView.setText(Integer.toString(mGameBossKills));
+                mEOBECreatureKillsScoreTextView.setText(Integer.toString(mGameCreatureKills));
+                mEOBEHighestStreakScoreTextView.setText(Integer.toString(mGameHighestStreak));
+                mEOBEClosestDeathScoreTextView.setText(Integer.toString(mGameClosestDeath));
+                mEOBELongestFrenzyScoreTextView.setText(Integer.toString(mGameLongestFrenzy));
+                mEOBEMostCalmScoreTextView.setText(Float.toString(mGameMostCalm));
+                mEOBEMostFranticTextView.setText(Float.toString(mGameMostFrantic));
+
+                // Build stage cards
+                buildStageCards();
+
+                // Display stage cards
+                mStageSelectStagecardLayout.setVisibility(View.VISIBLE);
 
                 break;
 
-            case R.id.game_screen_main_layout:
-                Log.d(TAG, "drawScreen: game");
+            case R.id.stage_card_screen_main_layout:
+                Log.d(TAG, "drawScreen: mStageIndex: " + mStageIndex + " - mStageReady: " + mStageReady + " - mStageComplete: " + mStageComplete);
 
-                // Check power meters
+                if (mStageComplete) {
 
-                // Power 1
-                if (mPower01Meter > mPower01Target) {
-
-                    mGamePower01ImageView.setVisibility(View.VISIBLE);
-
-                } else {
-
-                    mGamePower01ImageView.setVisibility(View.INVISIBLE);
+                    // Build scorecards
+                    buildScorecard();
                 }
 
-                // Power 2
-                if (stage_01_complete) {
+                //
+                mStageCardContentBossLayout.setBackground(versionCheck(STAGE_DISASTERS[mStageIndex - 1]));
+                mStageCardBossImageView.setBackground(versionCheck(BOSS_IMAGES[mStageIndex - 1]));
+                mStageCardContentTitleImageButton.setBackground(versionCheck(STAGE_NAMES[mStageIndex - 1]));
+                mStageCardContentTitleLayout.setBackgroundColor(STAGE_COLOR[mStageIndex - 1]);
+                mStageCardScreenBodyLayout.setBackground(versionCheck(STAGE_CARD_BG[mStageIndex - 1]));
 
-                    if (mPower02Meter > mPower02Target) {
+                //
+                mStageCardControlPrevImageButton.setVisibility(View.VISIBLE);
+                mStageCardControlNextImageButton.setVisibility(View.VISIBLE);
 
-                        mGamePower02ImageView.setVisibility(View.VISIBLE);
+                //
+                switch (mStageIndex) {
 
-                    } else {
+                    case 1:
 
-                        mGamePower02ImageView.setVisibility(View.INVISIBLE);
-                    }
+                        //
+                        mStageCardControlPrevImageButton.setVisibility(View.INVISIBLE);
 
-                } else { mGamePower02ImageView.setVisibility(View.GONE); }
+                        break;
 
-                // Power 3
-                if (stage_02_complete) {
+                    case 7:
 
-                    if (mPower03Meter > mPower03Target) {
+                        //
+                        mStageCardControlNextImageButton.setVisibility(View.INVISIBLE);
 
-                        mGamePower03ImageView.setVisibility(View.VISIBLE);
+                        break;
+                }
 
-                    } else {
+                // [1 = Stage Locked / 2 = Stage Ready / 3 = Stage Complete]
+                switch (mStageReady) {
 
-                        mGamePower03ImageView.setVisibility(View.INVISIBLE);
-                    }
+                    // Case - Stage Locked
+                    case 1:
 
-                } else { mGamePower03ImageView.setVisibility(View.GONE); }
+                        //
+                        mStageCardStatusImageView.setBackground(versionCheck(R.drawable.stage_locked_image));
 
-                // Power 4
-                if (stage_03_complete) {
+                        //
+                        mStageCardTopScoreImageButton.setVisibility(View.INVISIBLE);
 
-                    if (mPower04Meter > mPower04Target) {
+                        //
+                        mStageCardContentTitleLayout.setBackgroundColor(Color.BLACK);
 
-                        mGamePower04ImageView.setVisibility(View.VISIBLE);
+                        //
+                        mStageCardScorecardLayout.setVisibility(View.GONE);
+                        mStageCardTopScoreLayout.setVisibility(View.GONE);
 
-                    } else {
+                        //
+                        mStageCardContentBossLayout.setVisibility(View.GONE);
 
-                        mGamePower04ImageView.setVisibility(View.INVISIBLE);
-                    }
+                        //
+                        //findViewById(R.id.stage_card_scorecard_control_layout).setVisibility(View.GONE);
+                        mStageCardControlNextImageButton.setVisibility(View.INVISIBLE);
+                        mStageCardControlPlayImageButton.setVisibility(View.INVISIBLE);
 
-                } else { mGamePower04ImageView.setVisibility(View.GONE); }
+                        break;
 
-                // Power 5
-                if (stage_04_complete) {
+                    // Case - Stage Ready
+                    case 2:
 
-                    if (mPower05Meter > mPower05Target) {
+                        //
+                        mStageCardStatusImageView.setBackground(versionCheck(R.drawable.stage_ready_image));
 
-                        mGamePower05ImageView.setVisibility(View.VISIBLE);
+                        //
+                        if (mStageComplete) {
 
-                    } else {
+                            //
+                            mStageCardTopScoreImageButton.setVisibility(View.VISIBLE);
 
-                        mGamePower05ImageView.setVisibility(View.INVISIBLE);
-                    }
+                        } else {
 
-                } else { mGamePower05ImageView.setVisibility(View.GONE); }
+                            //
+                            mStageCardTopScoreImageButton.setVisibility(View.INVISIBLE);
+                        }
 
-                // Power 6
-                if (stage_05_complete) {
+                        //
+                        mStageCardScorecardLayout.setVisibility(View.INVISIBLE);
+                        mStageCardTopScoreLayout.setVisibility(View.GONE);
 
-                    if (mPower06Meter > mPower06Target) {
+                        //
+                        mStageCardContentBossLayout.setVisibility(View.VISIBLE);
 
-                        mGamePower06ImageView.setVisibility(View.VISIBLE);
+                        //
+                        mStageCardControlPlayImageButton.setVisibility(View.VISIBLE);
 
-                    } else {
+                        //findViewById(R.id.stage_card_scorecard_control_layout).setVisibility(View.VISIBLE);
+                        //findViewById(R.id.stage_card_ready_play_here_image_button).setVisibility(View.VISIBLE);
+                        //mStageCardControlPrevImageButton.setVisibility(View.VISIBLE);
+                        //mStageCardControlNextImageButton.setVisibility(View.VISIBLE);
 
-                        mGamePower06ImageView.setVisibility(View.INVISIBLE);
-                    }
+                        //*inject*
+                        mStageCardContentBossLayout.setVisibility(View.GONE);
+                        findViewById(R.id.stage_card_collection_layout).setVisibility(View.VISIBLE);
+                        //buildCreatureCollection();
 
-                } else { mGamePower06ImageView.setVisibility(View.GONE); }
+                        break;
+
+                    // Case - Stage Complete
+                    case 3:
+
+                        //
+                        mStageCardStatusImageView.setBackground(versionCheck(R.drawable.stage_complete_image));
+
+                        //
+                        mStageCardTopScoreImageButton.setVisibility(View.VISIBLE);
+
+                        //
+                        mStageCardScorecardLayout.setVisibility(View.VISIBLE);
+                        mStageCardTopScoreLayout.setVisibility(View.GONE);
+
+                        //
+                        mStageCardContentBossLayout.setVisibility(View.GONE);
+
+                        //
+                        //findViewById(R.id.stage_card_scorecard_control_layout).setVisibility(View.VISIBLE);
+                        mStageCardControlPlayImageButton.setVisibility(View.VISIBLE);
+
+                        if (mStageIndex == 7) { mStageCardControlNextImageButton.setVisibility(View.GONE); }
+                        else { mStageCardControlNextImageButton.setVisibility(View.VISIBLE); }
+
+                        //--move to stageReady 3 *duplicate* should remove
+                        //mStageCardScorecardLayout.setVisibility(View.VISIBLE);
+                        //mStageCardTopScoreLayout.setVisibility(View.GONE);
+                        //mStageCardContentBossLayout.setVisibility(View.GONE);
+
+                        //--move to stageReady 2, 3 with onClick
+                        //mStageCardTopScoreLayout.setVisibility(View.VISIBLE);
+                        //mStageCardScorecardLayout.setVisibility(View.GONE);
+                        //mStageCardContentBossLayout.setVisibility(View.GONE);
+
+                        break;
+                }
+
+                //
+                switch (mStageIndex) {
+
+                    // This is where we need to populate the text views
+
+                    case 1:
+
+                        //
+                        if (stage_01_complete) {
+
+                            //
+                            mStageTopApexPredatorTextView.setText(Boolean.toString(stage_01_apex));
+
+                            // Top Scores
+                            mStageTotalAttemptsTextView.setText(Integer.toString(stage_01_attempts));
+                            mStageTotalBossKillsTextView.setText(Integer.toString(stage_01_boss_kills));
+                            mStageTotalCreatureKillsTextView.setText(Integer.toString(stage_01_creature_kills));
+                            mStageTopHighestStreakTextView.setText(Integer.toString(stage_01_highest_streak));
+                            mStageTopClosestDeathTextView.setText(Integer.toString(stage_01_closest_death));
+                            mStageTopLongestFrenzyTextView.setText(Integer.toString(stage_01_longest_frenzy));
+                            mStageTopMostCalmTextView.setText(Long.toString(stage_01_most_calm));
+                            mStageTopMostFranticTextView.setText(Long.toString(stage_01_most_frantic));
+                            mStageTotalTimeTextView.setText(Integer.toString(stage_01_total_time));
+                            mStageTopBestTimeTextView.setText(Integer.toString(stage_01_best_time));
+                            mStageTopPredatorTextView.setText(Integer.toString(stage_01_predator));
+                            mStageTopAccuracyTextView.setText(String.format("%.2f", stage_01_accuracy));
+                            mStageTotalCollectionTextView.setText(Integer.toString(stage_01_collection));
+
+                            // Current Stage Scores
+                            mStageApexPredatorTextView.setText(Boolean.toString(mStageApex));
+                            mStagePredatorTextView.setText(Integer.toString(mStagePredator));
+                            mStageAccuracyTextView.setText(String.format("%.2f", mStageAccuracy));
+
+                            //
+                            mStageTimeTextView.setText(Integer.toString(mStageTime));
+                            mStageCreatureKillsTextView.setText(Integer.toString(mStageCreatureKills));
+                            mStageCollectionTextView.setText(Integer.toString(mStageCollection));
+
+                            //
+                            mStageHighestStreakTextView.setText(Integer.toString(mStageHighestStreak));
+                            mStageClosestDeathTextView.setText(Integer.toString(mStageClosestDeath));
+                            mStageLongestFrenzyTextView.setText(Integer.toString(mStageLongestFrenzy));
+                            mStageMostCalmTextView.setText(Long.toString(mStageMostCalm));
+                            mStageMostFranticTextView.setText(Long.toString(mStageMostFrantic));
+
+                        }
+
+                        break;
+
+                    case 2:
+
+                        //
+                        mStageTopApexPredatorTextView.setText(Boolean.toString(stage_02_apex));
+
+                        // Top Scores
+                        mStageTotalAttemptsTextView.setText(Integer.toString(stage_02_attempts));
+                        mStageTotalBossKillsTextView.setText(Integer.toString(stage_02_boss_kills));
+                        mStageTotalCreatureKillsTextView.setText(Integer.toString(stage_02_creature_kills));
+                        mStageTopHighestStreakTextView.setText(Integer.toString(stage_02_highest_streak));
+                        mStageTopClosestDeathTextView.setText(Integer.toString(stage_02_closest_death));
+                        mStageTopLongestFrenzyTextView.setText(Integer.toString(stage_02_longest_frenzy));
+                        mStageTopMostCalmTextView.setText(Long.toString(stage_02_most_calm));
+                        mStageTopMostFranticTextView.setText(Long.toString(stage_02_most_frantic));
+                        mStageTotalTimeTextView.setText(Integer.toString(stage_02_total_time));
+                        mStageTopBestTimeTextView.setText(Integer.toString(stage_02_best_time));
+                        mStageTopPredatorTextView.setText(Integer.toString(stage_02_predator));
+                        mStageTopAccuracyTextView.setText(String.format("%.2f", stage_02_accuracy));
+                        mStageTotalCollectionTextView.setText(Integer.toString(stage_02_collection));
+
+                        // Current Stage Scores
+                        mStageApexPredatorTextView.setText(Boolean.toString(mStageApex));
+                        mStagePredatorTextView.setText(Integer.toString(mStagePredator));
+                        mStageAccuracyTextView.setText(String.format("%.2f", mStageAccuracy));
+
+                        //
+                        mStageTimeTextView.setText(Integer.toString(mStageTime));
+                        mStageCreatureKillsTextView.setText(Integer.toString(mStageCreatureKills));
+                        mStageCollectionTextView.setText(Integer.toString(mStageCollection));
+
+                        //
+                        mStageHighestStreakTextView.setText(Integer.toString(mStageHighestStreak));
+                        mStageClosestDeathTextView.setText(Integer.toString(mStageClosestDeath));
+                        mStageLongestFrenzyTextView.setText(Integer.toString(mStageLongestFrenzy));
+                        mStageMostCalmTextView.setText(Long.toString(mStageMostCalm));
+                        mStageMostFranticTextView.setText(Long.toString(mStageMostFrantic));
+
+                        break;
+
+                    case 3:
+
+                        //
+                        mStageTopApexPredatorTextView.setText(Boolean.toString(stage_03_apex));
+
+                        // Top Scores
+                        mStageTotalAttemptsTextView.setText(Integer.toString(stage_03_attempts));
+                        mStageTotalBossKillsTextView.setText(Integer.toString(stage_03_boss_kills));
+                        mStageTotalCreatureKillsTextView.setText(Integer.toString(stage_03_creature_kills));
+                        mStageTopHighestStreakTextView.setText(Integer.toString(stage_03_highest_streak));
+                        mStageTopClosestDeathTextView.setText(Integer.toString(stage_03_closest_death));
+                        mStageTopLongestFrenzyTextView.setText(Integer.toString(stage_03_longest_frenzy));
+                        mStageTopMostCalmTextView.setText(Long.toString(stage_03_most_calm));
+                        mStageTopMostFranticTextView.setText(Long.toString(stage_03_most_frantic));
+                        mStageTotalTimeTextView.setText(Integer.toString(stage_03_total_time));
+                        mStageTopBestTimeTextView.setText(Integer.toString(stage_03_best_time));
+                        mStageTopPredatorTextView.setText(Integer.toString(stage_03_predator));
+                        mStageTopAccuracyTextView.setText(String.format("%.2f", stage_03_accuracy));
+                        mStageTotalCollectionTextView.setText(Integer.toString(stage_03_collection));
+
+                        // Current Stage Scores
+                        mStageApexPredatorTextView.setText(Boolean.toString(mStageApex));
+                        mStagePredatorTextView.setText(Integer.toString(mStagePredator));
+                        mStageAccuracyTextView.setText(String.format("%.2f", mStageAccuracy));
+
+                        //
+                        mStageTimeTextView.setText(Integer.toString(mStageTime));
+                        mStageCreatureKillsTextView.setText(Integer.toString(mStageCreatureKills));
+                        mStageCollectionTextView.setText(Integer.toString(mStageCollection));
+
+                        //
+                        mStageHighestStreakTextView.setText(Integer.toString(mStageHighestStreak));
+                        mStageClosestDeathTextView.setText(Integer.toString(mStageClosestDeath));
+                        mStageLongestFrenzyTextView.setText(Integer.toString(mStageLongestFrenzy));
+                        mStageMostCalmTextView.setText(Long.toString(mStageMostCalm));
+                        mStageMostFranticTextView.setText(Long.toString(mStageMostFrantic));
+
+                        break;
+
+                    case 4:
+
+                        //
+                        mStageTopApexPredatorTextView.setText(Boolean.toString(stage_04_apex));
+
+                        // Top Scores
+                        mStageTotalAttemptsTextView.setText(Integer.toString(stage_04_attempts));
+                        mStageTotalBossKillsTextView.setText(Integer.toString(stage_04_boss_kills));
+                        mStageTotalCreatureKillsTextView.setText(Integer.toString(stage_04_creature_kills));
+                        mStageTopHighestStreakTextView.setText(Integer.toString(stage_04_highest_streak));
+                        mStageTopClosestDeathTextView.setText(Integer.toString(stage_04_closest_death));
+                        mStageTopLongestFrenzyTextView.setText(Integer.toString(stage_04_longest_frenzy));
+                        mStageTopMostCalmTextView.setText(Long.toString(stage_04_most_calm));
+                        mStageTopMostFranticTextView.setText(Long.toString(stage_04_most_frantic));
+                        mStageTotalTimeTextView.setText(Integer.toString(stage_04_total_time));
+                        mStageTopBestTimeTextView.setText(Integer.toString(stage_04_best_time));
+                        mStageTopPredatorTextView.setText(Integer.toString(stage_04_predator));
+                        mStageTopAccuracyTextView.setText(String.format("%.2f", stage_04_accuracy));
+                        mStageTotalCollectionTextView.setText(Integer.toString(stage_04_collection));
+
+                        // Current Stage Scores
+                        mStageApexPredatorTextView.setText(Boolean.toString(mStageApex));
+                        mStagePredatorTextView.setText(Integer.toString(mStagePredator));
+                        mStageAccuracyTextView.setText(String.format("%.2f", mStageAccuracy));
+
+                        //
+                        mStageTimeTextView.setText(Integer.toString(mStageTime));
+                        mStageCreatureKillsTextView.setText(Integer.toString(mStageCreatureKills));
+                        mStageCollectionTextView.setText(Integer.toString(mStageCollection));
+
+                        //
+                        mStageHighestStreakTextView.setText(Integer.toString(mStageHighestStreak));
+                        mStageClosestDeathTextView.setText(Integer.toString(mStageClosestDeath));
+                        mStageLongestFrenzyTextView.setText(Integer.toString(mStageLongestFrenzy));
+                        mStageMostCalmTextView.setText(Long.toString(mStageMostCalm));
+                        mStageMostFranticTextView.setText(Long.toString(mStageMostFrantic));
+
+                        break;
+
+                    case 5:
+
+                        //
+                        mStageTopApexPredatorTextView.setText(Boolean.toString(stage_05_apex));
+
+                        // Top Scores
+                        mStageTotalAttemptsTextView.setText(Integer.toString(stage_05_attempts));
+                        mStageTotalBossKillsTextView.setText(Integer.toString(stage_05_boss_kills));
+                        mStageTotalCreatureKillsTextView.setText(Integer.toString(stage_05_creature_kills));
+                        mStageTopHighestStreakTextView.setText(Integer.toString(stage_05_highest_streak));
+                        mStageTopClosestDeathTextView.setText(Integer.toString(stage_05_closest_death));
+                        mStageTopLongestFrenzyTextView.setText(Integer.toString(stage_05_longest_frenzy));
+                        mStageTopMostCalmTextView.setText(Long.toString(stage_05_most_calm));
+                        mStageTopMostFranticTextView.setText(Long.toString(stage_05_most_frantic));
+                        mStageTotalTimeTextView.setText(Integer.toString(stage_05_total_time));
+                        mStageTopBestTimeTextView.setText(Integer.toString(stage_05_best_time));
+                        mStageTopPredatorTextView.setText(Integer.toString(stage_05_predator));
+                        mStageTopAccuracyTextView.setText(String.format("%.2f", stage_05_accuracy));
+                        mStageTotalCollectionTextView.setText(Integer.toString(stage_05_collection));
+
+                        // Current Stage Scores
+                        mStageApexPredatorTextView.setText(Boolean.toString(mStageApex));
+                        mStagePredatorTextView.setText(Integer.toString(mStagePredator));
+                        mStageAccuracyTextView.setText(String.format("%.2f", mStageAccuracy));
+
+                        //
+                        mStageTimeTextView.setText(Integer.toString(mStageTime));
+                        mStageCreatureKillsTextView.setText(Integer.toString(mStageCreatureKills));
+                        mStageCollectionTextView.setText(Integer.toString(mStageCollection));
+
+                        //
+                        mStageHighestStreakTextView.setText(Integer.toString(mStageHighestStreak));
+                        mStageClosestDeathTextView.setText(Integer.toString(mStageClosestDeath));
+                        mStageLongestFrenzyTextView.setText(Integer.toString(mStageLongestFrenzy));
+                        mStageMostCalmTextView.setText(Long.toString(mStageMostCalm));
+                        mStageMostFranticTextView.setText(Long.toString(mStageMostFrantic));
+
+                        break;
+
+                    case 6:
+
+                        //
+                        mStageTopApexPredatorTextView.setText(Boolean.toString(stage_06_apex));
+
+                        // Top Scores
+                        mStageTotalAttemptsTextView.setText(Integer.toString(stage_06_attempts));
+                        mStageTotalBossKillsTextView.setText(Integer.toString(stage_06_boss_kills));
+                        mStageTotalCreatureKillsTextView.setText(Integer.toString(stage_06_creature_kills));
+                        mStageTopHighestStreakTextView.setText(Integer.toString(stage_06_highest_streak));
+                        mStageTopClosestDeathTextView.setText(Integer.toString(stage_06_closest_death));
+                        mStageTopLongestFrenzyTextView.setText(Integer.toString(stage_06_longest_frenzy));
+                        mStageTopMostCalmTextView.setText(Long.toString(stage_06_most_calm));
+                        mStageTopMostFranticTextView.setText(Long.toString(stage_06_most_frantic));
+                        mStageTotalTimeTextView.setText(Integer.toString(stage_06_total_time));
+                        mStageTopBestTimeTextView.setText(Integer.toString(stage_06_best_time));
+                        mStageTopPredatorTextView.setText(Integer.toString(stage_06_predator));
+                        mStageTopAccuracyTextView.setText(String.format("%.2f", stage_06_accuracy));
+                        mStageTotalCollectionTextView.setText(Integer.toString(stage_06_collection));
+
+                        // Current Stage Scores
+                        mStageApexPredatorTextView.setText(Boolean.toString(mStageApex));
+                        mStagePredatorTextView.setText(Integer.toString(mStagePredator));
+                        mStageAccuracyTextView.setText(String.format("%.2f", mStageAccuracy));
+
+                        //
+                        mStageTimeTextView.setText(Integer.toString(mStageTime));
+                        mStageCreatureKillsTextView.setText(Integer.toString(mStageCreatureKills));
+                        mStageCollectionTextView.setText(Integer.toString(mStageCollection));
+
+                        //
+                        mStageHighestStreakTextView.setText(Integer.toString(mStageHighestStreak));
+                        mStageClosestDeathTextView.setText(Integer.toString(mStageClosestDeath));
+                        mStageLongestFrenzyTextView.setText(Integer.toString(mStageLongestFrenzy));
+                        mStageMostCalmTextView.setText(Long.toString(mStageMostCalm));
+                        mStageMostFranticTextView.setText(Long.toString(mStageMostFrantic));
+
+                        break;
+
+                    case 7:
+
+                        //
+                        mStageTopApexPredatorTextView.setText(Boolean.toString(stage_07_apex));
+
+                        // Top Scores
+                        mStageTotalAttemptsTextView.setText(Integer.toString(stage_07_attempts));
+                        mStageTotalBossKillsTextView.setText(Integer.toString(stage_07_boss_kills));
+                        mStageTotalCreatureKillsTextView.setText(Integer.toString(stage_07_creature_kills));
+                        mStageTopHighestStreakTextView.setText(Integer.toString(stage_07_highest_streak));
+                        mStageTopClosestDeathTextView.setText(Integer.toString(stage_07_closest_death));
+                        mStageTopLongestFrenzyTextView.setText(Integer.toString(stage_07_longest_frenzy));
+                        mStageTopMostCalmTextView.setText(Long.toString(stage_07_most_calm));
+                        mStageTopMostFranticTextView.setText(Long.toString(stage_07_most_frantic));
+                        mStageTotalTimeTextView.setText(Integer.toString(stage_07_total_time));
+                        mStageTopBestTimeTextView.setText(Integer.toString(stage_07_best_time));
+                        mStageTopPredatorTextView.setText(Integer.toString(stage_07_predator));
+                        mStageTopAccuracyTextView.setText(String.format("%.2f", stage_07_accuracy));
+                        mStageTotalCollectionTextView.setText(Integer.toString(stage_07_collection));
+
+                        // Current Stage Scores
+                        mStageApexPredatorTextView.setText(Boolean.toString(mStageApex));
+                        mStagePredatorTextView.setText(Integer.toString(mStagePredator));
+                        mStageAccuracyTextView.setText(String.format("%.2f", mStageAccuracy));
+
+                        //
+                        mStageTimeTextView.setText(Integer.toString(mStageTime));
+                        mStageCreatureKillsTextView.setText(Integer.toString(mStageCreatureKills));
+                        mStageCollectionTextView.setText(Integer.toString(mStageCollection));
+
+                        //
+                        mStageHighestStreakTextView.setText(Integer.toString(mStageHighestStreak));
+                        mStageClosestDeathTextView.setText(Integer.toString(mStageClosestDeath));
+                        mStageLongestFrenzyTextView.setText(Integer.toString(mStageLongestFrenzy));
+                        mStageMostCalmTextView.setText(Long.toString(mStageMostCalm));
+                        mStageMostFranticTextView.setText(Long.toString(mStageMostFrantic));
+
+                        break;
+                }
+
+                break;
+
+            //
+            case R.id.game_screen_main_layout:
+                Log.d(TAG, "drawScreen: > game_screen " + mCurScreen);
+
+                //
+                //checkPlayground();
+
+                // Check power display
+                checkPowers();
 
                 // Check tunnel view fade
                 updateTunnel();
@@ -2581,43 +4746,223 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 break;
 
-            case R.id.results_screen_main_layout:
-                Log.d(TAG, "drawScreen: results");
-
-                //
-                //mResultsSubStageImageView.setVisibility(View.VISIBLE);
-
-                break;
-
-            case R.id.eaten_screen_main_layout:
-                Log.d(TAG, "drawScreen: eaten");
-
-                //
-                mEatenStageImageView.setVisibility(View.VISIBLE);
-
-                break;
-
             //
-            case R.id.outro_screen_main_layout:
+            case R.id.eaten_screen_main_layout:
+                Log.d(TAG, "drawScreen: eaten_screen " + mCurScreen);
 
-                // Reset image view
-                mOutroImageView.setBackground(versionCheck(OUTRO[0]));
+                //
+                mEatenStageNameTextView.setBackground(versionCheck(STAGE_NAMES[mStageIndex - 1]));
+                mEatenStageTimeTextView.setText(Integer.toString(mStageTime));
+
+                // Extract stage and time scores *duplicate* should remove
+                //mEatenStageNameTextView.setBackground(versionCheck(STAGE_NAMES[mStageIndex - 1]));
+                //mEatenStageTimeTextView.setText(Integer.toString(mStageTime));
+
+                //
+                mEatenMainTitleImageView.setVisibility(View.VISIBLE);
+                mEatenSubTitleLayout.setVisibility(View.VISIBLE);
+                fadeIn(R.id.eaten_main_title_image_view);
 
                 break;
         }
     }
 
-	// Randomly select new background image
-	private void switchEnvironment(int canvas) {
+    // Check playground mode *redundant* should remove
+    //public void checkPlayground() {
+        //Log.d(TAG, "checkPlayground: checking...");
 
         //
-        if (!mStageBGImages.isEmpty()) {
-            Log.d(TAG, "switchEnvironment: Background Array is Empty >>>>>>>" + mStageBGImages.isEmpty() + "<<<<<<<<<<<<<<<<<<<<");
+        //if (!mCreatureGameOver) {
 
             //
-            //startBoss();
+            //mGameBossLayout.setVisibility(View.GONE);
+            //mGameCreatureLayout.setVisibility(View.VISIBLE);
+            //mGameControlLayout.setVisibility(View.VISIBLE);
+            //mGameLevelMarkerLayout.setVisibility(View.VISIBLE);
+            //mGamePowersLayout.setVisibility(View.VISIBLE);
 
         //} else {
+
+            //
+            //mGameBossLayout.setVisibility(View.VISIBLE);
+            //mGameCreatureLayout.setVisibility(View.GONE);
+            //mGameControlLayout.setVisibility(View.GONE);
+            //mGameLevelMarkerLayout.setVisibility(View.GONE);
+            //mGamePowersLayout.setVisibility(View.GONE);
+        //}
+    //}
+
+    // Check power display
+    public void checkPowers() {
+
+        // Power 1
+        if (mPower01Meter > mPower01Target) { mGamePower01ImageView.setVisibility(View.VISIBLE); }
+        else { mGamePower01ImageView.setVisibility(View.INVISIBLE); }
+
+        // Power 2
+        if (stage_01_complete) {
+
+            //
+            if (mPower02Meter > mPower02Target) { mGamePower02ImageView.setVisibility(View.VISIBLE); }
+            else { mGamePower02ImageView.setVisibility(View.INVISIBLE); }
+
+        } else { mGamePower02ImageView.setVisibility(View.GONE); }
+
+        // Power 3
+        if (stage_02_complete) {
+
+            if (mPower03Meter > mPower03Target) {
+
+                mGamePower03ImageView.setVisibility(View.VISIBLE);
+
+            } else {
+
+                mGamePower03ImageView.setVisibility(View.INVISIBLE);
+            }
+
+        } else { mGamePower03ImageView.setVisibility(View.GONE); }
+
+        // Power 4
+        if (stage_03_complete) {
+
+            if (mPower04Meter > mPower04Target) {
+
+                mGamePower04ImageView.setVisibility(View.VISIBLE);
+
+            } else {
+
+                mGamePower04ImageView.setVisibility(View.INVISIBLE);
+            }
+
+        } else { mGamePower04ImageView.setVisibility(View.GONE); }
+
+        // Power 5
+        if (stage_04_complete) {
+
+            if (mPower05Meter > mPower05Target) {
+
+                mGamePower05ImageView.setVisibility(View.VISIBLE);
+
+            } else {
+
+                mGamePower05ImageView.setVisibility(View.INVISIBLE);
+            }
+
+        } else { mGamePower05ImageView.setVisibility(View.GONE); }
+
+        // Power 6
+        if (stage_05_complete) {
+
+            if (mPower06Meter > mPower06Target) {
+
+                mGamePower06ImageView.setVisibility(View.VISIBLE);
+
+            } else {
+
+                mGamePower06ImageView.setVisibility(View.INVISIBLE);
+            }
+
+        } else { mGamePower06ImageView.setVisibility(View.GONE); }
+    }
+
+    // Build stage cards
+    public void buildStageCards() {
+
+        //
+        boolean[] stage_complete = {
+
+                //
+                stage_01_complete, stage_02_complete, stage_03_complete, stage_04_complete, stage_05_complete, stage_06_complete, stage_07_complete
+        };
+
+        //
+        int i = 0;
+
+        // Set stage card bg
+        for (int card : STAGE_PROP_CARDS) {
+
+            //
+            findViewById(card).setBackground(versionCheck(STAGE_PROP_CARD_BG[i]));
+
+            //
+            ++i;
+        }
+
+        //
+        i = 0;
+
+        // Set stage card titles
+        for (int card_title : STAGE_PROP_CARD_TITLES) {
+
+            //
+            findViewById(card_title).setBackground(versionCheck(STAGE_PROP_TITLE_IMAGES[i]));
+
+            //
+            ++i;
+        }
+
+        //
+        i = 0;
+
+        // Set stage status
+        for (int card_status : STAGE_PROP_CARD_STATUS) {
+
+            //
+            findViewById(card_status).setBackground(versionCheck(R.drawable.stage_ready_image));
+
+            //
+            if (i > 0 && !stage_complete[i - 1]) {
+
+                //
+                findViewById(card_status).setBackground(versionCheck(R.drawable.stage_locked_image));
+            }
+
+            //
+            if (stage_complete[i]) {
+
+                //
+                findViewById(card_status).setBackground(versionCheck(R.drawable.stage_complete_image));
+            }
+
+            //
+            ++i;
+        }
+
+        //
+        i = 0;
+
+        // Set stage icon
+        for (int card_icon : STAGE_PROP_CARD_ICONS) {
+
+            //
+            findViewById(card_icon).setBackground(versionCheck(R.drawable.stage_select_icon_ready));
+
+            //
+            if (stage_complete[i]) {
+
+                //
+                findViewById(card_icon).setBackground(versionCheck(R.drawable.stage_select_icon_complete));
+
+            }
+
+            //
+            if (i > 0 && !stage_complete[i - 1]) {
+
+                //
+                findViewById(card_icon).setBackground(versionCheck(R.drawable.stage_select_icon_lock));
+            }
+
+            //
+            ++i;
+        }
+    }
+
+	// Randomly select new background image
+	private void switchEnvironment() {
+        Log.d(TAG, "switchEnvironment:");
+
+        //
+        if (!mStageSceneImages.isEmpty()) {
 
             //
             setStage();
@@ -2631,26 +4976,32 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             //
             resetTunnel();
 
-            // Play bg audio
-            //playAudio(BG_AUDIO);
-
             // Random selection from array
             Random r = new Random();
 
             //
-            mEnvironmentID = mStageBGImages.get(r.nextInt(mStageBGImages.size()));
-            Log.d(TAG, "switchEnvironment: Background Array Size >>>>>>>>" + mStageBGImages.size() + "<<<<<<<<<<<<<<<<<<<<<<<<");
-            Log.d(TAG, "switchEnvironment: Random Selection ID >>>>>>>>>>>>" + mEnvironmentID + "<<<<<<<<<<<<<<<<<<");
-
-            //
-            mStageBGImages.remove(mStageBGImages.indexOf(mEnvironmentID));
+            mEnvironmentID = mStageSceneImages.get(r.nextInt(mStageSceneImages.size()));
+            String mSceneID = mStageSceneNames.get(mStageSceneImages.indexOf(mEnvironmentID));
 
             //
             Drawable mEnvironmentDrawable;
 
             //
             mEnvironmentDrawable = versionCheck(mEnvironmentID);
-            findViewById(canvas).setBackground(mEnvironmentDrawable);
+            mGameCreatureLayout.setBackground(mEnvironmentDrawable);
+            mGameSceneTextView.setText(mSceneID);
+        }
+    }
+
+    // Remove images and names from arrays
+    private void removeBG() {
+
+        //
+        if (!mStageSceneImages.isEmpty()) {
+
+            //
+            mStageSceneImages.remove(mStageSceneImages.indexOf(mEnvironmentID));
+            //mStageSceneNames.remove(mStageSceneNames.indexOf(mEnvironmentID));
         }
     }
 
@@ -2658,7 +5009,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void resetTunnel() {
 
         // Reset tunnel meter
-        mHungerMeter = 21;
+        mHungerMeter = 30;
         mSpeedIndex = 1000;
 
         // Update tunnel image
@@ -2669,7 +5020,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void resetBorder() {
 
         // Reset border meter
-        mBorderBarrel = 0;
+        mBorderBarrel = 19;
 
         // Update border image
         updateBorder();
@@ -2678,15 +5029,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     // Reset tap meter
     public void resetTapper() {
 
-        // Reset tap meter
-        if (mTapCount > 0) {
-
-            //
-            mTapCount = 0;
-        }
+        //
+        mTapCount = 0;
 
         //
-        findViewById(R.id.stage_advance_image).setVisibility(View.INVISIBLE);
+        mStageDisasterImageView.setAlpha((float) 0);
+
+        //
+        //mStageAdvanceMeter = 0;
 
         // Update tap image
         updateTapper();
@@ -2696,27 +5046,32 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void updateTunnel() {
 
         //
-        if (mHungerMeter < TUNNEL_FADE.length) {
+        if (mHungerMeter < ALPHA_INDEX.length) {
 
             //
-            double tunnel_alpha = TUNNEL_FADE[mHungerMeter];
+            double tunnel_alpha = ALPHA_INDEX[mHungerMeter];
             mGameTunnelVisionLayout.setAlpha((float) tunnel_alpha);
 
         } else {
 
             //
             mGameTunnelVisionLayout.setAlpha(0);
+
+            //
+            mStageFrenzy = 0;
         }
     }
 
     // Update border
     private void updateBorder() {
 
+        mGameBorderLayout.setVisibility(View.VISIBLE);
+
         //
-        if (mBorderBarrel < BORDER_FADE.length) {
+        if (mBorderBarrel < ALPHA_INDEX.length) {
 
             //
-            double border_alpha = BORDER_FADE[mBorderBarrel];
+            double border_alpha = ALPHA_INDEX[mBorderBarrel];
             mGameBorderLayout.setAlpha((float) border_alpha);
 
         } else {
@@ -2730,16 +5085,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void updateTapper() {
 
         //
-        if (mTapCount < TAP_FADE.length && mStageAdvanceMeter < mStageAdvanceTarget) {
+        if (mTapCount < mTapBarrel) {
 
-            //
-            double tap_alpha = TAP_FADE[mTapCount];
-            mGameAdvanceImageView.setAlpha((float) tap_alpha);
+            // Adjust view visibility
+            mGameScenePrevImageButton.setVisibility(View.INVISIBLE);
+            mGameSceneNextImageButton.setVisibility(View.INVISIBLE);
+            mGameSceneImageView.setBackgroundColor(getResources().getColor(R.color.color_palette_fade_05));
+        }
+
+        // Check valid tap
+        if (mTapCount < ALPHA_INDEX_INVERSE.length) {
+
+            // Adjust alpha on disaster image
+            double tap_alpha = ALPHA_INDEX_INVERSE[mTapCount];
+            mStageDisasterImageView.setVisibility(View.VISIBLE);
+            mStageDisasterImageView.setAlpha((float) tap_alpha);
 
         } else {
 
-            //
-            mGameAdvanceImageView.setAlpha((float) 1);
+            // Fill alpha on disaster image
+            mStageDisasterImageView.setVisibility(View.VISIBLE);
+            mStageDisasterImageView.setAlpha((float) 1);
         }
     }
 
@@ -2747,87 +5113,205 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void inflateTapper() {
 
         // Inflate tap variable
-        mTapCount = mTapCount + 1;
+        ++mTapCount;
+
+        // Score highest streak
+        if (mTapCount >= mStageHighestStreak || mStageHighestStreak == 0) { mStageHighestStreak = mTapCount; }
 
         // Check target
         if (mTapCount >= mTapBarrel) {
 
-            //
-            ++mStageAdvanceMeter;
+            // Adjust view visibility
+            mStageDisasterImageView.setVisibility(View.VISIBLE);
+            //findViewById(R.id.game_main_stage_advance_image_view).setVisibility(View.VISIBLE);
+            //mGamePowersLayout.setVisibility(View.GONE);
 
-            //
-            if (mStageAdvanceMeter >= mStageAdvanceTarget) {
+            // Adjust view visibility
+            mGameScenePrevImageButton.setVisibility(View.VISIBLE);
+            mGameSceneNextImageButton.setVisibility(View.VISIBLE);
+            mGameSceneImageView.setBackgroundColor(getResources().getColor(R.color.color_palette_fade_01));
 
-                //
-                findViewById(R.id.game_main_stage_advance_image_view).setVisibility(View.VISIBLE);
-                findViewById(R.id.stage_advance_image).setVisibility(View.VISIBLE);
-            }
-
-            //
+            // Play audio
             playAudio(BAMBOO_CLICK);
+
+        } else {
+
+            // Adjust view visibility
+            findViewById(R.id.game_main_stage_advance_image_view).setVisibility(View.INVISIBLE);
+            mGamePowersLayout.setVisibility(View.VISIBLE);
+
+            // Adjust view visibility
+            mGameScenePrevImageButton.setVisibility(View.INVISIBLE);
+            mGameSceneNextImageButton.setVisibility(View.INVISIBLE);
+
+            // Play audio
+            playAudio(PINGS[0]);
+
         }
 
         // Update bolt, whirlpool, etc.
-        if (mTapCount < TAP_FADE.length) { updateTapper(); }
+        if (mTapCount < ALPHA_INDEX_INVERSE.length) { updateTapper(); }
     }
 
     // Advance to next bg
     private void tapOut() {
 
-        //
+        // Pause game
         mPauseGame = true;
 
         // Stage progress
         ++mTapTotal;
 
         //
-        mStageAdvanceMeter = 0;
-        //++mStageAdvanceTarget;
+        //mStageAdvanceMeter = 0;
 
         //
-        playAudio(mGameTapAudio);
+        if (mStageSceneImages.isEmpty()) {
 
-        //
-        mGameLevelMarkerImageView.setBackground(versionCheck(LEVEL_MARKERS[mTapTotal]));
-
-        //
-        if (mStageBGImages.isEmpty()) {
-
-            //
-            findViewById(R.id.game_main_level_marker_layout).setVisibility(View.GONE);
-            findViewById(R.id.game_main_power_layouts).setVisibility(View.GONE);
-
-            //
-            startBoss();
+            // Start boss
+            mCreatureGameOver = true;
 
         } else {
 
             //
-            switchEnvironment(R.id.game_main_pg_creature_canvas_layout);
+            switchEnvironment();
 
             //
-            mPauseGame = false;
+            removeBG();
+
+            //
+            mGameLevelMarkerImageView.setBackground(versionCheck(LEVEL_MARKERS[mTapTotal]));
+            mGameLevelMarkerLayout.setVisibility(View.VISIBLE);
+            mGamePowersLayout.setVisibility(View.VISIBLE);
+        }
+
+        //
+        playAudio(mGameTapAudio);
+
+        // Undo pause game
+        mPauseGame = false;
+    }
+
+    // Switch stage cards
+    private void switchStageCard(int mode) {
+
+        boolean[] stage_complete = {
+
+                stage_01_complete, stage_02_complete, stage_03_complete, stage_04_complete, stage_05_complete, stage_06_complete, stage_07_complete
+        };
+
+        //
+        resetCreatureCollection();
+
+        //
+        switch (mode) {
+
+            //
+            case 0:
+
+                //
+                if (mStageIndex != 1) {
+
+                    //
+                    --mStageIndex;
+                    mStageApex = false;
+
+                    // Check stage complete
+                    if (mStageIndex != 1) {
+
+                        // Initial stage status - locked
+                        mStageReady = 1;
+
+                        // Test for ready - *not needed*
+                        if (stage_complete[mStageIndex - 2]) {
+
+                            Log.d(TAG, "switchStageCard: previous stage complete : " );
+
+                            //
+                            mStageReady = 2;
+                        }
+                    } else {
+
+                        //
+                        mStageReady = 2;
+                    }
+
+                    Log.d(TAG, "switchStageCard: mStageReady : " + mStageReady);
+
+                    //
+                    mStageComplete = stage_complete[mStageIndex - 1];
+
+                    Log.d(TAG, "switchStageCard: mStageComplete : " + mStageComplete);
+
+                    // Load images, audio, scores
+                    loadStageProps(mStageIndex);
+
+                    // Switch stage card screen
+                    //startStageCard();
+                    // Switch to SCREEN(STAGE_CARD)
+                    switchScreen(R.id.stage_card_screen_main_layout);
+                }
+
+                break;
+
+            //
+            case 1:
+
+                //
+                if (mStageIndex != 7) {
+
+                    //
+                    ++mStageIndex;
+                    mStageApex = false;
+
+                    // Initial stage status - locked
+                    mStageReady = 1;
+
+                    // Test for ready
+                    if (stage_complete[mStageIndex - 2]) {
+
+                        //
+                        mStageReady = 2;
+                    }
+
+                    Log.d(TAG, "switchStageCard: mStageReady : " + mStageReady);
+
+                    // Check stage complete
+                    mStageComplete = stage_complete[mStageIndex - 1];
+
+                    Log.d(TAG, "switchStageCard: mStageComplete : " + mStageComplete);
+
+                    // Load images, audio, scores
+                    loadStageProps(mStageIndex);
+
+                    // Switch stage card screen
+                    //startStageCard();
+                    // Switch to SCREEN(STAGE_CARD)
+                    switchScreen(R.id.stage_card_screen_main_layout);
+                }
+
+                break;
         }
     }
 
 	// Randomly select and position sprites
-	private void switchCreature(int creature, int canvas) {
+	private void switchCreature(int creature) {
 
         // Random selection from array
         Random r = new Random();
 
         // Array of images
-        int mCreatureID = CREATURES[r.nextInt(32)];
+        mCreatureID = CREATURES[r.nextInt(32)];
         Drawable mCreatureDrawable;
 
         // Return drawable
         mCreatureDrawable = versionCheck(mCreatureID);
 
+        // Move creature
+        moveCreature(creature, R.id.game_main_pg_creature_canvas_layout);
+
         // Attach random background
         findViewById(creature).setBackground(mCreatureDrawable);
-
-        // Move creature
-        moveCreature(creature, canvas);
     }
 
     // Move creature
@@ -2875,46 +5359,107 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         //
         for (int creature : CREATURE_BUTTONS) {
-            switchCreature(creature, R.id.game_main_pg_creature_canvas_layout);
+
+            //
+            switchCreature(creature);
+
+            //
+            switch (creature) {
+
+                //
+                case R.id.game_main_creature_01_image_button:
+
+                    //
+                    mStageCreature01ID = mCreatureID;
+
+                    break;
+
+                //
+                case R.id.game_main_creature_02_image_button:
+
+                    //
+                    mStageCreature02ID = mCreatureID;
+
+                    break;
+
+                //
+                case R.id.game_main_creature_03_image_button:
+
+                    //
+                    mStageCreature03ID = mCreatureID;
+
+                    break;
+
+                //
+                case R.id.game_main_creature_04_image_button:
+
+                    //
+                    mStageCreature04ID = mCreatureID;
+
+                    break;
+
+                //
+                case R.id.game_main_creature_05_image_button:
+
+                    //
+                    mStageCreature05ID = mCreatureID;
+
+                    break;
+            }
         }
     }
 
     // Creature animation
-    private void animateCreature(int creature) {
+    private void animateCreature(int v) {
 
         //
-        ImageView creatureImage = (ImageView) findViewById(creature);
+        ImageView creatureImage = findViewById(v);
         Animation creatureAnimation = AnimationUtils.loadAnimation(this, R.anim.creature_jump);
         creatureAnimation.setFillAfter(true);
         creatureImage.startAnimation(creatureAnimation);
     }
 
-    // Fade out
-    private void fadeOut(int screen) {
+    // Fade in
+    private void fadeIn(int v) {
 
         //
-        ImageView screenImage = (ImageView) findViewById(screen);
-        Animation fadeAnimation = AnimationUtils.loadAnimation(this, R.anim.fade_out);
+        View screenImage = findViewById(v);
+        Animation fadeAnimation = AnimationUtils.loadAnimation(this, R.anim.fade_in);
+        fadeAnimation.setFillAfter(true);
         screenImage.startAnimation(fadeAnimation);
     }
 
-    // Fade in
-    private void fadeIn(int view) {
+    //
+    private void fadeInObj(int v) {
 
         //
-        ImageView screenImage = (ImageView) findViewById(view);
-        Animation fadeAnimation = AnimationUtils.loadAnimation(this, R.anim.fade_in);
+        LinearLayout screenImage = findViewById(v);
+        Animation fadeAnimation = AnimationUtils.loadAnimation(this, R.anim.fade_in_obj);
+        fadeAnimation.setFillAfter(true);
+        screenImage.startAnimation(fadeAnimation);
+    }
+
+    // Fade titles
+    private void fadeTitles(int v) {
+
+        //
+        ImageView screenImage = findViewById(v);
+        Animation fadeAnimation = AnimationUtils.loadAnimation(this, R.anim.fade_titles);
+        fadeAnimation.setFillAfter(true);
         screenImage.startAnimation(fadeAnimation);
     }
 
     // Dialog to reset game
     private void alertNewGame() {
 
+        // Pause game
+        mPauseGame = true;
+
         // Create dialog
         AlertDialog.Builder restartBuilder = new AlertDialog.Builder(this);
 
         // Set titles
-        restartBuilder.setCancelable(true);
+        restartBuilder.setCancelable(false);
         restartBuilder.setTitle("Start New Game");
         restartBuilder.setMessage("This will erase all previous game data.");
 
@@ -2929,6 +5474,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 //
                 playAudio(MISS);
 
+                //
+                mPauseGame = false;
             }
         });
 
@@ -2945,6 +5492,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 //
                 playAudio(ROAR);
+
+                //
+                mPauseGame = false;
             }
         });
 
@@ -2955,16 +5505,84 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         playAudio(CROW_AUDIO);
     }
 
+    // Dialog to toggle tutorial
+    private void alertToggleTutorial() {
+
+        // Pause game
+        mPauseGame = true;
+
+        // Create dialog
+        AlertDialog.Builder tutorialBuilder = new AlertDialog.Builder(this);
+
+        // Set title
+        tutorialBuilder.setCancelable(false);
+        tutorialBuilder.setTitle("Toggle Tutorial");
+        tutorialBuilder.setMessage("Continue tutorial mode?");
+
+        //Pass checked state
+        boolean[] mToggle = { play_tutorial };
+
+        // Setup checkbox
+        tutorialBuilder.setMultiChoiceItems(R.array.tutorial, mToggle, new DialogInterface.OnMultiChoiceClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i, boolean b) {
+
+                //
+                switch (i) {
+
+                    //
+                    case 0:
+
+                        // Assign boolean value
+                        play_tutorial = b;
+
+                        // Set game data
+                        setGameData();
+
+                        // Play audio
+                        playAudio(THUNDER_AUDIO);
+
+                        // Undo pause game
+                        mPauseGame = false;
+
+                        break;
+                }
+            }
+        });
+
+        // Set positive button
+        tutorialBuilder.setPositiveButton("Yeah", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+                // Play audio
+                playAudio(RUN);
+
+                // Undo pause game
+                mPauseGame = false;
+            }
+        });
+
+        // Display
+        tutorialBuilder.show();
+
+        // Play audio
+        playAudio(CROW_AUDIO);
+    }
+
     // Dialog to edit settings
     private void alertEditSettings() {
+
+        // Pause game
+        mPauseGame = true;
 
         // Create dialog
         AlertDialog.Builder settingsBuilder = new AlertDialog.Builder(this);
 
         // Set title
-        settingsBuilder.setCancelable(true);
-        //settingsBuilder.setTitle("Settings");
-        settingsBuilder.setTitle("Adjust Game Settings");
+        settingsBuilder.setCancelable(false);
+        settingsBuilder.setTitle("Game Settings");
+        settingsBuilder.setMessage("Make adjustments");
 
         // Pass checked states
         boolean[] mChecked = {play_audio, play_haptic};
@@ -3004,7 +5622,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         setGameData();
 
                         break;
-
                 }
             }
         });
@@ -3014,8 +5631,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
 
-                //
-                playAudio(HEARTBEAT);
+                // Play audio
+                playAudio(RUN);
+
+                // Undo pause game
+                mPauseGame = false;
             }
         });
 
@@ -3029,7 +5649,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     // Dialog to alert return lose progress
     private void alertReturnLoseProgress() {
 
-        // Pause
+        // Pause game
         mPauseGame = true;
 
         // Alert dialog
@@ -3045,11 +5665,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
 
-                //
+                // Play audio
                 playAudio(MISS);
 
-                //
+                // Undo pause game
                 mPauseGame = false;
+
+                // Cancel dialogue
                 dialogInterface.cancel();
             }
         });
@@ -3059,26 +5681,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
 
-                //
-                playAudio(RUN);
-
-                //
+                // Switch to stage select screen
                 switchScreen(R.id.stage_select_screen_main_layout);
 
+                // Play audio
+                playAudio(RUN);
+
+                // Undo pause game
+                mPauseGame = false;
             }
         });
 
-        //
+        // Display
         mReturnAlert.show();
 
-        //
+        // Play audio
         playAudio(CROW_AUDIO);
     }
 
     // Dialog to alert exit lose progress
     private void alertExitLoseProgress() {
 
-        // Pause
+        // Pause game
         mPauseGame = true;
 
         // Alert dialog
@@ -3094,11 +5718,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
 
-                //
+                // Play audio
                 playAudio(MISS);
 
-                //
+                // Undo pause game
                 mPauseGame = false;
+
+                // Cancel dialogue
                 dialogInterface.cancel();
             }
         });
@@ -3108,18 +5734,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
 
-                //
+                // Play audio
                 playAudio(RUN);
 
-                //
+                // Undo pause game
+                //mPauseGame = false;
+
+                // Kill app
                 finish();
             }
         });
 
-        //
+        // Display
         mReturnAlert.show();
 
-        //
+        // Play audio
         playAudio(CROW_AUDIO);
     }
 
@@ -3128,16 +5757,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Drawable versionCheck(int mID) {
 
 	    // Check version
-	    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-
-	        //
-	        return context.getResources().getDrawable(mID, getTheme());
-
-        } else {
-
-	        //
-	        return  context.getResources().getDrawable(mID);
-        }
+	    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) { return context.getResources().getDrawable(mID, getTheme()); }
+	    else { return  context.getResources().getDrawable(mID); }
     }
 
 	// Method to play audio
@@ -3153,12 +5774,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             mediaPlayer = MediaPlayer.create(this, sound);
 
             //
-            if (sound == BG_AUDIO) {
-
-                //
-                mediaPlayer.setLooping(true);
-            }
-
             mediaPlayer.start();
 
 			// On click listener clears audio memory when finished playing
@@ -3203,415 +5818,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 		}
 	}
 
-	// Check stage progress and scores
-	private void checkCardData() {
-
-        // Check apex achievement
-        if (stage_01_apex) {
-
-            // Reveal apex achievement
-            mStage01ApexImageView.setVisibility(View.VISIBLE);
-
-        } else {
-
-            // Hide apex achievement
-            mStage01ApexImageView.setVisibility(View.GONE);
-        }
-
-        // Check accuracy score
-        if (stage_01_accuracy != null) {
-
-            // Reveal accuracy score
-            mStage01AccuracyTextView.setVisibility(View.VISIBLE);
-            mStage01AccuracyTextView.setText(stage_01_accuracy);
-
-        } else {
-
-            // Hide accuracy score
-            mStage01AccuracyTextView.setVisibility(View.GONE);
-        }
-
-        // Check predator score
-        if (stage_01_predator != null) {
-
-            // Reveal predator score
-            mStage01PredatorTextView.setVisibility(View.VISIBLE);
-            mStage01PredatorTextView.setText(stage_01_predator);
-
-        } else {
-
-            // Hide predator score
-            mStage01PredatorTextView.setVisibility(View.GONE);
-        }
-
-        // Check stage 2 ready
-        if (stage_02_unlocked) {
-
-            // Unlock stage
-            mStage02LockedImageButton.setVisibility(View.GONE);
-
-            // Check apex achievement
-            if (stage_02_apex) {
-
-                // Reveal apex achievement
-                mStage02ApexImageView.setVisibility(View.VISIBLE); }
-
-            else {
-
-                // Hide apex achievement
-                mStage02ApexImageView.setVisibility(View.GONE); }
-
-            // Check accuracy score
-            if (stage_02_accuracy != null) {
-
-                // Reveal accuracy score
-                mStage02AccuracyTextView.setVisibility(View.VISIBLE);
-                mStage02AccuracyTextView.setText(stage_02_accuracy);
-
-            } else {
-
-                // Hide accuracy score
-                mStage02AccuracyTextView.setVisibility(View.GONE); }
-
-            // Check predator score
-            if (stage_02_predator != null) {
-
-                // Reveal predator score
-                mStage02PredatorTextView.setVisibility(View.VISIBLE);
-                mStage02PredatorTextView.setText(stage_02_predator);
-
-            } else {
-
-                // Hide predator score
-                mStage02PredatorTextView.setVisibility(View.GONE); }
-
-        } else {
-
-            // Lock stage
-            mStage02LockedImageButton.setVisibility(View.VISIBLE);
-            mStage02ApexImageView.setVisibility(View.GONE);
-            mStage02AccuracyTextView.setVisibility(View.GONE);
-            mStage02PredatorTextView.setVisibility(View.GONE);
-        }
-
-        // Check stage 3 progress
-        if (stage_03_unlocked) {
-
-            // Unlock stage
-            mStage03LockedImageButton.setVisibility(View.GONE);
-
-            // Check apex achievement
-            if (stage_03_apex) {
-
-                // Reveal apex achievement
-                mStage03ApexImageView.setVisibility(View.VISIBLE);
-
-            } else {
-
-                // Hide apex achievement
-                mStage03ApexImageView.setVisibility(View.GONE);
-            }
-
-            // Check accuracy score
-            if (stage_03_accuracy != null) {
-
-                // Reveal accuracy score
-                mStage03AccuracyTextView.setVisibility(View.VISIBLE);
-                mStage03AccuracyTextView.setText(stage_03_accuracy);
-
-            } else {
-
-                // Hide accuracy score
-                mStage03AccuracyTextView.setVisibility(View.GONE);
-            }
-
-            // Check predator score
-            if (stage_03_predator != null) {
-
-                // Reveal predator score
-                mStage03PredatorTextView.setVisibility(View.VISIBLE);
-                mStage03PredatorTextView.setText(stage_03_predator);
-
-            } else {
-
-                // Hide predator score
-                mStage03PredatorTextView.setVisibility(View.GONE);
-            }
-
-        } else {
-
-            // Lock stage
-            mStage03LockedImageButton.setVisibility(View.VISIBLE);
-            mStage03ApexImageView.setVisibility(View.GONE);
-            mStage03AccuracyTextView.setVisibility(View.GONE);
-            mStage03PredatorTextView.setVisibility(View.GONE);
-        }
-
-        // Check stage 4 progress
-        if (stage_04_unlocked) {
-
-            // Unlock stage
-            mStage04LockedImageButton.setVisibility(View.GONE);
-
-            // Check apex achievement
-            if (stage_04_apex) {
-
-                // Reveal apex achievement
-                mStage04ApexImageView.setVisibility(View.VISIBLE);
-
-            } else {
-
-                // Hide apex achievement
-                mStage04ApexImageView.setVisibility(View.GONE);
-            }
-
-            // Check accuracy score
-            if (stage_04_accuracy != null) {
-
-                // Reveal accuracy score
-                mStage04AccuracyTextView.setVisibility(View.VISIBLE);
-                mStage04AccuracyTextView.setText(stage_04_accuracy);
-
-            } else {
-
-                // Hide accuracy score
-                mStage04AccuracyTextView.setVisibility(View.GONE);
-            }
-
-            // Check predator score
-            if (stage_04_predator != null) {
-
-                // Reveal predator score
-                mStage04PredatorTextView.setVisibility(View.VISIBLE);
-                mStage04PredatorTextView.setText(stage_04_predator);
-
-            } else {
-
-                // Hide predator score
-                mStage04PredatorTextView.setVisibility(View.GONE);
-            }
-
-        } else {
-
-            // Lock stage
-            mStage04LockedImageButton.setVisibility(View.VISIBLE);
-            mStage04ApexImageView.setVisibility(View.GONE);
-            mStage04AccuracyTextView.setVisibility(View.GONE);
-            mStage04PredatorTextView.setVisibility(View.GONE);
-        }
-
-        // Check stage 5 progress
-        if (stage_05_unlocked) {
-
-            // Unlock stage
-            mStage05LockedImageButton.setVisibility(View.GONE);
-
-            // Check apex achievement
-            if (stage_05_apex) {
-
-                // Reveal apex achievement
-                mStage05ApexImageView.setVisibility(View.VISIBLE);
-
-            } else {
-
-                // Hide apex achievement
-                mStage05ApexImageView.setVisibility(View.GONE);
-            }
-
-            // Check accuracy score
-            if (stage_05_accuracy != null) {
-
-                // Reveal accuracy score
-                mStage05AccuracyTextView.setVisibility(View.VISIBLE);
-                mStage05AccuracyTextView.setText(stage_05_accuracy);
-
-            } else {
-
-                // Hide accuracy score
-                mStage05AccuracyTextView.setVisibility(View.GONE);
-            }
-
-            // Check predator score
-            if (stage_05_predator != null) {
-
-                // Reveal predator score
-                mStage05PredatorTextView.setVisibility(View.VISIBLE);
-                mStage05PredatorTextView.setText(stage_05_predator);
-
-            } else {
-
-                // Hide predator score
-                mStage05PredatorTextView.setVisibility(View.GONE);
-            }
-
-        } else {
-
-            // Lock stage
-            mStage05LockedImageButton.setVisibility(View.VISIBLE);
-            mStage05ApexImageView.setVisibility(View.GONE);
-            mStage05AccuracyTextView.setVisibility(View.GONE);
-            mStage05PredatorTextView.setVisibility(View.GONE);
-        }
-
-        // Check stage 6 progress
-        if (stage_06_unlocked) {
-
-            // Unlock stage
-            mStage06LockedImageButton.setVisibility(View.GONE);
-
-            // Check apex achievement
-            if (stage_06_apex) {
-
-                // Reveal apex achievement
-                mStage06ApexImageView.setVisibility(View.VISIBLE);
-
-            } else {
-
-                // Hide apex achievement
-                mStage06ApexImageView.setVisibility(View.GONE);
-            }
-
-            // Check accuracy score
-            if (stage_06_accuracy != null) {
-
-                // Reveal accuracy score
-                mStage06AccuracyTextView.setVisibility(View.VISIBLE);
-                mStage06AccuracyTextView.setText(stage_06_accuracy);
-
-            } else {
-
-                // Hide accuracy score
-                mStage06AccuracyTextView.setVisibility(View.GONE);
-            }
-
-            // Check predator score
-            if (stage_06_predator != null) {
-
-                // Reveal predator score
-                mStage06PredatorTextView.setVisibility(View.VISIBLE);
-                mStage06PredatorTextView.setText(stage_06_predator);
-
-            } else {
-
-                // Hide predator score
-                mStage06PredatorTextView.setVisibility(View.GONE);
-            }
-
-        } else {
-
-            // Lock stage
-            mStage06LockedImageButton.setVisibility(View.VISIBLE);
-            mStage06ApexImageView.setVisibility(View.GONE);
-            mStage06AccuracyTextView.setVisibility(View.GONE);
-            mStage06PredatorTextView.setVisibility(View.GONE);
-        }
-
-        // Check final stage progress
-        if (stage_06_complete) {
-
-            // Unlock final
-            findViewById(R.id.stage_select_card_final_boss_image_layout).setVisibility(View.VISIBLE);
-            //mFinalBossImageView.setVisibility(View.VISIBLE);
-
-            // Check apex achievement
-            if (stage_final_boss_apex) {
-
-                // Reveal apex achievement
-                findViewById(R.id.select_stage_final_boss_apex_image_view).setVisibility(View.VISIBLE);
-                //mStageFinalBossApexImageView.setVisibility(View.VISIBLE);
-
-            } else {
-
-                // Hide apex achievement
-                findViewById(R.id.select_stage_final_boss_apex_image_view).setVisibility(View.GONE);
-                //mStageFinalBossApexImageView.setVisibility(View.GONE);
-            }
-
-        } else {
-
-            // Lock stage
-            findViewById(R.id.stage_select_card_final_boss_image_layout).setVisibility(View.GONE);
-            //mFinalBossImageView.setVisibility(View.GONE);
-            findViewById(R.id.select_stage_final_boss_apex_image_view).setVisibility(View.GONE);
-            //mStageFinalBossApexImageView.setVisibility(View.GONE);
-        }
-    }
-
 	// Calculate percentage
-	@SuppressLint("DefaultLocale")
-	private static String getPercentage(int mTurns, int mHits) {
+	private static float getPercentage(int turns, int hits) {
 
         // Ensure not dividing by zero
-        if (mTurns < 1) { mTurns = 1; }
+        if (turns < 1) { turns = 1; }
 
         // Build and return float average of turns and hits
-		float mPercentage = (100 * (float) mHits) / ((float) mTurns);
-		return String.format("%2.0f%%", mPercentage);
-	}
-
-	// Get aggression score
-	private static String getAggressionScore(int aggression) {
-
-	    // Build return string
-		String aggressionScore;
-
-		// Classify aggression
-		if (aggression < 1) {
-            aggressionScore = "grumpy ";
-        } else if (aggression < 2) {
-            aggressionScore = "bothered ";
-		} else if (aggression < 3) {
-			aggressionScore = "irritated ";
-		} else if (aggression < 4) {
-			aggressionScore = "annoyed ";
-		} else if (aggression < 5) {
-			aggressionScore = "upset ";
-		} else if (aggression < 6) {
-			aggressionScore = "frustrated ";
-        } else if (aggression < 7) {
-            aggressionScore = "infuriated ";
-        } else if (aggression < 8) {
-            aggressionScore = "hostile ";
-        } else if (aggression < 9) {
-            aggressionScore = "wrathful ";
-        } else if (aggression < 10) {
-            aggressionScore = "enraged ";
-        } else {
-            aggressionScore = "???";
-		}
-
-		// Return string
-		return aggressionScore;
-	}
-
-	// Get species score
-	private static String getSpeciesScore(int species) {
-
-	    // Build return string
-		String speciesScore;
-
-		// Classify predator
-		if (species < 2) {
-			speciesScore = "tadpole";
-		} else if (species < 3) {
-            speciesScore = "mouse";
-        } else if (species < 4) {
-            speciesScore = "toad";
-		} else if (species < 5) {
-            speciesScore = "pigeon";
-        } else if (species < 6) {
-            speciesScore = "crab";
-		} else if (species < 7) {
-            speciesScore = "rabbit";
-		} else if (species < 8) {
-            speciesScore = "sloth";
-		} else {
-            speciesScore = "???";
-		}
-
-		// Return string
-		return speciesScore;
-	}
+        return (100 * (float) hits) / ((float) turns);
+    }
 
     // Reset level markers
     private void resetLevelMarkers() {
@@ -3620,56 +5835,169 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mGameLevelMarkerImageView.setBackground(versionCheck(LEVEL_MARKERS[0]));
 
         // Reveal markers and powers
-        findViewById(R.id.game_main_level_marker_layout).setVisibility(View.VISIBLE);
-        findViewById(R.id.game_main_power_layouts).setVisibility(View.VISIBLE);
+        mGameLevelMarkerImageView.setVisibility(View.VISIBLE);
+        mGameLevelMarkerLayout.setVisibility(View.VISIBLE);
+        mGamePowersLayout.setVisibility(View.VISIBLE);
     }
 
-	// Post score results
-    // TODO - add total score formulas to this method
-	private void postResults(String stage_accuracy_score, String stage_predator_score, boolean stage_apex_score) {
+    // Stage card *redundant* should remove
+    //private void startStageCard () {
 
-        // Switch to results screen
-		switchScreen(R.id.results_screen_main_layout);
+        // Pause game
+        // mPauseGame = true;
 
-		// Post scores
-        mResultsAccuracyTextView.setText(stage_accuracy_score);
-        mResultsPredatorTextView.setText(stage_predator_score);
+        // Switch to SCREEN(STAGE_CARD)
+        //switchScreen(R.id.stage_card_screen_main_layout);
 
-        // Toggle apex achievement
-        if (stage_apex_score) { mResultsApexImageView.setVisibility(View.VISIBLE); }
-        else { mResultsApexImageView.setVisibility(View.GONE); }
+        // Play audio(s)
+        //playAudio(RUN);
 
-        // Play outro
-        playAudio(FLUTE_TRILL_LONG);
+        // Undo pause game
+        //mPauseGame = false;
+    //}
+
+    // Build scorecard - STAGE TOP SCORES
+    @SuppressLint({"SetTextI18n", "DefaultLocale"})
+    private void buildScorecard() {
+
+        // Primary scores
+        mStageTopApexPredatorTextView.setText(Boolean.toString(TOP_SCORES_TOP_APEX[mStageIndex - 1]));
+        mStagePredatorTextView.setText(Integer.toString(TOP_SCORES_TOP_PREDATOR[mStageIndex - 1]));
+        mStageTopAccuracyTextView.setText(String.format("%.2f", TOP_SCORES_TOP_ACCURACY[mStageIndex - 1]));
+
+        // Secondary scores
+        mStageTopBestTimeTextView.setText(Integer.toString(TOP_SCORES_BEST_TIME[mStageIndex - 1]));
+        mStageTotalTimeTextView.setText(Integer.toString(TOP_SCORES_TOTAL_TIME[mStageIndex - 1]));
+        mStageTotalCreatureKillsTextView.setText(Integer.toString(TOP_SCORES_TOTAL_CREATURE_KILLS[mStageIndex - 1]));
+        mStageCollectionTextView.setText(Integer.toString(TOP_SCORES_TOTAL_COLLECTION[mStageIndex - 1]));
+
+        // Tertiary scores
+        mStageHighestStreakTextView.setText(Integer.toString(TOP_SCORES_HIGHEST_STREAK[mStageIndex - 1]));
+        mStageClosestDeathTextView.setText(Integer.toString(TOP_SCORES_CLOSEST_DEATH[mStageIndex - 1]));
+        mStageLongestFrenzyTextView.setText(Integer.toString(TOP_SCORES_LONGEST_FRENZY[mStageIndex - 1]));
+        mStageMostCalmTextView.setText(Long.toString(TOP_SCORES_MOST_CALM[mStageIndex - 1]));
+        mStageMostFranticTextView.setText(Long.toString(TOP_SCORES_MOST_FRANTIC[mStageIndex - 1]));
+
+        // Top scores
+        mStageTotalAttemptsTextView.setText(Integer.toString(TOP_SCORES_TOTAL_ATTEMPTS[mStageIndex - 1]));
+        mStageTotalBossKillsTextView.setText(Integer.toString(TOP_SCORES_TOTAL_BOSS_KILLS[mStageIndex - 1]));
+    }
+
+    // Build stage scores - STAGE COMPLETE
+    @SuppressLint({"SetTextI18n", "DefaultLocale"})
+    private void buildStageScores() {
+
+        // Primary scores
+        mStageApexPredatorTextView.setText(Boolean.toString(mStageApex));
+        mStagePredatorTextView.setText(Integer.toString(mStagePredator));
+        mStageAccuracyTextView.setText(String.format("%.2f", mStageAccuracy));
+
+        // Secondary scores
+        mStageTimeTextView.setText(Integer.toString(mStageTime));
+        mStageCreatureKillsTextView.setText(Integer.toString(mStageCreatureKills));
+        mStageCollectionTextView.setText(Integer.toString(mStageCollection));
+
+        // Tertiary scores
+        mStageHighestStreakTextView.setText(Integer.toString(mStageHighestStreak));
+        mStageClosestDeathTextView.setText(Integer.toString(mStageClosestDeath));
+        mStageLongestFrenzyTextView.setText(Integer.toString(mStageLongestFrenzy));
+        mStageMostCalmTextView.setText(Long.toString(mStageMostCalm));
+        mStageMostFranticTextView.setText(Long.toString(mStageMostFrantic));
+    }
+
+    //
+    private void buildCreatureCollection(int creature, int trophy_case) {
+
+        View[] trophy_cases = new View[]{
+
+                //
+                mCreature01ImageView, mCreature02ImageView, mCreature03ImageView, mCreature04ImageView,
+                mCreature05ImageView, mCreature06ImageView, mCreature07ImageView, mCreature08ImageView,
+                mCreature09ImageView, mCreature10ImageView, mCreature11ImageView, mCreature12ImageView,
+                mCreature13ImageView, mCreature14ImageView, mCreature15ImageView, mCreature16ImageView,
+                mCreature17ImageView, mCreature18ImageView, mCreature19ImageView, mCreature20ImageView,
+                mCreature21ImageView, mCreature22ImageView, mCreature23ImageView, mCreature24ImageView,
+                mCreature25ImageView, mCreature26ImageView, mCreature27ImageView, mCreature28ImageView,
+                mCreature29ImageView, mCreature30ImageView, mCreature31ImageView, mCreature32ImageView,
+        };
+
+        //
+        trophy_cases[trophy_case].setBackground(versionCheck(creature));
+        Log.d(TAG, "buildCreatureCollection: trophy_case: " + trophy_cases[trophy_case] + " creature: " + creature);
+
+
+        //
+        //int i = 0;
+
+        //
+        //for (View trophy_case : trophy_cases) {
+
+            //
+            //trophy_case.setBackground(versionCheck(collections[i]));
+
+            //i++;
+        //}
+
+
+    }
+
+    //
+    private void resetCreatureCollection() {
+
+        View[] trophy_cases = new View[]{
+
+                //
+                mCreature01ImageView, mCreature02ImageView, mCreature03ImageView, mCreature04ImageView,
+                mCreature05ImageView, mCreature06ImageView, mCreature07ImageView, mCreature08ImageView,
+                mCreature09ImageView, mCreature10ImageView, mCreature11ImageView, mCreature12ImageView,
+                mCreature13ImageView, mCreature14ImageView, mCreature15ImageView, mCreature16ImageView,
+                mCreature17ImageView, mCreature18ImageView, mCreature19ImageView, mCreature20ImageView,
+                mCreature21ImageView, mCreature22ImageView, mCreature23ImageView, mCreature24ImageView,
+                mCreature25ImageView, mCreature26ImageView, mCreature27ImageView, mCreature28ImageView,
+                mCreature29ImageView, mCreature30ImageView, mCreature31ImageView, mCreature32ImageView,
+        };
+
+        //
+        //trophy_cases[trophy_case].setBackground(versionCheck(creature));
+        //Log.d(TAG, "buildCreatureCollection: trophy_case: " + trophy_cases[trophy_case] + " creature: " + creature);
+
+        //
+        for (View trophy_case : trophy_cases) {
+
+            //
+            trophy_case.setBackground(versionCheck(android.R.color.transparent));
+        }
     }
 
     // Player eaten
+    @SuppressLint("SetTextI18n")
     private void playerEaten() {
 
         // Stop timer
         mPauseGame = true;
 
-        // Switch to eaten screen
+        // Record time
+        mStageTime = mStageTimer;
+
+        // Switch to SCREEN(EATEN)
         switchScreen(R.id.eaten_screen_main_layout);
 
-        // Fade titles
-        fadeIn(R.id.eaten_main_ending_image_view);
-        fadeIn(R.id.eaten_footer_tutorial_image_button);
-        fadeIn(R.id.eaten_footer_try_again_image_button);
-
-        // Play outro audio
+        // Play outro audio(s)
         playAudio(HIT);
         playAudio(DARK_OUTRO);
+
+        // Undo pause game
+        mPauseGame = false;
     }
 
 //-- ARRAY RESOURCES -->
-
     // Array list of screen layouts
     final private static int[] SCREENS = {
 
+
             //
-            R.id.help_screen_main_layout, R.id.entry_screen_main_layout, R.id.game_screen_main_layout, R.id.results_screen_main_layout,
-            R.id.intro_screen_main_layout, R.id.stage_select_screen_main_layout, R.id.eaten_screen_main_layout, R.id.outro_screen_main_layout
+            R.id.credits_screen_main_layout, R.id.entry_screen_main_layout, R.id.game_screen_main_layout,
+            R.id.stage_select_screen_main_layout, R.id.eaten_screen_main_layout, R.id.stage_card_screen_main_layout
     };
 
 	// Array list of intro screen layouts
@@ -3697,14 +6025,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     // Array list of items that need event handlers
     final private static int[] CLICKABLES = {
 
+            // Credits
+            R.id.credits_screen_main_layout,
+
             // Entry
             R.id.entry_main_continue_image_button, R.id.entry_main_new_image_button, R.id.entry_main_settings_image_button, R.id.entry_main_tutorial_image_button,
+            R.id.entry_main_credits_image_button,
 
-            // Help
-            R.id.help_main_return_image_button, R.id.help_main_exit_image_button, R.id.help_main_tutorial_image_button,
+            // Stage card
+            R.id.stage_card_header_return_image_button, R.id.stage_card_content_title_image_button, R.id.stage_card_top_score_image_button,
+            R.id.stage_card_control_prev_image_button, R.id.stage_card_control_next_image_button,
+            R.id.stage_card_ready_play_here_image_button,
+
+            // Stage select
+            R.id.stage_select_return_image_button, R.id.select_stage_scorecard_image_button, R.id.stage_select_scorecard_layout,
+
+            //
+            R.id.stage_select_card_01_image_layout, R.id.stage_select_card_02_image_layout, R.id.stage_select_card_03_image_layout,
+            R.id.stage_select_card_04_image_layout, R.id.stage_select_card_05_image_layout, R.id.stage_select_card_06_image_layout,
+            R.id.stage_select_card_07_image_layout,
 
             // Game
-            R.id.game_main_return_image_button, R.id.game_main_exit_image_button, R.id.stage_advance_image,
+            R.id.game_main_exit_image_button, R.id.game_settings_alert_image_button,
+
+            //
+            R.id.game_scene_prev_image_button, R.id.game_scene_next_image_button,
 
             //
             R.id.game_main_power_01_image_view, R.id.game_main_power_02_image_view, R.id.game_main_power_03_image_view,
@@ -3717,21 +6062,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             R.id.game_main_creature_01_image_button, R.id.game_main_creature_02_image_button, R.id.game_main_creature_03_image_button,
             R.id.game_main_creature_04_image_button, R.id.game_main_creature_05_image_button, R.id.game_main_boss_image_button,
 
-            // Results
-            R.id.results_main_return_image_button, R.id.results_main_exit_image_button,
-            R.id.results_footer_restart_image_button, R.id.results_footer_next_image_button,
-
-            // Stage select
-            R.id.stage_select_return_image_button, R.id.select_stage_exit_image_button,
-
-            //
-            R.id.stage_select_card_01_image_layout, R.id.stage_select_card_02_image_layout, R.id.stage_select_card_03_image_layout,
-            R.id.stage_select_card_04_image_layout, R.id.stage_select_card_05_image_layout, R.id.stage_select_card_06_image_layout,
-            R.id.stage_select_card_final_boss_image_layout,
-
             // Eaten
-            R.id.eaten_main_return_image_button, R.id.eaten_main_exit_image_button,
-            R.id.eaten_footer_tutorial_image_button, R.id.eaten_footer_try_again_image_button,
+            R.id.eaten_main_return_image_button, R.id.eaten_main_exit_image_button, R.id.eaten_footer_tutorial_image_button, R.id.eaten_footer_try_again_image_button,
     };
 
     // Array list of creature buttons
@@ -3742,11 +6074,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             R.id.game_main_creature_04_image_button, R.id.game_main_creature_05_image_button
     };
 
+    // Array list of stage names
+    final private static int[] STAGE_NAMES = {
+
+            //
+            R.drawable.stage_01_title_image, R.drawable.stage_02_title_image, R.drawable.stage_03_title_image, R.drawable.stage_04_title_image,
+            R.drawable.stage_05_title_image, R.drawable.stage_06_title_image, R.drawable.game_main_subtitle_image_view
+    };
+
     // Array list of background images [forest]
     final private static int[] FOREST_SCENES = {
 
             //
             R.drawable.forest_bg_01, R.drawable.forest_bg_02, R.drawable.forest_bg_03, R.drawable.forest_bg_04, R.drawable.forest_bg_05
+    };
+
+    final private static String[] FOREST_SCENE_NAMES = {
+
+            //
+            "Glade", "Clearing", "Meadow", "Field", "Grassland"
     };
 
     // Array list of background images [ocean]
@@ -3756,11 +6102,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             R.drawable.ocean_bg_01, R.drawable.ocean_bg_02, R.drawable.ocean_bg_03, R.drawable.ocean_bg_04, R.drawable.ocean_bg_05
     };
 
+    final private static String[] OCEAN_SCENE_NAMES = {
+
+            //
+            "Delta", "Shoal", "Spring", "Banks", "Deep"
+    };
+
     // Array list of background images [mountain]
     final private static int[] MOUNTAIN_SCENES = {
 
             //
             R.drawable.mountain_bg_01, R.drawable.mountain_bg_02, R.drawable.mountain_bg_03, R.drawable.mountain_bg_04, R.drawable.mountain_bg_05
+    };
+
+    final private static String[] MOUNTAIN_SCENE_NAMES = {
+
+            //
+            "Valley", "Cliff", "Overhang", "Sheer Face", "Tops"
     };
 
     // Array list of background images [desert]
@@ -3770,11 +6128,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             R.drawable.desert_bg_01, R.drawable.desert_bg_02, R.drawable.desert_bg_03, R.drawable.desert_bg_04, R.drawable.desert_bg_05
     };
 
+    final private static String[] DESERT_SCENE_NAMES = {
+
+            //
+            "Dunes", "Barrens", "Highlands", "Mirage", "Deathlands"
+    };
+
     // Array list of background images [jungle]
     final private static int[] JUNGLE_SCENES = {
 
             //
             R.drawable.jungle_bg_01, R.drawable.jungle_bg_02, R.drawable.jungle_bg_03, R.drawable.jungle_bg_04, R.drawable.jungle_bg_05
+    };
+
+    final private static String[] JUNGLE_SCENE_NAMES = {
+
+            //
+            "Treetops", "Caves", "Volcano", "Underbrush", "Canopy"
     };
 
     // Array list of background images [tundra]
@@ -3783,6 +6153,101 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             //
             R.drawable.tundra_bg_01, R.drawable.tundra_bg_02, R.drawable.tundra_bg_03, R.drawable.tundra_bg_04, R.drawable.tundra_bg_05
     };
+
+    final private static String[] TUNDRA_SCENE_NAMES = {
+
+            //
+            "Staights", "Kills", "Dry Bed", "Snowlands", "Pole"
+    };
+
+    // Array list of background images [final]
+    final private static int[] FINAL_SCENES = {
+
+            //
+            R.drawable.final_bg_01, R.drawable.final_bg_02, R.drawable.final_bg_03, R.drawable.final_bg_04, R.drawable.final_bg_05
+    };
+
+    final private static String[] FINAL_SCENE_NAMES = {
+
+            //
+            "Planetary Gulf", "Stellar Field", "Galactic Space", "Universal Center", "Multiverse Foyer"
+    };
+
+    final private static int[][] STAGE_SCENES = {
+
+            //
+            FOREST_SCENES, OCEAN_SCENES, MOUNTAIN_SCENES, DESERT_SCENES, JUNGLE_SCENES, TUNDRA_SCENES, FINAL_SCENES
+    };
+
+    final private static String[][] STAGE_SCENE_NAMES = {
+
+            //
+            FOREST_SCENE_NAMES, OCEAN_SCENE_NAMES, MOUNTAIN_SCENE_NAMES, DESERT_SCENE_NAMES, JUNGLE_SCENE_NAMES, TUNDRA_SCENE_NAMES, FINAL_SCENE_NAMES
+    };
+
+    final private static int[] STAGE_BORDERS = {
+
+            //
+            R.drawable.forest_border, R.drawable.ocean_border, R.drawable.mountain_border, R.drawable.desert_border,
+            R.drawable.jungle_border, R.drawable.tundra_border, R.drawable.tundra_border_alt
+    };
+
+    // Array list of background images for disasters
+    final private static int[] STAGE_DISASTERS = {
+
+            //
+            R.drawable.forest_tap, R.drawable.ocean_tap, R.drawable.mountain_tap,
+            R.drawable.desert_tap, R.drawable.jungle_tap, R.drawable.tundra_tap,
+            R.drawable.final_tap
+    };
+
+    // Array list of audio for disasters
+    final private static int[] STAGE_DISASTER_AUDIO = {
+
+            //
+            THUNDER_AUDIO, SPLASH_AUDIO, EARTHQUAKE_AUDIO, TORNADO_AUDIO, VOLCANO_AUDIO, AVALANCHE_AUDIO, REVERSE_PING
+    };
+
+    // Array list of stage colors
+    final private static int[] STAGE_COLOR = {
+
+            //
+            Color.GREEN, Color.BLUE, R.color.color_palette_02_light_brown, Color.MAGENTA, Color.RED, Color.GRAY, Color.BLACK
+    };
+
+    // Array list of sprite images for bosses
+    final private static int[] BOSS_IMAGES = {
+
+            //
+            R.drawable.forest_boss, R.drawable.ocean_boss, R.drawable.mountain_boss,
+            R.drawable.desert_boss, R.drawable.jungle_boss, R.drawable.tundra_boss, R.drawable.final_boss
+    };
+
+    // Array list of audio for bosses
+    final private static int[] BOSS_CRY_AUDIO = {
+
+            //
+            WOLF_CRY, SHARK_CRY, HAWK_CRY, SCORPION_CRY, SNAKE_CRY, YETI_CRY, GROWL_ALERT
+    };
+
+    // Array list of images for boss scenes
+    final private static int[] BOSS_SCENE_IMAGES = {
+
+            //
+            R.drawable.forest_bg_boss, R.drawable.ocean_bg_boss, R.drawable.mountain_bg_boss,
+            R.drawable.desert_bg_boss, R.drawable.jungle_bg_boss, R.drawable.tundra_bg_boss,
+            R.drawable.final_boss_bg
+    };
+
+    // Array list of images for stage card bg
+    final private static int[] STAGE_CARD_BG = {
+
+            //
+            R.drawable.results_forest_bg_image, R.drawable.results_ocean_bg_image, R.drawable.results_mountain_bg_image,
+            R.drawable.results_desert_bg_image, R.drawable.results_jungle_bg_image, R.drawable.results_tundra_bg_image,
+            R.drawable.results_main_final_boss_bg_image
+    };
+
 
     // Array list of sprite images
     final private static int[] CREATURES = {
@@ -3806,41 +6271,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             R.drawable.game_main_watering_black_creature_image, R.drawable.game_main_watering_white_creature_image,
     };
 
-    // Array list of alphas for border image
-    final private static double[] BORDER_FADE = {
-
-            //
-            1, .95, .9, .85, .8, .75, .7, .65, .6, .55, .5, .4, .3, .25, .2, .15, .1, .075, .05, .025, 0
-    };
-
-    // Array list of alphas for bolt image
-    final private static double[] TAP_FADE = {
-
-            //
-            .0, .0, .1, .12, .13, .14, .10, .25, .40, .50, .60, .75, .80, .85, .87, .91, .93, .95, .97, .99, 1
-    };
-
-    // Array list of alphas for tunnel fade
-    final private static double[] TUNNEL_FADE = {
-
-            //
-            1, .95, .9, .85, .8, .75, .7, .65, .6, .55, .5, .4, .3, .25, .2, .15, .1, .075, .05, .025, 0
-    };
-
-    // Array list of alphas
+    // Array list of alphas - index.length = 20
     final private static double[] ALPHA_INDEX = {
 
             //
-            1, .99, .98, .97, .96, .95, .93, .9, .85, .8, .75, .7, .6, .5, .4, .25, .1, 0, 0
+            1, .99, .98, .97, .96, .95, .93, .91, .89, .85, .8, .75, .7, .6, .5, .25, .1, .01, .001, 0
     };
 
-    // Array list of sound effects
-    final private static int[] PING = {
+    // Array list of alphas - index.length = 20
+    final private static double[] ALPHA_INDEX_INVERSE = {
 
             //
-            R.raw.reverse_ding_00, R.raw.reverse_ding_01, R.raw.reverse_ding_02, R.raw.reverse_ding_03, R.raw.reverse_ding_04,
-            R.raw.reverse_ding_05, R.raw.reverse_ding_06, R.raw.reverse_ding_07, R.raw.reverse_ding_08, R.raw.reverse_ding_09,
-            R.raw.reverse_ding_10
+            0, .001, .01, .1, .25, .5, .6, .7, .75, .8, .85, .89, .91, .93, .95, .96, .97, .98, .99, .1
     };
 
     // Array list of pings
@@ -3849,5 +6291,154 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             //
             R.raw.ping_01_audio, R.raw.ping_02_audio, R.raw.ping_03_audio, R.raw.ping_04_audio, R.raw.ping_05_audio,
             R.raw.ping_06_audio, R.raw.ping_07_audio, R.raw.ping_08_audio, R.raw.ping_09_audio, R.raw.ping_10_audio
+    };
+
+//-- STAGE PROPS ARRAY -->
+    // Array list of stage cards
+    final private static int[] STAGE_PROP_CARDS = {
+
+            //
+            R.id.stage_select_card_01_image_layout, R.id.stage_select_card_02_image_layout, R.id.stage_select_card_03_image_layout,
+            R.id.stage_select_card_04_image_layout, R.id.stage_select_card_05_image_layout, R.id.stage_select_card_06_image_layout
+    };
+
+
+    // Array list of stage props - stage card titles
+    final private static int[] STAGE_PROP_CARD_TITLES = {
+
+            //
+            R.id.select_stage_title_01_image_view, R.id.select_stage_title_02_image_view, R.id.select_stage_title_03_image_view, R.id.select_stage_title_04_image_view,
+            R.id.select_stage_title_05_image_view, R.id.select_stage_title_06_image_view
+    };
+
+    // Array list of stage props - stage card status
+    final private static int[] STAGE_PROP_CARD_STATUS = {
+
+            //
+            R.id.select_stage_status_01_image_view, R.id.select_stage_status_02_image_view, R.id.select_stage_status_03_image_view, R.id.select_stage_status_04_image_view,
+            R.id.select_stage_status_05_image_view, R.id.select_stage_status_06_image_view, R.id.select_stage_status_07_image_view
+    };
+
+    // Array list of stage props - stage card icons
+    final private static int[] STAGE_PROP_CARD_ICONS = {
+
+            //
+            R.id.select_stage_status_01_icon_image_button, R.id.select_stage_status_02_icon_image_button, R.id.select_stage_status_03_icon_image_button,
+            R.id.select_stage_status_04_icon_image_button, R.id.select_stage_status_05_icon_image_button, R.id.select_stage_status_06_icon_image_button
+    };
+
+    // Array list of stage props - stage card bg
+    final private static int[] STAGE_PROP_CARD_BG = {
+
+            //
+            R.drawable.forest_card, R.drawable.ocean_card, R.drawable.mountain_card, R.drawable.desert_card,
+            R.drawable.jungle_card, R.drawable.tundra_card
+    };
+
+    // Array list of stage props - stage title images
+    final private static int[] STAGE_PROP_TITLE_IMAGES = {
+
+            //
+            R.drawable.select_stage_title_01_image, R.drawable.select_stage_title_02_image, R.drawable.select_stage_title_03_image, R.drawable.select_stage_title_04_image,
+            R.drawable.select_stage_title_05_image, R.drawable.select_stage_title_06_image
+    };
+
+//-- TOP SCORES ARRAYS -->
+    // Array list of top scores - total attempts
+    int[] TOP_SCORES_TOTAL_ATTEMPTS = {
+
+            //
+            stage_01_attempts, stage_02_attempts, stage_03_attempts, stage_04_attempts, stage_05_attempts, stage_06_attempts, stage_07_attempts
+    };
+
+    // Array list of top scores - total attempts
+    int[] TOP_SCORES_TOTAL_BOSS_KILLS = {
+
+            //
+            stage_01_boss_kills, stage_02_boss_kills, stage_03_boss_kills, stage_04_boss_kills, stage_05_boss_kills, stage_06_boss_kills, stage_07_boss_kills
+    };
+
+    // Array list of top scores - total attempts
+    int[] TOP_SCORES_TOTAL_CREATURE_KILLS = {
+
+            //
+            stage_01_creature_kills, stage_02_creature_kills, stage_03_creature_kills, stage_04_creature_kills, stage_05_creature_kills, stage_06_creature_kills, stage_07_creature_kills
+    };
+
+    // Array list of top scores - total attempts
+    int[] TOP_SCORES_HIGHEST_STREAK = {
+
+            //
+            stage_01_highest_streak, stage_02_highest_streak, stage_03_highest_streak, stage_04_highest_streak, stage_05_highest_streak, stage_06_highest_streak, stage_07_highest_streak
+    };
+
+    // Array list of top scores - total attempts
+    int[] TOP_SCORES_CLOSEST_DEATH = {
+
+            //
+            stage_01_closest_death, stage_02_closest_death, stage_03_closest_death, stage_04_closest_death, stage_05_closest_death, stage_06_closest_death, stage_07_closest_death
+    };
+
+    // Array list of top scores - total attempts
+    int[] TOP_SCORES_LONGEST_FRENZY = {
+
+            //
+            stage_01_longest_frenzy, stage_02_longest_frenzy, stage_03_longest_frenzy, stage_04_longest_frenzy, stage_05_longest_frenzy, stage_06_longest_frenzy, stage_07_longest_frenzy
+    };
+
+    // Array list of top scores - total attempts
+    Long[] TOP_SCORES_MOST_CALM = {
+
+            //
+            stage_01_most_calm, stage_02_most_calm, stage_03_most_calm, stage_04_most_calm, stage_05_most_calm, stage_06_most_calm, stage_07_most_calm
+    };
+
+    // Array list of top scores - total attempts
+    Long[] TOP_SCORES_MOST_FRANTIC = {
+
+            //
+            stage_01_most_frantic, stage_02_most_frantic, stage_03_most_frantic, stage_04_most_frantic, stage_05_most_frantic, stage_06_most_frantic, stage_07_most_frantic
+    };
+
+    // Array list of top scores - total attempts
+    int[] TOP_SCORES_TOTAL_TIME = {
+
+            //
+            stage_01_total_time, stage_02_total_time, stage_03_total_time, stage_04_total_time, stage_05_total_time, stage_06_total_time, stage_07_total_time
+    };
+
+    // Array list of top scores - total attempts
+    int[] TOP_SCORES_BEST_TIME = {
+
+            //
+            stage_01_best_time, stage_02_best_time, stage_03_best_time, stage_04_best_time, stage_05_best_time, stage_06_best_time, stage_07_best_time
+    };
+
+    // Array list of top scores - total attempts
+    boolean[] TOP_SCORES_TOP_APEX = {
+
+            //
+            stage_01_apex, stage_02_apex, stage_03_apex, stage_04_apex, stage_05_apex, stage_06_apex, stage_07_apex
+    };
+
+    // Array list of top scores - total attempts
+    int[] TOP_SCORES_TOP_PREDATOR = {
+
+            //
+            stage_01_predator, stage_02_predator, stage_03_predator, stage_04_predator, stage_05_predator, stage_06_predator, stage_07_predator
+    };
+
+    // Array list of top scores - total attempts
+    Float[] TOP_SCORES_TOP_ACCURACY = {
+
+            //
+            stage_01_accuracy, stage_02_accuracy, stage_03_accuracy, stage_04_accuracy, stage_05_accuracy, stage_06_accuracy, stage_07_accuracy
+    };
+
+    // Array list of top scores - total attempts
+    int[] TOP_SCORES_TOTAL_COLLECTION = {
+
+            //
+            stage_01_collection, stage_02_collection, stage_03_collection, stage_04_collection, stage_05_collection, stage_06_collection, stage_07_collection
     };
 }
