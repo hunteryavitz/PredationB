@@ -2,10 +2,9 @@
 <set xmlns:android="http://schemas.android.com/apk/res/android">
 
     <alpha
-
         android:fromAlpha="0"
         android:toAlpha="1"
-        android:duration="1000">
+        android:duration="250">
     </alpha>
 
     <scale
@@ -15,14 +14,14 @@
         android:toYScale="1"
         android:pivotX="50%p"
         android:pivotY="50%p"
-        android:duration="500">
+        android:duration="250">
     </scale>
 
     <alpha
         android:startOffset="2000"
         android:fromAlpha="1"
         android:toAlpha="0"
-        android:duration="250">
+        android:duration="500">
     </alpha>
 
 </set>
