@@ -58,16 +58,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     // Stage 1
     private static final String STAGE_01_COMPLETE = "stage_01_complete";
+
+    //
     private static final String STAGE_01_ATTEMPTS = "stage_01_attempts";
     private static final String STAGE_01_BOSS_KILLS = "stage_01_boss_kills";
+
+    //
     private static final String STAGE_01_CREATURE_KILLS = "stage_01_creature_kills";
+    private static final String STAGE_01_BEST_TIME = "stage_01_best_time";
     private static final String STAGE_01_HIGHEST_STREAK = "stage_01_highest_streak";
     private static final String STAGE_01_CLOSEST_DEATH = "stage_01_closest_death";
     private static final String STAGE_01_LONGEST_FRENZY = "stage_01_longest_frenzy";
     private static final String STAGE_01_MOST_CALM = "stage_01_most_calm";
     private static final String STAGE_01_MOST_FRANTIC = "stage_01_most_frantic";
+
+    //
     private static final String STAGE_01_TOTAL_TIME = "stage_01_total_time";
-    private static final String STAGE_01_BEST_TIME = "stage_01_best_time";
     private static final String STAGE_01_PREDATOR = "stage_01_predator";
     private static final String STAGE_01_ACCURACY = "stage_01_accuracy";
     private static final String STAGE_01_APEX = "stage_01_apex";
@@ -534,6 +540,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     //
     private ImageView mStageCardBossImageView;
+    private ImageView mStageCardDisasterImageView;
 
     //
     private LinearLayout mStageCardTopScoreLayout;
@@ -542,9 +549,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private LinearLayout mStageCardEatenScoreLayout;
     private LinearLayout mStageCardContentLayout;
     private LinearLayout mStageCardStageLockedLayout;
-
-    //
-    private LinearLayout mStageCardDisasterBGImageView;
 
     //
     private ImageView mStageTopApexBadgeImageView;
@@ -571,21 +575,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private LinearLayout mStageCardTopFranticLayout;
 
     //
-    //private TextView mStageScoreFinalScoreTextView;
     private TextView mTopScoreProgressScoreTextView;
-
-    // StageCard complete views - Stage complete [stage scores]
-    //private TextView mStageApexPredatorTextView;
-    //private TextView mStagePredatorTextView;
-    //private TextView mStageAccuracyTextView;
-    //private TextView mStageTimeTextView;
-    //private TextView mStageCreatureKillsTextView;
-    //private TextView mStageCollectionTextView;
-    //private TextView mStageHighestStreakTextView;
-    //private TextView mStageClosestDeathTextView;
-    //private TextView mStageLongestFrenzyTextView;
-    //private TextView mStageMostCalmTextView;
-    //private TextView mStageMostFranticTextView;
 
     //
     private LinearLayout mStageCardApexLayout;
@@ -605,7 +595,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ImageView mStageAccuracyBadgeImageView;
     private ImageView mStageTimeBadgeImageView;
     private ImageView mStageCreatureKillsBadgeImageView;
-    //private ImageView mStageCollectionBadgeImageView;
     private ImageView mStageHighStreakBadgeImageView;
     private ImageView mStageCloseDeathBadgeImageView;
     private ImageView mStageLongFrenzyBadgeImageView;
@@ -618,34 +607,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ImageView mCreature03ImageView;
     private ImageView mCreature04ImageView;
     private ImageView mCreature05ImageView;
-    private ImageView mCreature06ImageView;
-    private ImageView mCreature07ImageView;
-    private ImageView mCreature08ImageView;
-    private ImageView mCreature09ImageView;
-    private ImageView mCreature10ImageView;
-    private ImageView mCreature11ImageView;
-    private ImageView mCreature12ImageView;
-    private ImageView mCreature13ImageView;
-    private ImageView mCreature14ImageView;
-    private ImageView mCreature15ImageView;
-    private ImageView mCreature16ImageView;
-    private ImageView mCreature17ImageView;
-    private ImageView mCreature18ImageView;
-    private ImageView mCreature19ImageView;
-    private ImageView mCreature20ImageView;
-    private ImageView mCreature21ImageView;
-    private ImageView mCreature22ImageView;
-    private ImageView mCreature23ImageView;
-    private ImageView mCreature24ImageView;
-    private ImageView mCreature25ImageView;
-    private ImageView mCreature26ImageView;
-    private ImageView mCreature27ImageView;
-    private ImageView mCreature28ImageView;
-    private ImageView mCreature29ImageView;
-    private ImageView mCreature30ImageView;
-    private ImageView mCreature31ImageView;
-    private ImageView mCreature32ImageView;
 
+    //
     private TextView mStageCardTotalCollectionTextView;
 
     // StageCard switch card controls
@@ -664,20 +627,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 //-- GAME -->
 
-    //
-    //private TextView mDebugTextView;
-
     // Game titles
     private LinearLayout mGameControlLayout;
 
+    //
     private ImageView mGameStageImageView;
     private TextView mGameSceneTextView;
-
-    private TextView mGameMainArea01TextView;
-    private TextView mGameMainArea02TextView;
-    private TextView mGameMainArea03TextView;
-    private TextView mGameMainArea04TextView;
-    private TextView mGameMainArea05TextView;
 
     //
     private LinearLayout mGameMainControlLayout;
@@ -687,7 +642,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private LinearLayout mGamePowersLayout;
 
     // Game power icons
-    //private LinearLayout mGamePowerSet01Layout;
     private LinearLayout mGamePowerSet02Layout;
     private LinearLayout mGamePower01ImageView;
     private LinearLayout mGamePower02ImageView;
@@ -695,9 +649,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private LinearLayout mGamePower04ImageView;
     private LinearLayout mGamePower05ImageView;
     private LinearLayout mGamePower06ImageView;
-
-    // Game stage advances
-    private ImageButton mGameSceneNextImageButton;
 
     // Game creatures
     private ImageButton mGameCreature01ImageButton;
@@ -710,7 +661,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ImageButton mGameBossImageButton;
     private ProgressBar mGameBossHealthProgressBar;
     private ProgressBar mGameUserHealthProgressBar;
-    private ProgressBar mGameAdrenalineProgressBar;
 
     // Game creature playground
     private FrameLayout mGameCreatureLayout;
@@ -735,8 +685,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private LinearLayout mGameAdrenalineLayout;
 
+//-- LOAD -->
+
     //
-    private LinearLayout mGameMainStageCaptionLayout;
+    private TextView mLoadRandomScoreTitleTextView;
+    private TextView mLoadRandomScoreValueTextView;
 
 //-- LOCAL DATA STORE  -->
 
@@ -918,13 +871,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private static int mTapCount;
     private static int mStreakCount;
     private static int mTapTotal;
-    private static boolean mRunFlag;
 
     //
     private static int mBittenMeter;
-
-    // Border timer
-    private static int mBorderBarrel;
 
     // Timers
     private static int mPauseTimer;
@@ -934,8 +883,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     // Universal variables
     private static long mSpeedIndex;
     private static int mHungerMeter = 0;
-    private static int mStageAdvanceMeter;
-    private static int mStageAdvanceTarget;
 
     // Power variables
     private static int mPowerIncrement;
@@ -954,7 +901,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     // Stage scores - calculate at end stage
     private static int mStagePredator;
-    private static int mStageStalker;
     private static float mStageAccuracy;
     private static int mStageTime;
     private static int mStageCreatureKills;
@@ -967,8 +913,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private static boolean mStageApex = false;
 
     // Global scores - calculate at screen load
-    //private static int mGameAttempts;
-    //private static int mGameBossKills;
+    private static int mGameAttempts;
+    private static int mGameBossKills;
     private static int mGameCreatureKills;
     private static int mGameHighestStreak;
     private static int mGameClosestDeath;
@@ -976,7 +922,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private static long mGameMostCalm;
     private static long mGameMostFrantic;
     private static boolean mGameTimeBest;
-    //private static int mGameTimeTotal;
+    private static int mGameTimeTotal;
     private static int mGamePredator;
     private static float mGameAccuracy;
     private static boolean mGameApex;
@@ -1290,7 +1236,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mCreditsImageView = findViewById(R.id.credits_image_view);
 
         // Entry views
-        //mEntryScoreApexLayout = findViewById(R.id.entry_score_apex_layout);
         mEntryMainControlLayout = findViewById(R.id.entry_main_control_layout);
         mEntryContinueImageButton = findViewById(R.id.entry_main_continue_image_button);
         mEntryCreditsImageButton = findViewById(R.id.entry_main_credits_image_button);
@@ -1298,52 +1243,48 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // Stage select toggle views
         mStageSelectScorecardImageButton = findViewById(R.id.stage_select_scorecard_image_button);
         mStageSelectCollectionImageButton = findViewById(R.id.stage_select_trophycase_image_button);
-        mStageSelectContentImageButton = findViewById(R.id.stage_select_content_title_image_button);
+        mStageSelectContentImageButton = findViewById(R.id.stage_select_content_image_button);
 
         //
-        mStageSelectMainScorecardLayout = findViewById(R.id.stage_select_main_scorecard_layout);
-        mStageSelectMainCollectionLayout = findViewById(R.id.stage_select_main_trophy_layout);
-        mStageSelectMainContentLayout = findViewById(R.id.stage_select_main_content_title_layout);
+        mStageSelectMainScorecardLayout = findViewById(R.id.stage_select_scorecard_header_layout);
+        mStageSelectMainCollectionLayout = findViewById(R.id.stage_select_trophycase_header_layout);
+        mStageSelectMainContentLayout = findViewById(R.id.stage_select_content_header_layout);
 
         //
-        mStageSelectScorecardLayout = findViewById(R.id.stage_select_scorecard_layout);
+        mStageSelectScorecardLayout = findViewById(R.id.stage_select_scorecard_header_layout);
         mStageSelectCollectionLayout = findViewById(R.id.stage_select_trophycase_layout);
-        mStageSelectContentLayout = findViewById(R.id.stage_stage_selectcard_layout);
+        mStageSelectContentLayout = findViewById(R.id.stage_stage_content_layout);
 
         //
-        mStageSelectContentProgressBar = findViewById(R.id.stage_select_progress_bar);
-        mStageSelectTopScoresProgressBar = findViewById(R.id.stage_select_top_scores_progress_bar);
+        mStageSelectContentProgressBar = findViewById(R.id.stage_select_content_progress_bar);
+        mStageSelectTopScoresProgressBar = findViewById(R.id.stage_select_scorecard_progress_bar);
         mStageSelectTrophycaseProgressBar = findViewById(R.id.stage_select_trophycase_progress_bar);
 
         // EOBE top scores
-        mGameTrophyScoreTextView = findViewById(R.id.stage_select_trophycase_footer_count_text_view);
+        mGameTrophyScoreTextView = findViewById(R.id.stage_select_trophycase_progress_count_text_view);
         mGameTrophyPercentTextView = findViewById(R.id.stage_select_trophycase_footer_percent_text_view);
 
-        mJourneyScoreTextView = findViewById(R.id.stage_select_journey_score_text_view);
-        mGameScoreTextView = findViewById(R.id.stage_select_game_score_text_view);
+        mJourneyScoreTextView = findViewById(R.id.stage_select_content_progress_value_text_view);
+        mGameScoreTextView = findViewById(R.id.stage_select_scorecard_progress_value_text_view);
 
         //
-        mEOBEApexScoreBadgeImageView = findViewById(R.id.stage_select_eobe_score_apex_badge_image_view);
-        mEOBEPredatorScoreBadgeImageView = findViewById(R.id.stage_select_eobe_score_predator_badge_image_view);
-        mEOBEAccuracyScoreBadgeImageView = findViewById(R.id.stage_select_eobe_score_accuracy_badge_image_view);
-        mEOBETimeBestScoreBadgeImageView = findViewById(R.id.stage_select_eobe_score_best_time_badge_image_view);
-        //mEOBETimeTotalScoreBadgeImageView = findViewById(R.id.stage_select_eobe_score_total_time_badge_image_view);
-        //mEOBECollectionScoreBadgeImageView = findViewById(R.id.stage_select_eobe_score_collection_badge_image_view);
-        //mEOBEAttemptsScoreBadgeImageView = findViewById(R.id.stage_select_eobo_score_total_attempts_badge_image_view);
-        //mEOBEBossKillsScoreBadgeImageView = findViewById(R.id.stage_select_eobe_score_total_boss_kills_badge_image_view);
-        mEOBECreatureKillsScoreBadgeImageView = findViewById(R.id.stage_select_eobe_score_total_creature_kills_badge_image_view);
-        mEOBEHighStreakScoreBadgeImageView = findViewById(R.id.stage_select_eobe_score_high_streak_badge_image_view);
-        mEOBECloseDeathScoreBadgeImageView = findViewById(R.id.stage_select_eobe_score_close_death_badge_image_view);
-        mEOBELongFrenzyScoreBadgeImageView = findViewById(R.id.stage_select_eobe_score_long_frenzy_badge_image_view);
-        mEOBEMostCalmScoreBadgeImageView = findViewById(R.id.stage_select_eobe_score_most_calm_badge_image_view);
-        mEOBEMostFranticScoreBadgeImageView = findViewById(R.id.stage_select_eobe_score_most_frantic_badge_image_view);
+        mEOBEApexScoreBadgeImageView = findViewById(R.id.stage_select_score_apex_badge_image_view);
+        mEOBEPredatorScoreBadgeImageView = findViewById(R.id.stage_select_score_predator_badge_image_view);
+        mEOBEAccuracyScoreBadgeImageView = findViewById(R.id.stage_select_score_accuracy_badge_image_view);
+        mEOBETimeBestScoreBadgeImageView = findViewById(R.id.stage_select_score_time_badge_image_view);
+        mEOBECreatureKillsScoreBadgeImageView = findViewById(R.id.stage_select_score_creatures_badge_image_view);
+        mEOBEHighStreakScoreBadgeImageView = findViewById(R.id.stage_select_score_streak_badge_image_view);
+        mEOBECloseDeathScoreBadgeImageView = findViewById(R.id.stage_select_score_death_badge_image_view);
+        mEOBELongFrenzyScoreBadgeImageView = findViewById(R.id.stage_select_score_frenzy_badge_image_view);
+        mEOBEMostCalmScoreBadgeImageView = findViewById(R.id.stage_select_score_calm_badge_image_view);
+        mEOBEMostFranticScoreBadgeImageView = findViewById(R.id.stage_select_score_frantic_badge_image_view);
 
         //
         mGameApexLayout = findViewById(R.id.stage_select_score_apex_layout);
         mGamePredatorLayout = findViewById(R.id.stage_select_score_predator_layout);
         mGameAccuracyLayout = findViewById(R.id.stage_select_score_accuracy_layout);
-        mGameTimeLayout = findViewById(R.id.stage_select_score_time_best_layout);
-        mGameEatenLayout = findViewById(R.id.stage_select_score_creature_layout);
+        mGameTimeLayout = findViewById(R.id.stage_select_score_time_layout);
+        mGameEatenLayout = findViewById(R.id.stage_select_score_creatures_layout);
         mGameStreakLayout = findViewById(R.id.stage_select_score_streak_layout);
         mGameDeathLayout = findViewById(R.id.stage_select_score_death_layout);
         mGameFrenzyLayout = findViewById(R.id.stage_select_score_frenzy_layout);
@@ -1372,7 +1313,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mEOBEStage07TrophyImageView = findViewById(R.id.stage_select_trophy_07_image_view);
 
         // Stage card views
-        //mStageCardStatusImageView = findViewById(R.id.stage_card_status_image_view);
         mStageCardLockedImageButton = findViewById(R.id.stage_card_locked_image_button);
         mStageCardTrophyImageButton = findViewById(R.id.stage_card_trophy_image_button);
         mStageCardHiScoreImageButton = findViewById(R.id.stage_card_hiscore_image_button);
@@ -1402,7 +1342,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         //
         mStageCardContentLayout = findViewById(R.id.stage_card_content_layout);
-        mStageCardDisasterBGImageView = findViewById(R.id.stage_card_disaster_bg_image_view);
+        mStageCardDisasterImageView = findViewById(R.id.stage_card_disaster_image_view);
         mStageCardBossImageView = findViewById(R.id.stage_card_boss_image_view);
 
         //
@@ -1412,30 +1352,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mStageCardStageLockedLayout = findViewById(R.id.stage_card_stage_locked_layout);
         mStageCardEatenScoreLayout = findViewById(R.id.stage_card_eaten_score_layout);
 
-        // stage complete
-        //mStageApexPredatorTextView = findViewById(R.id.stage_card_apex_predator_score_text_view);
-        //mStagePredatorTextView = findViewById(R.id.stage_card_predator_score_text_view);
-        //mStageAccuracyTextView = findViewById(R.id.stage_card_accuracy_score_text_view);
-
-        // stage complete
-        //mStageTimeTextView = findViewById(R.id.stage_card_time_score_text_view);
-        //mStageCreatureKillsTextView = findViewById(R.id.stage_card_eaten_score_text_view);
-        //mStageCollectionTextView = findViewById(R.id.stage_card_collection_score_text_view);
-
-        // stage complete
-        //mStageHighestStreakTextView = findViewById(R.id.stage_card_streak_score_text_view);
-        //mStageClosestDeathTextView = findViewById(R.id.stage_card_death_score_text_view);
-        //mStageLongestFrenzyTextView = findViewById(R.id.stage_card_frenzy_score_text_view);
-        //mStageMostCalmTextView = findViewById(R.id.stage_card_calm_score_text_view);
-        //mStageMostFranticTextView = findViewById(R.id.stage_card_frantic_score_text_view);
-
         //
         mStageApexBadgeImageView = findViewById(R.id.stage_card_stage_score_apex_badge_image_view);
         mStagePredatorBadgeImageView = findViewById(R.id.stage_card_stage_score_predator_badge_image_view);
         mStageAccuracyBadgeImageView = findViewById(R.id.stage_card_stage_score_accuracy_badge_image_view);
         mStageTimeBadgeImageView = findViewById(R.id.stage_card_stage_score_time_badge_image_view);
         mStageCreatureKillsBadgeImageView = findViewById(R.id.stage_card_stage_score_total_eaten_badge_image_view);
-        //mStageCollectionBadgeImageView = findViewById(R.id.stage_card_stage_score_collection_badge_image_view);
         mStageHighStreakBadgeImageView = findViewById(R.id.stage_card_stage_score_high_streak_badge_image_view);
         mStageCloseDeathBadgeImageView = findViewById(R.id.stage_card_stage_score_close_death_badge_image_view);
         mStageLongFrenzyBadgeImageView = findViewById(R.id.stage_card_stage_score_long_frenzy_badge_image_view);
@@ -1454,23 +1376,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mStageCardCalmLayout = findViewById(R.id.stage_card_calm_layout);
         mStageCardFranticLayout = findViewById(R.id.stage_card_frantic_layout);
 
-        // top scores
-        //mStageTopApexPredatorTextView = findViewById(R.id.stage_card_top_apex_score_text_view);
-        //mStageTotalAttemptsTextView = findViewById(R.id.stage_card_total_attempts_score_text_view);
-        //mStageTotalBossKillsTextView = findViewById(R.id.stage_card_total_boss_kills_score_text_view);
-        //mStageTotalCreatureKillsTextView = findViewById(R.id.stage_card_total_creature_kills_score_text_view);
-        //mStageTopHighestStreakTextView = findViewById(R.id.stage_card_top_highest_streak_score_text_view);
-        //mStageTopClosestDeathTextView = findViewById(R.id.stage_card_top_closest_death_score_text_view);
-        //mStageTopLongestFrenzyTextView = findViewById(R.id.stage_card_top_longest_frenzy_score_text_view);
-        //mStageTopMostCalmTextView = findViewById(R.id.stage_card_top_most_calm_score_text_view);
-        //mStageTopMostFranticTextView = findViewById(R.id.stage_card_top_most_frantic_score_text_view);
-        //mStageTotalTimeTextView = findViewById(R.id.stage_card_total_time_score_text_view);
-        //mStageTopBestTimeTextView = findViewById(R.id.stage_card_top_best_time_score_text_view);
-        //mStageTopPredatorTextView = findViewById(R.id.stage_card_top_predator_score_text_view);
-        //mStageTopAccuracyTextView = findViewById(R.id.stage_card_top_accuracy_score_text_view);
-        //mStageTotalCollectionTextView = findViewById(R.id.stage_card_total_collection_score_text_view);
-        //mStageTotalCollectionPercentTextView = findViewById(R.id.stage_card_total_collection_percent_text_view);
-
         //
         mStageTopApexBadgeImageView = findViewById(R.id.stage_card_top_score_apex_badge_image_view);
         mStageTotalCreatureKillsBadgeImageView = findViewById(R.id.stage_card_top_score_total_eaten_badge_image_view);
@@ -1482,7 +1387,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mStageTopBestTimeBadgeImageView = findViewById(R.id.stage_card_top_score_best_time_badge_image_view);
         mStageTopPredatorBadgeImageView = findViewById(R.id.stage_card_top_score_predator_badge_image_view);
         mStageTopAccuracyBadgeImageView = findViewById(R.id.stage_card_top_score_accuracy_badge_image_view);
-        //mStageTotalCollectionBadgeImageView = findViewById(R.id.stage_card_top_score_collection_badge_image_view);
 
         //
         mStageCardTopApexLayout = findViewById(R.id.stage_card_top_apex_layout);
@@ -1503,7 +1407,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //
         mEatenStageTimeTextView = findViewById(R.id.eaten_stage_time_text_view);
 
-        //mStageScoreFinalScoreTextView = findViewById(R.id.stage_score_final_score_text_view);
         mTopScoreProgressScoreTextView = findViewById(R.id.top_score_progress_score_text_view);
 
         // Creature collection views
@@ -1512,33 +1415,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mCreature03ImageView = findViewById(R.id.creature_03_image_view);
         mCreature04ImageView = findViewById(R.id.creature_04_image_view);
         mCreature05ImageView = findViewById(R.id.creature_05_image_view);
-        mCreature06ImageView = findViewById(R.id.creature_06_image_view);
-        mCreature07ImageView = findViewById(R.id.creature_07_image_view);
-        mCreature08ImageView = findViewById(R.id.creature_08_image_view);
-        mCreature09ImageView = findViewById(R.id.creature_09_image_view);
-        mCreature10ImageView = findViewById(R.id.creature_10_image_view);
-        mCreature11ImageView = findViewById(R.id.creature_11_image_view);
-        mCreature12ImageView = findViewById(R.id.creature_12_image_view);
-        mCreature13ImageView = findViewById(R.id.creature_13_image_view);
-        mCreature14ImageView = findViewById(R.id.creature_14_image_view);
-        mCreature15ImageView = findViewById(R.id.creature_15_image_view);
-        mCreature16ImageView = findViewById(R.id.creature_16_image_view);
-        mCreature17ImageView = findViewById(R.id.creature_17_image_view);
-        mCreature18ImageView = findViewById(R.id.creature_18_image_view);
-        mCreature19ImageView = findViewById(R.id.creature_19_image_view);
-        mCreature20ImageView = findViewById(R.id.creature_20_image_view);
-        mCreature21ImageView = findViewById(R.id.creature_21_image_view);
-        mCreature22ImageView = findViewById(R.id.creature_22_image_view);
-        mCreature23ImageView = findViewById(R.id.creature_23_image_view);
-        mCreature24ImageView = findViewById(R.id.creature_24_image_view);
-        mCreature25ImageView = findViewById(R.id.creature_25_image_view);
-        mCreature26ImageView = findViewById(R.id.creature_26_image_view);
-        mCreature27ImageView = findViewById(R.id.creature_27_image_view);
-        mCreature28ImageView = findViewById(R.id.creature_28_image_view);
-        mCreature29ImageView = findViewById(R.id.creature_29_image_view);
-        mCreature30ImageView = findViewById(R.id.creature_30_image_view);
-        mCreature31ImageView = findViewById(R.id.creature_31_image_view);
-        mCreature32ImageView = findViewById(R.id.creature_32_image_view);
 
         mStageCardTotalCollectionTextView = findViewById(R.id.stage_card_total_collection_score_text_view);
 
@@ -1552,25 +1428,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mGameStageImageView = findViewById(R.id.game_main_stage_image_view);
         mGameSceneTextView = findViewById(R.id.game_main_scene_text_view);
 
-        mGameMainArea01TextView = findViewById(R.id.game_main_area_01_text_view);
-        mGameMainArea02TextView = findViewById(R.id.game_main_area_02_text_view);
-        mGameMainArea03TextView = findViewById(R.id.game_main_area_03_text_view);
-        mGameMainArea04TextView = findViewById(R.id.game_main_area_04_text_view);
-        mGameMainArea05TextView = findViewById(R.id.game_main_area_05_text_view);
-
-        //
-        //mDebugTextView = findViewById(R.id.debug_text_view);
-
         // Stage UI
         mGameLevelMarkerLayout = findViewById(R.id.game_main_level_marker_layout);
         mGamePowersLayout = findViewById(R.id.game_main_powers_layout);
 
-        //
-        mGameSceneNextImageButton = findViewById(R.id.game_scene_next_image_button);
-        //mStageDisasterImageView = findViewById(R.id.game_main_stage_advance_image_view);
-
         // Power icons
-        //mGamePowerSet01Layout = findViewById(R.id.game_main_power_set_01_layout);
         mGamePowerSet02Layout = findViewById(R.id.game_main_power_set_02_layout);
         mGamePower01ImageView = findViewById(R.id.game_main_power_01_image_view);
         mGamePower02ImageView = findViewById(R.id.game_main_power_02_image_view);
@@ -1593,7 +1455,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         // Playgrounds
         mGameCreatureLayout = findViewById(R.id.game_main_creature_layout);
-        //mGameBossLayout = findViewById(R.id.game_main_boss_layout);
 
         // Stage camouflage
         mGameBorderLayout = findViewById(R.id.game_main_silhouette_border_layout);
@@ -1612,12 +1473,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //
         mGameMainHungerMeterProgressBar = findViewById(R.id.game_main_hunger_meter_progress_bar);
         mGameMainTapoutMeterProgressBar = findViewById(R.id.game_main_tapout_progress_bar);
-        //mGameAdrenalineProgressBar = findViewById(R.id.game_main_adrenaline_progress_bar);
 
+        //
         mGameAdrenalineLayout = findViewById(R.id.game_main_adrenaline_layout);
 
         //
-        //mGameMainStageCaptionLayout = findViewById(R.id.game_main_stage_caption_layout);
+        mLoadRandomScoreTitleTextView = findViewById(R.id.load_main_random_score_title_text_view);
+        mLoadRandomScoreValueTextView = findViewById(R.id.load_main_random_score_value_text_view);
     }
 
     // Save game state data
@@ -3067,7 +2929,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //--STAGE SELECT-->
 
             // Stage select - Return event
-            case R.id.stage_select_return_image_button:
+            case R.id.stage_select_header_return_image_button:
 
                 //
                 findViewById(mCurScreen).setVisibility(View.GONE);
@@ -3196,7 +3058,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 break;
 
-            case R.id.stage_select_content_title_image_button:
+            case R.id.stage_select_content_image_button:
 
                 //
                 mTopScores = false;
@@ -3443,12 +3305,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //--STAGE CARD-->
 
             //
-            //case R.id.game_main_flash_layout:
+            case R.id.game_main_flash_layout:
 
                 //
-                //mGameFlashLayout.setVisibility(View.GONE);
+                mGameFlashLayout.setVisibility(View.GONE);
 
-                //break;
+                break;
 
             // Stage card - Header return
             case R.id.stage_card_header_return_image_button:
@@ -3919,72 +3781,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 break;
 
-            // Game - Exit Event
-            case R.id.game_main_exit_image_button:
-
-                // Exit dialogue
-                alertExitLoseProgress();
-
-                break;
-
-            //
-            //case R.id.game_scene_prev_image_button:
-
-                // Pause game
-                //Log.d(TAG, "gameButton: pause");
-                //mPauseGame = true;
-
-                //
-                //if (mStageAdvanceMeter >= mStageAdvanceTarget) {
-
-                    //
-                    //tapOut();
-
-                //} else {
-
-                    //
-                    //playAudio(MISS);
-                //}
-
-                //
-                //mCurScreen = R.id.game_screen_main_layout;
-                //drawScreen();
-
-                //
-                //playAudio(FLUTE_TRILL_LONG);
-
-                // Undo pause game
-                //Log.d(TAG, "onClick: un-pause");
-                //mPauseGame = false;
-
-                //break;
-
-            //
-            //case R.id.game_scene_next_image_button:
-
-                //
-                //findViewById(mCurScreen).setVisibility(View.GONE);
-
-                // Pause game
-                //Log.d(TAG, "gameButton: pause");
-                //mPauseGame = true;
-
-                //
-                //tapOut();
-
-                //
-                //mCurScreen = R.id.game_screen_main_layout;
-                //drawScreen();
-
-                //
-                //playAudio(FLUTE_TRILL_LONG);
-
-                // Undo pause game
-                //Log.d(TAG, "onClick: un-pause");
-                //mPauseGame = false;
-
-                //break;
-
             //
             case R.id.game_main_power_01_image_view:
 
@@ -4353,7 +4149,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         preLoadStageProps();
 
         // Switch stage card screen
-        switchScreen(R.id.stage_card_screen_main_layout);
+        switchScreen(R.id.load_screen_main_layout);
 
         //
         playAudio(mGameTapAudio);
@@ -4862,9 +4658,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     //
                     mPower02Meter = 0;
                     mPower02Target = mPower02Target + mPowerIncrement;
-
-                    //
-                    ++mStageStalker;
 
                     // Decelerate timer
                     decelerateTimer(.5);
@@ -5751,9 +5544,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mHungerMeter = 30;
         mSpeedIndex = 1000;
 
-        //mStageAdvanceMeter = 0;
-        //mStageAdvanceTarget = 1;
-
         //
         mStageFrenzy = 0;
 
@@ -5792,7 +5582,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mTapCount = 0;
         mStreakCount = 0;
         mTapTotal = 0;
-        mRunFlag = false;
 
         //
         mPauseTimer = -1;
@@ -5810,7 +5599,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         //
         mStagePredator = 0;
-        mStageStalker = 0;
         mStageAccuracy = 0f;
 
         //
@@ -5867,6 +5655,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mGameBorderLayout.setBackground(versionCheck(STAGE_BORDERS[mStageIndex - 1]));
 
         // Load stage disaster image
+        mGameFlashLayout.setBackground(versionCheck(STAGE_DISASTERS[mStageIndex - 1]));
         //mStageDisasterImageView.setBackground(versionCheck(STAGE_DISASTERS[mStageIndex - 1]));
     }
 
@@ -6052,10 +5841,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 fadeDisaster();
 
                 // Load stage resources
-                //mStageCardDisasterBGImageView.setBackground(versionCheck(STAGE_DISASTERS[mStageIndex - 1]));
-                //fadeControl(R.id.stage_card_disaster_bg_image_view);
+                mStageCardDisasterImageView.setBackground(versionCheck(STAGE_DISASTERS[mStageIndex - 1]));
                 mStageCardBossImageView.setBackground(versionCheck(BOSS_IMAGES[mStageIndex - 1]));
-                //fadeIn(R.id.stage_card_boss_image_view);
                 mStageCardContentTitleImageButton.setBackground(versionCheck(STAGE_NAMES[mStageIndex - 1]));
                 mStageCardContentTitleLayout.setBackgroundColor(ContextCompat.getColor(this, STAGE_COLOR[mStageIndex - 1]));
                 mStageCardBossNameTextView.setText(BOSS_NAME[mStageIndex - 1] + " - " + DISASTER_NAME[mStageIndex - 1]);
@@ -6468,7 +6255,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ++mTapTotal;
 
         //
-        ++mStageAdvanceMeter;
         ++mTapBarrel;
 
         //
@@ -7375,24 +7161,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.game_main_level_marker_01_image_view).setAlpha(1);
         findViewById(BOSS_IMAGES[mStageIndex - 1]);
 
-        //
-        TextView[] stage_areas = {
-
-                mGameMainArea01TextView, mGameMainArea02TextView, mGameMainArea03TextView,
-                mGameMainArea04TextView, mGameMainArea05TextView,
-        };
-
-        int i = 0;
-
-        //
-        for (TextView area : stage_areas) {
-
-            //
-            area.setText(mStageSceneNames.get(i));
-
-            i++;
-        }
-
         // Reveal markers and powers
         mGameLevelMarkerLayout.setVisibility(View.VISIBLE);
         mGamePowersLayout.setVisibility(View.VISIBLE);
@@ -7613,22 +7381,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mStageTopMostFranticBadgeImageView.setVisibility(View.INVISIBLE);
 
         //
-        mStageCardTopApexLayout.setVisibility(View.GONE);
-        mStageCardTopPredatorLayout.setVisibility(View.GONE);
-        mStageCardTopAccuracyLayout.setVisibility(View.GONE);
-        mStageCardTopTimeLayout.setVisibility(View.GONE);
-        mStageCardTopEatenLayout.setVisibility(View.GONE);
-        mStageCardTopStreakLayout.setVisibility(View.GONE);
-        mStageCardTopDeathLayout.setVisibility(View.GONE);
-        mStageCardTopFrenzyLayout.setVisibility(View.GONE);
-        mStageCardTopCalmLayout.setVisibility(View.GONE);
-        mStageCardTopFranticLayout.setVisibility(View.GONE);
+        //mStageCardTopApexLayout.setVisibility(View.GONE);
+        //mStageCardTopPredatorLayout.setVisibility(View.GONE);
+        //mStageCardTopAccuracyLayout.setVisibility(View.GONE);
+        //mStageCardTopTimeLayout.setVisibility(View.GONE);
+        //mStageCardTopEatenLayout.setVisibility(View.GONE);
+        //mStageCardTopStreakLayout.setVisibility(View.GONE);
+        //mStageCardTopDeathLayout.setVisibility(View.GONE);
+        //mStageCardTopFrenzyLayout.setVisibility(View.GONE);
+        //mStageCardTopCalmLayout.setVisibility(View.GONE);
+        //mStageCardTopFranticLayout.setVisibility(View.GONE);
 
         //
         switch (mStageIndex) {
 
             //
             case 1:
+
+                //
+                mLoadRandomScoreTitleTextView.setText("Total Boss Kills:");
+                mLoadRandomScoreValueTextView.setText(Integer.toString((TOTAL_BOSS_KILLS_SCORE_ARRAY[mStageIndex - 1])));
 
                 //
                 if (stage_01_apex) {
@@ -8977,13 +8749,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 //
                 mCreature01ImageView, mCreature02ImageView, mCreature03ImageView, mCreature04ImageView,
-                mCreature05ImageView, mCreature06ImageView, mCreature07ImageView, mCreature08ImageView,
-                mCreature09ImageView, mCreature10ImageView, mCreature11ImageView, mCreature12ImageView,
-                mCreature13ImageView, mCreature14ImageView, mCreature15ImageView, mCreature16ImageView,
-                mCreature17ImageView, mCreature18ImageView, mCreature19ImageView, mCreature20ImageView,
-                mCreature21ImageView, mCreature22ImageView, mCreature23ImageView, mCreature24ImageView,
-                mCreature25ImageView, mCreature26ImageView, mCreature27ImageView, mCreature28ImageView,
-                mCreature29ImageView, mCreature30ImageView, mCreature31ImageView, mCreature32ImageView,
+                mCreature05ImageView
         };
 
         //
@@ -9073,13 +8839,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 //
                 mCreature01ImageView, mCreature02ImageView, mCreature03ImageView, mCreature04ImageView,
-                mCreature05ImageView, mCreature06ImageView, mCreature07ImageView, mCreature08ImageView,
-                mCreature09ImageView, mCreature10ImageView, mCreature11ImageView, mCreature12ImageView,
-                mCreature13ImageView, mCreature14ImageView, mCreature15ImageView, mCreature16ImageView,
-                mCreature17ImageView, mCreature18ImageView, mCreature19ImageView, mCreature20ImageView,
-                mCreature21ImageView, mCreature22ImageView, mCreature23ImageView, mCreature24ImageView,
-                mCreature25ImageView, mCreature26ImageView, mCreature27ImageView, mCreature28ImageView,
-                mCreature29ImageView, mCreature30ImageView, mCreature31ImageView, mCreature32ImageView,
+                mCreature05ImageView
         };
 
         //
@@ -9140,6 +8900,521 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 //-- ARRAY RESOURCES -->
 
+    //-- START ASSETS ----------------------------------------------------------------------------->
+
+        //-- STAGE SELECT -->
+
+    //
+    int[] STAGE_SELECT_TITLE_IMAGES = {
+
+            //
+            R.drawable.stage_select_title_01, R.drawable.stage_select_title_02, R.drawable.stage_select_title_03,
+            R.drawable.stage_select_title_04, R.drawable.stage_select_title_05, R.drawable.stage_select_title_06,
+            R.drawable.stage_select_title_07
+    };
+
+    //
+    int[] STAGE_SELECT_BG_IMAGES = {
+
+            //
+            R.drawable.stage_select_bg_01, R.drawable.stage_select_bg_02, R.drawable.stage_select_bg_03,
+            R.drawable.stage_select_bg_04, R.drawable.stage_select_bg_05, R.drawable.stage_select_bg_06,
+            R.drawable.stage_select_bg_07
+    };
+
+    //
+    int[] STAGE_SELECT_COLOR_VALUES = {
+
+            //
+            R.color.stage_select_01_main, R.color.stage_select_02_main, R.color.stage_select_03_main,
+            R.color.stage_select_04_main, R.color.stage_select_05_main, R.color.stage_select_06_main,
+            R.color.stage_select_07_main
+    };
+
+        //-- STAGE CARD -->
+
+    //
+    int[] STAGE_CARD_TITLE_IMAGES = {
+
+            //
+            R.drawable.stage_card_title_01, R.drawable.stage_card_title_02, R.drawable.stage_card_title_03,
+            R.drawable.stage_card_title_04, R.drawable.stage_card_title_05, R.drawable.stage_card_title_06,
+            R.drawable.stage_card_title_07
+    };
+
+    //
+    int[] STAGE_CARD_BG_IMAGES = {
+
+            //
+            R.drawable.stage_card_bg_01, R.drawable.stage_card_bg_02, R.drawable.stage_card_bg_03,
+            R.drawable.stage_card_bg_04, R.drawable.stage_card_bg_05, R.drawable.stage_card_bg_06,
+            R.drawable.stage_card_bg_07
+    };
+
+    //
+    int[] STAGE_CARD_COLOR_VALUES = {
+
+            //
+            R.color.stage_card_01_main, R.color.stage_card_02_main, R.color.stage_card_03_main,
+            R.color.stage_card_04_main, R.color.stage_card_05_main, R.color.stage_card_06_main,
+            R.color.stage_card_07_main
+    };
+
+    //
+    int[] STAGE_CARD_BOSS_IMAGES = {
+
+            //
+            R.drawable.stage_card_boss_01, R.drawable.stage_card_boss_02, R.drawable.stage_card_boss_03,
+            R.drawable.stage_card_boss_04, R.drawable.stage_card_boss_05, R.drawable.stage_card_boss_06,
+            R.drawable.stage_card_boss_07
+    };
+
+    //
+    int[] STAGE_CARD_BOSS_STRINGS = {
+
+            //
+            R.string.stage_card_boss_01, R.string.stage_card_boss_02, R.string.stage_card_boss_03,
+            R.string.stage_card_boss_04, R.string.stage_card_boss_05, R.string.stage_card_boss_06,
+            R.string.stage_card_boss_07
+    };
+
+    //
+    int[] STAGE_CARD_BOSS_DESCRIPTION_STRINGS = {
+
+            //
+            R.string.stage_card_boss_01_description, R.string.stage_card_boss_02_description, R.string.stage_card_boss_03_description,
+            R.string.stage_card_boss_04_description, R.string.stage_card_boss_05_description, R.string.stage_card_boss_06_description,
+            R.string.stage_card_boss_07_description
+    };
+
+    //
+    int[] STAGE_CARD_DISASTER_IMAGES = {
+
+            //
+            R.drawable.stage_card_disaster_01, R.drawable.stage_card_disaster_02, R.drawable.stage_card_disaster_03,
+            R.drawable.stage_card_disaster_04, R.drawable.stage_card_disaster_05, R.drawable.stage_card_disaster_06,
+            R.drawable.stage_card_disaster_07
+    };
+
+    //
+    int[] STAGE_CARD_DISASTER_STRINGS = {
+
+            //
+            R.string.stage_card_disaster_01, R.string.stage_card_disaster_02, R.string.stage_card_disaster_03,
+            R.string.stage_card_disaster_04, R.string.stage_card_disaster_05, R.string.stage_card_disaster_06,
+            R.string.stage_card_disaster_07
+    };
+
+    //
+    int[] STAGE_CARD_DISASTER_DESCRIPTION_STRINGS = {
+
+            //
+            R.string.stage_card_disaster_01_description, R.string.stage_card_disaster_02_description, R.string.stage_card_disaster_03_description,
+            R.string.stage_card_disaster_04_description, R.string.stage_card_disaster_05_description, R.string.stage_card_disaster_06_description,
+            R.string.stage_card_disaster_07_description
+    };
+
+    //
+    int[] STAGE_CARD_CREATURE_01_IMAGES = {
+
+            //
+            R.drawable.stage_card_creature_01_01, R.drawable.stage_card_creature_01_02, R.drawable.stage_card_creature_01_03,
+            R.drawable.stage_card_creature_01_04, R.drawable.stage_card_creature_01_05, R.drawable.stage_card_creature_01_06,
+            R.drawable.stage_card_creature_01_07
+    };
+
+    //
+    int[] STAGE_CARD_CREATURE_01_STRINGS = {
+
+            //
+            R.string.stage_card_creature_01_01, R.string.stage_card_creature_01_02, R.string.stage_card_creature_01_03,
+            R.string.stage_card_creature_01_04, R.string.stage_card_creature_01_05, R.string.stage_card_creature_01_06,
+            R.string.stage_card_creature_01_07
+    };
+
+    //
+    int[] STAGE_CARD_CREATURE_01_DESCRIPTION_STRINGS = {
+
+            //
+            R.string.stage_card_creature_01_description_01, R.string.stage_card_creature_01_description_02, R.string.stage_card_creature_01_description_03,
+            R.string.stage_card_creature_01_description_04, R.string.stage_card_creature_01_description_05, R.string.stage_card_creature_01_description_06,
+            R.string.stage_card_creature_01_description_07,
+    };
+
+    //
+    int[] STAGE_CARD_CREATURE_02_IMAGES = {
+
+            //
+            R.drawable.stage_card_creature_02_01, R.drawable.stage_card_creature_02_02, R.drawable.stage_card_creature_02_03,
+            R.drawable.stage_card_creature_02_04, R.drawable.stage_card_creature_02_05, R.drawable.stage_card_creature_02_06,
+            R.drawable.stage_card_creature_02_07
+    };
+
+    //
+    int[] STAGE_CARD_CREATURE_02_STRINGS = {
+
+            //
+            R.string.stage_card_creature_02_01, R.string.stage_card_creature_02_02, R.string.stage_card_creature_02_03,
+            R.string.stage_card_creature_02_04, R.string.stage_card_creature_02_05, R.string.stage_card_creature_02_06,
+            R.string.stage_card_creature_02_07
+    };
+
+    //
+    int[] STAGE_CARD_CREATURE_02_DESCRIPTION_STRINGS = {
+
+            //
+            R.string.stage_card_creature_02_description_01, R.string.stage_card_creature_02_description_02, R.string.stage_card_creature_02_description_03,
+            R.string.stage_card_creature_02_description_04, R.string.stage_card_creature_02_description_05, R.string.stage_card_creature_02_description_06,
+            R.string.stage_card_creature_02_description_07,
+    };
+
+    //
+    int[] STAGE_CARD_CREATURE_03_IMAGES = {
+
+            //
+            R.drawable.stage_card_creature_03_01, R.drawable.stage_card_creature_03_02, R.drawable.stage_card_creature_03_03,
+            R.drawable.stage_card_creature_03_04, R.drawable.stage_card_creature_03_05, R.drawable.stage_card_creature_03_06,
+            R.drawable.stage_card_creature_03_07
+    };
+
+    //
+    int[] STAGE_CARD_CREATURE_03_STRINGS = {
+
+            //
+            R.string.stage_card_creature_03_01, R.string.stage_card_creature_03_02, R.string.stage_card_creature_03_03,
+            R.string.stage_card_creature_03_04, R.string.stage_card_creature_03_05, R.string.stage_card_creature_03_06,
+            R.string.stage_card_creature_03_07
+    };
+
+    //
+    int[] STAGE_CARD_CREATURE_03_DESCRIPTION_STRINGS = {
+
+            //
+            R.string.stage_card_creature_03_description_01, R.string.stage_card_creature_03_description_02, R.string.stage_card_creature_03_description_03,
+            R.string.stage_card_creature_03_description_04, R.string.stage_card_creature_03_description_05, R.string.stage_card_creature_03_description_06,
+            R.string.stage_card_creature_03_description_07,
+    };
+
+    //
+    int[] STAGE_CARD_CREATURE_04_IMAGES = {
+
+            //
+            R.drawable.stage_card_creature_04_01, R.drawable.stage_card_creature_04_02, R.drawable.stage_card_creature_04_03,
+            R.drawable.stage_card_creature_04_04, R.drawable.stage_card_creature_04_05, R.drawable.stage_card_creature_04_06,
+            R.drawable.stage_card_creature_04_07
+    };
+
+    //
+    int[] STAGE_CARD_CREATURE_04_STRINGS = {
+
+            //
+            R.string.stage_card_creature_04_01, R.string.stage_card_creature_04_02, R.string.stage_card_creature_04_03,
+            R.string.stage_card_creature_04_04, R.string.stage_card_creature_04_05, R.string.stage_card_creature_04_06,
+            R.string.stage_card_creature_04_07
+    };
+
+    //
+    int[] STAGE_CARD_CREATURE_04_DESCRIPTION_STRINGS = {
+
+            //
+            R.string.stage_card_creature_04_description_01, R.string.stage_card_creature_04_description_02, R.string.stage_card_creature_04_description_03,
+            R.string.stage_card_creature_04_description_04, R.string.stage_card_creature_04_description_05, R.string.stage_card_creature_04_description_06,
+            R.string.stage_card_creature_04_description_07,
+    };
+
+    //
+    int[] STAGE_CARD_CREATURE_05_IMAGES = {
+
+            //
+            R.drawable.stage_card_creature_05_01, R.drawable.stage_card_creature_05_02, R.drawable.stage_card_creature_05_03,
+            R.drawable.stage_card_creature_05_04, R.drawable.stage_card_creature_05_05, R.drawable.stage_card_creature_05_06,
+            R.drawable.stage_card_creature_05_07
+    };
+
+    //
+    int[] STAGE_CARD_CREATURE_05_STRINGS = {
+
+            //
+            R.string.stage_card_creature_05_01, R.string.stage_card_creature_05_02, R.string.stage_card_creature_05_03,
+            R.string.stage_card_creature_05_04, R.string.stage_card_creature_05_05, R.string.stage_card_creature_05_06,
+            R.string.stage_card_creature_05_07
+    };
+
+    //
+    int[] STAGE_CARD_CREATURE_05_DESCRIPTION_STRINGS = {
+
+            //
+            R.string.stage_card_creature_05_description_01, R.string.stage_card_creature_05_description_02, R.string.stage_card_creature_05_description_03,
+            R.string.stage_card_creature_05_description_04, R.string.stage_card_creature_05_description_05, R.string.stage_card_creature_05_description_06,
+            R.string.stage_card_creature_05_description_07,
+    };
+
+        //-- GAME -->
+
+    //
+    int[] GAME_STAGE_TITLE_IMAGES = {
+
+            //
+            R.drawable.game_stage_title_01, R.drawable.game_stage_title_02, R.drawable.game_stage_title_03,
+            R.drawable.game_stage_title_04, R.drawable.game_stage_title_05, R.drawable.game_stage_title_06,
+            R.drawable.game_stage_title_07
+    };
+
+    //
+    int[] GAME_BOARD_01_TITLE_IMAGES = {
+
+            //
+            R.drawable.game_board_01_01, R.drawable.game_board_01_02, R.drawable.game_board_01_03,
+            R.drawable.game_board_01_04, R.drawable.game_board_01_05, R.drawable.game_board_01_06,
+            R.drawable.game_board_01_07
+    };
+
+    //
+    int[] GAME_BOARD_01_THUMBNAILS = {
+
+            //
+            R.drawable.game_board_01_thumbnail_01, R.drawable.game_board_01_thumbnail_02, R.drawable.game_board_01_thumbnail_03,
+            R.drawable.game_board_01_thumbnail_04, R.drawable.game_board_01_thumbnail_05, R.drawable.game_board_01_thumbnail_06,
+            R.drawable.game_board_01_thumbnail_07
+    };
+
+    //
+    int[] GAME_BOARD_01_BG_IMAGES = {
+
+            //
+            R.drawable.game_board_01_bg_01, R.drawable.game_board_01_bg_02, R.drawable.game_board_01_bg_03,
+            R.drawable.game_board_01_bg_04, R.drawable.game_board_01_bg_05, R.drawable.game_board_01_bg_06,
+            R.drawable.game_board_01_bg_07
+    };
+
+    //
+    int[] GAME_BOARD_02_TITLE_IMAGES = {
+
+            //
+            R.drawable.game_board_02_01, R.drawable.game_board_02_02, R.drawable.game_board_02_03,
+            R.drawable.game_board_02_04, R.drawable.game_board_02_05, R.drawable.game_board_02_06,
+            R.drawable.game_board_02_07
+    };
+
+    //
+    int[] GAME_BOARD_02_THUMBNAILS = {
+
+            //
+            R.drawable.game_board_02_thumbnail_01, R.drawable.game_board_02_thumbnail_02, R.drawable.game_board_02_thumbnail_03,
+            R.drawable.game_board_02_thumbnail_04, R.drawable.game_board_02_thumbnail_05, R.drawable.game_board_02_thumbnail_06,
+            R.drawable.game_board_02_thumbnail_07
+    };
+
+    //
+    int[] GAME_BOARD_02_BG_IMAGES = {
+
+            //
+            R.drawable.game_board_02_bg_01, R.drawable.game_board_02_bg_02, R.drawable.game_board_02_bg_03,
+            R.drawable.game_board_02_bg_04, R.drawable.game_board_02_bg_05, R.drawable.game_board_02_bg_06,
+            R.drawable.game_board_02_bg_07
+    };
+
+    //
+    int[] GAME_BOARD_03_TITLE_IMAGES = {
+
+            //
+            R.drawable.game_board_03_01, R.drawable.game_board_03_02, R.drawable.game_board_03_03,
+            R.drawable.game_board_03_04, R.drawable.game_board_03_05, R.drawable.game_board_03_06,
+            R.drawable.game_board_03_07
+    };
+
+    //
+    int[] GAME_BOARD_03_THUMBNAILS = {
+
+            //
+            R.drawable.game_board_03_thumbnail_01, R.drawable.game_board_03_thumbnail_02, R.drawable.game_board_03_thumbnail_03,
+            R.drawable.game_board_03_thumbnail_04, R.drawable.game_board_03_thumbnail_05, R.drawable.game_board_03_thumbnail_06,
+            R.drawable.game_board_03_thumbnail_07
+    };
+
+    //
+    int[] GAME_BOARD_03_BG_IMAGES = {
+
+            //
+            R.drawable.game_board_03_bg_01, R.drawable.game_board_03_bg_02, R.drawable.game_board_03_bg_03,
+            R.drawable.game_board_03_bg_04, R.drawable.game_board_03_bg_05, R.drawable.game_board_03_bg_06,
+            R.drawable.game_board_03_bg_07
+    };
+
+    //
+    int[] GAME_BOARD_04_TITLE_IMAGES = {
+
+            //
+            R.drawable.game_board_04_01, R.drawable.game_board_04_02, R.drawable.game_board_04_03,
+            R.drawable.game_board_04_04, R.drawable.game_board_04_05, R.drawable.game_board_04_06,
+            R.drawable.game_board_04_07
+    };
+
+    //
+    int[] GAME_BOARD_04_THUMBNAILS = {
+
+            //
+            R.drawable.game_board_04_thumbnail_01, R.drawable.game_board_04_thumbnail_02, R.drawable.game_board_04_thumbnail_03,
+            R.drawable.game_board_04_thumbnail_04, R.drawable.game_board_04_thumbnail_05, R.drawable.game_board_04_thumbnail_06,
+            R.drawable.game_board_04_thumbnail_07
+    };
+
+    //
+    int[] GAME_BOARD_04_BG_IMAGES = {
+
+            //
+            R.drawable.game_board_04_bg_01, R.drawable.game_board_04_bg_02, R.drawable.game_board_04_bg_03,
+            R.drawable.game_board_04_bg_04, R.drawable.game_board_04_bg_05, R.drawable.game_board_04_bg_06,
+            R.drawable.game_board_04_bg_07
+    };
+
+    //
+    int[] GAME_BOARD_05_TITLE_IMAGES = {
+
+            //
+            R.drawable.game_board_05_01, R.drawable.game_board_05_02, R.drawable.game_board_05_03,
+            R.drawable.game_board_05_04, R.drawable.game_board_05_05, R.drawable.game_board_05_06,
+            R.drawable.game_board_05_07
+    };
+
+    //
+    int[] GAME_BOARD_05_THUMBNAILS = {
+
+            //
+            R.drawable.game_board_05_thumbnail_01, R.drawable.game_board_05_thumbnail_02, R.drawable.game_board_05_thumbnail_03,
+            R.drawable.game_board_05_thumbnail_04, R.drawable.game_board_05_thumbnail_05, R.drawable.game_board_05_thumbnail_06,
+            R.drawable.game_board_05_thumbnail_07
+    };
+
+    //
+    int[] GAME_BOARD_05_BG_IMAGES = {
+
+            //
+            R.drawable.game_board_05_bg_01, R.drawable.game_board_05_bg_02, R.drawable.game_board_05_bg_03,
+            R.drawable.game_board_05_bg_04, R.drawable.game_board_05_bg_05, R.drawable.game_board_05_bg_06,
+            R.drawable.game_board_05_bg_07
+    };
+
+    //
+    int[] GAME_BOSS_THUMBNAIL_IMAGES = {
+
+            //
+            R.drawable.game_boss_thumbnail_01, R.drawable.game_boss_thumbnail_02, R.drawable.game_boss_thumbnail_03,
+            R.drawable.game_boss_thumbnail_04, R.drawable.game_boss_thumbnail_05, R.drawable.game_boss_thumbnail_06,
+            R.drawable.game_boss_thumbnail_07
+    };
+
+    //
+    int[] GAME_BOSS_TITLE_IMAGES = {
+
+            //
+            R.drawable.game_boss_01_title, R.drawable.game_boss_02_title, R.drawable.game_boss_03_title,
+            R.drawable.game_boss_04_title, R.drawable.game_boss_05_title, R.drawable.game_boss_06_title,
+            R.drawable.game_boss_07_title
+    };
+
+    //
+    int[] GAME_BOSS_STRINGS = {
+
+            //
+            R.string.game_boss_01, R.string.game_boss_02, R.string.game_boss_03,
+            R.string.game_boss_04, R.string.game_boss_05, R.string.game_boss_06,
+            R.string.game_boss_07
+    };
+
+    //
+    int[] GAME_CREATURE_SPECIAL_01 = {
+
+            //
+            R.drawable.game_creature_special_01_01, R.drawable.game_creature_special_01_02, R.drawable.game_creature_special_01_03,
+            R.drawable.game_creature_special_01_04, R.drawable.game_creature_special_01_05, R.drawable.game_creature_special_01_06,
+            R.drawable.game_creature_special_01_07
+    };
+
+    //
+    int[] GAME_CREATURE_SPECIAL_02 = {
+
+            //
+            R.drawable.game_creature_special_02_01, R.drawable.game_creature_special_02_02, R.drawable.game_creature_special_02_03,
+            R.drawable.game_creature_special_02_04, R.drawable.game_creature_special_02_05, R.drawable.game_creature_special_02_06,
+            R.drawable.game_creature_special_02_07
+    };
+
+    //
+    int[] GAME_CREATURE_SPECIAL_03 = {
+
+            //
+            R.drawable.game_creature_special_03_01, R.drawable.game_creature_special_03_02, R.drawable.game_creature_special_03_03,
+            R.drawable.game_creature_special_03_04, R.drawable.game_creature_special_03_05, R.drawable.game_creature_special_03_06,
+            R.drawable.game_creature_special_03_07
+    };
+
+    //
+    int[] GAME_CREATURE_SPECIAL_04 = {
+
+            //
+            R.drawable.game_creature_special_04_01, R.drawable.game_creature_special_04_02, R.drawable.game_creature_special_04_03,
+            R.drawable.game_creature_special_04_04, R.drawable.game_creature_special_04_05, R.drawable.game_creature_special_04_06,
+            R.drawable.game_creature_special_04_07
+    };
+
+    //
+    int[] GAME_CREATURE_SPECIAL_05 = {
+
+            //
+            R.drawable.game_creature_special_05_01, R.drawable.game_creature_special_05_02, R.drawable.game_creature_special_05_03,
+            R.drawable.game_creature_special_05_04, R.drawable.game_creature_special_05_05, R.drawable.game_creature_special_05_06,
+            R.drawable.game_creature_special_05_07
+    };
+
+    //
+    int[] GAME_STAGE_BORDERS = {
+
+            //
+            R.drawable.game_border_01, R.drawable.game_border_02, R.drawable.game_border_03,
+            R.drawable.game_border_04, R.drawable.game_border_05, R.drawable.game_border_06,
+            R.drawable.game_border_07
+    };
+
+    //
+    int[] GAME_DISASTER_BG_IMAGES = {
+
+            //
+            R.drawable.game_disaster_01_bg_image, R.drawable.game_disaster_02_bg_image, R.drawable.game_disaster_03_bg_image,
+            R.drawable.game_disaster_04_bg_image, R.drawable.game_disaster_05_bg_image, R.drawable.game_disaster_06_bg_image,
+            R.drawable.game_disaster_07_bg_image
+    };
+
+    //
+    int[] GAME_DISASTER_THUMBNAIL_IMAGES = {
+
+            //
+            R.drawable.game_disaster_01_thumbnail_image, R.drawable.game_disaster_02_thumbnail_image, R.drawable.game_disaster_03_thumbnail_image,
+            R.drawable.game_disaster_04_thumbnail_image, R.drawable.game_disaster_05_thumbnail_image, R.drawable.game_disaster_06_thumbnail_image,
+            R.drawable.game_disaster_07_thumbnail_image
+    };
+
+    // -- END ASSETS ------------------------------------------------------------------------------>
+
+    //
+    boolean[] STAGE_COMPLETE_SCORE_ARRAY = {
+
+            //
+            stage_01_complete, stage_02_complete, stage_03_complete,
+            stage_04_complete, stage_05_complete, stage_06_complete,
+            stage_07_complete,
+
+    };
+
+    //
+    int[] TOTAL_BOSS_KILLS_SCORE_ARRAY = {
+
+            //
+            stage_01_boss_kills, stage_02_boss_kills, stage_03_boss_kills,
+            stage_04_boss_kills, stage_05_boss_kills, stage_06_boss_kills,
+            stage_07_boss_kills
+    };
+
     // RESOURCE : INTEGER - Array list of items that need event handlers
     final private static int[] CLICKABLES = {
 
@@ -9150,15 +9425,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             R.id.entry_main_continue_image_button, R.id.entry_main_new_image_button, R.id.entry_main_credits_image_button, // Main menu options
 
             // Stage select
-            R.id.stage_select_return_image_button, // Exit to main
-            R.id.stage_select_trophycase_image_button, R.id.stage_select_scorecard_image_button, R.id.stage_select_content_title_image_button, // Switch scorecards
+            R.id.stage_select_header_return_image_button, // Exit to main
+            R.id.stage_select_trophycase_image_button, R.id.stage_select_scorecard_image_button, R.id.stage_select_content_image_button, // Switch scorecards
             R.id.stage_stage_select_01_hilite_layout, R.id.stage_stage_select_02_hilite_layout, R.id.stage_stage_select_03_hilite_layout,
             R.id.stage_stage_select_04_hilite_layout, R.id.stage_stage_select_05_hilite_layout, R.id.stage_stage_select_06_hilite_layout,
             R.id.stage_stage_select_07_hilite_layout, // Select stage
-
-            //R.id.stage_select_trophy_01_image_view, R.id.stage_select_trophy_02_image_view, R.id.stage_select_trophy_03_image_view,
-            //R.id.stage_select_trophy_04_image_view, R.id.stage_select_trophy_05_image_view, R.id.stage_select_trophy_06_image_view,
-            //R.id.stage_select_trophy_07_image_view, // Boss cry
 
             // Stage card
             R.id.stage_card_header_return_image_button, R.id.stage_card_locked_image_button, // Exit to stage select
@@ -9168,10 +9439,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             //R.id.stage_card_screen_body_layout, // Touch to main
 
             // Game
-            R.id.game_main_return_image_button, R.id.game_main_exit_image_button, // Exit to stagecard
-
-            //
-            //R.id.game_scene_prev_image_button, R.id.game_scene_next_image_button,
+            R.id.game_main_return_image_button, // Exit to stagecard
 
             //
             R.id.game_main_power_01_image_view, R.id.game_main_power_02_image_view, R.id.game_main_power_03_image_view,

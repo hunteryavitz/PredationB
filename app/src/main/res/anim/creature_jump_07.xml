@@ -15,14 +15,14 @@
         android:toYScale="1"
         android:pivotX="50%p"
         android:pivotY="50%p"
-        android:duration="500">
+        android:duration="250">
     </scale>
 
     <alpha
-        android:startOffset="500"
+        android:startOffset="2000"
         android:fromAlpha="1"
         android:toAlpha="0"
-        android:duration="100">
+        android:duration="250">
     </alpha>
 
 </set>
