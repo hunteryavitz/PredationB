@@ -1336,8 +1336,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mStageCardScreenBodyLayout = findViewById(R.id.stage_card_screen_main_layout);
 
         //
-        mStageCardContentTitleLayout = findViewById(R.id.stage_card_content_title_layout);
-        mStageCardContentTitleImageButton = findViewById(R.id.stage_card_content_title_image_button);
+        mStageCardContentTitleLayout = findViewById(R.id.stage_card_content_control_layout);
+        mStageCardContentTitleImageButton = findViewById(R.id.stage_card_title_image_view);
         mStageCardBossNameTextView = findViewById(R.id.stage_card_boss_name_text_view);
 
         //
@@ -1349,7 +1349,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mStageCardScorecardLayout = findViewById(R.id.stage_card_stagescore_layout);
         mStageCardCollectionLayout = findViewById(R.id.stage_card_trophy_layout);
         mStageCardTopScoreLayout = findViewById(R.id.stage_card_hiscore_layout);
-        mStageCardStageLockedLayout = findViewById(R.id.stage_card_stage_locked_layout);
+        mStageCardStageLockedLayout = findViewById(R.id.stage_card_locked_layout);
         mStageCardEatenScoreLayout = findViewById(R.id.stage_card_eaten_score_layout);
 
         //
@@ -3313,7 +3313,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             // Stage card - Header return
-            case R.id.stage_card_header_return_image_button:
+            case R.id.stage_card_return_image_button:
 
                 //
                 findViewById(mCurScreen).setVisibility(View.GONE);
@@ -3713,7 +3713,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             // Stage card - Footer play here
-            case R.id.stage_card_ready_play_here_image_button:
+            case R.id.stage_card_control_play_image_button:
 
                 //
                 findViewById(mCurScreen).setVisibility(View.GONE);
@@ -9432,10 +9432,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             R.id.stage_stage_select_07_hilite_layout, // Select stage
 
             // Stage card
-            R.id.stage_card_header_return_image_button, R.id.stage_card_locked_image_button, // Exit to stage select
+            R.id.stage_card_return_image_button, R.id.stage_card_locked_image_button, // Exit to stage select
             R.id.stage_card_trophy_image_button, R.id.stage_card_hiscore_image_button, R.id.stage_card_stagescore_image_button,
             R.id.stage_card_eaten_image_button, R.id.stage_card_content_image_button, // Switch scorecards
-            R.id.stage_card_control_prev_image_button, R.id.stage_card_ready_play_here_image_button, R.id.stage_card_control_next_image_button, // Switch stagecards
+            R.id.stage_card_control_prev_image_button, R.id.stage_card_control_play_image_button, R.id.stage_card_control_next_image_button, // Switch stagecards
             //R.id.stage_card_screen_body_layout, // Touch to main
 
             // Game
