@@ -1,0 +1,359 @@
+<resources>
+
+    <string name="app_name">PredationB</string>
+
+    <string name="stage_card_boss_01">Wolf</string>
+    <string name="stage_card_boss_02">Shark</string>
+    <string name="stage_card_boss_03">Hawk</string>
+    <string name="stage_card_boss_04">Scorpion</string>
+    <string name="stage_card_boss_05">Anaconda</string>
+    <string name="stage_card_boss_06">Yeti</string>
+    <string name="stage_card_boss_07">Dragon</string>
+
+    <string name="stage_card_boss_01_description">This pack animal lurks deep in the forest.</string>
+    <string name="stage_card_boss_02_description">This lone hunter swims deep in the ocean.</string>
+    <string name="stage_card_boss_03_description">This fierce raptor flies deep in the mountains.</string>
+    <string name="stage_card_boss_04_description">This creepy insect crawls deep in the desert.</string>
+    <string name="stage_card_boss_05_description">This quiet killer hides deep in the jungle.</string>
+    <string name="stage_card_boss_06_description">This mythical beast ravages deep in the tundra.</string>
+    <string name="stage_card_boss_07_description">This legendary creature wanders deep in the nether.</string>
+
+    <string name="stage_card_disaster_01">Lightning Bolt</string>
+    <string name="stage_card_disaster_02">Whirlpool</string>
+    <string name="stage_card_disaster_03">Earthquake</string>
+    <string name="stage_card_disaster_04">Dust Devil</string>
+    <string name="stage_card_disaster_05">Volcano</string>
+    <string name="stage_card_disaster_06">Avalanche</string>
+    <string name="stage_card_disaster_07">Black Hole</string>
+
+    <string name="stage_card_disaster_01_description">This disaster can strike at any time.</string>
+    <string name="stage_card_disaster_02_description">This disaster can come from nowhere.</string>
+    <string name="stage_card_disaster_03_description">This disaster can happen suddenly.</string>
+    <string name="stage_card_disaster_04_description">This disaster can surprise you.</string>
+    <string name="stage_card_disaster_05_description">This disaster will have no warning.</string>
+    <string name="stage_card_disaster_06_description">This disaster will come quickly.</string>
+    <string name="stage_card_disaster_07_description">This disaster will end everything.</string>
+
+    <string name="stage_card_creature_01_01">rajkal</string>
+    <string name="stage_card_creature_02_01">tripicall</string>
+    <string name="stage_card_creature_03_01">seveee</string>
+    <string name="stage_card_creature_04_01">cstwad</string>
+    <string name="stage_card_creature_05_01">sdoby</string>
+
+    <string name="stage_card_creature_01_02">toooopyes</string>
+    <string name="stage_card_creature_02_02">dresyth</string>
+    <string name="stage_card_creature_03_02">creteryus</string>
+    <string name="stage_card_creature_04_02">csumo</string>
+    <string name="stage_card_creature_05_02">fritty</string>
+
+    <string name="stage_card_creature_01_03">srik</string>
+    <string name="stage_card_creature_02_03">deeetoo</string>
+    <string name="stage_card_creature_03_03">ufoodyu</string>
+    <string name="stage_card_creature_04_03">radffftyuiots</string>
+    <string name="stage_card_creature_05_03">crehhkkhhgg</string>
+
+    <string name="stage_card_creature_01_04">oofee</string>
+    <string name="stage_card_creature_02_04">sumpyus</string>
+    <string name="stage_card_creature_03_04">creature type</string>
+    <string name="stage_card_creature_04_04">creature type</string>
+    <string name="stage_card_creature_05_04">creature type</string>
+
+    <string name="stage_card_creature_01_05">creature type</string>
+    <string name="stage_card_creature_02_05">creature type</string>
+    <string name="stage_card_creature_03_05">creature type</string>
+    <string name="stage_card_creature_04_05">creature type</string>
+    <string name="stage_card_creature_05_05">creature type</string>
+
+    <string name="stage_card_creature_01_06">creature type</string>
+    <string name="stage_card_creature_02_06">creature type</string>
+    <string name="stage_card_creature_03_06">creature type</string>
+    <string name="stage_card_creature_04_06">creature type</string>
+    <string name="stage_card_creature_05_06">creature type</string>
+
+    <string name="stage_card_creature_01_07">creature type</string>
+    <string name="stage_card_creature_02_07">creature type</string>
+    <string name="stage_card_creature_03_07">creature type</string>
+    <string name="stage_card_creature_04_07">creature type</string>
+    <string name="stage_card_creature_05_07">creature type</string>
+
+    <string name="stage_card_creature_01_description_01">creature description and location</string>
+    <string name="stage_card_creature_02_description_01">creature description and location</string>
+    <string name="stage_card_creature_03_description_01">creature description and location</string>
+    <string name="stage_card_creature_04_description_01">creature description and location</string>
+    <string name="stage_card_creature_05_description_01">creature description and location</string>
+
+    <string name="stage_card_creature_01_description_02">creature description and location</string>
+    <string name="stage_card_creature_02_description_02">creature description and location</string>
+    <string name="stage_card_creature_03_description_02">creature description and location</string>
+    <string name="stage_card_creature_04_description_02">creature description and location</string>
+    <string name="stage_card_creature_05_description_02">creature description and location</string>
+
+    <string name="stage_card_creature_01_description_03">creature description and location</string>
+    <string name="stage_card_creature_02_description_03">creature description and location</string>
+    <string name="stage_card_creature_03_description_03">creature description and location</string>
+    <string name="stage_card_creature_04_description_03">creature description and location</string>
+    <string name="stage_card_creature_05_description_03">creature description and location</string>
+
+    <string name="stage_card_creature_01_description_04">creature description and location</string>
+    <string name="stage_card_creature_02_description_04">creature description and location</string>
+    <string name="stage_card_creature_03_description_04">creature description and location</string>
+    <string name="stage_card_creature_04_description_04">creature description and location</string>
+    <string name="stage_card_creature_05_description_04">creature description and location</string>
+
+    <string name="stage_card_creature_01_description_05">creature description and location</string>
+    <string name="stage_card_creature_02_description_05">creature description and location</string>
+    <string name="stage_card_creature_03_description_05">creature description and location</string>
+    <string name="stage_card_creature_04_description_05">creature description and location</string>
+    <string name="stage_card_creature_05_description_05">creature description and location</string>
+
+    <string name="stage_card_creature_01_description_06">creature description and location</string>
+    <string name="stage_card_creature_02_description_06">creature description and location</string>
+    <string name="stage_card_creature_03_description_06">creature description and location</string>
+    <string name="stage_card_creature_04_description_06">creature description and location</string>
+    <string name="stage_card_creature_05_description_06">creature description and location</string>
+
+    <string name="stage_card_creature_01_description_07">creature description and location</string>
+    <string name="stage_card_creature_02_description_07">creature description and location</string>
+    <string name="stage_card_creature_03_description_07">creature description and location</string>
+    <string name="stage_card_creature_04_description_07">creature description and location</string>
+    <string name="stage_card_creature_05_description_07">creature description and location</string>
+
+    <string name="game_boss_01">Wolf</string>
+    <string name="game_boss_02">Shark</string>
+    <string name="game_boss_03">Hawk</string>
+    <string name="game_boss_04">Scorpion</string>
+    <string name="game_boss_05">Anaconda</string>
+    <string name="game_boss_06">Yeti</string>
+    <string name="game_boss_07">Dragon</string>
+    <string name="load_screen_random_score_title_text_view">SOME SCORE</string>
+    <string name="load_screen_random_score_value_text_view">99%</string>
+    <string name="credits_image_view">credits_image_view</string>
+    <string name="entry_main_title_image_view">entry_main_title_image_view</string>
+    <string name="entry_sub_title_image_view">entry_sub_title_image_view</string>
+    <string name="entry_main_continue_image_button">entry_main_continue_image_button</string>
+    <string name="entry_main_new_image_button">entry_main_new_image_button</string>
+    <string name="entry_main_settings_image_button">entry_main_settings_image_button</string>
+    <string name="entry_main_tutorial_image_button">entry_main_tutorial_image_button</string>
+    <string name="entry_main_credits_image_button">entry_main_credits_image_button</string>
+    <string name="stage_select_return_image_button">stage_select_return_image_button</string>
+    <string name="stage_select_header_title_image_view">stage_select_header_title_image_view</string>
+    <string name="stage_select_awards_image_button">stage_select_awards_image_button</string>
+    <string name="stage_select_trophycase_image_button">stage_select_trophycase_image_button</string>
+    <string name="stage_select_scorecard_image_button">stage_select_scorecard_image_button</string>
+    <string name="stage_select_content_image_button">stage_select_content_image_button</string>
+    <string name="trophycase">TROPHYCASE</string>
+    <string name="map">WORLD MAP</string>
+    <string name="awards">AWARDS</string>
+    <string name="territory">TERRITORY</string>
+    <string name="_99">99</string>
+    <string name="percent">%</string>
+    <string name="rank">RANK</string>
+    <string name="trophy_01_title">Wolf</string>
+    <string name="trophy_01_description">Forest Predator</string>
+    <string name="stage_card_trophy_01_image_view">stage_card_trophy_01_image_view</string>
+    <string name="stage_select_trophy_01_image_view">stage_select_trophy_01_image_view</string>
+    <string name="trophy_02_title">Shark</string>
+    <string name="trophy_02_description">Ocean Predator</string>
+    <string name="stage_select_trophy_02_image_view">stage_select_trophy_02_image_view</string>
+    <string name="trophy_03_title">Hawk</string>
+    <string name="trophy_03_description">Mountain Predator</string>
+    <string name="stage_select_trophy_03_image_view">stage_select_trophy_03_image_view</string>
+    <string name="trophy_04_title">Scorpion</string>
+    <string name="trophy_04_description">Desert Predator</string>
+    <string name="stage_select_trophy_04_image_view">stage_select_trophy_04_image_view</string>
+    <string name="trophy_05_title">Anaconda</string>
+    <string name="trophy_05_description">Jungle Predator</string>
+    <string name="stage_select_trophy_05_image_view">stage_select_trophy_05_image_view</string>
+    <string name="trophy_06_title">Yeti</string>
+    <string name="trophy_06_description">Tundra Predator</string>
+    <string name="stage_select_trophy_06_image_view">stage_select_trophy_06_image_view</string>
+    <string name="trophy_07_title">Dragon</string>
+    <string name="trophy_07_description">Nether Predator</string>
+    <string name="stage_select_trophy_07_image_view">stage_select_trophy_07_image_view</string>
+    <string name="_7">7</string>
+    <string name="predators">PREDATORS</string>
+    <string name="achievements">ACHIEVEMENTS</string>
+    <string name="collected">COLLECTED</string>
+    <string name="score_apex_title">Top of the Food Chain</string>
+    <string name="score_apex_description">ACHIEVE APEX ON EVERY STAGE</string>
+    <string name="stage_select_score_apex_badge_image_view">stage_select_score_apex_badge_image_view</string>
+    <string name="score_predator_title">King of the Jungle</string>
+    <string name="score_predator_description">ACHIEVE TOP PREDATOR IN EVERY STAGE</string>
+    <string name="stage_select_score_predator_badge_image_view">stage_select_score_predator_badge_image_view</string>
+    <string name="score_accuracy_title">Eye of the Hawk</string>
+    <string name="score_accuracy_description">ACHIEVE TOP ACCURACY ON EVERY STAGE</string>
+    <string name="stage_select_score_accuracy_badge_image_view">stage_select_score_accuracy_badge_image_view</string>
+    <string name="score_time_title">Reflex of the Snake</string>
+    <string name="score_time_description">ACHIEVE TOP TIME IN EVERY STAGE</string>
+    <string name="stage_select_score_time_badge_image_view">stage_select_score_time_badge_image_view</string>
+    <string name="score_creatures_title">Hunger of the Wolf</string>
+    <string name="score_creatures_description">EAT 1000 CREATURES</string>
+    <string name="stage_select_score_creatures_badge_image_view">stage_select_score_creatures_badge_image_view</string>
+    <string name="score_streak_title">Mercy of the Shark</string>
+    <string name="score_streak_description">ACHIEVE STREAK OF 50</string>
+    <string name="stage_select_score_streak_badge_image_view">stage_select_score_streak_badge_image_view</string>
+    <string name="score_death_description">ACHIEVE CLOSER THAN 3 HEARTBEATS FROM DEATH</string>
+    <string name="score_death_title">Endurance of the Scorpion</string>
+    <string name="stage_select_score_death_badge_image_view">stage_select_score_death_badge_image_view</string>
+    <string name="score_frenzy_title">Endurance of the Yeti</string>
+    <string name="score_frenzy_description">ACHIEVE TOP FRENZY IN EVERY STAGE</string>
+    <string name="stage_select_score_frenzy_badge_image_view">stage_select_score_frenzy_badge_image_view</string>
+    <string name="score_calm_title">Cold-Blooded</string>
+    <string name="score_calm_description">ACHIEVE LOWEST ADRENALINE</string>
+    <string name="stage_select_score_calm_badge_image_view">stage_select_score_calm_badge_image_view</string>
+    <string name="score_frantic_title">Rampager</string>
+    <string name="score_frantic_description">ACHIEVE HIGHEST ADRENALINE</string>
+    <string name="stage_select_score_frantic_badge_image_view">stage_select_score_frantic_badge_image_view</string>
+    <string name="stage_select_content_stage_01_image_view">stage_select_content_stage_01_image_view</string>
+    <string name="stage_select_content_stage_01_status_image_button">stage_select_content_stage_01_status_image_button</string>
+    <string name="stage_select_content_stage_status_text_view">stage_select_content_stage_status_text_view</string>
+    <string name="stage_card_control_prev_image_button">stage_card_control_prev_image_button</string>
+    <string name="stage_card_control_play_image_button">stage_card_control_play_image_button</string>
+    <string name="stage_card_control_next_image_button">stage_card_control_next_image_button</string>
+    <string name="stage_card_return_image_button">stage_card_return_image_button</string>
+    <string name="stage_card_title_image_view">stage_card_title_image_view</string>
+    <string name="stage_card_spacer_image_button">stage_card_spacer_image_button</string>
+    <string name="stage_card_trophy_image_button">stage_card_trophy_image_button</string>
+    <string name="stage_card_scorecard_image_button">stage_card_scorecard_image_button</string>
+    <string name="stage_card_stagescore_image_button">stage_card_stagescore_image_button</string>
+    <string name="stage_card_eaten_image_button">stage_card_eaten_image_button</string>
+    <string name="stage_card_content_image_button">stage_card_content_image_button</string>
+    <string name="stage_locked">STAGE LOCKED</string>
+    <string name="stage_card_locked_image_view">stage_card_locked_image_view</string>
+    <string name="you_were_eaten">YOU WERE EATEN</string>
+    <string name="stage_card_eaten_content_image_view">stage_card_eaten_content_image_view</string>
+    <string name="creature_01_title">Creature 01</string>
+    <string name="creature_01_description">THIS CREATURE CAN BE FOUND IN THE FIRST BOARD.</string>
+    <string name="creature_02_title">Creature 02</string>
+    <string name="creature_02_description">THIS CREATURE CAN BE FOUND IN THE SECOND BOARD.</string>
+    <string name="stage_card_trophy_02_image_view">stage_card_trophy_02_image_view</string>
+    <string name="creature_03_title">Creature 03</string>
+    <string name="creature_03_description">THIS CREATURE CAN BE FOUND IN THE THIRD BOARD.</string>
+    <string name="stage_card_trophy_03_image_view">stage_card_trophy_03_image_view</string>
+    <string name="creature_04_title">Creature 04</string>
+    <string name="creature_04_description">THIS CREATURE CAN BE FOUND IN THE FOURTH BOARD.</string>
+    <string name="stage_card_trophy_04_image_view">stage_card_trophy_04_image_view</string>
+    <string name="creature_05_title">Creature 05</string>
+    <string name="creature_05_description">THIS CREATURE CAN BE FOUND IN THE FIFTH BOARD.</string>
+    <string name="stage_card_trophy_05_image_view">stage_card_trophy_05_image_view</string>
+    <string name="stage_ready">STAGE READY</string>
+    <string name="stage_card_boss_image_view">stage_card_boss_image_view</string>
+    <string name="boss_title">Boss</string>
+    <string name="boss_description">THIS IS THE PREDATOR HIDING SOMEWHERE ON THIS STAGE.</string>
+    <string name="power_title">Power</string>
+    <string name="power_description">THIS IS THE POWER NEEDED FOR THIS STAGE.</string>
+    <string name="disaster_title">Disaster</string>
+    <string name="disaster_description">THIS IS THE DISASTER THAT WILL HAPPEN ON THIS STAGE.</string>
+    <string name="stage_card_disaster_image_view">stage_card_disaster_image_view</string>
+    <string name="stage_card_power_image_view">stage_card_power_image_view</string>
+    <string name="stage_status_title">STAGE COMPLETE</string>
+    <string name="stage_card_stagescore_boss_title">STAGE BOSS</string>
+    <string name="stage_card_stagescore_boss_image_view">stage_card_stagescore_boss_image_view</string>
+    <string name="stage_card_stagescore_boss_status">Boss Status</string>
+    <string name="stage_card_stagescore_disaster_01_image_view">stage_card_stagescore_disaster_01_image_view</string>
+    <string name="stage_card_stagescore_disaster_02_image_view">stage_card_stagescore_disaster_02_image_view</string>
+    <string name="stage_card_stagescore_disaster_03_image_view">stage_card_stagescore_disaster_03_image_view</string>
+    <string name="stage_card_stagescore_disaster_04_image_view">stage_card_stagescore_disaster_04_image_view</string>
+    <string name="stage_card_stagescore_disaster_05_image_view">stage_card_stagescore_disaster_05_image_view</string>
+    <string name="stage_card_stagescore_disaster_status">Disaster Status</string>
+    <string name="stage_card_stagescore_disaster_title">STAGE DISASTER</string>
+    <string name="stage_card_stagescore_predators_title">STAGE PREDATORS</string>
+    <string name="stage_card_stagescore_predators_01_image_view">stage_card_stagescore_predators_01_image_view</string>
+    <string name="stage_card_stagescore_predators_02_image_view">stage_card_stagescore_predators_02_image_view</string>
+    <string name="stage_card_stagescore_predators_03_image_view">stage_card_stagescore_predators_03_image_view</string>
+    <string name="stage_card_stagescore_predators_04_image_view">stage_card_stagescore_predators_04_image_view</string>
+    <string name="stage_card_stagescore_predators_05_image_view">stage_card_stagescore_predators_05_image_view</string>
+    <string name="stage_card_stagescore_predators_status">Predators Status</string>
+    <string name="stage_card_stagescore_foodchain_title">FOOD CHAIN</string>
+    <string name="stage_card_stagescore_foodchain_status">Food Chain Status</string>
+
+    <string name="stage_card_scorecard_predator_title">Aggression</string>
+    <string name="stage_card_scorecard_predator_description">ACHIEVE TOP AGGRESSION</string>
+    <string name="stage_card_scorecard_predator_badge_image_view">stage_card_scorecard_predator_badge_image_view</string>
+
+    <string name="stage_card_scorecard_accuracy_title">Accuracy</string>
+    <string name="stage_card_scorecard_accuracy_description">ACHIEVE 95% ACCURACY</string>
+    <string name="stage_card_scorecard_accuracy_badge_image_view">stage_card_scorecard_accuracy_badge_image_view</string>
+
+    <string name="stage_card_scorecard_time_title">Best Time</string>
+    <string name="stage_card_scorecard_time_description">FINISH STAGE IN 2:00</string>
+    <string name="stage_card_scorecard_time_badge_image_view">stage_card_scorecard_time_badge_image_view</string>
+
+    <string name="stage_card_scorecard_kills_title">Kills</string>
+    <string name="stage_card_scorecard_kills_description">EAT 1000 CREATURES</string>
+    <string name="stage_card_scorecard_kills_badge_image_view">stage_card_scorecard_kills_badge_image_view</string>
+
+    <string name="stage_card_scorecard_streak_title">High Streak</string>
+    <string name="stage_card_scorecard_streak_description">KILL 20 CREATURES WITHOUT MISS</string>
+    <string name="stage_card_scorecard_streak_badge_image_view">stage_card_scorecard_streak_badge_image_view</string>
+
+    <string name="stage_card_scorecard_death_title">Close to Death</string>
+    <string name="stage_card_scorecard_death_description">GET CLOSER TO DEATH THAN 3 HEARTBEATS</string>
+    <string name="stage_card_scorecard_death_badge_image_view">stage_card_scorecard_death_badge_image_view</string>
+
+    <string name="stage_card_scorecard_frenzy_title">Longest Frenzy</string>
+    <string name="stage_card_scorecard_frenzy_description">SURVIVE FRENZY FOR MORE THAN 10 HEARTBEATS</string>
+    <string name="stage_card_scorecard_frenzy_badge_image_view">stage_card_scorecard_frenzy_badge_image_view</string>
+
+    <string name="stage_card_scorecard_calm_title">Most Calm</string>
+    <string name="stage_card_scorecard_calm_description">ACHIEVE LOWEST ADRENALINE</string>
+    <string name="stage_card_scorecard_calm_badge_image_view">stage_card_scorecard_calm_badge_image_view</string>
+
+    <string name="stage_card_scorecard_frantic_title">Most Frantic</string>
+    <string name="stage_card_scorecard_frantic_description">ACHIEVE HIGHEST ADRENALINE</string>
+    <string name="stage_card_scorecard_frantic_badge_image_view">stage_card_scorecard_frantic_badge_image_view</string>
+    <string name="badges">BADGES</string>
+
+    <string name="stage_card_scorecard_progress_title_text_view">EXP:</string>
+    <string name="stage_card_power_01">Fight</string>
+    <string name="stage_card_power_02">Breathe</string>
+    <string name="stage_card_power_03">Flight</string>
+    <string name="stage_card_power_04">Gaze</string>
+    <string name="stage_card_power_05">Roar</string>
+    <string name="stage_card_power_06">Flow</string>
+    <string name="stage_card_power_07">Secret</string>
+    <string name="stage_card_power_01_description">Destroy every creature with a single sweep</string>
+    <string name="stage_card_power_02_description">Slow adrenaline and survive longer</string>
+    <string name="stage_card_power_03_description">Run away and live to fight another day</string>
+    <string name="stage_card_power_04_description">Peer into the deep to see those hiding</string>
+    <string name="stage_card_power_05_description">Scare creatures from hiding and speed up adrenaline</string>
+    <string name="stage_card_power_06_description">Slow time and take the initiative</string>
+    <string name="stage_card_power_07_description">Secret power to be seen</string>
+
+
+    <string name="game_scene_next_image_button">game_scene_next_image_button</string>
+    <string name="game_main_boss_image_button">game_main_boss_image_button</string>
+    <string name="game_main_creature_01_image_button">game_main_creature_01_image_button</string>
+    <string name="game_main_creature_02_image_button">game_main_creature_02_image_button</string>
+    <string name="game_main_creature_03_image_button">game_main_creature_03_image_button</string>
+    <string name="game_main_creature_04_image_button">game_main_creature_04_image_button</string>
+    <string name="game_main_creature_05_image_button">game_main_creature_05_image_button</string>
+    <string name="game_main_return_image_button">game_main_return_image_button</string>
+    <string name="game_main_stage_image_view">game_main_stage_image_view</string>
+    <string name="game_main_scene_image_view">game_main_scene_image_view</string>
+    <string name="game_main_spacer_image_button">game_main_spacer_image_button</string>
+    <string name="game_main_level_marker_03_image_view">game_main_level_marker_03_image_view</string>
+    <string name="game_main_level_marker_05_image_view">game_main_level_marker_05_image_view</string>
+    <string name="game_main_level_marker_01_image_view">game_main_level_marker_01_image_view</string>
+    <string name="game_main_level_marker_02_image_view">game_main_level_marker_02_image_view</string>
+    <string name="game_main_level_marker_04_image_view">game_main_level_marker_04_image_view</string>
+    <string name="game_main_creature_01_splatter_image_view">game_main_creature_01_splatter_image_view</string>
+    <string name="game_main_creature_02_splatter_image_view">game_main_creature_02_splatter_image_view</string>
+    <string name="game_main_creature_03_splatter_image_view">game_main_creature_03_splatter_image_view</string>
+    <string name="game_main_creature_04_splatter_image_view">game_main_creature_04_splatter_image_view</string>
+    <string name="game_main_creature_05_splatter_image_view">game_main_creature_05_splatter_image_view</string>
+    <string name="game_special_creature_image_button">game_special_creature_image_button</string>
+    <string name="game_power_01_image_view">game_power_01_image_view</string>
+    <string name="game_power_02_image_view">game_power_02_image_view</string>
+    <string name="game_power_03_image_view">game_power_03_image_view</string>
+    <string name="game_power_04_image_view">game_power_04_image_view</string>
+    <string name="game_power_05_image_view">game_power_05_image_view</string>
+    <string name="game_power_06_image_view">game_power_06_image_view</string>
+
+    <string name="stage_complete">Stage Complete</string>
+    <string name="stage_card_boss_status_eaten">Eaten</string>
+    <string name="stage_card_boss_status_escaped">Escaped</string>
+    <string name="stage_card_boss_status_defeated">Defeated</string>
+
+
+</resources>

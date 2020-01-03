@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#94A2A3</color>
+    <color name="colorPrimaryDark">#344443</color>
+    <color name="colorAccent">#94A2A3</color>
+
+    <color name="style_color_palette_eobe_bg">#000000</color>
+
+    <color name="style_color_palette_screen_bg">#050706</color>
+
+    <color name="style_color_palette_title_bar_bg">#7D0B1516</color>
+    <color name="style_color_palette_title_bar_text_main">#F4F4F4</color>
+    <color name="style_color_palette_title_bar_text_sub">#94A2A3</color>
+    <color name="style_color_palette_title_bar_icon_selected">#FFFFFF</color>
+    <color name="style_color_palette_title_bar_icon_unselected">#7D344443</color>
+
+    <color name="style_color_palette_control_card_bg_active">#7D0B1516</color>
+    <color name="style_color_palette_control_card_bg_inactive">#7D0B1516</color>
+    <color name="style_color_palette_control_card_bar_bg">#7D000000</color>
+    <color name="style_color_palette_control_card_text_main">#F4F4F4</color>
+    <color name="style_color_palette_control_card_text_sub">#94A2A3</color>
+    <color name="style_color_palette_control_card_icon_selected">#FFFFFF</color>
+    <color name="style_color_palette_control_card_icon_unselected">#7D344443</color>
+
+    <color name="style_color_palette_footer_bar_bg">#7D0B1516</color>
+    <color name="style_color_palette_footer_bar_text_main">#F4F4F4</color>
+    <color name="style_color_palette_footer_bar_text_sub">#94A2A3</color>
+    <color name="style_color_palette_footer_bar_icon_selected">#FFFFFF</color>
+    <color name="style_color_palette_footer_bar_icon_unselected">#7D344443</color>
+
+    <color name="style_color_palette_badge_bg_active">#000000</color>
+
+    <color name="style_color_palette_stage_01_main">#7D003333</color>
+    <color name="style_color_palette_stage_02_main">#7D000066</color>
+    <color name="style_color_palette_stage_03_main">#68333300</color>
+    <color name="style_color_palette_stage_04_main">#7D221111</color>
+    <color name="style_color_palette_stage_05_main">#7D551100</color>
+    <color name="style_color_palette_stage_06_main">#41002244</color>
+    <color name="style_color_palette_stage_07_main">#7D112233</color>
+
+    <color name="stage_select_01_main">#7D003333</color>
+    <color name="stage_select_02_main">#7D000066</color>
+    <color name="stage_select_03_main">#7D333300</color>
+    <color name="stage_select_04_main">#7D221111</color>
+    <color name="stage_select_05_main">#7D551100</color>
+    <color name="stage_select_06_main">#7D002244</color>
+    <color name="stage_select_07_main">#7D112233</color>
+
+    <color name="stage_card_01_main">#7D003333</color>
+    <color name="stage_card_02_main">#7D000066</color>
+    <color name="stage_card_03_main">#7D333300</color>
+    <color name="stage_card_04_main">#7D221111</color>
+    <color name="stage_card_05_main">#7D551100</color>
+    <color name="stage_card_06_main">#7D002244</color>
+    <color name="stage_card_07_main">#7D112233</color>
+
+    <color name="game_stage_01_main">#66003333</color>
+    <color name="game_stage_02_main">#7D000066</color>
+    <color name="game_stage_03_main">#7D333300</color>
+    <color name="game_stage_04_main">#7D221111</color>
+    <color name="game_stage_05_main">#7D551100</color>
+    <color name="game_stage_06_main">#7D002244</color>
+    <color name="game_stage_07_main">#7D112233</color>
+
+</resources>
