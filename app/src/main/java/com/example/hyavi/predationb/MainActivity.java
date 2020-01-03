@@ -58,8 +58,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     // Stage 1
     private static final String STAGE_01_COMPLETE = "stage_01_complete";
 
+    //
     private static final String STAGE_01_APEX = "stage_01_apex";
-    private static final String STAGE_01_PREDATOR = "stage_01_predator";
+    private static final String STAGE_01_FOOD_CHAIN = "stage_01_food_chain";
     private static final String STAGE_01_ACCURACY = "stage_01_accuracy";
     private static final String STAGE_01_CREATURE_KILLS = "stage_01_creature_kills";
     private static final String STAGE_01_BEST_TIME = "stage_01_best_time";
@@ -69,22 +70,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private static final String STAGE_01_MOST_CALM = "stage_01_most_calm";
     private static final String STAGE_01_MOST_FRANTIC = "stage_01_most_frantic";
 
+    //
     private static final String STAGE_01_ATTEMPTS = "stage_01_attempts";
     private static final String STAGE_01_BOSS_KILLS = "stage_01_boss_kills";
     private static final String STAGE_01_TOTAL_TIME = "stage_01_total_time";
     private static final String STAGE_01_COLLECTION = "stage_01_collection";
 
-    private static final String STAGE_01_CREATURE_01 = "stage_01_creature_01";
-    private static final String STAGE_01_CREATURE_02 = "stage_01_creature_02";
-    private static final String STAGE_01_CREATURE_03 = "stage_01_creature_03";
-    private static final String STAGE_01_CREATURE_04 = "stage_01_creature_04";
-    private static final String STAGE_01_CREATURE_05 = "stage_01_creature_05";
+    //
+    private static final String STAGE_01_PREDATOR_01 = "stage_01_predator_01";
+    private static final String STAGE_01_PREDATOR_02 = "stage_01_predator_02";
+    private static final String STAGE_01_PREDATOR_03 = "stage_01_predator_03";
+    private static final String STAGE_01_PREDATOR_04 = "stage_01_predator_04";
+    private static final String STAGE_01_PREDATOR_05 = "stage_01_predator_05";
 
     // Stage 2
     private static final String STAGE_02_COMPLETE = "stage_02_complete";
 
+    //
     private static final String STAGE_02_APEX = "stage_02_apex";
-    private static final String STAGE_02_PREDATOR = "stage_02_predator";
+    private static final String STAGE_02_FOOD_CHAIN = "stage_02_food_chain";
     private static final String STAGE_02_ACCURACY = "stage_02_accuracy";
     private static final String STAGE_02_CREATURE_KILLS = "stage_02_creature_kills";
     private static final String STAGE_02_BEST_TIME = "stage_02_best_time";
@@ -94,22 +98,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private static final String STAGE_02_MOST_CALM = "stage_02_most_calm";
     private static final String STAGE_02_MOST_FRANTIC = "stage_02_most_frantic";
 
+    //
     private static final String STAGE_02_ATTEMPTS = "stage_02_attempts";
     private static final String STAGE_02_BOSS_KILLS = "stage_02_boss_kills";
     private static final String STAGE_02_TOTAL_TIME = "stage_02_total_time";
     private static final String STAGE_02_COLLECTION = "stage_02_collection";
 
-    private static final String STAGE_02_CREATURE_01 = "stage_02_creature_01";
-    private static final String STAGE_02_CREATURE_02 = "stage_02_creature_02";
-    private static final String STAGE_02_CREATURE_03 = "stage_02_creature_03";
-    private static final String STAGE_02_CREATURE_04 = "stage_02_creature_04";
-    private static final String STAGE_02_CREATURE_05 = "stage_02_creature_05";
+    //
+    private static final String STAGE_02_PREDATOR_01 = "stage_02_predator_01";
+    private static final String STAGE_02_PREDATOR_02 = "stage_02_predator_02";
+    private static final String STAGE_02_PREDATOR_03 = "stage_02_predator_03";
+    private static final String STAGE_02_PREDATOR_04 = "stage_02_predator_04";
+    private static final String STAGE_02_PREDATOR_05 = "stage_02_predator_05";
 
     // Stage 3
     private static final String STAGE_03_COMPLETE = "stage_03_complete";
 
+    //
     private static final String STAGE_03_APEX = "stage_03_apex";
-    private static final String STAGE_03_PREDATOR = "stage_03_predator";
+    private static final String STAGE_03_FOOD_CHAIN = "stage_03_food_chain";
     private static final String STAGE_03_ACCURACY = "stage_03_accuracy";
     private static final String STAGE_03_CREATURE_KILLS = "stage_03_creature_kills";
     private static final String STAGE_03_BEST_TIME = "stage_03_best_time";
@@ -119,22 +126,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private static final String STAGE_03_MOST_CALM = "stage_03_most_calm";
     private static final String STAGE_03_MOST_FRANTIC = "stage_03_most_frantic";
 
+    //
     private static final String STAGE_03_ATTEMPTS = "stage_03_attempts";
     private static final String STAGE_03_BOSS_KILLS = "stage_03_boss_kills";
     private static final String STAGE_03_TOTAL_TIME = "stage_03_total_time";
     private static final String STAGE_03_COLLECTION = "stage_03_collection";
 
-    private static final String STAGE_03_CREATURE_01 = "stage_03_creature_01";
-    private static final String STAGE_03_CREATURE_02 = "stage_03_creature_02";
-    private static final String STAGE_03_CREATURE_03 = "stage_03_creature_03";
-    private static final String STAGE_03_CREATURE_04 = "stage_03_creature_04";
-    private static final String STAGE_03_CREATURE_05 = "stage_03_creature_05";
+    //
+    private static final String STAGE_03_PREDATOR_01 = "stage_03_predator_01";
+    private static final String STAGE_03_PREDATOR_02 = "stage_03_predator_02";
+    private static final String STAGE_03_PREDATOR_03 = "stage_03_predator_03";
+    private static final String STAGE_03_PREDATOR_04 = "stage_03_predator_04";
+    private static final String STAGE_03_PREDATOR_05 = "stage_03_predator_05";
 
     // Stage 4
     private static final String STAGE_04_COMPLETE = "stage_04_complete";
 
+    //
     private static final String STAGE_04_APEX = "stage_04_apex";
-    private static final String STAGE_04_PREDATOR = "stage_04_predator";
+    private static final String STAGE_04_FOOD_CHAIN = "stage_04_food_chain";
     private static final String STAGE_04_ACCURACY = "stage_04_accuracy";
     private static final String STAGE_04_CREATURE_KILLS = "stage_04_creature_kills";
     private static final String STAGE_04_BEST_TIME = "stage_04_best_time";
@@ -144,22 +154,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private static final String STAGE_04_MOST_CALM = "stage_04_most_calm";
     private static final String STAGE_04_MOST_FRANTIC = "stage_04_most_frantic";
 
+    //
     private static final String STAGE_04_ATTEMPTS = "stage_04_attempts";
     private static final String STAGE_04_BOSS_KILLS = "stage_04_boss_kills";
     private static final String STAGE_04_TOTAL_TIME = "stage_04_total_time";
     private static final String STAGE_04_COLLECTION = "stage_04_collection";
 
-    private static final String STAGE_04_CREATURE_01 = "stage_04_creature_01";
-    private static final String STAGE_04_CREATURE_02 = "stage_04_creature_02";
-    private static final String STAGE_04_CREATURE_03 = "stage_04_creature_03";
-    private static final String STAGE_04_CREATURE_04 = "stage_04_creature_04";
-    private static final String STAGE_04_CREATURE_05 = "stage_04_creature_05";
+    //
+    private static final String STAGE_04_PREDATOR_01 = "stage_04_predator_01";
+    private static final String STAGE_04_PREDATOR_02 = "stage_04_predator_02";
+    private static final String STAGE_04_PREDATOR_03 = "stage_04_predator_03";
+    private static final String STAGE_04_PREDATOR_04 = "stage_04_predator_04";
+    private static final String STAGE_04_PREDATOR_05 = "stage_04_predator_05";
 
     // Stage 5
     private static final String STAGE_05_COMPLETE = "stage_05_complete";
 
+    //
     private static final String STAGE_05_APEX = "stage_05_apex";
-    private static final String STAGE_05_PREDATOR = "stage_05_predator";
+    private static final String STAGE_05_FOOD_CHAIN = "stage_05_food_chain";
     private static final String STAGE_05_ACCURACY = "stage_05_accuracy";
     private static final String STAGE_05_CREATURE_KILLS = "stage_05_creature_kills";
     private static final String STAGE_05_BEST_TIME = "stage_05_best_time";
@@ -169,22 +182,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private static final String STAGE_05_MOST_CALM = "stage_05_most_calm";
     private static final String STAGE_05_MOST_FRANTIC = "stage_05_most_frantic";
 
+    //
     private static final String STAGE_05_ATTEMPTS = "stage_05_attempts";
     private static final String STAGE_05_BOSS_KILLS = "stage_05_boss_kills";
     private static final String STAGE_05_TOTAL_TIME = "stage_05_total_time";
     private static final String STAGE_05_COLLECTION = "stage_05_collection";
 
-    private static final String STAGE_05_CREATURE_01 = "stage_05_creature_01";
-    private static final String STAGE_05_CREATURE_02 = "stage_05_creature_02";
-    private static final String STAGE_05_CREATURE_03 = "stage_05_creature_03";
-    private static final String STAGE_05_CREATURE_04 = "stage_05_creature_04";
-    private static final String STAGE_05_CREATURE_05 = "stage_05_creature_05";
+    //
+    private static final String STAGE_05_PREDATOR_01 = "stage_05_predator_01";
+    private static final String STAGE_05_PREDATOR_02 = "stage_05_predator_02";
+    private static final String STAGE_05_PREDATOR_03 = "stage_05_predator_03";
+    private static final String STAGE_05_PREDATOR_04 = "stage_05_predator_04";
+    private static final String STAGE_05_PREDATOR_05 = "stage_05_predator_05";
 
     // Stage 6
     private static final String STAGE_06_COMPLETE = "stage_06_complete";
 
+    //
     private static final String STAGE_06_APEX = "stage_06_apex";
-    private static final String STAGE_06_PREDATOR = "stage_06_predator";
+    private static final String STAGE_06_FOOD_CHAIN = "stage_06_food_chain";
     private static final String STAGE_06_ACCURACY = "stage_06_accuracy";
     private static final String STAGE_06_CREATURE_KILLS = "stage_06_creature_kills";
     private static final String STAGE_06_BEST_TIME = "stage_06_best_time";
@@ -194,22 +210,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private static final String STAGE_06_MOST_CALM = "stage_06_most_calm";
     private static final String STAGE_06_MOST_FRANTIC = "stage_06_most_frantic";
 
+    //
     private static final String STAGE_06_ATTEMPTS = "stage_06_attempts";
     private static final String STAGE_06_BOSS_KILLS = "stage_06_boss_kills";
     private static final String STAGE_06_TOTAL_TIME = "stage_06_total_time";
     private static final String STAGE_06_COLLECTION = "stage_06_collection";
 
-    private static final String STAGE_06_CREATURE_01 = "stage_06_creature_01";
-    private static final String STAGE_06_CREATURE_02 = "stage_06_creature_02";
-    private static final String STAGE_06_CREATURE_03 = "stage_06_creature_03";
-    private static final String STAGE_06_CREATURE_04 = "stage_06_creature_04";
-    private static final String STAGE_06_CREATURE_05 = "stage_06_creature_05";
+    //
+    private static final String STAGE_06_PREDATOR_01 = "stage_06_predator_01";
+    private static final String STAGE_06_PREDATOR_02 = "stage_06_predator_02";
+    private static final String STAGE_06_PREDATOR_03 = "stage_06_predator_03";
+    private static final String STAGE_06_PREDATOR_04 = "stage_06_predator_04";
+    private static final String STAGE_06_PREDATOR_05 = "stage_06_predator_05";
 
     // Stage 7
     private static final String STAGE_07_COMPLETE = "stage_07_complete";
 
+    //
     private static final String STAGE_07_APEX = "stage_07_apex";
-    private static final String STAGE_07_PREDATOR = "stage_07_predator";
+    private static final String STAGE_07_FOOD_CHAIN = "stage_07_food_chain";
     private static final String STAGE_07_ACCURACY = "stage_07_accuracy";
     private static final String STAGE_07_CREATURE_KILLS = "stage_07_creature_kills";
     private static final String STAGE_07_BEST_TIME = "stage_07_best_time";
@@ -219,16 +238,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private static final String STAGE_07_MOST_CALM = "stage_07_most_calm";
     private static final String STAGE_07_MOST_FRANTIC = "stage_07_most_frantic";
 
+    //
     private static final String STAGE_07_ATTEMPTS = "stage_07_attempts";
     private static final String STAGE_07_BOSS_KILLS = "stage_07_boss_kills";
     private static final String STAGE_07_TOTAL_TIME = "stage_07_total_time";
     private static final String STAGE_07_COLLECTION = "stage_07_collection";
 
-    private static final String STAGE_07_CREATURE_01 = "stage_07_creature_01";
-    private static final String STAGE_07_CREATURE_02 = "stage_07_creature_02";
-    private static final String STAGE_07_CREATURE_03 = "stage_07_creature_03";
-    private static final String STAGE_07_CREATURE_04 = "stage_07_creature_04";
-    private static final String STAGE_07_CREATURE_05 = "stage_07_creature_05";
+    //
+    private static final String STAGE_07_PREDATOR_01 = "stage_07_predator_01";
+    private static final String STAGE_07_PREDATOR_02 = "stage_07_predator_02";
+    private static final String STAGE_07_PREDATOR_03 = "stage_07_predator_03";
+    private static final String STAGE_07_PREDATOR_04 = "stage_07_predator_04";
+    private static final String STAGE_07_PREDATOR_05 = "stage_07_predator_05";
 
 //-- GLOBAL DYNAMIC VIEWS -->
 
@@ -450,23 +471,36 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 //-- GAME -->
 
-    // Game titles
-    private LinearLayout mGameHeaderControlLayout;
-
     //
     private ImageView mGameStageImageView;
     private ImageView mGameSceneImageView;
 
     //
-    private LinearLayout mGameFooterControlLayout;
+    private LinearLayout mGameHeaderControlLayout;
 
-    // Game user interfaces
-    private ImageButton mGamePower01ImageButton;
-    private ImageButton mGamePower02ImageButton;
-    private ImageButton mGamePower03ImageButton;
-    private ImageButton mGamePower04ImageButton;
-    private ImageButton mGamePower05ImageButton;
-    private ImageButton mGamePower06ImageButton;
+    //
+    private LinearLayout mGameBoard01ThumbnailLayout;
+    private LinearLayout mGameBoard02ThumbnailLayout;
+    private LinearLayout mGameBoard03ThumbnailLayout;
+    private LinearLayout mGameBoard04ThumbnailLayout;
+    private LinearLayout mGameBoard05ThumbnailLayout;
+
+    //
+    private ImageView mGamePredator01ThumbnailImageView;
+    private ImageView mGamePredator02ThumbnailImageView;
+    private ImageView mGamePredator03ThumbnailImageView;
+    private ImageView mGamePredator04ThumbnailImageView;
+    private ImageView mGamePredator05ThumbnailImageView;
+
+    //
+    private LinearLayout mGameAdrenalineLayout;
+    private LinearLayout mGameBossThumbnailImageButton;
+
+    //
+    private ProgressBar mGameMainTapoutMeterProgressBar;
+
+    // Game creature playground
+    private FrameLayout mGameCreatureLayout;
 
     // Game creatures
     private ImageButton mGameCreature01ImageButton;
@@ -475,13 +509,42 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ImageButton mGameCreature04ImageButton;
     private ImageButton mGameCreature05ImageButton;
 
+    //
+    private ImageView mGameSplatter01ImageView;
+    private ImageView mGameSplatter02ImageView;
+    private ImageView mGameSplatter03ImageView;
+    private ImageView mGameSplatter04ImageView;
+    private ImageView mGameSplatter05ImageView;
+
+    //
+    private ImageButton mGamePredatorImageButton;
+
     // Game boss
     private ImageButton mGameBossImageButton;
+
+    //
     private ProgressBar mGameBossHealthProgressBar;
     private ProgressBar mGameUserHealthProgressBar;
 
-    // Game creature playground
-    private FrameLayout mGameCreatureLayout;
+    //
+    private LinearLayout mGameFooterControlLayout;
+
+    //
+    private ProgressBar mGameMainHungerMeterProgressBar;
+
+    // Game footer user interfaces
+    private ImageButton mGamePower01ImageButton;
+    private ImageButton mGamePower02ImageButton;
+    private ImageButton mGamePower03ImageButton;
+    private ImageButton mGamePower04ImageButton;
+    private ImageButton mGamePower05ImageButton;
+    private ImageButton mGamePower06ImageButton;
+
+    //
+    private RelativeLayout mGameBittenLayout;
+
+    //
+    private RelativeLayout mGameDisasterLayout;
 
     // Game stage border
     private RelativeLayout mGameBorderLayout;
@@ -489,26 +552,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     // Game stage tunnel
     private RelativeLayout mGameTunnelVisionLayout;
 
-    //
-    private RelativeLayout mGameBittenLayout;
-
-    //
-    private RelativeLayout mGameDisasterLayout;
-    private RelativeLayout mGameBloodsplatLayout;
-    private RelativeLayout mGameFlashLayout;
-    private RelativeLayout mGameBlackoutLayout;
-
-    //
-    private ProgressBar mGameMainHungerMeterProgressBar;
-    private ProgressBar mGameMainTapoutMeterProgressBar;
-
-    private LinearLayout mGameAdrenalineLayout;
-
 //-- LOAD -->
 
     //
     private TextView mLoadRandomScoreTitleTextView;
     private TextView mLoadRandomScoreValueTextView;
+
+//-- GENERAL -->
+
+    // Fades
+    private RelativeLayout mGameFlashLayout;
+    private RelativeLayout mGameBlackoutLayout;
 
 //-- LOCAL DATA STORE  -->
 
@@ -526,133 +580,161 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private static boolean stage_01_complete; // -> if (stage_01_complete) {boolean stage_02_unlocked = true;}
 
     // Top scores - stage 1
-    private static int stage_01_attempts;
-    private static int stage_01_boss_kills;
+    private static boolean stage_01_apex;
+    private static int stage_01_food_chain;
+    private static float stage_01_accuracy;
     private static int stage_01_creature_kills;
+    private static int stage_01_best_time;
+
+    //
     private static int stage_01_highest_streak;
     private static int stage_01_closest_death;
     private static int stage_01_longest_frenzy;
     private static long stage_01_most_calm;
     private static long stage_01_most_frantic;
+
+    //
+    private static int stage_01_attempts;
+    private static int stage_01_boss_kills;
     private static int stage_01_total_time;
-    private static int stage_01_best_time;
-    private static int stage_01_predator;
-    private static float stage_01_accuracy;
-    private static boolean stage_01_apex;
     private static int stage_01_collection;
 
     //
     private static boolean stage_02_complete; // -> if (stage_02_complete) {boolean stage_03_unlocked = true;}
 
     // Top scores - stage 2
-    private static int stage_02_attempts;
-    private static int stage_02_boss_kills;
+    private static boolean stage_02_apex;
+    private static int stage_02_food_chain;
+    private static float stage_02_accuracy;
     private static int stage_02_creature_kills;
+    private static int stage_02_best_time;
+
+    //
     private static int stage_02_highest_streak;
     private static int stage_02_closest_death;
     private static int stage_02_longest_frenzy;
     private static long stage_02_most_calm;
     private static long stage_02_most_frantic;
+
+    //
+    private static int stage_02_attempts;
+    private static int stage_02_boss_kills;
     private static int stage_02_total_time;
-    private static int stage_02_best_time;
-    private static int stage_02_predator;
-    private static float stage_02_accuracy;
-    private static boolean stage_02_apex;
     private static int stage_02_collection;
 
     //
     private static boolean stage_03_complete; // -> if (stage_03_complete) {boolean stage_04_unlocked = true;}
 
     // Top scores - stage 3
-    private static int stage_03_attempts;
-    private static int stage_03_boss_kills;
+    private static boolean stage_03_apex;
+    private static int stage_03_food_chain;
+    private static float stage_03_accuracy;
     private static int stage_03_creature_kills;
+    private static int stage_03_best_time;
+
+    //
     private static int stage_03_highest_streak;
     private static int stage_03_closest_death;
     private static int stage_03_longest_frenzy;
     private static long stage_03_most_calm;
     private static long stage_03_most_frantic;
+
+    //
+    private static int stage_03_attempts;
+    private static int stage_03_boss_kills;
     private static int stage_03_total_time;
-    private static int stage_03_best_time;
-    private static int stage_03_predator;
-    private static float stage_03_accuracy;
-    private static boolean stage_03_apex;
     private static int stage_03_collection;
 
     //
     private static boolean stage_04_complete; // -> if (stage_04_complete) {boolean stage_05_unlocked = true;}
 
     // Top scores - stage 4
-    private static int stage_04_attempts;
-    private static int stage_04_boss_kills;
+    private static boolean stage_04_apex;
+    private static int stage_04_food_chain;
+    private static float stage_04_accuracy;
     private static int stage_04_creature_kills;
+    private static int stage_04_best_time;
+
+    //
     private static int stage_04_highest_streak;
     private static int stage_04_closest_death;
     private static int stage_04_longest_frenzy;
     private static long stage_04_most_calm;
     private static long stage_04_most_frantic;
+
+    //
+    private static int stage_04_attempts;
+    private static int stage_04_boss_kills;
     private static int stage_04_total_time;
-    private static int stage_04_best_time;
-    private static int stage_04_predator;
-    private static float stage_04_accuracy;
-    private static boolean stage_04_apex;
     private static int stage_04_collection;
 
     //
     private static boolean stage_05_complete; // -> if (stage_05_complete) {boolean stage_06_unlocked = true;}
 
     // Top scores - stage 5
-    private static int stage_05_attempts;
-    private static int stage_05_boss_kills;
+    private static boolean stage_05_apex;
+    private static int stage_05_food_chain;
+    private static float stage_05_accuracy;
     private static int stage_05_creature_kills;
+    private static int stage_05_best_time;
+
+    //
     private static int stage_05_highest_streak;
     private static int stage_05_closest_death;
     private static int stage_05_longest_frenzy;
     private static long stage_05_most_calm;
     private static long stage_05_most_frantic;
+
+    //
+    private static int stage_05_attempts;
+    private static int stage_05_boss_kills;
     private static int stage_05_total_time;
-    private static int stage_05_best_time;
-    private static int stage_05_predator;
-    private static float stage_05_accuracy;
-    private static boolean stage_05_apex;
     private static int stage_05_collection;
 
     //
     private static boolean stage_06_complete; // -> if (stage_06_complete) {boolean stage_final_boss_unlocked = true;}
 
     // Top scores - stage 6
-    private static int stage_06_attempts;
-    private static int stage_06_boss_kills;
+    private static boolean stage_06_apex;
+    private static int stage_06_food_chain;
+    private static float stage_06_accuracy;
     private static int stage_06_creature_kills;
+    private static int stage_06_best_time;
+
+    //
     private static int stage_06_highest_streak;
     private static int stage_06_closest_death;
     private static int stage_06_longest_frenzy;
     private static long stage_06_most_calm;
     private static long stage_06_most_frantic;
+
+    //
+    private static int stage_06_attempts;
+    private static int stage_06_boss_kills;
     private static int stage_06_total_time;
-    private static int stage_06_best_time;
-    private static int stage_06_predator;
-    private static float stage_06_accuracy;
-    private static boolean stage_06_apex;
     private static int stage_06_collection;
 
     //
     private static boolean stage_07_complete; // -> if (stage_final_boss_complete) {boolean game_complete = true;}
 
     // Top scores - stage 7
-    private static int stage_07_attempts;
-    private static int stage_07_boss_kills;
+    private static boolean stage_07_apex;
+    private static int stage_07_food_chain;
+    private static float stage_07_accuracy;
     private static int stage_07_creature_kills;
+    private static int stage_07_best_time;
+
+    //
     private static int stage_07_highest_streak;
     private static int stage_07_closest_death;
     private static int stage_07_longest_frenzy;
     private static long stage_07_most_calm;
     private static long stage_07_most_frantic;
+
+    //
+    private static int stage_07_attempts;
+    private static int stage_07_boss_kills;
     private static int stage_07_total_time;
-    private static int stage_07_best_time;
-    private static int stage_07_predator;
-    private static float stage_07_accuracy;
-    private static boolean stage_07_apex;
     private static int stage_07_collection;
 
     // Game complete
@@ -678,9 +760,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     // Stage ready [1 = Locked, 2 = Ready, 3 = Complete]
     private static int mStageReady = 1;
     private static boolean mStageComplete = false;
-
-    //
-    private static int mStageFrenzy;
 
     // Variables for tap meter
     private static int mTapBarrel;
@@ -715,6 +794,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private static int mPower06Meter;
     private static int mPower06Target;
 
+    //
+    private static int mStageFrenzy;
+
     // Stage scores - calculate at end stage
     private static boolean mStageApex = false;
     private static int mStagePredator;
@@ -729,7 +811,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     // Global scores - calculate at screen load
     private static boolean mGameApex;
-    private static int mGamePredator;
+    private static int mGameFoodChain;
     private static float mGameAccuracy;
     private static boolean mGameTimeBest;
     private static int mGameCreatureKills;
@@ -773,20 +855,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private static int mRevealCreatureRandomIndex;
 
     //
-    ArrayList<Boolean> stage_01_top_creatures_previous = new ArrayList<Boolean>() {
-    };
-    ArrayList<Boolean> stage_02_top_creatures_previous = new ArrayList<Boolean>() {
-    };
-    ArrayList<Boolean> stage_03_top_creatures_previous = new ArrayList<Boolean>() {
-    };
-    ArrayList<Boolean> stage_04_top_creatures_previous = new ArrayList<Boolean>() {
-    };
-    ArrayList<Boolean> stage_05_top_creatures_previous = new ArrayList<Boolean>() {
-    };
-    ArrayList<Boolean> stage_06_top_creatures_previous = new ArrayList<Boolean>() {
-    };
-    ArrayList<Boolean> stage_07_top_creatures_previous = new ArrayList<Boolean>() {
-    };
+    ArrayList<Boolean> stage_01_top_predators_previous = new ArrayList<Boolean>() {};
+    ArrayList<Boolean> stage_02_top_predators_previous = new ArrayList<Boolean>() {};
+    ArrayList<Boolean> stage_03_top_predators_previous = new ArrayList<Boolean>() {};
+    ArrayList<Boolean> stage_04_top_predators_previous = new ArrayList<Boolean>() {};
+    ArrayList<Boolean> stage_05_top_predators_previous = new ArrayList<Boolean>() {};
+    ArrayList<Boolean> stage_06_top_predators_previous = new ArrayList<Boolean>() {};
+    ArrayList<Boolean> stage_07_top_predators_previous = new ArrayList<Boolean>() {};
 
     //
     private static int mGameTapAudio;
@@ -935,7 +1010,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             playAudio(GROWL_ALERT);
 
                             // Boss move
-                            moveCreature(R.id.game_creature_boss_image_button, R.id.game_main_pg_creature_canvas_layout);
+                            moveCreature(R.id.game_boss_image_button, R.id.game_main_pg_creature_canvas_layout);
 
                             // Boss strike
                             --mHungerMeter;
@@ -1296,7 +1371,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // Boss
         mGameBossHealthProgressBar = findViewById(R.id.game_main_boss_health_progress_bar);
         mGameUserHealthProgressBar = findViewById(R.id.game_main_user_health_progress_bar);
-        mGameBossImageButton = findViewById(R.id.game_creature_boss_image_button);
+        mGameBossImageButton = findViewById(R.id.game_boss_image_button);
 
         // Playgrounds
         mGameCreatureLayout = findViewById(R.id.game_main_creature_layout);
@@ -1305,7 +1380,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mGameTunnelVisionLayout = findViewById(R.id.game_main_tunnel_vision_layout);
         mGameBittenLayout = findViewById(R.id.game_main_bitten_layout);
         mGameDisasterLayout = findViewById(R.id.game_disaster_layout);
-        mGameBloodsplatLayout = findViewById(R.id.game_bloodsplat_layout);
         mGameBorderLayout = findViewById(R.id.game_main_silhouette_border_layout);
         mGameFlashLayout = findViewById(R.id.game_fade_white_layout);
         mGameBlackoutLayout = findViewById(R.id.game_fade_black_layout);
@@ -1341,7 +1415,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         //
         mEditorSet.putBoolean(STAGE_01_APEX, stage_01_apex);
-        mEditorSet.putInt(STAGE_01_PREDATOR, stage_01_predator);
+        mEditorSet.putInt(STAGE_01_FOOD_CHAIN, stage_01_food_chain);
         mEditorSet.putFloat(STAGE_01_ACCURACY, stage_01_accuracy);
         mEditorSet.putInt(STAGE_01_CREATURE_KILLS, stage_01_creature_kills);
         mEditorSet.putInt(STAGE_01_HIGHEST_STREAK, stage_01_highest_streak);
@@ -1391,7 +1465,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         //
         mEditorSet.putBoolean(STAGE_02_COMPLETE, stage_02_complete);
-        mEditorSet.putInt(STAGE_02_PREDATOR, stage_02_predator);
+        mEditorSet.putInt(STAGE_02_FOOD_CHAIN, stage_02_food_chain);
         mEditorSet.putFloat(STAGE_02_ACCURACY, stage_02_accuracy);
         mEditorSet.putBoolean(STAGE_02_APEX, stage_02_apex);
 
@@ -1435,7 +1509,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         //
         mEditorSet.putBoolean(STAGE_03_COMPLETE, stage_03_complete);
-        mEditorSet.putInt(STAGE_03_PREDATOR, stage_03_predator);
+        mEditorSet.putInt(STAGE_03_FOOD_CHAIN, stage_03_food_chain);
         mEditorSet.putFloat(STAGE_03_ACCURACY, stage_03_accuracy);
         mEditorSet.putBoolean(STAGE_03_APEX, stage_03_apex);
 
@@ -1479,7 +1553,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         //
         mEditorSet.putBoolean(STAGE_04_COMPLETE, stage_04_complete);
-        mEditorSet.putInt(STAGE_04_PREDATOR, stage_04_predator);
+        mEditorSet.putInt(STAGE_04_FOOD_CHAIN, stage_04_food_chain);
         mEditorSet.putFloat(STAGE_04_ACCURACY, stage_04_accuracy);
         mEditorSet.putBoolean(STAGE_04_APEX, stage_04_apex);
 
@@ -1523,7 +1597,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         //
         mEditorSet.putBoolean(STAGE_05_COMPLETE, stage_05_complete);
-        mEditorSet.putInt(STAGE_05_PREDATOR, stage_05_predator);
+        mEditorSet.putInt(STAGE_05_FOOD_CHAIN, stage_05_food_chain);
         mEditorSet.putFloat(STAGE_05_ACCURACY, stage_05_accuracy);
         mEditorSet.putBoolean(STAGE_05_APEX, stage_05_apex);
 
@@ -1567,7 +1641,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         //
         mEditorSet.putBoolean(STAGE_06_COMPLETE, stage_06_complete);
-        mEditorSet.putInt(STAGE_06_PREDATOR, stage_06_predator);
+        mEditorSet.putInt(STAGE_06_FOOD_CHAIN, stage_06_food_chain);
         mEditorSet.putFloat(STAGE_06_ACCURACY, stage_06_accuracy);
         mEditorSet.putBoolean(STAGE_06_APEX, stage_06_apex);
 
@@ -1611,7 +1685,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         //
         mEditorSet.putBoolean(STAGE_07_COMPLETE, stage_07_complete);
-        mEditorSet.putInt(STAGE_07_PREDATOR, stage_07_predator);
+        mEditorSet.putInt(STAGE_07_FOOD_CHAIN, stage_07_food_chain);
         mEditorSet.putFloat(STAGE_07_ACCURACY, stage_07_accuracy);
         mEditorSet.putBoolean(STAGE_07_APEX, stage_07_apex);
 
@@ -1657,28 +1731,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         stage_01_creature_kills = mUserPrefGet.getInt(STAGE_01_CREATURE_KILLS, 0);
 
         //
-        boolean stage_01_creature_01 = mUserPrefGet.getBoolean(STAGE_01_CREATURE_01, false);
-        boolean stage_01_creature_02 = mUserPrefGet.getBoolean(STAGE_01_CREATURE_02, false);
-        boolean stage_01_creature_03 = mUserPrefGet.getBoolean(STAGE_01_CREATURE_03, false);
-        boolean stage_01_creature_04 = mUserPrefGet.getBoolean(STAGE_01_CREATURE_04, false);
-        boolean stage_01_creature_05 = mUserPrefGet.getBoolean(STAGE_01_CREATURE_05, false);
+        boolean stage_01_predator_01 = mUserPrefGet.getBoolean(STAGE_01_PREDATOR_01, false);
+        boolean stage_01_predator_02 = mUserPrefGet.getBoolean(STAGE_01_PREDATOR_02, false);
+        boolean stage_01_predator_03 = mUserPrefGet.getBoolean(STAGE_01_PREDATOR_03, false);
+        boolean stage_01_predator_04 = mUserPrefGet.getBoolean(STAGE_01_PREDATOR_04, false);
+        boolean stage_01_predator_05 = mUserPrefGet.getBoolean(STAGE_01_PREDATOR_05, false);
 
         //
-        stage_01_top_creatures_previous.clear();
-        stage_01_top_creatures_previous.add(stage_01_creature_01);
-        stage_01_top_creatures_previous.add(stage_01_creature_02);
-        stage_01_top_creatures_previous.add(stage_01_creature_03);
-        stage_01_top_creatures_previous.add(stage_01_creature_04);
-        stage_01_top_creatures_previous.add(stage_01_creature_05);
+        stage_01_top_predators_previous.clear();
+        stage_01_top_predators_previous.add(stage_01_predator_01);
+        stage_01_top_predators_previous.add(stage_01_predator_02);
+        stage_01_top_predators_previous.add(stage_01_predator_03);
+        stage_01_top_predators_previous.add(stage_01_predator_04);
+        stage_01_top_predators_previous.add(stage_01_predator_05);
 
         //
         stage_01_collection = 0;
 
         //
-        for (boolean creature : stage_01_top_creatures_previous) {
+        for (boolean predator : stage_01_top_predators_previous) {
 
             //
-            if (creature) {
+            if (predator) {
                 ++stage_01_collection;
             }
         }
@@ -1695,7 +1769,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         stage_01_best_time = mUserPrefGet.getInt(STAGE_01_BEST_TIME, 0);
 
         //
-        stage_01_predator = mUserPrefGet.getInt(STAGE_01_PREDATOR, 0);
+        stage_01_food_chain = mUserPrefGet.getInt(STAGE_01_FOOD_CHAIN, 0);
         stage_01_accuracy = mUserPrefGet.getFloat(STAGE_01_ACCURACY, 0);
         stage_01_apex = mUserPrefGet.getBoolean(STAGE_01_APEX, false);
 
@@ -1712,28 +1786,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         stage_02_creature_kills = mUserPrefGet.getInt(STAGE_02_CREATURE_KILLS, 0);
 
         //
-        boolean stage_02_creature_01 = mUserPrefGet.getBoolean(STAGE_02_CREATURE_01, false);
-        boolean stage_02_creature_02 = mUserPrefGet.getBoolean(STAGE_02_CREATURE_02, false);
-        boolean stage_02_creature_03 = mUserPrefGet.getBoolean(STAGE_02_CREATURE_03, false);
-        boolean stage_02_creature_04 = mUserPrefGet.getBoolean(STAGE_02_CREATURE_04, false);
-        boolean stage_02_creature_05 = mUserPrefGet.getBoolean(STAGE_02_CREATURE_05, false);
+        boolean stage_02_predator_01 = mUserPrefGet.getBoolean(STAGE_02_PREDATOR_01, false);
+        boolean stage_02_predator_02 = mUserPrefGet.getBoolean(STAGE_02_PREDATOR_02, false);
+        boolean stage_02_predator_03 = mUserPrefGet.getBoolean(STAGE_02_PREDATOR_03, false);
+        boolean stage_02_predator_04 = mUserPrefGet.getBoolean(STAGE_02_PREDATOR_04, false);
+        boolean stage_02_predator_05 = mUserPrefGet.getBoolean(STAGE_02_PREDATOR_05, false);
 
         //
-        stage_02_top_creatures_previous.clear();
-        stage_02_top_creatures_previous.add(stage_02_creature_01);
-        stage_02_top_creatures_previous.add(stage_02_creature_02);
-        stage_02_top_creatures_previous.add(stage_02_creature_03);
-        stage_02_top_creatures_previous.add(stage_02_creature_04);
-        stage_02_top_creatures_previous.add(stage_02_creature_05);
+        stage_02_top_predators_previous.clear();
+        stage_02_top_predators_previous.add(stage_02_predator_01);
+        stage_02_top_predators_previous.add(stage_02_predator_02);
+        stage_02_top_predators_previous.add(stage_02_predator_03);
+        stage_02_top_predators_previous.add(stage_02_predator_04);
+        stage_02_top_predators_previous.add(stage_02_predator_05);
 
         //
         stage_02_collection = 0;
 
         //
-        for (boolean creature : stage_02_top_creatures_previous) {
+        for (boolean predator : stage_02_top_predators_previous) {
 
             //
-            if (creature) {
+            if (predator) {
                 ++stage_02_collection;
             }
         }
@@ -1750,7 +1824,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         stage_02_best_time = mUserPrefGet.getInt(STAGE_02_BEST_TIME, 0);
 
         //
-        stage_02_predator = mUserPrefGet.getInt(STAGE_02_PREDATOR, 0);
+        stage_02_food_chain = mUserPrefGet.getInt(STAGE_02_FOOD_CHAIN, 0);
         stage_02_accuracy = mUserPrefGet.getFloat(STAGE_02_ACCURACY, 0);
         stage_02_apex = mUserPrefGet.getBoolean(STAGE_02_APEX, false);
 
@@ -1764,28 +1838,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         stage_03_creature_kills = mUserPrefGet.getInt(STAGE_03_CREATURE_KILLS, 0);
 
         //
-        boolean stage_03_creature_01 = mUserPrefGet.getBoolean(STAGE_03_CREATURE_01, false);
-        boolean stage_03_creature_02 = mUserPrefGet.getBoolean(STAGE_03_CREATURE_02, false);
-        boolean stage_03_creature_03 = mUserPrefGet.getBoolean(STAGE_03_CREATURE_03, false);
-        boolean stage_03_creature_04 = mUserPrefGet.getBoolean(STAGE_03_CREATURE_04, false);
-        boolean stage_03_creature_05 = mUserPrefGet.getBoolean(STAGE_03_CREATURE_05, false);
+        boolean stage_03_predator_01 = mUserPrefGet.getBoolean(STAGE_03_PREDATOR_01, false);
+        boolean stage_03_predator_02 = mUserPrefGet.getBoolean(STAGE_03_PREDATOR_02, false);
+        boolean stage_03_predator_03 = mUserPrefGet.getBoolean(STAGE_03_PREDATOR_03, false);
+        boolean stage_03_predator_04 = mUserPrefGet.getBoolean(STAGE_03_PREDATOR_04, false);
+        boolean stage_03_predator_05 = mUserPrefGet.getBoolean(STAGE_03_PREDATOR_05, false);
 
         //
-        stage_03_top_creatures_previous.clear();
-        stage_03_top_creatures_previous.add(stage_03_creature_01);
-        stage_03_top_creatures_previous.add(stage_03_creature_02);
-        stage_03_top_creatures_previous.add(stage_03_creature_03);
-        stage_03_top_creatures_previous.add(stage_03_creature_04);
-        stage_03_top_creatures_previous.add(stage_03_creature_05);
+        stage_03_top_predators_previous.clear();
+        stage_03_top_predators_previous.add(stage_03_predator_01);
+        stage_03_top_predators_previous.add(stage_03_predator_02);
+        stage_03_top_predators_previous.add(stage_03_predator_03);
+        stage_03_top_predators_previous.add(stage_03_predator_04);
+        stage_03_top_predators_previous.add(stage_03_predator_05);
 
         //
         stage_03_collection = 0;
 
         //
-        for (boolean creature : stage_03_top_creatures_previous) {
+        for (boolean predator : stage_03_top_predators_previous) {
 
             //
-            if (creature) {
+            if (predator) {
                 ++stage_03_collection;
             }
         }
@@ -1802,7 +1876,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         stage_03_best_time = mUserPrefGet.getInt(STAGE_03_BEST_TIME, 0);
 
         //
-        stage_03_predator = mUserPrefGet.getInt(STAGE_03_PREDATOR, 0);
+        stage_03_food_chain = mUserPrefGet.getInt(STAGE_03_FOOD_CHAIN, 0);
         stage_03_accuracy = mUserPrefGet.getFloat(STAGE_03_ACCURACY, 0);
         stage_03_apex = mUserPrefGet.getBoolean(STAGE_03_APEX, false);
 
@@ -1816,28 +1890,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         stage_04_creature_kills = mUserPrefGet.getInt(STAGE_04_CREATURE_KILLS, 0);
 
         //
-        boolean stage_04_creature_01 = mUserPrefGet.getBoolean(STAGE_04_CREATURE_01, false);
-        boolean stage_04_creature_02 = mUserPrefGet.getBoolean(STAGE_04_CREATURE_02, false);
-        boolean stage_04_creature_03 = mUserPrefGet.getBoolean(STAGE_04_CREATURE_03, false);
-        boolean stage_04_creature_04 = mUserPrefGet.getBoolean(STAGE_04_CREATURE_04, false);
-        boolean stage_04_creature_05 = mUserPrefGet.getBoolean(STAGE_04_CREATURE_05, false);
+        boolean stage_04_predator_01 = mUserPrefGet.getBoolean(STAGE_04_PREDATOR_01, false);
+        boolean stage_04_predator_02 = mUserPrefGet.getBoolean(STAGE_04_PREDATOR_02, false);
+        boolean stage_04_predator_03 = mUserPrefGet.getBoolean(STAGE_04_PREDATOR_03, false);
+        boolean stage_04_predator_04 = mUserPrefGet.getBoolean(STAGE_04_PREDATOR_04, false);
+        boolean stage_04_predator_05 = mUserPrefGet.getBoolean(STAGE_04_PREDATOR_05, false);
 
         //
-        stage_04_top_creatures_previous.clear();
-        stage_04_top_creatures_previous.add(stage_04_creature_01);
-        stage_04_top_creatures_previous.add(stage_04_creature_02);
-        stage_04_top_creatures_previous.add(stage_04_creature_03);
-        stage_04_top_creatures_previous.add(stage_04_creature_04);
-        stage_04_top_creatures_previous.add(stage_04_creature_05);
+        stage_04_top_predators_previous.clear();
+        stage_04_top_predators_previous.add(stage_04_predator_01);
+        stage_04_top_predators_previous.add(stage_04_predator_02);
+        stage_04_top_predators_previous.add(stage_04_predator_03);
+        stage_04_top_predators_previous.add(stage_04_predator_04);
+        stage_04_top_predators_previous.add(stage_04_predator_05);
 
         //
         stage_04_collection = 0;
 
         //
-        for (boolean creature : stage_04_top_creatures_previous) {
+        for (boolean predator : stage_04_top_predators_previous) {
 
             //
-            if (creature) {
+            if (predator) {
                 ++stage_04_collection;
             }
         }
@@ -1854,7 +1928,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         stage_04_best_time = mUserPrefGet.getInt(STAGE_04_BEST_TIME, 0);
 
         //
-        stage_04_predator = mUserPrefGet.getInt(STAGE_04_PREDATOR, 0);
+        stage_04_food_chain = mUserPrefGet.getInt(STAGE_04_FOOD_CHAIN, 0);
         stage_04_accuracy = mUserPrefGet.getFloat(STAGE_04_ACCURACY, 0);
         stage_04_apex = mUserPrefGet.getBoolean(STAGE_04_APEX, false);
 
@@ -1868,28 +1942,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         stage_05_creature_kills = mUserPrefGet.getInt(STAGE_05_CREATURE_KILLS, 0);
 
         //
-        boolean stage_05_creature_01 = mUserPrefGet.getBoolean(STAGE_05_CREATURE_01, false);
-        boolean stage_05_creature_02 = mUserPrefGet.getBoolean(STAGE_05_CREATURE_02, false);
-        boolean stage_05_creature_03 = mUserPrefGet.getBoolean(STAGE_05_CREATURE_03, false);
-        boolean stage_05_creature_04 = mUserPrefGet.getBoolean(STAGE_05_CREATURE_04, false);
-        boolean stage_05_creature_05 = mUserPrefGet.getBoolean(STAGE_05_CREATURE_05, false);
+        boolean stage_05_predator_01 = mUserPrefGet.getBoolean(STAGE_05_PREDATOR_01, false);
+        boolean stage_05_predator_02 = mUserPrefGet.getBoolean(STAGE_05_PREDATOR_02, false);
+        boolean stage_05_predator_03 = mUserPrefGet.getBoolean(STAGE_05_PREDATOR_03, false);
+        boolean stage_05_predator_04 = mUserPrefGet.getBoolean(STAGE_05_PREDATOR_04, false);
+        boolean stage_05_predator_05 = mUserPrefGet.getBoolean(STAGE_05_PREDATOR_05, false);
 
         //
-        stage_05_top_creatures_previous.clear();
-        stage_05_top_creatures_previous.add(stage_05_creature_01);
-        stage_05_top_creatures_previous.add(stage_05_creature_02);
-        stage_05_top_creatures_previous.add(stage_05_creature_03);
-        stage_05_top_creatures_previous.add(stage_05_creature_04);
-        stage_05_top_creatures_previous.add(stage_05_creature_05);
+        stage_05_top_predators_previous.clear();
+        stage_05_top_predators_previous.add(stage_05_predator_01);
+        stage_05_top_predators_previous.add(stage_05_predator_02);
+        stage_05_top_predators_previous.add(stage_05_predator_03);
+        stage_05_top_predators_previous.add(stage_05_predator_04);
+        stage_05_top_predators_previous.add(stage_05_predator_05);
 
         //
         stage_05_collection = 0;
 
         //
-        for (boolean creature : stage_05_top_creatures_previous) {
+        for (boolean predator : stage_05_top_predators_previous) {
 
             //
-            if (creature) {
+            if (predator) {
                 ++stage_05_collection;
             }
         }
@@ -1906,7 +1980,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         stage_05_best_time = mUserPrefGet.getInt(STAGE_05_BEST_TIME, 0);
 
         //
-        stage_05_predator = mUserPrefGet.getInt(STAGE_05_PREDATOR, 0);
+        stage_05_food_chain = mUserPrefGet.getInt(STAGE_05_FOOD_CHAIN, 0);
         stage_05_accuracy = mUserPrefGet.getFloat(STAGE_05_ACCURACY, 0);
         stage_05_apex = mUserPrefGet.getBoolean(STAGE_05_APEX, false);
 
@@ -1920,28 +1994,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         stage_06_creature_kills = mUserPrefGet.getInt(STAGE_06_CREATURE_KILLS, 0);
 
         //
-        boolean stage_06_creature_01 = mUserPrefGet.getBoolean(STAGE_06_CREATURE_01, false);
-        boolean stage_06_creature_02 = mUserPrefGet.getBoolean(STAGE_06_CREATURE_02, false);
-        boolean stage_06_creature_03 = mUserPrefGet.getBoolean(STAGE_06_CREATURE_03, false);
-        boolean stage_06_creature_04 = mUserPrefGet.getBoolean(STAGE_06_CREATURE_04, false);
-        boolean stage_06_creature_05 = mUserPrefGet.getBoolean(STAGE_06_CREATURE_05, false);
+        boolean stage_06_predator_01 = mUserPrefGet.getBoolean(STAGE_06_PREDATOR_01, false);
+        boolean stage_06_predator_02 = mUserPrefGet.getBoolean(STAGE_06_PREDATOR_02, false);
+        boolean stage_06_predator_03 = mUserPrefGet.getBoolean(STAGE_06_PREDATOR_03, false);
+        boolean stage_06_predator_04 = mUserPrefGet.getBoolean(STAGE_06_PREDATOR_04, false);
+        boolean stage_06_predator_05 = mUserPrefGet.getBoolean(STAGE_06_PREDATOR_05, false);
 
         //
-        stage_06_top_creatures_previous.clear();
-        stage_06_top_creatures_previous.add(stage_06_creature_01);
-        stage_06_top_creatures_previous.add(stage_06_creature_02);
-        stage_06_top_creatures_previous.add(stage_06_creature_03);
-        stage_06_top_creatures_previous.add(stage_06_creature_04);
-        stage_06_top_creatures_previous.add(stage_06_creature_05);
+        stage_06_top_predators_previous.clear();
+        stage_06_top_predators_previous.add(stage_06_predator_01);
+        stage_06_top_predators_previous.add(stage_06_predator_02);
+        stage_06_top_predators_previous.add(stage_06_predator_03);
+        stage_06_top_predators_previous.add(stage_06_predator_04);
+        stage_06_top_predators_previous.add(stage_06_predator_05);
 
         //
         stage_06_collection = 0;
 
         //
-        for (boolean creature : stage_06_top_creatures_previous) {
+        for (boolean predator : stage_06_top_predators_previous) {
 
             //
-            if (creature) {
+            if (predator) {
                 ++stage_06_collection;
             }
         }
@@ -1958,7 +2032,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         stage_06_best_time = mUserPrefGet.getInt(STAGE_06_BEST_TIME, 0);
 
         //
-        stage_06_predator = mUserPrefGet.getInt(STAGE_06_PREDATOR, 0);
+        stage_06_food_chain = mUserPrefGet.getInt(STAGE_06_FOOD_CHAIN, 0);
         stage_06_accuracy = mUserPrefGet.getFloat(STAGE_06_ACCURACY, 0);
         stage_06_apex = mUserPrefGet.getBoolean(STAGE_06_APEX, false);
 
@@ -1980,28 +2054,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // --> [vegetarian, omnivore, carnivore] (1 - 500)
 
         //
-        boolean stage_07_creature_01 = mUserPrefGet.getBoolean(STAGE_07_CREATURE_01, false);
-        boolean stage_07_creature_02 = mUserPrefGet.getBoolean(STAGE_07_CREATURE_02, false);
-        boolean stage_07_creature_03 = mUserPrefGet.getBoolean(STAGE_07_CREATURE_03, false);
-        boolean stage_07_creature_04 = mUserPrefGet.getBoolean(STAGE_07_CREATURE_04, false);
-        boolean stage_07_creature_05 = mUserPrefGet.getBoolean(STAGE_07_CREATURE_05, false);
+        boolean stage_07_predator_01 = mUserPrefGet.getBoolean(STAGE_07_PREDATOR_01, false);
+        boolean stage_07_predator_02 = mUserPrefGet.getBoolean(STAGE_07_PREDATOR_02, false);
+        boolean stage_07_predator_03 = mUserPrefGet.getBoolean(STAGE_07_PREDATOR_03, false);
+        boolean stage_07_predator_04 = mUserPrefGet.getBoolean(STAGE_07_PREDATOR_04, false);
+        boolean stage_07_predator_05 = mUserPrefGet.getBoolean(STAGE_07_PREDATOR_05, false);
 
         //
-        stage_07_top_creatures_previous.clear();
-        stage_07_top_creatures_previous.add(stage_07_creature_01);
-        stage_07_top_creatures_previous.add(stage_07_creature_02);
-        stage_07_top_creatures_previous.add(stage_07_creature_03);
-        stage_07_top_creatures_previous.add(stage_07_creature_04);
-        stage_07_top_creatures_previous.add(stage_07_creature_05);
+        stage_07_top_predators_previous.clear();
+        stage_07_top_predators_previous.add(stage_07_predator_01);
+        stage_07_top_predators_previous.add(stage_07_predator_02);
+        stage_07_top_predators_previous.add(stage_07_predator_03);
+        stage_07_top_predators_previous.add(stage_07_predator_04);
+        stage_07_top_predators_previous.add(stage_07_predator_05);
 
         //
         stage_07_collection = 0;
 
         //
-        for (boolean creature : stage_07_top_creatures_previous) {
+        for (boolean predator : stage_07_top_predators_previous) {
 
             //
-            if (creature) {
+            if (predator) {
                 ++stage_07_collection;
             }
         }
@@ -2029,8 +2103,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // --> [sloth, tortoise, jack-rabbit]
 
         //
-        stage_07_predator = mUserPrefGet.getInt(STAGE_07_PREDATOR, 0);
-        // --> [survivalist, predator, beast]
+        stage_07_food_chain = mUserPrefGet.getInt(STAGE_07_FOOD_CHAIN, 0);
+        // --> [survivalist, food_chain, beast]
         stage_07_accuracy = mUserPrefGet.getFloat(STAGE_07_ACCURACY, 0);
         // --> [sharp, honed, exacting]
         stage_07_apex = mUserPrefGet.getBoolean(STAGE_07_APEX, false);
@@ -2046,7 +2120,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //mGameBossKills = stage_01_boss_kills + stage_02_boss_kills + stage_03_boss_kills + stage_04_boss_kills + stage_05_boss_kills + stage_06_boss_kills + stage_07_boss_kills;
         // --> [timid, bold, vicious]
 
-        // Assign - total creature kills
+        // Assign - total predator kills
         mGameCreatureKills = stage_01_creature_kills + stage_02_creature_kills + stage_03_creature_kills + stage_04_creature_kills + stage_05_creature_kills + stage_06_creature_kills + stage_07_creature_kills;
         // --> [afraid, daring, fearful]
 
@@ -2210,8 +2284,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // Assign - best time
         //mGameTimeBest = hiScore;
 
-        // Assign - top predator
-        mGamePredator = (stage_01_predator + stage_02_predator + stage_03_predator + stage_04_predator + stage_05_predator + stage_06_predator + stage_07_predator);
+        // Assign - top food_chain
+        mGameFood_chain = (stage_01_food_chain + stage_02_food_chain + stage_03_food_chain + stage_04_food_chain + stage_05_food_chain + stage_06_food_chain + stage_07_food_chain);
 
         // Reset - top accuracy
         mAccumulativeAccuracy = 0;
@@ -3385,7 +3459,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             //
-            case R.id.game_creature_boss_image_button:
+            case R.id.game_boss_image_button:
 
                 //
                 mGameBossImageButton.setVisibility(View.GONE);
@@ -3817,12 +3891,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // Play bite noise [DO this in boss mode]
         playAudio(HIT);
 
-        // Reset bold image [DO this in boss mode]
-        if (mHungerMeter < ALPHA_INDEX.length) {
-
-            //
-            mGameTunnelVisionLayout.setAlpha((float) ALPHA_INDEX[mHungerMeter]);
-        }
+        //
+        mGameTunnelVisionLayout.setAlpha((float) (mHungerMeter / 100));
     }
 
     // Miss sprite
@@ -3838,7 +3908,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //
         //mBittenMeter = mBittenMeter + 5;
         Random r = new Random();
-        mGameBloodsplatLayout.setBackground(versionCheck(BITTEN_IMAGES[r.nextInt(BITTEN_IMAGES.length - 1)]));
+        mGameBittenLayout.setBackground(versionCheck(BITTEN_IMAGES[r.nextInt(BITTEN_IMAGES.length - 1)]));
         fadeBloodsplat();
 
         //
@@ -3921,7 +3991,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     lessBorder(.5);
 
                     //
-                    for (int creature : CREATURE_BUTTONS) {
+                    for (int creature : GAME_STAGE_CREATURE_BUTTONS) {
 
                         //
                         showCreature(creature);
@@ -3949,7 +4019,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     moreBorder(.25);
 
                     //
-                    for (int creature : CREATURE_BUTTONS) {
+                    for (int creature : GAME_STAGE_CREATURE_BUTTONS) {
 
                         //
                         hideCreature(creature);
@@ -3995,7 +4065,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     resetBorder();
 
                     //
-                    for (int creature : CREATURE_BUTTONS) {
+                    for (int creature : GAME_STAGE_CREATURE_BUTTONS) {
                         showCreature(creature);
                     }
 
@@ -4125,7 +4195,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         //
         mBossHealth = 5;
-        mHungerMeter = 20;
+        mHungerMeter = 100;
         mBossDowned = true;
 
         //
@@ -4146,7 +4216,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mGameCreatureLayout.setBackground(versionCheck(BOSS_SCENE_IMAGES[mStageIndex - 1]));
 
         //
-        moveCreature(R.id.game_creature_boss_image_button, R.id.game_main_pg_creature_canvas_layout);
+        moveCreature(R.id.game_boss_image_button, R.id.game_main_pg_creature_canvas_layout);
 
         //
         //mGameBossImageButton.setVisibility(View.VISIBLE);
@@ -4194,7 +4264,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (!mBossGameOver) {
 
             //
-            moveCreature(R.id.game_creature_boss_image_button, R.id.game_main_pg_creature_canvas_layout);
+            moveCreature(R.id.game_boss_image_button, R.id.game_main_pg_creature_canvas_layout);
         }
 
         //
@@ -4922,7 +4992,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         resetBorder();
 
         //
-        mHungerMeter = 30;
+        mHungerMeter = 100;
         mSpeedIndex = 1000;
 
         //
@@ -5568,17 +5638,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mGameTunnelVisionLayout.setVisibility(View.VISIBLE);
 
         //
-        if (mHungerMeter < ALPHA_INDEX.length) {
-
-            //
-            double tunnel_alpha = ALPHA_INDEX[mHungerMeter];
-            mGameTunnelVisionLayout.setAlpha((float) tunnel_alpha);
-
-        } else {
-
-            //
-            mGameTunnelVisionLayout.setAlpha(0);
-        }
+        mGameTunnelVisionLayout.setAlpha((float) (mHungerMeter / 100));
     }
 
     // Reveal more stage border
@@ -6411,7 +6471,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void fadeBoss() {
 
         //
-        View screenImage = findViewById(R.id.game_creature_boss_image_button);
+        View screenImage = findViewById(R.id.game_boss_image_button);
         Animation fadeAnimation = AnimationUtils.loadAnimation(this, R.anim.boss_fade_in);
         fadeAnimation.setFillAfter(true);
         screenImage.startAnimation(fadeAnimation);
@@ -6431,10 +6491,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void fadeBloodsplat() {
 
         //
-        View screenImage = findViewById(R.id.game_bloodsplat_layout);
         Animation fadeAnimation = AnimationUtils.loadAnimation(this, R.anim.fade_flash);
         fadeAnimation.setFillAfter(true);
-        screenImage.startAnimation(fadeAnimation);
+        mGameBittenLayout.startAnimation(fadeAnimation);
     }
 
     // Fade flash
@@ -9670,7 +9729,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             //
             R.id.game_creature_01_image_button, R.id.game_creature_02_image_button, R.id.game_creature_03_image_button,
-            R.id.game_creature_04_image_button, R.id.game_creature_05_image_button, R.id.game_creature_boss_image_button, // Hit creature
+            R.id.game_creature_04_image_button, R.id.game_creature_05_image_button, R.id.game_boss_image_button, // Hit creature
     };
 
     // RESOURCE : INTEGER - Array list of screen layouts
