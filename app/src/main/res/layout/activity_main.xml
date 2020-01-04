@@ -1472,7 +1472,7 @@
                         android:orientation="vertical">
 
                         <LinearLayout
-                            android:id="@+id/stage_select_content_stage_01_layout"
+                            android:id="@+id/stage_select_content_card_01_layout"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_margin="16dp"
@@ -1492,14 +1492,14 @@
                                 android:visibility="visible">
 
                                 <ImageView
-                                    android:id="@+id/stage_select_content_stage_01_title_image_view"
+                                    android:id="@+id/stage_select_content_title_01_image_view"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:background="@drawable/stage_select_title_01"
+                                    android:background="@drawable/stage_select_content_title_01_image"
                                     android:contentDescription="@string/stage_select_content_stage_01_image_view" />
 
                                 <ImageButton
-                                    android:id="@+id/stage_select_content_stage_01_status_image_button"
+                                    android:id="@+id/stage_select_content_status_01_image_button"
                                     android:layout_width="64dp"
                                     android:layout_height="64dp"
                                     android:layout_gravity="center_horizontal|center_vertical"
@@ -1509,7 +1509,7 @@
                             </LinearLayout>
 
                             <TextView
-                                android:id="@+id/stage_select_content_stage_01_status_text_view"
+                                android:id="@+id/stage_select_content_status_01_text_view"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/stage_select_content_stage_status_text_view"
@@ -1518,7 +1518,7 @@
                                 android:textStyle="bold" />
 
                             <ProgressBar
-                                android:id="@+id/stage_select_content_stage_01_status_progress_bar"
+                                android:id="@+id/stage_select_content_status_01_progress_bar"
                                 style="?android:attr/progressBarStyleHorizontal"
                                 android:layout_width="match_parent"
                                 android:layout_height="24dp"
@@ -1532,7 +1532,7 @@
                                 android:orientation="horizontal">
 
                                 <TextView
-                                    android:id="@+id/stage_select_content_stage_01_progress_value_text_view"
+                                    android:id="@+id/stage_select_content_progress_01_text_view"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="@string/_99"
@@ -1551,7 +1551,7 @@
                         </LinearLayout>
 
                         <LinearLayout
-                            android:id="@+id/stage_select_content_stage_02_layout"
+                            android:id="@+id/stage_select_content_card_02_layout"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_margin="16dp"
@@ -1569,14 +1569,14 @@
                                 android:orientation="horizontal">
 
                                 <ImageView
-                                    android:id="@+id/stage_select_content_stage_02_title_image_view"
+                                    android:id="@+id/stage_select_content_title_02_image_view"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:background="@drawable/stage_select_title_02"
+                                    android:background="@drawable/stage_select_content_title_01_image"
                                     android:contentDescription="@string/stage_select_content_stage_01_image_view" />
 
                                 <ImageButton
-                                    android:id="@+id/stage_select_content_stage_02_status_image_button"
+                                    android:id="@+id/stage_select_content_status_02_image_button"
                                     android:layout_width="64dp"
                                     android:layout_height="64dp"
                                     android:layout_gravity="center_horizontal|center_vertical"
@@ -1586,7 +1586,7 @@
                             </LinearLayout>
 
                             <TextView
-                                android:id="@+id/stage_select_content_stage_02_status_text_view"
+                                android:id="@+id/stage_select_content_status_02_text_view"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/stage_select_content_stage_status_text_view"
@@ -1595,7 +1595,7 @@
                                 android:textStyle="bold" />
 
                             <ProgressBar
-                                android:id="@+id/stage_select_content_stage_02_status_progress_bar"
+                                android:id="@+id/stage_select_content_status_02_progress_bar"
                                 style="?android:attr/progressBarStyleHorizontal"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -1609,7 +1609,7 @@
                                 android:orientation="horizontal">
 
                                 <TextView
-                                    android:id="@+id/stage_select_content_stage_02_progress_value_text_view"
+                                    android:id="@+id/stage_select_content_progress_02_text_view"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="@string/_99"
@@ -1628,7 +1628,7 @@
                         </LinearLayout>
 
                         <LinearLayout
-                            android:id="@+id/stage_select_content_stage_03_layout"
+                            android:id="@+id/stage_select_content_card_03_layout"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_margin="16dp"
@@ -1646,14 +1646,14 @@
                                 android:orientation="horizontal">
 
                                 <ImageView
-                                    android:id="@+id/stage_select_content_stage_03_title_image_view"
+                                    android:id="@+id/stage_select_content_title_03_image_view"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:background="@drawable/stage_select_title_03"
+                                    android:background="@drawable/stage_select_content_title_01_image"
                                     android:contentDescription="@string/stage_select_content_stage_01_image_view" />
 
                                 <ImageButton
-                                    android:id="@+id/stage_select_content_stage_03_status_image_button"
+                                    android:id="@+id/stage_select_content_status_03_image_button"
                                     android:layout_width="64dp"
                                     android:layout_height="64dp"
                                     android:layout_gravity="center_horizontal|center_vertical"
@@ -1663,7 +1663,7 @@
                             </LinearLayout>
 
                             <TextView
-                                android:id="@+id/stage_select_content_stage_03_status_text_view"
+                                android:id="@+id/stage_select_content_status_03_text_view"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/stage_select_content_stage_status_text_view"
@@ -1672,7 +1672,7 @@
                                 android:textStyle="bold" />
 
                             <ProgressBar
-                                android:id="@+id/stage_select_content_stage_03_status_progress_bar"
+                                android:id="@+id/stage_select_content_status_03_progress_bar"
                                 style="?android:attr/progressBarStyleHorizontal"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -1686,7 +1686,7 @@
                                 android:orientation="horizontal">
 
                                 <TextView
-                                    android:id="@+id/stage_select_content_stage_03_progress_value_text_view"
+                                    android:id="@+id/stage_select_content_progress_03_text_view"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="@string/_99"
@@ -1705,7 +1705,7 @@
                         </LinearLayout>
 
                         <LinearLayout
-                            android:id="@+id/stage_select_content_stage_04_layout"
+                            android:id="@+id/stage_select_content_card_04_layout"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_margin="16dp"
@@ -1723,14 +1723,14 @@
                                 android:orientation="horizontal">
 
                                 <ImageView
-                                    android:id="@+id/stage_select_content_stage_04_title_image_view"
+                                    android:id="@+id/stage_select_content_title_04_image_view"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:background="@drawable/stage_select_title_04"
+                                    android:background="@drawable/stage_select_content_title_01_image"
                                     android:contentDescription="@string/stage_select_content_stage_01_image_view" />
 
                                 <ImageButton
-                                    android:id="@+id/stage_select_content_stage_04_status_image_button"
+                                    android:id="@+id/stage_select_content_status_04_image_button"
                                     android:layout_width="64dp"
                                     android:layout_height="64dp"
                                     android:layout_gravity="center_horizontal|center_vertical"
@@ -1740,7 +1740,7 @@
                             </LinearLayout>
 
                             <TextView
-                                android:id="@+id/stage_select_content_stage_04_status_text_view"
+                                android:id="@+id/stage_select_content_status_04_text_view"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/stage_select_content_stage_status_text_view"
@@ -1749,7 +1749,7 @@
                                 android:textStyle="bold" />
 
                             <ProgressBar
-                                android:id="@+id/stage_select_content_stage_04_status_progress_bar"
+                                android:id="@+id/stage_select_content_status_04_progress_bar"
                                 style="?android:attr/progressBarStyleHorizontal"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -1763,7 +1763,7 @@
                                 android:orientation="horizontal">
 
                                 <TextView
-                                    android:id="@+id/stage_select_content_stage_04_progress_value_text_view"
+                                    android:id="@+id/stage_select_content_progress_04_text_view"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="@string/_99"
@@ -1782,7 +1782,7 @@
                         </LinearLayout>
 
                         <LinearLayout
-                            android:id="@+id/stage_select_content_stage_05_layout"
+                            android:id="@+id/stage_select_content_card_05_layout"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_margin="16dp"
@@ -1800,14 +1800,14 @@
                                 android:orientation="horizontal">
 
                                 <ImageView
-                                    android:id="@+id/stage_select_content_stage_05_title_image_view"
+                                    android:id="@+id/stage_select_content_title_05_image_view"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:background="@drawable/stage_select_title_05"
+                                    android:background="@drawable/stage_select_content_title_01_image"
                                     android:contentDescription="@string/stage_select_content_stage_01_image_view" />
 
                                 <ImageButton
-                                    android:id="@+id/stage_select_content_stage_05_status_image_button"
+                                    android:id="@+id/stage_select_content_status_05_image_button"
                                     android:layout_width="64dp"
                                     android:layout_height="64dp"
                                     android:layout_gravity="center_horizontal|center_vertical"
@@ -1817,7 +1817,7 @@
                             </LinearLayout>
 
                             <TextView
-                                android:id="@+id/stage_select_content_stage_05_status_text_view"
+                                android:id="@+id/stage_select_content_status_05_text_view"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/stage_select_content_stage_status_text_view"
@@ -1826,7 +1826,7 @@
                                 android:textStyle="bold" />
 
                             <ProgressBar
-                                android:id="@+id/stage_select_content_stage_05_status_progress_bar"
+                                android:id="@+id/stage_select_content_status_05_progress_bar"
                                 style="?android:attr/progressBarStyleHorizontal"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -1840,7 +1840,7 @@
                                 android:orientation="horizontal">
 
                                 <TextView
-                                    android:id="@+id/stage_select_content_stage_05_progress_value_text_view"
+                                    android:id="@+id/stage_select_content_progress_05_text_view"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="@string/_99"
@@ -1859,7 +1859,7 @@
                         </LinearLayout>
 
                         <LinearLayout
-                            android:id="@+id/stage_select_content_stage_06_layout"
+                            android:id="@+id/stage_select_content_card_06_layout"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_margin="16dp"
@@ -1878,14 +1878,14 @@
                                 android:orientation="horizontal">
 
                                 <ImageView
-                                    android:id="@+id/stage_select_content_stage_06_title_image_view"
+                                    android:id="@+id/stage_select_content_title_06_image_view"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:background="@drawable/stage_select_title_06"
+                                    android:background="@drawable/stage_select_content_title_01_image"
                                     android:contentDescription="@string/stage_select_content_stage_01_image_view" />
 
                                 <ImageButton
-                                    android:id="@+id/stage_select_content_stage_06_status_image_button"
+                                    android:id="@+id/stage_select_content_status_06_image_button"
                                     android:layout_width="64dp"
                                     android:layout_height="64dp"
                                     android:layout_gravity="center_horizontal|center_vertical"
@@ -1895,7 +1895,7 @@
                             </LinearLayout>
 
                             <TextView
-                                android:id="@+id/stage_select_content_stage_06_status_text_view"
+                                android:id="@+id/stage_select_content_status_06_text_view"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/stage_select_content_stage_status_text_view"
@@ -1904,7 +1904,7 @@
                                 android:textStyle="bold" />
 
                             <ProgressBar
-                                android:id="@+id/stage_select_content_stage_06_status_progress_bar"
+                                android:id="@+id/stage_select_content_status_06_progress_bar"
                                 style="?android:attr/progressBarStyleHorizontal"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -1918,7 +1918,7 @@
                                 android:orientation="horizontal">
 
                                 <TextView
-                                    android:id="@+id/stage_select_content_stage_06_progress_value_text_view"
+                                    android:id="@+id/stage_select_content_progress_06_text_view"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="@string/_99"
@@ -1937,7 +1937,7 @@
                         </LinearLayout>
 
                         <LinearLayout
-                            android:id="@+id/stage_select_content_stage_07_layout"
+                            android:id="@+id/stage_select_content_card_07_layout"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_margin="16dp"
@@ -1956,14 +1956,14 @@
                                 android:orientation="horizontal">
 
                                 <ImageView
-                                    android:id="@+id/stage_select_content_stage_07_title_image_view"
+                                    android:id="@+id/stage_select_content_title_07_image_view"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:background="@drawable/stage_select_title_07"
+                                    android:background="@drawable/stage_select_content_title_01_image"
                                     android:contentDescription="@string/stage_select_content_stage_01_image_view" />
 
                                 <ImageButton
-                                    android:id="@+id/stage_select_content_stage_07_status_image_button"
+                                    android:id="@+id/stage_select_content_status_07_image_button"
                                     android:layout_width="64dp"
                                     android:layout_height="64dp"
                                     android:layout_gravity="center_horizontal|center_vertical"
@@ -1973,7 +1973,7 @@
                             </LinearLayout>
 
                             <TextView
-                                android:id="@+id/stage_select_content_stage_07_status_text_view"
+                                android:id="@+id/stage_select_content_status_07_text_view"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/stage_select_content_stage_status_text_view"
@@ -1982,7 +1982,7 @@
                                 android:textStyle="bold" />
 
                             <ProgressBar
-                                android:id="@+id/stage_select_content_stage_07_status_progress_bar"
+                                android:id="@+id/stage_select_content_status_07_progress_bar"
                                 style="?android:attr/progressBarStyleHorizontal"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -1996,7 +1996,7 @@
                                 android:orientation="horizontal">
 
                                 <TextView
-                                    android:id="@+id/stage_select_content_stage_07_progress_value_text_view"
+                                    android:id="@+id/stage_select_content_progress_07_text_view"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="@string/_99"
@@ -2080,7 +2080,7 @@
         android:layout_height="match_parent"
         android:background="@drawable/stage_card_bg_01"
         android:orientation="vertical"
-        android:visibility="gone"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -2113,7 +2113,7 @@
                     android:id="@+id/stage_card_title_image_view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/stage_card_title_01"
+                    android:background="@drawable/stage_card_title_01_image"
                     android:contentDescription="@string/stage_card_title_image_view" />
             </LinearLayout>
 
@@ -3238,7 +3238,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:visibility="gone">
+                android:visibility="visible">
 
                 <LinearLayout
                     android:id="@+id/stage_card_content_title_layout"
@@ -3550,7 +3550,7 @@
         android:layout_height="match_parent"
         android:gravity="center_vertical|center_horizontal"
         android:orientation="vertical"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -3795,7 +3795,7 @@
                 android:visibility="visible">
 
                 <ImageButton
-                    android:id="@+id/game_creature_special_image_button"
+                    android:id="@+id/game_predator_image_button"
                     android:layout_width="64dp"
                     android:layout_height="64dp"
                     android:background="@drawable/skull_icon"
@@ -3807,7 +3807,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageButton
-                    android:id="@+id/game_creature_boss_image_button"
+                    android:id="@+id/game_boss_image_button"
                     android:layout_width="96dp"
                     android:layout_height="96dp"
                     android:background="@mipmap/eobe_ic_launcher"
@@ -4094,19 +4094,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/stage_01_disaster_image"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/game_bloodsplat_layout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/game_bitten_01_image"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -354,6 +354,9 @@
     <string name="stage_card_boss_status_eaten">Eaten</string>
     <string name="stage_card_boss_status_escaped">Escaped</string>
     <string name="stage_card_boss_status_defeated">Defeated</string>
+    <string name="stage_select_content_status_ready">Ready</string>
+    <string name="stage_select_content_status_locked">Locked</string>
+    <string name="stage_select_content_status_complete">Complete</string>
 
 
 </resources>

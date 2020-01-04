@@ -799,7 +799,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     // Stage scores - calculate at end stage
     private static boolean mStageApex = false;
-    private static int mStagePredator;
+    private static int mStageFoodChain;
     private static float mStageAccuracy;
     private static int mStageTime;
     private static int mStageCreatureKills;
@@ -1170,22 +1170,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mStageSelectDialogueLayout = findViewById(R.id.stage_select_score_layout);
 
         // Content Layouts
-        mStageSelectContentStage01TitleImageView = findViewById(R.id.stage_select_content_stage_01_title_image_view);
-        mStageSelectContentStage02TitleImageView = findViewById(R.id.stage_select_content_stage_02_title_image_view);
-        mStageSelectContentStage03TitleImageView = findViewById(R.id.stage_select_content_stage_03_title_image_view);
-        mStageSelectContentStage04TitleImageView = findViewById(R.id.stage_select_content_stage_04_title_image_view);
-        mStageSelectContentStage05TitleImageView = findViewById(R.id.stage_select_content_stage_05_title_image_view);
-        mStageSelectContentStage06TitleImageView = findViewById(R.id.stage_select_content_stage_06_title_image_view);
-        mStageSelectContentStage07TitleImageView = findViewById(R.id.stage_select_content_stage_07_title_image_view);
+        mStageSelectContentStage01TitleImageView = findViewById(R.id.stage_select_content_title_01_image_view);
+        mStageSelectContentStage02TitleImageView = findViewById(R.id.stage_select_content_title_02_image_view);
+        mStageSelectContentStage03TitleImageView = findViewById(R.id.stage_select_content_title_03_image_view);
+        mStageSelectContentStage04TitleImageView = findViewById(R.id.stage_select_content_title_04_image_view);
+        mStageSelectContentStage05TitleImageView = findViewById(R.id.stage_select_content_title_05_image_view);
+        mStageSelectContentStage06TitleImageView = findViewById(R.id.stage_select_content_title_06_image_view);
+        mStageSelectContentStage07TitleImageView = findViewById(R.id.stage_select_content_title_07_image_view);
 
         //
-        mStageSelectContentStage01StatusImageButton = findViewById(R.id.stage_select_content_stage_01_status_image_button);
-        mStageSelectContentStage02StatusImageButton = findViewById(R.id.stage_select_content_stage_02_status_image_button);
-        mStageSelectContentStage03StatusImageButton = findViewById(R.id.stage_select_content_stage_03_status_image_button);
-        mStageSelectContentStage04StatusImageButton = findViewById(R.id.stage_select_content_stage_04_status_image_button);
-        mStageSelectContentStage05StatusImageButton = findViewById(R.id.stage_select_content_stage_05_status_image_button);
-        mStageSelectContentStage06StatusImageButton = findViewById(R.id.stage_select_content_stage_06_status_image_button);
-        mStageSelectContentStage07StatusImageButton = findViewById(R.id.stage_select_content_stage_07_status_image_button);
+        mStageSelectContentStage01StatusImageButton = findViewById(R.id.stage_select_content_status_01_image_button);
+        mStageSelectContentStage02StatusImageButton = findViewById(R.id.stage_select_content_status_02_image_button);
+        mStageSelectContentStage03StatusImageButton = findViewById(R.id.stage_select_content_status_03_image_button);
+        mStageSelectContentStage04StatusImageButton = findViewById(R.id.stage_select_content_status_04_image_button);
+        mStageSelectContentStage05StatusImageButton = findViewById(R.id.stage_select_content_status_05_image_button);
+        mStageSelectContentStage06StatusImageButton = findViewById(R.id.stage_select_content_status_06_image_button);
+        mStageSelectContentStage07StatusImageButton = findViewById(R.id.stage_select_content_status_07_image_button);
 
         //
         mStageSelectContentStage01BGLayout = findViewById(R.id.stage_select_content_stage_01_header_layout);
@@ -1197,40 +1197,40 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mStageSelectContentStage07BGLayout = findViewById(R.id.stage_select_content_stage_07_header_layout);
 
         //
-        mStageSelectContentStage01ColorLayout = findViewById(R.id.stage_select_content_stage_01_layout);
-        mStageSelectContentStage02ColorLayout = findViewById(R.id.stage_select_content_stage_02_layout);
-        mStageSelectContentStage03ColorLayout = findViewById(R.id.stage_select_content_stage_03_layout);
-        mStageSelectContentStage04ColorLayout = findViewById(R.id.stage_select_content_stage_04_layout);
-        mStageSelectContentStage05ColorLayout = findViewById(R.id.stage_select_content_stage_05_layout);
-        mStageSelectContentStage06ColorLayout = findViewById(R.id.stage_select_content_stage_06_layout);
-        mStageSelectContentStage07ColorLayout = findViewById(R.id.stage_select_content_stage_07_layout);
+        mStageSelectContentStage01ColorLayout = findViewById(R.id.stage_select_content_card_01_layout);
+        mStageSelectContentStage02ColorLayout = findViewById(R.id.stage_select_content_card_02_layout);
+        mStageSelectContentStage03ColorLayout = findViewById(R.id.stage_select_content_card_03_layout);
+        mStageSelectContentStage04ColorLayout = findViewById(R.id.stage_select_content_card_04_layout);
+        mStageSelectContentStage05ColorLayout = findViewById(R.id.stage_select_content_card_05_layout);
+        mStageSelectContentStage06ColorLayout = findViewById(R.id.stage_select_content_card_06_layout);
+        mStageSelectContentStage07ColorLayout = findViewById(R.id.stage_select_content_card_07_layout);
 
         //
-        mStageSelectContentStage01StatusTextView = findViewById(R.id.stage_select_content_stage_01_status_text_view);
-        mStageSelectContentStage02StatusTextView = findViewById(R.id.stage_select_content_stage_02_status_text_view);
-        mStageSelectContentStage03StatusTextView = findViewById(R.id.stage_select_content_stage_03_status_text_view);
-        mStageSelectContentStage04StatusTextView = findViewById(R.id.stage_select_content_stage_04_status_text_view);
-        mStageSelectContentStage05StatusTextView = findViewById(R.id.stage_select_content_stage_05_status_text_view);
-        mStageSelectContentStage06StatusTextView = findViewById(R.id.stage_select_content_stage_06_status_text_view);
-        mStageSelectContentStage07StatusTextView = findViewById(R.id.stage_select_content_stage_07_status_text_view);
+        mStageSelectContentStage01StatusTextView = findViewById(R.id.stage_select_content_status_01_text_view);
+        mStageSelectContentStage02StatusTextView = findViewById(R.id.stage_select_content_status_02_text_view);
+        mStageSelectContentStage03StatusTextView = findViewById(R.id.stage_select_content_status_03_text_view);
+        mStageSelectContentStage04StatusTextView = findViewById(R.id.stage_select_content_status_04_text_view);
+        mStageSelectContentStage05StatusTextView = findViewById(R.id.stage_select_content_status_05_text_view);
+        mStageSelectContentStage06StatusTextView = findViewById(R.id.stage_select_content_status_06_text_view);
+        mStageSelectContentStage07StatusTextView = findViewById(R.id.stage_select_content_status_07_text_view);
 
         //
-        mStageSelectContentStage01ProgressBar = findViewById(R.id.stage_select_content_stage_01_status_progress_bar);
-        mStageSelectContentStage02ProgressBar = findViewById(R.id.stage_select_content_stage_02_status_progress_bar);
-        mStageSelectContentStage03ProgressBar = findViewById(R.id.stage_select_content_stage_03_status_progress_bar);
-        mStageSelectContentStage04ProgressBar = findViewById(R.id.stage_select_content_stage_04_status_progress_bar);
-        mStageSelectContentStage05ProgressBar = findViewById(R.id.stage_select_content_stage_05_status_progress_bar);
-        mStageSelectContentStage06ProgressBar = findViewById(R.id.stage_select_content_stage_06_status_progress_bar);
-        mStageSelectContentStage07ProgressBar = findViewById(R.id.stage_select_content_stage_07_status_progress_bar);
+        mStageSelectContentStage01ProgressBar = findViewById(R.id.stage_select_content_status_01_progress_bar);
+        mStageSelectContentStage02ProgressBar = findViewById(R.id.stage_select_content_status_02_progress_bar);
+        mStageSelectContentStage03ProgressBar = findViewById(R.id.stage_select_content_status_03_progress_bar);
+        mStageSelectContentStage04ProgressBar = findViewById(R.id.stage_select_content_status_04_progress_bar);
+        mStageSelectContentStage05ProgressBar = findViewById(R.id.stage_select_content_status_05_progress_bar);
+        mStageSelectContentStage06ProgressBar = findViewById(R.id.stage_select_content_status_06_progress_bar);
+        mStageSelectContentStage07ProgressBar = findViewById(R.id.stage_select_content_status_07_progress_bar);
 
         //
-        mStageSelectContentStage01ProgressTextView = findViewById(R.id.stage_select_content_stage_01_progress_value_text_view);
-        mStageSelectContentStage02ProgressTextView = findViewById(R.id.stage_select_content_stage_02_progress_value_text_view);
-        mStageSelectContentStage03ProgressTextView = findViewById(R.id.stage_select_content_stage_03_progress_value_text_view);
-        mStageSelectContentStage04ProgressTextView = findViewById(R.id.stage_select_content_stage_04_progress_value_text_view);
-        mStageSelectContentStage05ProgressTextView = findViewById(R.id.stage_select_content_stage_05_progress_value_text_view);
-        mStageSelectContentStage06ProgressTextView = findViewById(R.id.stage_select_content_stage_06_progress_value_text_view);
-        mStageSelectContentStage07ProgressTextView = findViewById(R.id.stage_select_content_stage_07_progress_value_text_view);
+        mStageSelectContentStage01ProgressTextView = findViewById(R.id.stage_select_content_progress_01_text_view);
+        mStageSelectContentStage02ProgressTextView = findViewById(R.id.stage_select_content_progress_02_text_view);
+        mStageSelectContentStage03ProgressTextView = findViewById(R.id.stage_select_content_progress_03_text_view);
+        mStageSelectContentStage04ProgressTextView = findViewById(R.id.stage_select_content_progress_04_text_view);
+        mStageSelectContentStage05ProgressTextView = findViewById(R.id.stage_select_content_progress_05_text_view);
+        mStageSelectContentStage06ProgressTextView = findViewById(R.id.stage_select_content_progress_06_text_view);
+        mStageSelectContentStage07ProgressTextView = findViewById(R.id.stage_select_content_progress_07_text_view);
 
         // Scorecard Layouts
         mStageSelectScorecardApexLayout = findViewById(R.id.stage_select_score_apex_layout);
@@ -1431,13 +1431,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         int i = 0;
 
         //
-        for (boolean creature : stage_01_top_creatures_previous) {
+        for (boolean predator : stage_01_top_predators_previous) {
 
             //
-            if (creature) {
+            if (predator) {
 
                 //
-                mEditorSet.putBoolean(top_creature_previous_string_01[i], true);
+                mEditorSet.putBoolean(top_predator_previous_string_01[i], true);
             }
 
             //
@@ -1473,13 +1473,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         i = 0;
 
         //
-        for (boolean creature : stage_02_top_creatures_previous) {
+        for (boolean predator : stage_02_top_predators_previous) {
 
             //
-            if (creature) {
+            if (predator) {
 
                 //
-                mEditorSet.putBoolean(top_creature_previous_string_02[i], true);
+                mEditorSet.putBoolean(top_predator_previous_string_02[i], true);
             }
 
             //
@@ -1517,13 +1517,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         i = 0;
 
         //
-        for (boolean creature : stage_03_top_creatures_previous) {
+        for (boolean predator : stage_03_top_predators_previous) {
 
             //
-            if (creature) {
+            if (predator) {
 
                 //
-                mEditorSet.putBoolean(top_creature_previous_string_03[i], true);
+                mEditorSet.putBoolean(top_predator_previous_string_03[i], true);
             }
 
             //
@@ -1561,13 +1561,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         i = 0;
 
         //
-        for (boolean creature : stage_04_top_creatures_previous) {
+        for (boolean predator : stage_04_top_predators_previous) {
 
             //
-            if (creature) {
+            if (predator) {
 
                 //
-                mEditorSet.putBoolean(top_creature_previous_string_04[i], true);
+                mEditorSet.putBoolean(top_predator_previous_string_04[i], true);
             }
 
             //
@@ -1605,13 +1605,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         i = 0;
 
         //
-        for (boolean creature : stage_05_top_creatures_previous) {
+        for (boolean predator : stage_05_top_predators_previous) {
 
             //
-            if (creature) {
+            if (predator) {
 
                 //
-                mEditorSet.putBoolean(top_creature_previous_string_05[i], true);
+                mEditorSet.putBoolean(top_predator_previous_string_05[i], true);
             }
 
             //
@@ -1649,13 +1649,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         i = 0;
 
         //
-        for (boolean creature : stage_06_top_creatures_previous) {
+        for (boolean predator : stage_06_top_predators_previous) {
 
             //
-            if (creature) {
+            if (predator) {
 
                 //
-                mEditorSet.putBoolean(top_creature_previous_string_06[i], true);
+                mEditorSet.putBoolean(top_predator_previous_string_06[i], true);
             }
 
             //
@@ -1693,13 +1693,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         i = 0;
 
         //
-        for (boolean creature : stage_07_top_creatures_previous) {
+        for (boolean predator : stage_07_top_predators_previous) {
 
             //
-            if (creature) {
+            if (predator) {
 
                 //
-                mEditorSet.putBoolean(top_creature_previous_string_07[i], true);
+                mEditorSet.putBoolean(top_predator_previous_string_07[i], true);
             }
 
             //
@@ -2038,7 +2038,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 // -- STAGE 7 -->
         //
-        //stage_07_complete = mUserPrefGet.getBoolean(STAGE_07_COMPLETE, false);
+        stage_07_complete = mUserPrefGet.getBoolean(STAGE_07_COMPLETE, false);
 
         //
         stage_07_attempts = mUserPrefGet.getInt(STAGE_07_ATTEMPTS, 0);
@@ -2113,11 +2113,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         game_complete = stage_07_complete;
 
         // Assign - total attempts
-        //mGameAttempts = stage_01_attempts + stage_02_attempts + stage_03_attempts + stage_04_attempts + stage_05_attempts + stage_06_attempts + stage_07_attempts;
+        mGameAttempts = stage_01_attempts + stage_02_attempts + stage_03_attempts + stage_04_attempts + stage_05_attempts + stage_06_attempts + stage_07_attempts;
         // --> [around-the-block, known-by-name, old-stomping-grounds]
 
         // Assign - total boss kills
-        //mGameBossKills = stage_01_boss_kills + stage_02_boss_kills + stage_03_boss_kills + stage_04_boss_kills + stage_05_boss_kills + stage_06_boss_kills + stage_07_boss_kills;
+        mGameBossKills = stage_01_boss_kills + stage_02_boss_kills + stage_03_boss_kills + stage_04_boss_kills + stage_05_boss_kills + stage_06_boss_kills + stage_07_boss_kills;
         // --> [timid, bold, vicious]
 
         // Assign - total predator kills
@@ -2285,7 +2285,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //mGameTimeBest = hiScore;
 
         // Assign - top food_chain
-        mGameFood_chain = (stage_01_food_chain + stage_02_food_chain + stage_03_food_chain + stage_04_food_chain + stage_05_food_chain + stage_06_food_chain + stage_07_food_chain);
+        mGameFoodChain = (stage_01_food_chain + stage_02_food_chain + stage_03_food_chain + stage_04_food_chain + stage_05_food_chain + stage_06_food_chain + stage_07_food_chain);
 
         // Reset - top accuracy
         mAccumulativeAccuracy = 0;
@@ -2353,6 +2353,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 (stage_01_boss_kills + stage_02_boss_kills + stage_03_boss_kills +
                         stage_04_boss_kills + stage_05_boss_kills + stage_06_boss_kills +
                         stage_07_boss_kills);
+        
+        //
+        mGameTimeTotal =
+                (stage_01_total_time + stage_02_total_time + stage_03_total_time +
+                    stage_04_total_time + stage_05_total_time + stage_06_total_time +
+                    stage_07_total_time);
     }
 
     // Set click listeners
@@ -2788,7 +2794,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             // Stage select - stage event
-            case R.id.stage_select_content_stage_01_layout:
+            case R.id.stage_select_content_card_01_layout:
 
                 // Set stage card - forest [index for resources]
                 mStageIndex = 1;
@@ -2799,7 +2805,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             // Stage select - stage event
-            case R.id.stage_select_content_stage_02_layout:
+            case R.id.stage_select_content_card_02_layout:
 
                 // Set stage card - ocean
                 mStageIndex = 2;
@@ -2810,7 +2816,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             // Stage select - stage event
-            case R.id.stage_select_content_stage_03_layout:
+            case R.id.stage_select_content_card_03_layout:
 
                 // Set stage card - mountain
                 mStageIndex = 3;
@@ -2821,7 +2827,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             // Stage select - stage event
-            case R.id.stage_select_content_stage_04_layout:
+            case R.id.stage_select_content_card_04_layout:
 
                 // Set stage card - desert
                 mStageIndex = 4;
@@ -2832,7 +2838,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             // Stage select - stage event
-            case R.id.stage_select_content_stage_05_layout:
+            case R.id.stage_select_content_card_05_layout:
 
                 // Set stage card - jungle
                 mStageIndex = 5;
@@ -2843,7 +2849,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             // Stage select - stage event
-            case R.id.stage_select_content_stage_06_layout:
+            case R.id.stage_select_content_card_06_layout:
 
                 // Set stage card - tundra
                 mStageIndex = 6;
@@ -2854,7 +2860,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             // Stage select - stage event
-            case R.id.stage_select_content_stage_07_layout:
+            case R.id.stage_select_content_card_07_layout:
 
                 // Set stage card - final
                 mStageIndex = 7;
@@ -3982,7 +3988,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     mPower01Target = mPower01Target + mPowerIncrement;
 
                     // Add predator score
-                    ++mStagePredator;
+                    ++mStageFoodChain;
 
                     // Accelerate timer
                     accelerateTimer(.25);
@@ -4385,11 +4391,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     } // Replace if not already true, if it's false, it won't matter anyway.
 
                     //
-                    if (mStagePredator > 4) {
-                        mStagePredator = 5;
+                    if (mStageFoodChain > 4) {
+                        mStageFoodChain = 5;
                     }
-                    if (mStagePredator > stage_01_predator) {
-                        stage_01_predator = mStagePredator;
+                    if (mStageFoodChain > stage_01_food_chain) {
+                        stage_01_food_chain = mStageFoodChain;
                     } // Replace if better - maintain top scores at top
 
                     //
@@ -4424,7 +4430,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             if (creature == creature_captured) {
 
                                 //
-                                stage_01_top_creatures_previous.set(i, true);
+                                stage_01_top_predators_previous.set(i, true);
                                 ++j;
                             }
 
@@ -4470,8 +4476,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     } // Replace if not already true, if it's false, it won't matter anyway.
 
                     //
-                    if (mStagePredator > stage_02_predator) {
-                        stage_02_predator = mStagePredator;
+                    if (mStageFoodChain > stage_02_food_chain) {
+                        stage_02_food_chain = mStageFoodChain;
                     } // Replace if better - maintain top scores at top
 
                     //
@@ -4506,7 +4512,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             if (creature == creature_captured) {
 
                                 //
-                                stage_02_top_creatures_previous.set(i, true);
+                                stage_02_top_predators_previous.set(i, true);
                                 ++j;
                             }
 
@@ -4552,8 +4558,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     } // Replace if not already true, if it's false, it won't matter anyway.
 
                     //
-                    if (mStagePredator > stage_03_predator) {
-                        stage_03_predator = mStagePredator;
+                    if (mStageFoodChain > stage_03_food_chain) {
+                        stage_03_food_chain = mStageFoodChain;
                     } // Replace if better - maintain top scores at top
 
                     //
@@ -4588,7 +4594,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             if (creature == creature_captured) {
 
                                 //
-                                stage_03_top_creatures_previous.set(i, true);
+                                stage_03_top_predators_previous.set(i, true);
                                 ++j;
                             }
 
@@ -4634,8 +4640,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     } // Replace if not already true, if it's false, it won't matter anyway.
 
                     //
-                    if (mStagePredator > stage_04_predator) {
-                        stage_04_predator = mStagePredator;
+                    if (mStageFoodChain > stage_04_food_chain) {
+                        stage_04_food_chain = mStageFoodChain;
                     } // Replace if better - maintain top scores at top
 
                     //
@@ -4670,7 +4676,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             if (creature == creature_captured) {
 
                                 //
-                                stage_04_top_creatures_previous.set(i, true);
+                                stage_04_top_predators_previous.set(i, true);
                                 ++j;
                             }
 
@@ -4716,8 +4722,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     } // Replace if not already true, if it's false, it won't matter anyway.
 
                     //
-                    if (mStagePredator > stage_05_predator) {
-                        stage_05_predator = mStagePredator;
+                    if (mStageFoodChain > stage_05_food_chain) {
+                        stage_05_food_chain = mStageFoodChain;
                     } // Replace if better - maintain top scores at top
 
                     //
@@ -4752,7 +4758,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             if (creature == creature_captured) {
 
                                 //
-                                stage_05_top_creatures_previous.set(i, true);
+                                stage_05_top_predators_previous.set(i, true);
                                 ++j;
                             }
 
@@ -4798,8 +4804,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     } // Replace if not already true, if it's false, it won't matter anyway.
 
                     //
-                    if (mStagePredator > stage_06_predator) {
-                        stage_06_predator = mStagePredator;
+                    if (mStageFoodChain > stage_06_food_chain) {
+                        stage_06_food_chain = mStageFoodChain;
                     } // Replace if better - maintain top scores at top
 
                     //
@@ -4834,7 +4840,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             if (creature == creature_captured) {
 
                                 //
-                                stage_06_top_creatures_previous.set(i, true);
+                                stage_06_top_predators_previous.set(i, true);
                                 ++j;
                             }
 
@@ -4880,8 +4886,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     } // Replace if not already true, if it's false, it won't matter anyway.
 
                     //
-                    if (mStagePredator > stage_07_predator) {
-                        stage_07_predator = mStagePredator;
+                    if (mStageFoodChain > stage_07_food_chain) {
+                        stage_07_food_chain = mStageFoodChain;
                     } // Replace if better - maintain top scores at top
 
                     //
@@ -4916,7 +4922,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             if (creature == creature_captured) {
 
                                 //
-                                stage_07_top_creatures_previous.set(i, true);
+                                stage_07_top_predators_previous.set(i, true);
                                 ++j;
                             }
 
@@ -5049,7 +5055,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mBossDowned = false;
 
         //
-        mStagePredator = 0;
+        mStageFoodChain = 0;
         mStageAccuracy = 0f;
 
         //
@@ -5099,7 +5105,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         // Load stage name
-        mGameStageImageView.setBackground(versionCheck(STAGE_NAMES[mStageIndex - 1]));
+        mGameStageImageView.setBackground(versionCheck(GAME_STAGE_TITLE_IMAGES[mStageIndex - 1]));
 
         // Load stage border image
         mGameBorderLayout.setBackground(versionCheck(STAGE_BORDERS[mStageIndex - 1]));
@@ -5140,7 +5146,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             mStageCardTrophycaseImageButton.setVisibility(View.VISIBLE);
 
             // Load boss image button
-            mGameBossImageButton.setBackground(versionCheck(BOSS_IMAGES[mStageIndex - 1]));
+            mGameBossImageButton.setBackground(versionCheck(STAGE_CARD_BOSS_IMAGES[mStageIndex - 1]));
 
             // Reset trophy case
             resetCreatureTrophycase();
@@ -5298,15 +5304,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.stage_card_screen_main_layout:
 
                 //
-                mStageCardContentTitleImageButton.setBackground(versionCheck(STAGE_SELECT_TITLE_IMAGES[mStageIndex - 1]));
+                mStageCardContentTitleImageButton.setBackground(versionCheck(STAGE_CARD_TITLE_IMAGES[mStageIndex - 1]));
                 mStageCardContentTitleLayout.setBackgroundColor(ContextCompat.getColor(this, STAGE_COLOR[mStageIndex - 1]));
-                mStageCardBossNameTextView.setText(BOSS_NAME[mStageIndex - 1]);
-                mStageCardPowerNameTextView.setText(POWER_NAME[mStageIndex - 1]);
-                mStageCardDisasterNameTextView.setText(DISASTER_NAME[mStageIndex - 1]);
+                mStageCardBossNameTextView.setText(STAGE_CARD_BOSS_NAME_STRINGS[mStageIndex - 1]);
+                //mStageCardPowerNameTextView.setText(POWER_NAME[mStageIndex - 1]);
+                //mStageCardDisasterNameTextView.setText(DISASTER_NAME[mStageIndex - 1]);
                 mStageCardScreenBodyLayout.setBackground(versionCheck(STAGE_CARD_BG[mStageIndex - 1]));
 
                 // Load stage resources
-                mStageCardBossImageView.setBackground(versionCheck(BOSS_IMAGES[mStageIndex - 1]));
+                mStageCardBossImageView.setBackground(versionCheck(STAGE_CARD_BOSS_IMAGES[mStageIndex - 1]));
                 mStageCardPowerImageView.setBackground(versionCheck(STAGE_CARD_POWER_IMAGES[mStageIndex - 1]));
                 mStageCardDisasterImageView.setBackground(versionCheck(STAGE_DISASTERS[mStageIndex - 1]));
 
@@ -5663,10 +5669,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //
         if (mTapCount > 11) {
 
-            if (mTapTotal < LEVEL_MARKERS.length) {
+            if (mTapTotal < GAME_SCENE_LAYOUTS.length) {
 
                 //
-                findViewById(LEVEL_MARKERS[mTapTotal]).setBackground(versionCheck(STAGE_DISASTERS[mStageIndex - 1]));
+                findViewById(GAME_SCENE_LAYOUTS[mTapTotal]).setBackground(versionCheck(STAGE_DISASTERS[mStageIndex - 1]));
             }
             //
             tapOut();
@@ -5834,18 +5840,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             //removeBG();
 
             //
-            if (!(mTapTotal > LEVEL_MARKERS.length - 1)) {
+            if (!(mTapTotal > GAME_SCENE_LAYOUTS.length - 1)) {
 
                 //
-                findViewById(LEVEL_MARKERS[mTapTotal - 1]).setAlpha(1f);
-                findViewById(LEVEL_MARKERS[mTapTotal]).setAlpha(1f);
+                findViewById(GAME_SCENE_LAYOUTS[mTapTotal - 1]).setAlpha(1f);
+                findViewById(GAME_SCENE_LAYOUTS[mTapTotal]).setAlpha(1f);
                 //findViewById(LEVEL_MARKERS[mTapTotal]).setBackground(versionCheck(BOSS_IMAGES[mStageIndex - 1]));
 
             } else {
 
                 //
-                for (int marker : LEVEL_MARKERS) {
-                    findViewById(marker).setAlpha(1f);
+                for (int scene : GAME_SCENE_LAYOUTS) {
+                    findViewById(scene).setAlpha(1f);
                 }
 
             }
@@ -5879,10 +5885,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         int i = 0;
 
         // Stage card bg [resource]
-        for (int card : STAGE_SELECT_CARD_LAYOUTS) {
+        for (int card : STAGE_SELECT_CONTENT_CARD_LAYOUTS) {
 
             // BG image [asset]
-            findViewById(card).setBackground(versionCheck(STAGE_SELECT_BG_IMAGES[i]));
+            findViewById(card).setBackground(versionCheck(STAGE_SELECT_CONTENT_BG_IMAGES[i]));
 
             //
             ++i;
@@ -5892,10 +5898,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         i = 0;
 
         // Stage card titles [resource]
-        for (int card_title : STAGE_SELECT_TITLE_LAYOUTS) {
+        for (int card_title : STAGE_SELECT_CONTENT_TITLE_IMAGE_VIEWS) {
 
             // Title image [asset]
-            findViewById(card_title).setBackground(versionCheck(STAGE_SELECT_TITLE_IMAGES[i]));
+            findViewById(card_title).setBackground(versionCheck(STAGE_SELECT_CONTENT_TITLE_IMAGES[i]));
 
             //
             ++i;
@@ -5905,16 +5911,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         i = 0;
 
         // Stage icon [resource]
-        for (int card_icon : STAGE_SELECT_STATUS_IMAGE_VIEWS) {
+        for (int card_icon : STAGE_SELECT_CONTENT_STATUS_IMAGE_BUTTONS) {
 
             // Icon image [asset]
-            findViewById(card_icon).setBackground(versionCheck(STAGE_SELECT_STATUS_IMAGES[0]));
+            findViewById(card_icon).setBackground(versionCheck(STAGE_SELECT_CONTENT_STATUS_IMAGES[0]));
 
             //
             if (stage_complete[i]) {
 
                 // Icon image [asset]
-                findViewById(card_icon).setBackground(versionCheck(STAGE_SELECT_STATUS_IMAGES[1]));
+                findViewById(card_icon).setBackground(versionCheck(STAGE_SELECT_CONTENT_STATUS_IMAGES[1]));
 
             }
 
@@ -5922,7 +5928,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             if (i > 0 && !stage_complete[i - 1]) {
 
                 // Icon image [asset]
-                findViewById(card_icon).setBackground(versionCheck(STAGE_SELECT_STATUS_IMAGES[2]));
+                findViewById(card_icon).setBackground(versionCheck(STAGE_SELECT_CONTENT_STATUS_IMAGES[2]));
             }
 
             //
@@ -5933,24 +5939,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         i = 0;
 
         // Stage status [resource]
-        for (int card_status : STAGE_SELECT_STATUS_TEXT_VIEWS) {
+        for (int card_status : STAGE_SELECT_CONTENT_STATUS_TEXT_VIEWS) {
 
             // Status string [asset]
             TextView mText = findViewById(card_status);
-            mText.setText(STAGE_SELECT_STATUS_STRINGS[0]);
+            mText.setText(STAGE_SELECT_CONTENT_STATUS_STRINGS[0]);
 
             //
             if (i > 0 && !stage_complete[i - 1]) {
 
                 // Status string [asset]
-                mText.setText(STAGE_SELECT_STATUS_STRINGS[1]);
+                mText.setText(STAGE_SELECT_CONTENT_STATUS_STRINGS[1]);
             }
 
             //
             if (stage_complete[i]) {
 
                 // Status string [asset]
-                mText.setText(STAGE_SELECT_STATUS_STRINGS[2]);
+                mText.setText(STAGE_SELECT_CONTENT_STATUS_STRINGS[2]);
                 ++journey_score;
             }
 
@@ -5962,10 +5968,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         i = 0;
 
         // Stage hilite [resource]
-        for (int hilite : STAGE_SELECT_PROGRESS_BARS) {
+        for (int hilite : STAGE_SELECT_CONTENT_PROGRESS_BARS) {
 
             // Color [asset]
-            findViewById(hilite).setBackgroundColor(ContextCompat.getColor(this, (STAGE_SELECT_COLOR_VALUES[i])));
+            findViewById(hilite).setBackgroundColor(ContextCompat.getColor(this, (STAGE_SELECT_CONTENT_COLOR_VALUES[i])));
             findViewById(hilite).setAlpha(1f);
 
             //
@@ -5984,7 +5990,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         i = 99;
 
         // Stage progress [resource]
-        for (int card_progress : STAGE_SELECT_PROGRESS_BARS) {
+        for (int card_progress : STAGE_SELECT_CONTENT_PROGRESS_BARS) {
 
             // Stage progress [asset]
             ProgressBar mProgress = findViewById(card_progress);
@@ -5995,7 +6001,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         i = 0;
 
         // Stage progress [resource]
-        for (int card_progress_text : STAGE_SELECT_PROGRESS_TEXT_VIEWS) {
+        for (int card_progress_text : STAGE_SELECT_CONTENT_PROGRESS_TEXT_VIEWS) {
 
             // Stage progress [asset]
             TextView mText = findViewById(card_progress_text);
@@ -6282,19 +6288,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //
         int splatter = r.nextInt(4);
         //int splatter = Arrays.asList(CREATURE_BUTTONS).indexOf(creature);
-        findViewById(CREATURE_SPLATTERS[splatter]).setVisibility(View.INVISIBLE);
+        findViewById(GAME_STAGE_SPLATTER_IMAGE_VIEWS[splatter]).setVisibility(View.INVISIBLE);
 
         //
         float splatterX = findViewById(creature).getX();
         float splatterY = findViewById(creature).getY();
 
         //
-        findViewById(CREATURE_SPLATTERS[splatter]).setX(splatterX);
-        findViewById(CREATURE_SPLATTERS[splatter]).setY(splatterY);
+        findViewById(GAME_STAGE_SPLATTER_IMAGE_VIEWS[splatter]).setX(splatterX);
+        findViewById(GAME_STAGE_SPLATTER_IMAGE_VIEWS[splatter]).setY(splatterY);
 
         //
-        findViewById(CREATURE_SPLATTERS[splatter]).setVisibility(View.VISIBLE);
-        fadeSplatter(CREATURE_SPLATTERS[splatter]);
+        findViewById(GAME_STAGE_SPLATTER_IMAGE_VIEWS[splatter]).setVisibility(View.VISIBLE);
+        fadeSplatter(GAME_STAGE_SPLATTER_IMAGE_VIEWS[splatter]);
 
         // Hide creature
         findViewById(creature).setVisibility(View.INVISIBLE);
@@ -6338,7 +6344,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             //
             if (r.nextInt(10) >= random_index) {
-                showCreature(CREATURE_BUTTONS[r.nextInt(5)]);
+                showCreature(GAME_STAGE_CREATURE_BUTTONS[r.nextInt(5)]);
             }
         }
     }
@@ -6347,7 +6353,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void setStage() {
 
         //
-        for (int creature : CREATURE_BUTTONS) {
+        for (int creature : GAME_STAGE_CREATURE_BUTTONS) {
 
             //
             switchCreature(creature);
@@ -6825,8 +6831,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         int marker_index = 0;
         int bg_image_index = 0;
 
-        // Replace capture image
-        for (int marker : LEVEL_MARKERS) {
+        // Replace bg image
+        for (int marker : GAME_SCENE_LAYOUTS) {
 
             //
             findViewById(marker).setBackground(versionCheck(STAGE_PREDATORS[mStageIndex - 1][marker_index]));
@@ -6836,8 +6842,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             ++marker_index;
         }
 
-        // Replace bg image
-        for (int bg_image : LEVEL_MARKERS_BG_IMAGES) {
+        //
+        for (int bg_image : GAME_BOARD_CAPTURE_IMAGE_VIEWS) {
 
             //
             findViewById(bg_image).setBackground(versionCheck(STAGE_SCENES[mStageIndex - 1][bg_image_index]));
@@ -6893,7 +6899,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         // Achieve top predator in every stage
-        if (mGamePredator > 29) {
+        if (mGameFoodChain > 29) {
 
             //
             ++game_score;
@@ -7108,7 +7114,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 //
                 mLoadRandomScoreTitleTextView.setText("Total Boss Kills:");
-                mLoadRandomScoreValueTextView.setText(Integer.toString((TOTAL_BOSS_KILLS_SCORE_ARRAY[mStageIndex - 1])));
+                mLoadRandomScoreValueTextView.setText(Integer.toString(mGameBossKills));
 
                 //
                 if (stage_01_apex) {
@@ -7123,7 +7129,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
 
                 //
-                if (stage_01_predator > 2) {
+                if (stage_01_food_chain > 2) {
 
                     //
                     ++top_score;
@@ -7135,11 +7141,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
 
                 //
-                if (stage_01_predator > 3) {
+                if (stage_01_food_chain > 3) {
                     mStageTopPredatorBadgeImageView.setBackground(versionCheck(R.drawable.badge_silver));
                     ++top_score;
                 }
-                if (stage_01_predator > 4) {
+                if (stage_01_food_chain > 4) {
                     mStageTopPredatorBadgeImageView.setBackground(versionCheck(R.drawable.badge_gold));
                     ++top_score;
                 }
@@ -7337,7 +7343,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
 
                 //
-                if (stage_02_predator > 2) {
+                if (stage_02_food_chain > 2) {
 
                     //
                     ++top_score;
@@ -7349,11 +7355,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
 
                 //
-                if (stage_02_predator > 3) {
+                if (stage_02_food_chain > 3) {
                     mStageTopPredatorBadgeImageView.setBackground(versionCheck(R.drawable.badge_silver));
                     ++top_score;
                 }
-                if (stage_02_predator > 4) {
+                if (stage_02_food_chain > 4) {
                     mStageTopPredatorBadgeImageView.setBackground(versionCheck(R.drawable.badge_gold));
                     ++top_score;
                 }
@@ -7549,7 +7555,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
 
                 //
-                if (stage_03_predator > 2) {
+                if (stage_03_food_chain > 2) {
 
                     //
                     ++top_score;
@@ -7561,11 +7567,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
 
                 //
-                if (stage_03_predator > 3) {
+                if (stage_03_food_chain > 3) {
                     mStageTopPredatorBadgeImageView.setBackground(versionCheck(R.drawable.badge_silver));
                     ++top_score;
                 }
-                if (stage_03_predator > 4) {
+                if (stage_03_food_chain > 4) {
                     mStageTopPredatorBadgeImageView.setBackground(versionCheck(R.drawable.badge_gold));
                     ++top_score;
                 }
@@ -7763,7 +7769,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
 
                 //
-                if (stage_04_predator > 2) {
+                if (stage_04_food_chain > 2) {
 
                     //
                     ++top_score;
@@ -7775,11 +7781,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
 
                 //
-                if (stage_04_predator > 3) {
+                if (stage_04_food_chain > 3) {
                     mStageTopPredatorBadgeImageView.setBackground(versionCheck(R.drawable.badge_silver));
                     ++top_score;
                 }
-                if (stage_04_predator > 4) {
+                if (stage_04_food_chain > 4) {
                     mStageTopPredatorBadgeImageView.setBackground(versionCheck(R.drawable.badge_gold));
                     ++top_score;
                 }
@@ -7977,7 +7983,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
 
                 //
-                if (stage_05_predator > 2) {
+                if (stage_05_food_chain > 2) {
 
                     //
                     ++top_score;
@@ -7989,11 +7995,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
 
                 //
-                if (stage_05_predator > 3) {
+                if (stage_05_food_chain > 3) {
                     mStageTopPredatorBadgeImageView.setBackground(versionCheck(R.drawable.badge_silver));
                     ++top_score;
                 }
-                if (stage_05_predator > 4) {
+                if (stage_05_food_chain > 4) {
                     mStageTopPredatorBadgeImageView.setBackground(versionCheck(R.drawable.badge_gold));
                     ++top_score;
                 }
@@ -8191,7 +8197,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
 
                 //
-                if (stage_06_predator > 2) {
+                if (stage_06_food_chain > 2) {
 
                     //
                     ++top_score;
@@ -8203,11 +8209,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
 
                 //
-                if (stage_06_predator > 3) {
+                if (stage_06_food_chain > 3) {
                     mStageTopPredatorBadgeImageView.setBackground(versionCheck(R.drawable.badge_silver));
                     ++top_score;
                 }
-                if (stage_06_predator > 4) {
+                if (stage_06_food_chain > 4) {
                     mStageTopPredatorBadgeImageView.setBackground(versionCheck(R.drawable.badge_gold));
                     ++top_score;
                 }
@@ -8405,7 +8411,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
 
                 //
-                if (stage_07_predator > 2) {
+                if (stage_07_food_chain > 2) {
 
                     //
                     ++top_score;
@@ -8417,11 +8423,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
 
                 //
-                if (stage_07_predator > 3) {
+                if (stage_07_food_chain > 3) {
                     mStageTopPredatorBadgeImageView.setBackground(versionCheck(R.drawable.badge_silver));
                     ++top_score;
                 }
-                if (stage_07_predator > 4) {
+                if (stage_07_food_chain > 4) {
                     mStageTopPredatorBadgeImageView.setBackground(versionCheck(R.drawable.badge_gold));
                     ++top_score;
                 }
@@ -8635,7 +8641,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mStageCardTopFranticLayout.setVisibility(View.GONE);
 
         // Primary scores
-        if (mStagePredator > 2) {
+        if (mStageFoodChain > 2) {
 
             //
             ++final_score;
@@ -8647,11 +8653,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         //
-        if (mStagePredator > 3) {
+        if (mStageFoodChain > 3) {
             mStageTopPredatorBadgeImageView.setBackground(versionCheck(R.drawable.badge_silver));
             ++final_score;
         }
-        if (mStagePredator > 4) {
+        if (mStageFoodChain > 4) {
             mStageTopPredatorBadgeImageView.setBackground(versionCheck(R.drawable.badge_gold));
             ++final_score;
         }
@@ -8864,9 +8870,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ArrayList[] stage_creatures_previous = {
 
                 //
-                stage_01_top_creatures_previous, stage_02_top_creatures_previous, stage_03_top_creatures_previous,
-                stage_04_top_creatures_previous, stage_05_top_creatures_previous, stage_06_top_creatures_previous,
-                stage_07_top_creatures_previous
+                stage_01_top_predators_previous, stage_02_top_predators_previous, stage_03_top_predators_previous,
+                stage_04_top_predators_previous, stage_05_top_predators_previous, stage_06_top_predators_previous,
+                stage_07_top_predators_previous
         };
 
         //
@@ -8903,9 +8909,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ArrayList[] stage_creatures_previous = {
 
                 //
-                stage_01_top_creatures_previous, stage_02_top_creatures_previous, stage_03_top_creatures_previous,
-                stage_04_top_creatures_previous, stage_05_top_creatures_previous, stage_06_top_creatures_previous,
-                stage_07_top_creatures_previous
+                stage_01_top_predators_previous, stage_02_top_predators_previous, stage_03_top_predators_previous,
+                stage_04_top_predators_previous, stage_05_top_predators_previous, stage_06_top_predators_previous,
+                stage_07_top_predators_previous
         };
 
         //
@@ -9033,7 +9039,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     final private static int[] STAGE_SELECT_CONTENT_STATUS_STRINGS = {
 
-            R.string.stage_select_content_status_stage_ready, R.string.stage_select_content_status_stage_locked, R.string.stage_select_content_status_stage_complete
+            R.string.stage_select_content_status_ready, R.string.stage_select_content_status_locked, R.string.stage_select_content_status_complete
     };
 
     //
@@ -9599,16 +9605,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     final private static int[] GAME_BOARD_CAPTURE_IMAGE_VIEWS = {
 
             //
-            R.id.game_board_capture_01_image_view, R.id.game_board_capture_02_image_view, R.id.game_board_capture_03_image_view,
-            R.id.game_board_capture_04_image_view, R.id.game_board_capture_05_image_view
+            R.id.game_scene_01_capture_image_view, R.id.game_scene_02_capture_image_view, R.id.game_scene_03_capture_image_view,
+            R.id.game_scene_04_capture_image_view, R.id.game_scene_05_capture_image_view
     };
 
-    // RESOUCE : INTEGER - Array list of level marker views [stage bg image]
-    final private static int[] GAME_BOARD_DISASTER_LAYOUTS = {
+    final private static int[] GAME_SCENE_LAYOUTS = {
 
             //
-            R.id.game_board_01_layout, R.id.game_board_02_layout, R.id.game_board_03_layout,
-            R.id.game_board_04_layout, R.id.game_board_05_layout
+            R.id.game_scene_01_layout, R.id.game_scene_02_layout, R.id.game_scene_03_layout,
+            R.id.game_scene_04_layout, R.id.game_scene_05_layout
     };
 
     // RESOURCE : INTEGER - Array list of creature button views [1-5]
@@ -9626,9 +9631,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             R.id.game_splatter_01_image_view, R.id.game_splatter_02_image_view, R.id.game_splatter_03_image_view,
             R.id.game_splatter_04_image_view, R.id.game_splatter_05_image_view
     };
-
-
-
 
     //
     final private static boolean[] STAGE_COMPLETE_SCORE_ARRAY = {
@@ -9700,9 +9702,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             R.id.stage_select_score_frantic_layout,
 
             // Content
-            R.id.stage_select_content_stage_01_layout, R.id.stage_select_content_stage_02_layout, R.id.stage_select_content_stage_03_layout,
-            R.id.stage_select_content_stage_04_layout, R.id.stage_select_content_stage_05_layout, R.id.stage_select_content_stage_06_layout,
-            R.id.stage_select_content_stage_07_layout,
+            R.id.stage_select_content_card_01_layout, R.id.stage_select_content_card_02_layout, R.id.stage_select_content_card_03_layout,
+            R.id.stage_select_content_card_04_layout, R.id.stage_select_content_card_05_layout, R.id.stage_select_content_card_06_layout,
+            R.id.stage_select_content_card_07_layout,
 
 // Stage card
             //
@@ -10114,20 +10116,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             R.drawable.skull_icon, R.drawable.skull_black_icon
     };
 
-    // RESOURCE : DOUBLE - Array list of alphas - index.length = 20
-    final private static double[] ALPHA_INDEX = {
-
-            //
-            1, .99, .98, .97, .96, .95, .93, .91, .89, .85, .8, .75, .7, .6, .5, .25, .1, .01, .001, 0
-    };
-
-    // RESOURCE : DOUBLE - Array list of alphas - index.length = 20
-    final private static double[] ALPHA_INDEX_INVERSE = {
-
-            //
-            0, .001, .01, .1, .25, .5, .6, .7, .75, .8, .85, .89, .91, .93, .95, .96, .97, .98, .99, 1
-    };
-
     // RESOURCE : INTEGER - Array list of pings
     final private static int[] PINGS = {
 
@@ -10136,90 +10124,62 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             R.raw.ping_06_audio, R.raw.ping_07_audio, R.raw.ping_08_audio, R.raw.ping_09_audio, R.raw.ping_10_audio
     };
 
-//-- STAGE PROPS ARRAY -->
-    // RESOURCE : INTEGER - Array list of stage cards - stage card layout views
-    final private static int[] STAGE_PROP_CARDS = {
-
-        //
-        R.id.stage_select_content_stage_01_layout, R.id.stage_select_content_stage_02_layout, R.id.stage_select_content_stage_03_layout,
-        R.id.stage_select_content_stage_04_layout, R.id.stage_select_content_stage_05_layout, R.id.stage_select_content_stage_06_layout,
-        R.id.stage_select_content_stage_07_layout,
-    };
-
-    // RESOURCE : DRAWABLE - Array list of stage props - stage card bg images
-    final private static int[] STAGE_PROP_CARD_BG = {
-
-            //
-            R.drawable.stage_select_bg_01, R.drawable.stage_select_bg_02, R.drawable.stage_select_bg_03,
-            R.drawable.stage_select_bg_04, R.drawable.stage_select_bg_05, R.drawable.stage_select_bg_06,
-            R.drawable.stage_select_bg_07
-    };
-
-    // RESOURCE : DRAWABLE - Array list of stage props - stage card title images
-    final private static int[] STAGE_PROP_TITLE_IMAGES = {
-
-            //
-            R.drawable.stage_select_title_01, R.drawable.stage_select_title_02, R.drawable.stage_select_title_03,
-            R.drawable.stage_select_title_04, R.drawable.stage_select_title_05, R.drawable.stage_select_title_06,
-            R.drawable.stage_select_title_07
-    };
-
 // RESOURCES for setGameData()
 
     // RESOURCE : STRING - Array list of top scores constants
-    final private static String[] top_creature_previous_string_01 = {
+    final private static String[] top_predator_previous_string_01 = {
 
             //
-            STAGE_01_CREATURE_01, STAGE_01_CREATURE_02, STAGE_01_CREATURE_03, STAGE_01_CREATURE_04,
-            STAGE_01_CREATURE_05
+            STAGE_01_PREDATOR_01, STAGE_01_PREDATOR_02, STAGE_01_PREDATOR_03, STAGE_01_PREDATOR_04,
+            STAGE_01_PREDATOR_05
     };
 
     // RESOURCE : STRING - Array list of top scores constants
-    final private static String[] top_creature_previous_string_02 = {
+    final private static String[] top_predator_previous_string_02 = {
 
             //
-            STAGE_02_CREATURE_01, STAGE_02_CREATURE_02, STAGE_02_CREATURE_03, STAGE_02_CREATURE_04,
-            STAGE_02_CREATURE_05
+            STAGE_02_PREDATOR_01, STAGE_02_PREDATOR_02, STAGE_02_PREDATOR_03, STAGE_02_PREDATOR_04,
+            STAGE_02_PREDATOR_05
     };
 
     // RESOURCE : STRING - Array list of top scores constants
-    final private static String[] top_creature_previous_string_03 = {
+    final private static String[] top_predator_previous_string_03 = {
 
             //
-            STAGE_03_CREATURE_01, STAGE_03_CREATURE_02, STAGE_03_CREATURE_03, STAGE_03_CREATURE_04,
-            STAGE_03_CREATURE_05
+            STAGE_03_PREDATOR_01, STAGE_03_PREDATOR_02, STAGE_03_PREDATOR_03, STAGE_03_PREDATOR_04,
+            STAGE_03_PREDATOR_05
     };
 
     // RESOURCE : STRING - Array list of top scores constants
-    final private static String[] top_creature_previous_string_04 = {
+    final private static String[] top_predator_previous_string_04 = {
 
             //
-            STAGE_04_CREATURE_01, STAGE_04_CREATURE_02, STAGE_04_CREATURE_03, STAGE_04_CREATURE_04,
-            STAGE_04_CREATURE_05
+            STAGE_04_PREDATOR_01, STAGE_04_PREDATOR_02, STAGE_04_PREDATOR_03, STAGE_04_PREDATOR_04,
+            STAGE_04_PREDATOR_05
     };
 
     // RESOURCE : STRING - Array list of top scores constants
-    final private static String[] top_creature_previous_string_05 = {
+    final private static String[] top_predator_previous_string_05 = {
 
             //
-            STAGE_05_CREATURE_01, STAGE_05_CREATURE_02, STAGE_05_CREATURE_03, STAGE_05_CREATURE_04,
-            STAGE_05_CREATURE_05
+            STAGE_05_PREDATOR_01, STAGE_05_PREDATOR_02, STAGE_05_PREDATOR_03, STAGE_05_PREDATOR_04,
+            STAGE_05_PREDATOR_05
     };
 
     // RESOURCE : STRING - Array list of top scores constants
-    final private static String[] top_creature_previous_string_06 = {
+    final private static String[] top_predator_previous_string_06 = {
 
             //
-            STAGE_06_CREATURE_01, STAGE_06_CREATURE_02, STAGE_06_CREATURE_03, STAGE_06_CREATURE_04,
-            STAGE_06_CREATURE_05
+            STAGE_06_PREDATOR_01, STAGE_06_PREDATOR_02, STAGE_06_PREDATOR_03, STAGE_06_PREDATOR_04,
+            STAGE_06_PREDATOR_05
     };
 
     // RESOURCE : STRING - Array list of top scores constants
-    final private static String[] top_creature_previous_string_07 = {
+    final private static String[] top_predator_previous_string_07 = {
 
             //
-            STAGE_07_CREATURE_01, STAGE_07_CREATURE_02, STAGE_07_CREATURE_03, STAGE_07_CREATURE_04,
-            STAGE_07_CREATURE_05
+            STAGE_07_PREDATOR_01, STAGE_07_PREDATOR_02, STAGE_07_PREDATOR_03, STAGE_07_PREDATOR_04,
+            STAGE_07_PREDATOR_05
     };
 
     // RESOURCE : IMAGE - Array list of bite mark images

@@ -38,21 +38,21 @@
     <color name="style_color_palette_stage_06_main">#41002244</color>
     <color name="style_color_palette_stage_07_main">#7D112233</color>
 
-    <color name="stage_select_01_main">#7D003333</color>
-    <color name="stage_select_02_main">#7D000066</color>
-    <color name="stage_select_03_main">#7D333300</color>
-    <color name="stage_select_04_main">#7D221111</color>
-    <color name="stage_select_05_main">#7D551100</color>
-    <color name="stage_select_06_main">#7D002244</color>
-    <color name="stage_select_07_main">#7D112233</color>
+    <color name="stage_select_content_color_01_value">#7D003333</color>
+    <color name="stage_select_content_color_02_value">#7D000066</color>
+    <color name="stage_select_content_color_03_value">#7D333300</color>
+    <color name="stage_select_content_color_04_value">#7D221111</color>
+    <color name="stage_select_content_color_05_value">#7D551100</color>
+    <color name="stage_select_content_color_06_value">#7D002244</color>
+    <color name="stage_select_content_color_07_value">#7D112233</color>
 
-    <color name="stage_card_01_main">#7D003333</color>
-    <color name="stage_card_02_main">#7D000066</color>
-    <color name="stage_card_03_main">#7D333300</color>
-    <color name="stage_card_04_main">#7D221111</color>
-    <color name="stage_card_05_main">#7D551100</color>
-    <color name="stage_card_06_main">#7D002244</color>
-    <color name="stage_card_07_main">#7D112233</color>
+    <color name="stage_card_color_01_value">#7D003333</color>
+    <color name="stage_card_color_02_value">#7D000066</color>
+    <color name="stage_card_color_03_value">#7D333300</color>
+    <color name="stage_card_color_04_value">#7D221111</color>
+    <color name="stage_card_color_05_value">#7D551100</color>
+    <color name="stage_card_color_06_value">#7D002244</color>
+    <color name="stage_card_color_07_value">#7D112233</color>
 
     <color name="game_stage_01_main">#66003333</color>
     <color name="game_stage_02_main">#7D000066</color>
