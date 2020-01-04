@@ -2078,7 +2078,7 @@
         android:id="@+id/stage_card_screen_main_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/stage_card_bg_01"
+        android:background="@drawable/stage_card_bg_01_image"
         android:orientation="vertical"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -2090,6 +2090,7 @@
             android:id="@+id/stage_card_header_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="8dp"
             android:background="@color/style_color_palette_title_bar_bg"
             android:orientation="horizontal">
 
@@ -2494,7 +2495,7 @@
                         android:orientation="vertical">
 
                         <LinearLayout
-                            android:id="@+id/stage_card_scorecard_predator_layout"
+                            android:id="@+id/stage_card_scorecard_score_01_layout"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="8dp"
@@ -2524,11 +2525,11 @@
                                     android:textSize="18sp" />
 
                                 <ImageView
-                                    android:id="@+id/stage_card_scorecard_predator_badge_image_view"
+                                    android:id="@+id/stage_card_scorecard_badge_01_image_view"
                                     android:layout_width="24dp"
                                     android:layout_height="24dp"
                                     android:layout_margin="4dp"
-                                    android:background="@drawable/stage_select_icon_lock_image"
+                                    android:background="@drawable/badge_bronze"
                                     android:contentDescription="@string/stage_card_scorecard_predator_badge_image_view"
                                     android:visibility="visible" />
 
@@ -2546,7 +2547,7 @@
                         </LinearLayout>
 
                         <LinearLayout
-                            android:id="@+id/stage_card_scorecard_accuracy_layout"
+                            android:id="@+id/stage_card_scorecard_score_02_layout"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="8dp"
@@ -2576,7 +2577,7 @@
                                     android:textSize="18sp" />
 
                                 <ImageView
-                                    android:id="@+id/stage_card_scorecard_accuracy_badge_image_view"
+                                    android:id="@+id/stage_card_scorecard_badge_02_image_view"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_margin="4dp"
@@ -2598,7 +2599,7 @@
                         </LinearLayout>
 
                         <LinearLayout
-                            android:id="@+id/stage_card_scorecard_best_time_layout"
+                            android:id="@+id/stage_card_scorecard_score_03_layout"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="8dp"
@@ -2628,11 +2629,11 @@
                                     android:textSize="18sp" />
 
                                 <ImageView
-                                    android:id="@+id/stage_card_scorecard_time_badge_image_view"
+                                    android:id="@+id/stage_card_scorecard_badge_03_image_view"
                                     android:layout_width="24dp"
                                     android:layout_height="24dp"
                                     android:layout_margin="4dp"
-                                    android:background="@drawable/stage_select_icon_lock_image"
+                                    android:background="@drawable/badge_bronze"
                                     android:contentDescription="@string/stage_card_scorecard_time_badge_image_view"
                                     android:visibility="visible" />
 
@@ -2650,7 +2651,7 @@
                         </LinearLayout>
 
                         <LinearLayout
-                            android:id="@+id/stage_card_scorecard_total_kills_layout"
+                            android:id="@+id/stage_card_scorecard_score_04_layout"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="8dp"
@@ -2680,7 +2681,7 @@
                                     android:textSize="18sp" />
 
                                 <ImageView
-                                    android:id="@+id/stage_card_scorecard_kills_badge_image_view"
+                                    android:id="@+id/stage_card_scorecard_badge_04_image_view"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_margin="4dp"
@@ -2702,7 +2703,7 @@
                         </LinearLayout>
 
                         <LinearLayout
-                            android:id="@+id/stage_card_scorecard_highest_streak_layout"
+                            android:id="@+id/stage_card_scorecard_score_05_layout"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="8dp"
@@ -2732,7 +2733,7 @@
                                     android:textSize="18sp" />
 
                                 <ImageView
-                                    android:id="@+id/stage_card_scorecard_streak_badge_image_view"
+                                    android:id="@+id/stage_card_scorecard_badge_05_image_view"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_margin="4dp"
@@ -2754,7 +2755,7 @@
                         </LinearLayout>
 
                         <LinearLayout
-                            android:id="@+id/stage_card_scorecard_closest_death_layout"
+                            android:id="@+id/stage_card_scorecard_score_06_layout"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="8dp"
@@ -2784,7 +2785,7 @@
                                     android:textSize="18sp" />
 
                                 <ImageView
-                                    android:id="@+id/stage_card_scorecard_death_badge_image_view"
+                                    android:id="@+id/stage_card_scorecard_badge_06_image_view"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_margin="4dp"
@@ -2807,7 +2808,7 @@
                         </LinearLayout>
 
                         <LinearLayout
-                            android:id="@+id/stage_card_scorecard_longest_frenzy_layout"
+                            android:id="@+id/stage_card_scorecard_score_07_layout"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="8dp"
@@ -2837,7 +2838,7 @@
                                     android:textSize="18sp" />
 
                                 <ImageView
-                                    android:id="@+id/stage_card_scorecard_frenzy_badge_image_view"
+                                    android:id="@+id/stage_card_scorecard_badge_07_image_view"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_margin="4dp"
@@ -2860,7 +2861,7 @@
                         </LinearLayout>
 
                         <LinearLayout
-                            android:id="@+id/stage_card_scorecard_most_calm_layout"
+                            android:id="@+id/stage_card_scorecard_score_08_layout"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="8dp"
@@ -2890,7 +2891,7 @@
                                     android:textSize="18sp" />
 
                                 <ImageView
-                                    android:id="@+id/stage_card_scorecard_calm_badge_image_view"
+                                    android:id="@+id/stage_card_scorecard_badge_08_image_view"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_margin="4dp"
@@ -2913,7 +2914,7 @@
                         </LinearLayout>
 
                         <LinearLayout
-                            android:id="@+id/stage_card_scorecard_most_frantic_layout"
+                            android:id="@+id/stage_card_scorecard_score_09_layout"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="8dp"
@@ -2943,7 +2944,7 @@
                                     android:textSize="18sp" />
 
                                 <ImageView
-                                    android:id="@+id/stage_card_scorecard_frantic_badge_image_view"
+                                    android:id="@+id/stage_card_scorecard_badge_09_image_view"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_margin="4dp"
@@ -2975,7 +2976,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:visibility="gone">
+                android:visibility="visible">
 
                 <LinearLayout
                     android:id="@+id/stage_card_complete_title_layout"
@@ -3026,7 +3027,7 @@
                             android:layout_width="64dp"
                             android:layout_height="64dp"
                             android:layout_margin="6dp"
-                            android:background="@drawable/stage_card_boss_01"
+                            android:background="@drawable/stage_card_content_boss_01_image"
                             android:contentDescription="@string/stage_card_stagescore_boss_image_view" />
 
                         <TextView
@@ -3238,7 +3239,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:visibility="visible">
+                android:visibility="gone">
 
                 <LinearLayout
                     android:id="@+id/stage_card_content_title_layout"
@@ -3282,7 +3283,7 @@
                             android:id="@+id/stage_card_boss_image_view"
                             android:layout_width="96dp"
                             android:layout_height="128dp"
-                            android:background="@drawable/stage_card_boss_01"
+                            android:background="@drawable/stage_card_content_boss_01_image"
                             android:contentDescription="@string/stage_card_boss_image_view"
                             android:visibility="visible" />
 
@@ -3331,11 +3332,10 @@
                             android:id="@+id/stage_card_power_image_view"
                             android:layout_width="96dp"
                             android:layout_height="128dp"
-                            android:background="#003333"
+                            android:background="@drawable/stage_card_content_power_01_image"
                             android:contentDescription="@string/stage_card_power_image_view"
                             android:padding="24dp"
-                            android:visibility="visible"
-                            tools:srcCompat="@drawable/game_power_05_icon" />
+                            android:visibility="visible" />
 
                         <LinearLayout
                             android:id="@+id/stage_card_content_power_title_layout"
@@ -3381,7 +3381,7 @@
                             android:id="@+id/stage_card_disaster_image_view"
                             android:layout_width="96dp"
                             android:layout_height="128dp"
-                            android:background="@drawable/stage_card_disaster_01"
+                            android:background="@drawable/stage_card_content_disaster_01_image"
                             android:contentDescription="@string/stage_card_disaster_image_view" />
 
                         <LinearLayout
