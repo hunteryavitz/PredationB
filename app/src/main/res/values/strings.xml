@@ -203,10 +203,13 @@
     <string name="stage_select_score_calm_badge_image_view">stage_select_score_calm_badge_image_view</string>
     <string name="score_frantic_title">Rampager</string>
     <string name="score_frantic_description">ACHIEVE HIGHEST ADRENALINE</string>
+
     <string name="stage_select_score_frantic_badge_image_view">stage_select_score_frantic_badge_image_view</string>
+
     <string name="stage_select_content_stage_01_image_view">stage_select_content_stage_01_image_view</string>
     <string name="stage_select_content_stage_01_status_image_button">stage_select_content_stage_01_status_image_button</string>
     <string name="stage_select_content_stage_status_text_view">stage_select_content_stage_status_text_view</string>
+
     <string name="stage_card_control_prev_image_button">stage_card_control_prev_image_button</string>
     <string name="stage_card_control_play_image_button">stage_card_control_play_image_button</string>
     <string name="stage_card_control_next_image_button">stage_card_control_next_image_button</string>
@@ -218,6 +221,7 @@
     <string name="stage_card_stagescore_image_button">stage_card_stagescore_image_button</string>
     <string name="stage_card_eaten_image_button">stage_card_eaten_image_button</string>
     <string name="stage_card_content_image_button">stage_card_content_image_button</string>
+
     <string name="stage_locked">STAGE LOCKED</string>
     <string name="stage_card_locked_image_view">stage_card_locked_image_view</string>
     <string name="you_were_eaten">YOU WERE EATEN</string>
@@ -247,22 +251,28 @@
     <string name="stage_card_disaster_image_view">stage_card_disaster_image_view</string>
     <string name="stage_card_power_image_view">stage_card_power_image_view</string>
     <string name="stage_status_title">STAGE COMPLETE</string>
-    <string name="stage_card_stagescore_boss_title">STAGE BOSS</string>
-    <string name="stage_card_stagescore_boss_image_view">stage_card_stagescore_boss_image_view</string>
-    <string name="stage_card_stagescore_boss_status">Boss Status</string>
+
     <string name="stage_card_stagescore_disaster_01_image_view">stage_card_stagescore_disaster_01_image_view</string>
     <string name="stage_card_stagescore_disaster_02_image_view">stage_card_stagescore_disaster_02_image_view</string>
     <string name="stage_card_stagescore_disaster_03_image_view">stage_card_stagescore_disaster_03_image_view</string>
     <string name="stage_card_stagescore_disaster_04_image_view">stage_card_stagescore_disaster_04_image_view</string>
     <string name="stage_card_stagescore_disaster_05_image_view">stage_card_stagescore_disaster_05_image_view</string>
-    <string name="stage_card_stagescore_disaster_status">Disaster Status</string>
+
     <string name="stage_card_stagescore_disaster_title">STAGE DISASTER</string>
+    <string name="stage_card_stagescore_disaster_status">Disaster Status</string>
+
     <string name="stage_card_stagescore_predators_title">STAGE PREDATORS</string>
+
     <string name="stage_card_stagescore_predators_01_image_view">stage_card_stagescore_predators_01_image_view</string>
     <string name="stage_card_stagescore_predators_02_image_view">stage_card_stagescore_predators_02_image_view</string>
     <string name="stage_card_stagescore_predators_03_image_view">stage_card_stagescore_predators_03_image_view</string>
     <string name="stage_card_stagescore_predators_04_image_view">stage_card_stagescore_predators_04_image_view</string>
     <string name="stage_card_stagescore_predators_05_image_view">stage_card_stagescore_predators_05_image_view</string>
+
+    <string name="stage_card_stagescore_boss_title">STAGE BOSS</string>
+    <string name="stage_card_stagescore_boss_image_view">stage_card_stagescore_boss_image_view</string>
+    <string name="stage_card_stagescore_boss_status">Boss Status</string>
+
     <string name="stage_card_stagescore_predators_status">Predators Status</string>
     <string name="stage_card_stagescore_foodchain_title">FOOD CHAIN</string>
     <string name="stage_card_stagescore_foodchain_status">Food Chain Status</string>
@@ -302,9 +312,11 @@
     <string name="stage_card_scorecard_frantic_title">Most Frantic</string>
     <string name="stage_card_scorecard_frantic_description">ACHIEVE HIGHEST ADRENALINE</string>
     <string name="stage_card_scorecard_frantic_badge_image_view">stage_card_scorecard_frantic_badge_image_view</string>
+
     <string name="badges">BADGES</string>
 
     <string name="stage_card_scorecard_progress_title_text_view">EXP:</string>
+
     <string name="stage_card_power_01">Fight</string>
     <string name="stage_card_power_02">Breathe</string>
     <string name="stage_card_power_03">Flight</string>
@@ -312,6 +324,7 @@
     <string name="stage_card_power_05">Roar</string>
     <string name="stage_card_power_06">Flow</string>
     <string name="stage_card_power_07">Secret</string>
+
     <string name="stage_card_power_01_description">Destroy every creature with a single sweep</string>
     <string name="stage_card_power_02_description">Slow adrenaline and survive longer</string>
     <string name="stage_card_power_03_description">Run away and live to fight another day</string>
@@ -320,8 +333,8 @@
     <string name="stage_card_power_06_description">Slow time and take the initiative</string>
     <string name="stage_card_power_07_description">Secret power to be seen</string>
 
-
     <string name="game_scene_next_image_button">game_scene_next_image_button</string>
+
     <string name="game_main_boss_image_button">game_main_boss_image_button</string>
     <string name="game_main_creature_01_image_button">game_main_creature_01_image_button</string>
     <string name="game_main_creature_02_image_button">game_main_creature_02_image_button</string>
@@ -332,17 +345,21 @@
     <string name="game_main_stage_image_view">game_main_stage_image_view</string>
     <string name="game_main_scene_image_view">game_main_scene_image_view</string>
     <string name="game_main_spacer_image_button">game_main_spacer_image_button</string>
+
     <string name="game_main_level_marker_03_image_view">game_main_level_marker_03_image_view</string>
     <string name="game_main_level_marker_05_image_view">game_main_level_marker_05_image_view</string>
     <string name="game_main_level_marker_01_image_view">game_main_level_marker_01_image_view</string>
     <string name="game_main_level_marker_02_image_view">game_main_level_marker_02_image_view</string>
     <string name="game_main_level_marker_04_image_view">game_main_level_marker_04_image_view</string>
+
     <string name="game_main_creature_01_splatter_image_view">game_main_creature_01_splatter_image_view</string>
     <string name="game_main_creature_02_splatter_image_view">game_main_creature_02_splatter_image_view</string>
     <string name="game_main_creature_03_splatter_image_view">game_main_creature_03_splatter_image_view</string>
     <string name="game_main_creature_04_splatter_image_view">game_main_creature_04_splatter_image_view</string>
     <string name="game_main_creature_05_splatter_image_view">game_main_creature_05_splatter_image_view</string>
+
     <string name="game_special_creature_image_button">game_special_creature_image_button</string>
+
     <string name="game_power_01_image_view">game_power_01_image_view</string>
     <string name="game_power_02_image_view">game_power_02_image_view</string>
     <string name="game_power_03_image_view">game_power_03_image_view</string>
@@ -351,12 +368,229 @@
     <string name="game_power_06_image_view">game_power_06_image_view</string>
 
     <string name="stage_complete">Stage Complete</string>
+
     <string name="stage_card_boss_status_eaten">Eaten</string>
     <string name="stage_card_boss_status_escaped">Escaped</string>
     <string name="stage_card_boss_status_defeated">Defeated</string>
+
     <string name="stage_select_content_status_ready">Ready</string>
     <string name="stage_select_content_status_locked">Locked</string>
     <string name="stage_select_content_status_complete">Complete</string>
+
+    <string name="stage_card_content_boss_01_title">Wolf</string>
+    <string name="stage_card_content_boss_02_title">Shark</string>
+    <string name="stage_card_content_boss_03_title">Hawk</string>
+    <string name="stage_card_content_boss_04_title">Scorpion</string>
+    <string name="stage_card_content_boss_05_title">Anaconda</string>
+    <string name="stage_card_content_boss_06_title">Yeti</string>
+    <string name="stage_card_content_boss_07_title">Dragon</string>
+
+    <string name="stage_card_content_boss_01_description">ROAMING IN THE FOREST</string>
+    <string name="stage_card_content_boss_02_description">LURKING IN THE OCEAN</string>
+    <string name="stage_card_content_boss_03_description">PERCHED IN THE MOUNTAINS</string>
+    <string name="stage_card_content_boss_04_description">HIDING IN THE DESERT</string>
+    <string name="stage_card_content_boss_05_description">WAITING IN THE JUNGLE</string>
+    <string name="stage_card_content_boss_06_description">WANDERING IN THE TUNDRA</string>
+    <string name="stage_card_content_boss_07_description">SOARING IN THE NETHER</string>
+
+    <string name="stage_card_content_power_01_title">Roar</string>
+    <string name="stage_card_content_power_02_title">Breathe</string>
+    <string name="stage_card_content_power_03_title">Freeze</string>
+    <string name="stage_card_content_power_04_title">Watch</string>
+    <string name="stage_card_content_power_05_title">Run</string>
+    <string name="stage_card_content_power_06_title">Strike</string>
+    <string name="stage_card_content_power_07_title">Capture</string>
+
+    <string name="stage_card_content_power_01_description">REVEAL ALL CREATURES ON THE BOARD</string>
+    <string name="stage_card_content_power_02_description">REGAIN ADRENALINE AND SLOW HEARTBEAT</string>
+    <string name="stage_card_content_power_03_description">SLOW OR STOP TIME FOR A MOMENT</string>
+    <string name="stage_card_content_power_04_description">SURVEY AREA FOR HIDING PREDATORS</string>
+    <string name="stage_card_content_power_05_description">FLEE TO ANOTHER BOARD AREA</string>
+    <string name="stage_card_content_power_06_description">DESTROY ALL VISIBLE CREATURES</string>
+    <string name="stage_card_content_power_07_description">HARNESS PREDATOR FOR TROPHYCASE</string>
+
+    <string name="stage_card_content_disaster_01_title">Lightning Bolt</string>
+    <string name="stage_card_content_disaster_02_title">Whirlpool</string>
+    <string name="stage_card_content_disaster_03_title">Earthquake</string>
+    <string name="stage_card_content_disaster_04_title">Dust Storm</string>
+    <string name="stage_card_content_disaster_05_title">Volcano</string>
+    <string name="stage_card_content_disaster_06_title">Avalanche</string>
+    <string name="stage_card_content_disaster_07_title">Black Hole</string>
+
+    <string name="stage_card_content_disaster_01_description">A POWERFUL LIGHTNING STRIKE THAT DESTROYS ALL</string>
+    <string name="stage_card_content_disaster_02_description">A FORCEFUL WHIRLPOOL OF WATER THAT DESTROYS ALL</string>
+    <string name="stage_card_content_disaster_03_description">A CHAOTIC GROUND SHAKING THAT DESTROYS ALL</string>
+    <string name="stage_card_content_disaster_04_description">A QUICK DUST STORM THAT DESTROYS ALL</string>
+    <string name="stage_card_content_disaster_05_description">AN EXPLOSIVE MOUNTAIN THAT DESTROYS ALL</string>
+    <string name="stage_card_content_disaster_06_description">AN UNEXPECTED SNOW STORM THAT DESTROYS ALL</string>
+    <string name="stage_card_content_disaster_07_description">A HOLE IN SPACE AND TIME THAT DESTROYS ALL</string>
+
+    <string name="stage_card_trophycase_predator_01_01_title">Forest Predator 1</string>
+    <string name="stage_card_trophycase_predator_01_02_title">Ocean Predator 1</string>
+    <string name="stage_card_trophycase_predator_01_03_title">Mountain Predator 1</string>
+    <string name="stage_card_trophycase_predator_01_04_title">Desert Predator 1</string>
+    <string name="stage_card_trophycase_predator_01_05_title">Jungle Predator 1</string>
+    <string name="stage_card_trophycase_predator_01_06_title">Tundra Predator 1</string>
+    <string name="stage_card_trophycase_predator_01_07_title">Nether Predator 1</string>
+
+    <string name="stage_card_trophycase_predator_01_01_description">PREDATOR 1 FOREST</string>
+    <string name="stage_card_trophycase_predator_01_02_description">PREDATOR 1 OCEAN</string>
+    <string name="stage_card_trophycase_predator_01_03_description">PREDATOR 1 MOUNTAIN</string>
+    <string name="stage_card_trophycase_predator_01_04_description">PREDATOR 1 DESERT</string>
+    <string name="stage_card_trophycase_predator_01_05_description">PREDATOR 1 JUNGLE</string>
+    <string name="stage_card_trophycase_predator_01_06_description">PREDATOR 1 TUNDRA</string>
+    <string name="stage_card_trophycase_predator_01_07_description">PREDATOR 1 NETHER</string>
+
+    <string name="stage_card_trophycase_predator_02_01_title">Forest Predator 2</string>
+    <string name="stage_card_trophycase_predator_02_02_title">Ocean Predator 2</string>
+    <string name="stage_card_trophycase_predator_02_03_title">Mountain Predator 2</string>
+    <string name="stage_card_trophycase_predator_02_04_title">Desert Predator 2</string>
+    <string name="stage_card_trophycase_predator_02_05_title">Jungle Predator 2</string>
+    <string name="stage_card_trophycase_predator_02_06_title">Tundra Predator 2</string>
+    <string name="stage_card_trophycase_predator_02_07_title">Nether Predator 2</string>
+
+    <string name="stage_card_trophycase_predator_02_01_description">PREDATOR 2 FOREST</string>
+    <string name="stage_card_trophycase_predator_02_02_description">PREDATOR 2 OCEAN</string>
+    <string name="stage_card_trophycase_predator_02_03_description">PREDATOR 2 MOUNTAIN</string>
+    <string name="stage_card_trophycase_predator_02_04_description">PREDATOR 2 DESERT</string>
+    <string name="stage_card_trophycase_predator_02_05_description">PREDATOR 2 JUNGLE</string>
+    <string name="stage_card_trophycase_predator_02_06_description">PREDATOR 2 TUNDRA</string>
+    <string name="stage_card_trophycase_predator_02_07_description">PREDATOR 2 NETHER</string>
+
+    <string name="stage_card_trophycase_predator_03_01_title">Forest Predator 3</string>
+    <string name="stage_card_trophycase_predator_03_02_title">Ocean Predator 3</string>
+    <string name="stage_card_trophycase_predator_03_03_title">Mountain Predator 3</string>
+    <string name="stage_card_trophycase_predator_03_04_title">Desert Predator 3</string>
+    <string name="stage_card_trophycase_predator_03_05_title">Jungle Predator 3</string>
+    <string name="stage_card_trophycase_predator_03_06_title">Tundra Predator 3</string>
+    <string name="stage_card_trophycase_predator_03_07_title">Nether Predator 3</string>
+
+    <string name="stage_card_trophycase_predator_03_01_description">PREDATOR 3 FOREST</string>
+    <string name="stage_card_trophycase_predator_03_02_description">PREDATOR 3 OCEAN</string>
+    <string name="stage_card_trophycase_predator_03_03_description">PREDATOR 3 MOUNTAIN</string>
+    <string name="stage_card_trophycase_predator_03_04_description">PREDATOR 3 DESERT</string>
+    <string name="stage_card_trophycase_predator_03_05_description">PREDATOR 3 JUNGLE</string>
+    <string name="stage_card_trophycase_predator_03_06_description">PREDATOR 3 TUNDRA</string>
+    <string name="stage_card_trophycase_predator_03_07_description">PREDATOR 3 NETHER</string>
+
+    <string name="stage_card_trophycase_predator_04_01_title">Forest Predator 4</string>
+    <string name="stage_card_trophycase_predator_04_02_title">Ocean Predator 4</string>
+    <string name="stage_card_trophycase_predator_04_03_title">Mountain Predator 4</string>
+    <string name="stage_card_trophycase_predator_04_04_title">Desert Predator 4</string>
+    <string name="stage_card_trophycase_predator_04_05_title">Jungle Predator 4</string>
+    <string name="stage_card_trophycase_predator_04_06_title">Tundra Predator 4</string>
+    <string name="stage_card_trophycase_predator_04_07_title">Nether Predator 4</string>
+
+    <string name="stage_card_trophycase_predator_04_01_description">PREDATOR 4 FOREST</string>
+    <string name="stage_card_trophycase_predator_04_02_description">PREDATOR 4 OCEAN</string>
+    <string name="stage_card_trophycase_predator_04_03_description">PREDATOR 4 MOUNTAIN</string>
+    <string name="stage_card_trophycase_predator_04_04_description">PREDATOR 4 DESERT</string>
+    <string name="stage_card_trophycase_predator_04_05_description">PREDATOR 4 JUNGLE</string>
+    <string name="stage_card_trophycase_predator_04_06_description">PREDATOR 4 TUNDRA</string>
+    <string name="stage_card_trophycase_predator_04_07_description">PREDATOR 4 NETHER</string>
+
+    <string name="stage_card_trophycase_predator_05_01_title">Forest Predator 5</string>
+    <string name="stage_card_trophycase_predator_05_02_title">Ocean Predator 5</string>
+    <string name="stage_card_trophycase_predator_05_03_title">Mountain Predator 5</string>
+    <string name="stage_card_trophycase_predator_05_04_title">Desert Predator 5</string>
+    <string name="stage_card_trophycase_predator_05_05_title">Jungle Predator 5</string>
+    <string name="stage_card_trophycase_predator_05_06_title">Tundra Predator 5</string>
+    <string name="stage_card_trophycase_predator_05_07_title">Nether Predator 5</string>
+
+    <string name="stage_card_trophycase_predator_05_01_description">PREDATOR 5 FOREST</string>
+    <string name="stage_card_trophycase_predator_05_02_description">PREDATOR 5 OCEAN</string>
+    <string name="stage_card_trophycase_predator_05_03_description">PREDATOR 5 MOUNTAIN</string>
+    <string name="stage_card_trophycase_predator_05_04_description">PREDATOR 5 DESERT</string>
+    <string name="stage_card_trophycase_predator_05_05_description">PREDATOR 5 JUNGLE</string>
+    <string name="stage_card_trophycase_predator_05_06_description">PREDATOR 5 TUNDRA</string>
+    <string name="stage_card_trophycase_predator_05_07_description">PREDATOR 5 NETHER</string>
+
+    <string name="stage_card_complete_boss_01_title">Wolf</string>
+    <string name="stage_card_complete_boss_02_title">Shark</string>
+    <string name="stage_card_complete_boss_03_title">Hawk</string>
+    <string name="stage_card_complete_boss_04_title">Scorpion</string>
+    <string name="stage_card_complete_boss_05_title">Python</string>
+    <string name="stage_card_complete_boss_06_title">Yeti</string>
+    <string name="stage_card_complete_boss_07_title">Dragon</string>
+
+    <string name="stage_card_complete_boss_status_eaten">EATEN</string>
+    <string name="stage_card_complete_boss_status_escaped">ESCAPED</string>
+    <string name="stage_card_complete_boss_status_defeated">DEFEATED</string>
+    <string name="stage_card_complete_boss_status_captured">CAPTURED</string>
+
+    <string name="stage_card_complete_disaster_01_title">Lightning Bolt</string>
+    <string name="stage_card_complete_disaster_02_title">Whirlpool</string>
+    <string name="stage_card_complete_disaster_03_title">Earthquake</string>
+    <string name="stage_card_complete_disaster_04_title">Dust Storm</string>
+    <string name="stage_card_complete_disaster_05_title">Volcano</string>
+    <string name="stage_card_complete_disaster_06_title">Avalanche</string>
+    <string name="stage_card_complete_disaster_07_title">Black Hole</string>
+
+    <string name="stage_card_complete_disaster_status_A">1 / 5</string>
+    <string name="stage_card_complete_disaster_status_B">2 / 5</string>
+    <string name="stage_card_complete_disaster_status_C">3 / 5</string>
+    <string name="stage_card_complete_disaster_status_D">4 / 5</string>
+    <string name="stage_card_complete_disaster_status_E">5 / 5</string>
+
+    <string name="stage_card_complete_predator_01_01_title">Forest Predator 01</string>
+    <string name="stage_card_complete_predator_01_02_title">Ocean Predator 01</string>
+    <string name="stage_card_complete_predator_01_03_title">Mountain Predator 01</string>
+    <string name="stage_card_complete_predator_01_04_title">Desert Predator 01</string>
+    <string name="stage_card_complete_predator_01_05_title">Jungle Predator 01</string>
+    <string name="stage_card_complete_predator_01_06_title">Tundra Predator 01</string>
+    <string name="stage_card_complete_predator_01_07_title">Nether Predator 01</string>
+
+    <string name="stage_card_complete_predator_02_01_title">Forest Predator 02</string>
+    <string name="stage_card_complete_predator_02_02_title">Ocean Predator 02</string>
+    <string name="stage_card_complete_predator_02_03_title">Mountain Predator 02</string>
+    <string name="stage_card_complete_predator_02_04_title">Desert Predator 02</string>
+    <string name="stage_card_complete_predator_02_05_title">Jungle Predator 02</string>
+    <string name="stage_card_complete_predator_02_06_title">Tundra Predator 02</string>
+    <string name="stage_card_complete_predator_02_07_title">Nether Predator 02</string>
+
+    <string name="stage_card_complete_predator_03_01_title">Forest Predator 03</string>
+    <string name="stage_card_complete_predator_03_02_title">Ocean Predator 03</string>
+    <string name="stage_card_complete_predator_03_03_title">Mountain Predator 03</string>
+    <string name="stage_card_complete_predator_03_04_title">Desert Predator 03</string>
+    <string name="stage_card_complete_predator_03_05_title">Jungle Predator 03</string>
+    <string name="stage_card_complete_predator_03_06_title">Tundra Predator 03</string>
+    <string name="stage_card_complete_predator_03_07_title">Nether Predator 03</string>
+
+    <string name="stage_card_complete_predator_04_01_title">Forest Predator 04</string>
+    <string name="stage_card_complete_predator_04_02_title">Ocean Predator 04</string>
+    <string name="stage_card_complete_predator_04_03_title">Mountain Predator 04</string>
+    <string name="stage_card_complete_predator_04_04_title">Desert Predator 04</string>
+    <string name="stage_card_complete_predator_04_05_title">Jungle Predator 04</string>
+    <string name="stage_card_complete_predator_04_06_title">Tundra Predator 04</string>
+    <string name="stage_card_complete_predator_04_07_title">Nether Predator 04</string>
+
+    <string name="stage_card_complete_predator_05_01_title">Forest Predator 05</string>
+    <string name="stage_card_complete_predator_05_02_title">Ocean Predator 05</string>
+    <string name="stage_card_complete_predator_05_03_title">Mountain Predator 05</string>
+    <string name="stage_card_complete_predator_05_04_title">Desert Predator 05</string>
+    <string name="stage_card_complete_predator_05_05_title">Jungle Predator 05</string>
+    <string name="stage_card_complete_predator_05_06_title">Tundra Predator 05</string>
+    <string name="stage_card_complete_predator_05_07_title">Nether Predator 05</string>
+
+    <string name="stage_card_complete_predator_status_A">1 / 5</string>
+    <string name="stage_card_complete_predator_status_B">2 / 5</string>
+    <string name="stage_card_complete_predator_status_C">3 / 5</string>
+    <string name="stage_card_complete_predator_status_D">4 / 5</string>
+    <string name="stage_card_complete_predator_status_E">5 / 5</string>
+
+    <string name="stage_card_complete_foodchain_01_title">Forest Food Chain</string>
+    <string name="stage_card_complete_foodchain_02_title">Ocean Food Chain</string>
+    <string name="stage_card_complete_foodchain_03_title">Mountain Food Chain</string>
+    <string name="stage_card_complete_foodchain_04_title">Desert Food Chain</string>
+    <string name="stage_card_complete_foodchain_05_title">Jungle Food Chain</string>
+    <string name="stage_card_complete_foodchain_06_title">Tundra Food Chain</string>
+    <string name="stage_card_complete_foodchain_07_title">Nether Food Chain</string>
+
+    <string name="stage_card_complete_foodchain_status_A">A</string>
+    <string name="stage_card_complete_foodchain_status_B">B</string>
+    <string name="stage_card_complete_foodchain_status_C">C</string>
+    <string name="stage_card_complete_foodchain_status_D">D</string>
+    <string name="stage_card_complete_foodchain_status_E">E</string>
 
 
 </resources>

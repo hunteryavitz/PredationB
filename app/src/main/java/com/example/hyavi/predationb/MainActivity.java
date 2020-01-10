@@ -1305,26 +1305,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mStageCardEatenLayout = findViewById(R.id.stage_card_eaten_layout);
 
         //
-        mStageTopPredatorBadgeImageView = findViewById(R.id.stage_card_scorecard_predator_badge_image_view);
-        mStageTopAccuracyBadgeImageView = findViewById(R.id.stage_card_scorecard_accuracy_badge_image_view);
-        mStageTopBestTimeBadgeImageView = findViewById(R.id.stage_card_scorecard_time_badge_image_view);
-        mStageTotalCreatureKillsBadgeImageView = findViewById(R.id.stage_card_scorecard_kills_badge_image_view);
-        mStageTopHighStreakBadgeImageView = findViewById(R.id.stage_card_scorecard_streak_badge_image_view);
-        mStageTopCloseDeathBadgeImageView = findViewById(R.id.stage_card_scorecard_death_badge_image_view);
-        mStageTopLongFrenzyBadgeImageView = findViewById(R.id.stage_card_scorecard_frenzy_badge_image_view);
-        mStageTopMostCalmBadgeImageView = findViewById(R.id.stage_card_scorecard_calm_badge_image_view);
-        mStageTopMostFranticBadgeImageView = findViewById(R.id.stage_card_scorecard_frantic_badge_image_view);
+        mStageTopPredatorBadgeImageView = findViewById(R.id.stage_card_scorecard_badge_01_image_view);
+        mStageTopAccuracyBadgeImageView = findViewById(R.id.stage_card_scorecard_badge_02_image_view);
+        mStageTopBestTimeBadgeImageView = findViewById(R.id.stage_card_scorecard_badge_03_image_view);
+        mStageTotalCreatureKillsBadgeImageView = findViewById(R.id.stage_card_scorecard_badge_04_image_view);
+        mStageTopHighStreakBadgeImageView = findViewById(R.id.stage_card_scorecard_badge_05_image_view);
+        mStageTopCloseDeathBadgeImageView = findViewById(R.id.stage_card_scorecard_badge_06_image_view);
+        mStageTopLongFrenzyBadgeImageView = findViewById(R.id.stage_card_scorecard_badge_07_image_view);
+        mStageTopMostCalmBadgeImageView = findViewById(R.id.stage_card_scorecard_badge_08_image_view);
+        mStageTopMostFranticBadgeImageView = findViewById(R.id.stage_card_scorecard_badge_09_image_view);
 
         //
-        mStageCardTopPredatorLayout = findViewById(R.id.stage_card_scorecard_predator_layout);
-        mStageCardTopAccuracyLayout = findViewById(R.id.stage_card_scorecard_accuracy_layout);
-        mStageCardTopTimeLayout = findViewById(R.id.stage_card_scorecard_best_time_layout);
-        mStageCardTopEatenLayout = findViewById(R.id.stage_card_scorecard_total_kills_layout);
-        mStageCardTopStreakLayout = findViewById(R.id.stage_card_scorecard_highest_streak_layout);
-        mStageCardTopDeathLayout = findViewById(R.id.stage_card_scorecard_closest_death_layout);
-        mStageCardTopFrenzyLayout = findViewById(R.id.stage_card_scorecard_longest_frenzy_layout);
-        mStageCardTopCalmLayout = findViewById(R.id.stage_card_scorecard_most_calm_layout);
-        mStageCardTopFranticLayout = findViewById(R.id.stage_card_scorecard_most_frantic_layout);
+        mStageCardTopPredatorLayout = findViewById(R.id.stage_card_scorecard_score_01_layout);
+        mStageCardTopAccuracyLayout = findViewById(R.id.stage_card_scorecard_score_02_layout);
+        mStageCardTopTimeLayout = findViewById(R.id.stage_card_scorecard_score_03_layout);
+        mStageCardTopEatenLayout = findViewById(R.id.stage_card_scorecard_score_04_layout);
+        mStageCardTopStreakLayout = findViewById(R.id.stage_card_scorecard_score_05_layout);
+        mStageCardTopDeathLayout = findViewById(R.id.stage_card_scorecard_score_06_layout);
+        mStageCardTopFrenzyLayout = findViewById(R.id.stage_card_scorecard_score_07_layout);
+        mStageCardTopCalmLayout = findViewById(R.id.stage_card_scorecard_score_08_layout);
+        mStageCardTopFranticLayout = findViewById(R.id.stage_card_scorecard_score_09_layout);
 
         // Stage card - switch ui
         mStageCardControlPrevImageButton = findViewById(R.id.stage_card_control_prev_image_button);
@@ -5717,19 +5717,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (mBittenMeter < 0) {
             mBittenMeter = 0;
         }
-        if (mBittenMeter > 19) {
-            mBittenMeter = 19;
+        if (mBittenMeter > 100) {
+            mBittenMeter = 100;
         }
-        if (mBittenMeter < ALPHA_INDEX.length) {
-
-            //
-            double bitten_alpha = ALPHA_INDEX_INVERSE[mBittenMeter];
-            mGameBittenLayout.setAlpha((float) bitten_alpha);
-        } else {
-
-            //
-            mGameBittenLayout.setAlpha(0);
-        }
+            mGameBittenLayout.setAlpha((float) (mBittenMeter / 100));
     }
 
     // Reset tunnel
@@ -8975,7 +8966,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     //-- STAGE SELECT -->
-
     //
     final private static int[] STAGE_SELECT_CONTENT_CARD_LAYOUTS = {
 
@@ -9180,138 +9170,156 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     };
 
     //
-    final private static int[] STAGE_CARD_TROPHYCASE_CREATURE_01_IMAGES = {
+    final private static int[] STAGE_CARD_TROPHYCASE_PREDATOR_01_IMAGES = {
 
             //
-            R.drawable.stage_card_trophycase_creature_01_01_image, R.drawable.stage_card_trophycase_creature_01_02_image, R.drawable.stage_card_trophycase_creature_01_03_image,
-            R.drawable.stage_card_trophycase_creature_01_04_image, R.drawable.stage_card_trophycase_creature_01_05_image, R.drawable.stage_card_trophycase_creature_01_06_image,
-            R.drawable.stage_card_trophycase_creature_01_07_image
+            R.drawable.stage_card_trophycase_predator_01_01_image, R.drawable.stage_card_trophycase_predator_01_02_image, R.drawable.stage_card_trophycase_predator_01_03_image,
+            R.drawable.stage_card_trophycase_predator_01_04_image, R.drawable.stage_card_trophycase_predator_01_05_image, R.drawable.stage_card_trophycase_predator_01_06_image,
+            R.drawable.stage_card_trophycase_predator_01_07_image
     };
 
     //
-    final private static int[] STAGE_CARD_TROPHYCASE_CREATURE_01_TITLE_STRINGS = {
+    final private static int[] STAGE_CARD_TROPHYCASE_PREDATOR_01_TITLE_STRINGS = {
 
             //
-            R.string.stage_card_trophycase_creature_01_01_title, R.string.stage_card_trophycase_creature_01_02_title, R.string.stage_card_trophycase_creature_01_03_title,
-            R.string.stage_card_trophycase_creature_01_04_title, R.string.stage_card_tropycase_creature_01_05_title, R.string.stage_card_trophycase_creature_01_06_title,
-            R.string.stage_card_trophycase_creature_01_07_title
+            R.string.stage_card_trophycase_predator_01_01_title, R.string.stage_card_trophycase_predator_01_02_title, R.string.stage_card_trophycase_predator_01_03_title,
+            R.string.stage_card_trophycase_predator_01_04_title, R.string.stage_card_trophycase_predator_01_05_title, R.string.stage_card_trophycase_predator_01_06_title,
+            R.string.stage_card_trophycase_predator_01_07_title
     };
 
     //
-    final private static int[] STAGE_CARD_TROPHYCASE_CREATURE_01_DESCRIPTION_STRINGS = {
+    final private static int[] STAGE_CARD_TROPHYCASE_PREDATOR_01_DESCRIPTION_STRINGS = {
 
             //
-            R.string.stage_card_trophycase_creature_01_01_description, R.string.stage_card_trophycase_creature_01_02_description, R.string.stage_card_trophycase_creature_01_03_description,
-            R.string.stage_card_trophycase_creature_01_04_description, R.string.stage_card_trophycase_creature_01_05_description, R.string.stage_card_trophycase_creature_01_06_description,
-            R.string.stage_card_trophycase_creature_01_07_description
+            R.string.stage_card_trophycase_predator_01_01_description, R.string.stage_card_trophycase_predator_01_02_description, R.string.stage_card_trophycase_predator_01_03_description,
+            R.string.stage_card_trophycase_predator_01_04_description, R.string.stage_card_trophycase_predator_01_05_description, R.string.stage_card_trophycase_predator_01_06_description,
+            R.string.stage_card_trophycase_predator_01_07_description
     };
 
     //
-    final private static int[] STAGE_CARD_TROPHYCASE_CREATURE_02_IMAGES = {
+    final private static int[] STAGE_CARD_TROPHYCASE_PREDATOR_02_IMAGES = {
 
             //
-            R.drawable.stage_card_trophycase_creature_02_01_image, R.drawable.stage_card_trophycase_creature_02_02_image, R.drawable.stage_card_trophycase_creature_02_03_image,
-            R.drawable.stage_card_trophycase_creature_02_04_image, R.drawable.stage_card_trophycase_creature_02_05_image, R.drawable.stage_card_trophycase_creature_02_06_image,
-            R.drawable.stage_card_trophycase_creature_02_07_image
+            R.drawable.stage_card_trophycase_predator_02_01_image, R.drawable.stage_card_trophycase_predator_02_02_image, R.drawable.stage_card_trophycase_predator_02_03_image,
+            R.drawable.stage_card_trophycase_predator_02_04_image, R.drawable.stage_card_trophycase_predator_02_05_image, R.drawable.stage_card_trophycase_predator_02_06_image,
+            R.drawable.stage_card_trophycase_predator_02_07_image
     };
 
     //
-    final private static int[] STAGE_CARD_TROPHYCASE_CREATURE_02_TITLE_STRINGS = {
+    final private static int[] STAGE_CARD_TROPHYCASE_PREDATOR_02_TITLE_STRINGS = {
 
             //
-            R.string.stage_card_trophycase_creature_02_01_title, R.string.stage_card_trophycase_creature_02_02_title, R.string.stage_card_trophycase_creature_02_03_title,
-            R.string.stage_card_trophycase_creature_02_04_title, R.string.stage_card_trophycase_creature_02_05_title, R.string.stage_card_trophycase_creature_02_06_title,
-            R.string.stage_card_trophycase_creature_02_07_title
+            R.string.stage_card_trophycase_predator_02_01_title, R.string.stage_card_trophycase_predator_02_02_title, R.string.stage_card_trophycase_predator_02_03_title,
+            R.string.stage_card_trophycase_predator_02_04_title, R.string.stage_card_trophycase_predator_02_05_title, R.string.stage_card_trophycase_predator_02_06_title,
+            R.string.stage_card_trophycase_predator_02_07_title
     };
 
     //
-    final private static int[] STAGE_CARD_TROPHYCASE_CREATURE_02_DESCRIPTION_STRINGS = {
+    final private static int[] STAGE_CARD_TROPHYCASE_PREDATOR_02_DESCRIPTION_STRINGS = {
 
             //
-            R.string.stage_card_trophycase_creature_02_01_description, R.string.stage_card_trophycase_creature_02_02_description, R.string.stage_card_trophycase_creature_02_03_description,
-            R.string.stage_card_trophycase_creature_02_04_description, R.string.stage_card_trophycase_creature_02_05_description, R.string.stage_card_trophycase_creature_02_06_description,
-            R.string.stage_card_trophycase_creature_02_07_description
+            R.string.stage_card_trophycase_predator_02_01_description, R.string.stage_card_trophycase_predator_02_02_description, R.string.stage_card_trophycase_predator_02_03_description,
+            R.string.stage_card_trophycase_predator_02_04_description, R.string.stage_card_trophycase_predator_02_05_description, R.string.stage_card_trophycase_predator_02_06_description,
+            R.string.stage_card_trophycase_predator_02_07_description
     };
 
     //
-    final private static int[] STAGE_CARD_TROPHYCASE_CREATURE_03_IMAGES = {
+    final private static int[] STAGE_CARD_TROPHYCASE_PREDATOR_03_IMAGES = {
 
             //
-            R.drawable.stage_card_trophycase_creature_03_01_image, R.drawable.stage_card_trophycase_creature_03_02_image, R.drawable.stage_card_trophycase_creature_03_03_image,
-            R.drawable.stage_card_trophycase_creature_03_04_image, R.drawable.stage_card_trophycased_creature_03_05_image, R.drawable.stage_card_trophycase_creature_03_06_image,
-            R.drawable.stage_card_trophycase_creature_03_07_image
+            R.drawable.stage_card_trophycase_predator_03_01_image, R.drawable.stage_card_trophycase_predator_03_02_image, R.drawable.stage_card_trophycase_predator_03_03_image,
+            R.drawable.stage_card_trophycase_predator_03_04_image, R.drawable.stage_card_trophycase_predator_03_05_image, R.drawable.stage_card_trophycase_predator_03_06_image,
+            R.drawable.stage_card_trophycase_predator_03_07_image
     };
 
     //
-    final private static int[] STAGE_CARD_TROPHYCASE_CREATURE_03_TITLE_STRINGS = {
+    final private static int[] STAGE_CARD_TROPHYCASE_PREDATOR_03_TITLE_STRINGS = {
 
             //
-            R.string.stage_card_trophycase_creature_03_01_title, R.string.stage_card_trophycase_creature_03_02_title, R.string.stage_card_trophycase_creature_03_03_title,
-            R.string.stage_card_trophycase_creature_03_04_title, R.string.stage_card_trophycase_creature_03_05_title, R.string.stage_card_trophycase_creature_03_06_title,
-            R.string.stage_card_trophycase_creature_03_07_title
+            R.string.stage_card_trophycase_predator_03_01_title, R.string.stage_card_trophycase_predator_03_02_title, R.string.stage_card_trophycase_predator_03_03_title,
+            R.string.stage_card_trophycase_predator_03_04_title, R.string.stage_card_trophycase_predator_03_05_title, R.string.stage_card_trophycase_predator_03_06_title,
+            R.string.stage_card_trophycase_predator_03_07_title
     };
 
     //
-    final private static int[] STAGE_CARD_TROPHYCASE_CREATURE_03_DESCRIPTION_STRINGS = {
+    final private static int[] STAGE_CARD_TROPHYCASE_PREDATOR_03_DESCRIPTION_STRINGS = {
 
             //
-            R.string.stage_card_trophycase_creature_03_01_description, R.string.stage_card_trophycase_creature_03_02_description, R.string.stage_card_trophycase_creature_03_03_description,
-            R.string.stage_card_trophycase_creature_03_04_description, R.string.stage_card_trophycase_creature_03_05_description, R.string.stage_card_trophycase_creature_03_06_description,
-            R.string.stage_card_trophycase_creature_03_07_description
+            R.string.stage_card_trophycase_predator_03_01_description, R.string.stage_card_trophycase_predator_03_02_description, R.string.stage_card_trophycase_predator_03_03_description,
+            R.string.stage_card_trophycase_predator_03_04_description, R.string.stage_card_trophycase_predator_03_05_description, R.string.stage_card_trophycase_predator_03_06_description,
+            R.string.stage_card_trophycase_predator_03_07_description
     };
 
     //
-    final private static int[] STAGE_CARD_TROPHYCASE_CREATURE_04_IMAGES = {
+    final private static int[] STAGE_CARD_TROPHYCASE_PREDATOR_04_IMAGES = {
 
             //
-            R.drawable.stage_card_trophycase_creature_04_01_image, R.drawable.stage_card_trophycase_creature_04_02_image, R.drawable.stage_card_trophycase_creature_04_03_image,
-            R.drawable.stage_card_trophycase_creature_04_04_image, R.drawable.stage_card_trophycase_creature_04_05_image, R.drawable.stage_card_trophycase_creature_04_06_image,
-            R.drawable.stage_card_trophycase_creature_04_07_image
+            R.drawable.stage_card_trophycase_predator_04_01_image, R.drawable.stage_card_trophycase_predator_04_02_image, R.drawable.stage_card_trophycase_predator_04_03_image,
+            R.drawable.stage_card_trophycase_predator_04_04_image, R.drawable.stage_card_trophycase_predator_04_05_image, R.drawable.stage_card_trophycase_predator_04_06_image,
+            R.drawable.stage_card_trophycase_predator_04_07_image
     };
 
     //
-    final private static int[] STAGE_CARD_TROPHYCASE_CREATURE_04_TITLE_STRINGS = {
+    final private static int[] STAGE_CARD_TROPHYCASE_PREDATOR_04_TITLE_STRINGS = {
 
             //
-            R.string.stage_card_trophycase_creature_04_01_title, R.string.stage_card_trophycase_creature_04_02_title, R.string.stage_card_trophycase_creature_04_03_title,
-            R.string.stage_card_trophycase_creature_04_04_title, R.string.stage_card_trophycase_creature_04_05_title, R.string.stage_card_trophycase_creature_04_06_title,
-            R.string.stage_card_trophycase_creature_04_07_title
+            R.string.stage_card_trophycase_predator_04_01_title, R.string.stage_card_trophycase_predator_04_02_title, R.string.stage_card_trophycase_predator_04_03_title,
+            R.string.stage_card_trophycase_predator_04_04_title, R.string.stage_card_trophycase_predator_04_05_title, R.string.stage_card_trophycase_predator_04_06_title,
+            R.string.stage_card_trophycase_predator_04_07_title
     };
 
     //
-    final private static int[] STAGE_CARD_TROPHYCASE_CREATURE_04_DESCRIPTION_STRINGS = {
+    final private static int[] STAGE_CARD_TROPHYCASE_PREDATOR_04_DESCRIPTION_STRINGS = {
 
             //
-            R.string.stage_card_trophycase_creature_04_01_description, R.string.stage_card_trophycase_creature_04_02_description, R.string.stage_card_trophycase_creature_04_03_description,
-            R.string.stage_card_trophycase_creature_04_04_description, R.string.stage_card_trophycase_creature_04_05_description, R.string.stage_card_trophycase_creature_04_06_description,
-            R.string.stage_card_trophycase_creature_04_07_description
+            R.string.stage_card_trophycase_predator_04_01_description, R.string.stage_card_trophycase_predator_04_02_description, R.string.stage_card_trophycase_predator_04_03_description,
+            R.string.stage_card_trophycase_predator_04_04_description, R.string.stage_card_trophycase_predator_04_05_description, R.string.stage_card_trophycase_predator_04_06_description,
+            R.string.stage_card_trophycase_predator_04_07_description
     };
 
     //
-    final private static int[] STAGE_CARD_TROPHYCASE_CREATURE_05_IMAGES = {
+    final private static int[] STAGE_CARD_TROPHYCASE_PREDATOR_05_IMAGES = {
 
             //
-            R.drawable.stage_card_trophycase_creature_05_01_image, R.drawable.stage_card_trophycase_creature_05_02_image, R.drawable.stage_card_trophycase_creature_05_03_image,
-            R.drawable.stage_card_trophycase_creature_05_04_image, R.drawable.stage_card_trophycase_creature_05_05_image, R.drawable.stage_card_trophycase_creature_05_06_image,
-            R.drawable.stage_card_trophycase_creature_05_07_image
+            R.drawable.stage_card_trophycase_predator_05_01_image, R.drawable.stage_card_trophycase_predator_05_02_image, R.drawable.stage_card_trophycase_predator_05_03_image,
+            R.drawable.stage_card_trophycase_predator_05_04_image, R.drawable.stage_card_trophycase_predator_05_05_image, R.drawable.stage_card_trophycase_predator_05_06_image,
+            R.drawable.stage_card_trophycase_predator_05_07_image
     };
 
     //
-    final private static int[] STAGE_CARD_TROPHYCASE_CREATURE_05_TITLE_STRINGS = {
+    final private static int[] STAGE_CARD_TROPHYCASE_PREDATOR_05_TITLE_STRINGS = {
 
             //
-            R.string.stage_card_trophycase_creature_05_01_title, R.string.stage_card_trophycase_creature_05_02_title, R.string.stage_card_trophycase_creature_05_03_title,
-            R.string.stage_card_trophycase_creature_05_04_title, R.string.stage_card_trophycase_creature_05_05_title, R.string.stage_card_trophycase_creature_05_06_title,
-            R.string.stage_card_trophycase_creature_05_07_title
+            R.string.stage_card_trophycase_predator_05_01_title, R.string.stage_card_trophycase_predator_05_02_title, R.string.stage_card_trophycase_predator_05_03_title,
+            R.string.stage_card_trophycase_predator_05_04_title, R.string.stage_card_trophycase_predator_05_05_title, R.string.stage_card_trophycase_predator_05_06_title,
+            R.string.stage_card_trophycase_predator_05_07_title
     };
 
     //
-    final private static int[] STAGE_CARD_TROPHYCASE_CREATURE_05_DESCRIPTION_STRINGS = {
+    final private static int[] STAGE_CARD_TROPHYCASE_PREDATOR_05_DESCRIPTION_STRINGS = {
 
             //
-            R.string.stage_card_trophycase_creature_05_01_description, R.string.stage_card_trophycase_creature_05_02_description, R.string.stage_card_trophycase_creature_05_03_description,
-            R.string.stage_card_trophycase_creature_05_04_description, R.string.stage_card_trophycase_creature_05_05_description, R.string.stage_card_trophycase_creature_05_06_description,
-            R.string.stage_card_trophycase_creature_05_07_description
+            R.string.stage_card_trophycase_predator_05_01_description, R.string.stage_card_trophycase_predator_05_02_description, R.string.stage_card_trophycase_predator_05_03_description,
+            R.string.stage_card_trophycase_predator_05_04_description, R.string.stage_card_trophycase_predator_05_05_description, R.string.stage_card_trophycase_predator_05_06_description,
+            R.string.stage_card_trophycase_predator_05_07_description
+    };
+
+    //
+    final private static int[] STAGE_CARD_COMPLETE_BOSS_TITLE_STRINGS = {
+
+            //
+            R.string.stage_card_complete_boss_01_title, R.string.stage_card_complete_boss_02_title, R.string.stage_card_complete_boss_03_title,
+            R.string.stage_card_complete_boss_04_title, R.string.stage_card_complete_boss_05_title, R.string.stage_card_complete_boss_06_title,
+            R.string.stage_card_complete_boss_07_title
+    };
+
+    //
+    final private static int[] STAGE_CARD_COMPLETE_BOSS_IMAGES = {
+
+            //
+            R.drawable.stage_card_complete_boss_01_image, R.drawable.stage_card_complete_boss_02_image, R.drawable.stage_card_complete_boss_03_image,
+            R.drawable.stage_card_complete_boss_04_image, R.drawable.stage_card_complete_boss_05_image, R.drawable.stage_card_complete_boss_06_image,
+            R.drawable.stage_card_complete_boss_07_image
     };
 
     //
@@ -9323,11 +9331,36 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     };
 
     //
+    final private static int[] STAGE_CARD_COMPLETE_DISASTER_TITLE_STRINGS = {
+
+            //
+            R.string.stage_card_complete_disaster_01_title, R.string.stage_card_complete_disaster_02_title, R.string.stage_card_complete_disaster_03_title,
+            R.string.stage_card_complete_disaster_04_title, R.string.stage_card_complete_disaster_05_title, R.string.stage_card_complete_disaster_06_title,
+            R.string.stage_card_complete_disaster_07_title
+    };
+
+    //
     final private static int[] STAGE_CARD_COMPLETE_DISASTER_IMAGE_VIEWS = {
 
             //
             R.id.stage_card_complete_disaster_01_image_view, R.id.stage_card_complete_disaster_02_image_view, R.id.stage_card_complete_disaster_03_image_view,
             R.id.stage_card_complete_disaster_04_image_view, R.id.stage_card_complete_disaster_05_image_view
+    };
+
+    final private static int[] STAGE_CARD_COMPLETE_DISASTER_IMAGES = {
+
+            //
+            R.drawable.stage_card_complete_disaster_01_image, R.drawable.stage_card_complete_disaster_02_image, R.drawable.stage_card_complete_disaster_03_image,
+            R.drawable.stage_card_complete_disaster_04_image, R.drawable.stage_card_complete_disaster_05_image, R.drawable.stage_card_complete_disaster_06_image,
+            R.drawable.stage_card_complete_disaster_07_image
+    };
+
+    //
+    final private static int[] STAGE_CARD_COMPLETE_DISASTER_STATUS_STRINGS = {
+
+            //
+            R.string.stage_card_complete_disaster_status_A, R.string.stage_card_complete_disaster_status_B, R.string.stage_card_complete_disaster_status_C,
+            R.string.stage_card_complete_disaster_status_D, R.string.stage_card_complete_disaster_status_E
     };
 
     //
@@ -9336,6 +9369,116 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             //
             R.id.stage_card_complete_predator_01_image_view, R.id.stage_card_complete_predator_02_image_view, R.id.stage_card_complete_predator_03_image_view,
             R.id.stage_card_complete_predator_04_image_view, R.id.stage_card_complete_predator_05_image_view
+    };
+
+    final private static int[] STAGE_CARD_COMPLETE_PREDATOR_01_IMAGES = {
+
+            //
+            R.drawable.stage_card_complete_predator_01_01_image, R.drawable.stage_card_complete_predator_01_02_image, R.drawable.stage_card_complete_predator_01_03_image,
+            R.drawable.stage_card_complete_predator_01_04_image, R.drawable.stage_card_complete_predator_01_05_image, R.drawable.stage_card_complete_predator_01_06_image,
+            R.drawable.stage_card_complete_predator_01_07_image
+    };
+
+    //
+    final private static int[] STAGE_CARD_COMPLETE_PREDATOR_01_TITLE_STRINGS = {
+
+            //
+            R.string.stage_card_complete_predator_01_01_title, R.string.stage_card_complete_predator_01_02_title, R.string.stage_card_complete_predator_01_03_title,
+            R.string.stage_card_complete_predator_01_04_title, R.string.stage_card_complete_predator_01_05_title, R.string.stage_card_complete_predator_01_06_title,
+            R.string.stage_card_complete_predator_01_07_title
+    };
+
+    final private static int[] STAGE_CARD_COMPLETE_PREDATOR_02_IMAGES = {
+
+            //
+            R.drawable.stage_card_complete_predator_02_01_image, R.drawable.stage_card_complete_predator_02_02_image, R.drawable.stage_card_complete_predator_02_03_image,
+            R.drawable.stage_card_complete_predator_02_04_image, R.drawable.stage_card_complete_predator_02_05_image, R.drawable.stage_card_complete_predator_02_06_image,
+            R.drawable.stage_card_complete_predator_02_07_image
+    };
+
+    //
+    final private static int[] STAGE_CARD_COMPLETE_PREDATOR_02_TITLE_STRINGS = {
+
+            //
+            R.string.stage_card_complete_predator_02_01_title, R.string.stage_card_complete_predator_02_02_title, R.string.stage_card_complete_predator_02_03_title,
+            R.string.stage_card_complete_predator_02_04_title, R.string.stage_card_complete_predator_02_05_title, R.string.stage_card_complete_predator_02_06_title,
+            R.string.stage_card_complete_predator_02_07_title
+    };
+
+    final private static int[] STAGE_CARD_COMPLETE_PREDATOR_03_IMAGES = {
+
+            //
+            R.drawable.stage_card_complete_predator_03_01_image, R.drawable.stage_card_complete_predator_03_02_image, R.drawable.stage_card_complete_predator_03_03_image,
+            R.drawable.stage_card_complete_predator_03_04_image, R.drawable.stage_card_complete_predator_03_05_image, R.drawable.stage_card_complete_predator_03_06_image,
+            R.drawable.stage_card_complete_predator_03_07_image
+    };
+
+    //
+    final private static int[] STAGE_CARD_COMPLETE_PREDATOR_03_TITLE_STRINGS = {
+
+            //
+            R.string.stage_card_complete_predator_03_01_title, R.string.stage_card_complete_predator_03_02_title, R.string.stage_card_complete_predator_03_03_title,
+            R.string.stage_card_complete_predator_03_04_title, R.string.stage_card_complete_predator_03_05_title, R.string.stage_card_complete_predator_03_06_title,
+            R.string.stage_card_complete_predator_03_07_title
+    };
+
+    final private static int[] STAGE_CARD_COMPLETE_PREDATOR_04_IMAGES = {
+
+            //
+            R.drawable.stage_card_complete_predator_04_01_image, R.drawable.stage_card_complete_predator_04_02_image, R.drawable.stage_card_complete_predator_04_03_image,
+            R.drawable.stage_card_complete_predator_04_04_image, R.drawable.stage_card_complete_predator_04_05_image, R.drawable.stage_card_complete_predator_04_06_image,
+            R.drawable.stage_card_complete_predator_04_07_image
+    };
+
+    //
+    final private static int[] STAGE_CARD_COMPLETE_PREDATOR_04_TITLE_STRINGS = {
+
+            //
+            R.string.stage_card_complete_predator_04_01_title, R.string.stage_card_complete_predator_04_02_title, R.string.stage_card_complete_predator_04_03_title,
+            R.string.stage_card_complete_predator_04_04_title, R.string.stage_card_complete_predator_04_05_title, R.string.stage_card_complete_predator_04_06_title,
+            R.string.stage_card_complete_predator_04_07_title
+    };
+
+    final private static int[] STAGE_CARD_COMPLETE_PREDATOR_05_IMAGES = {
+
+            //
+            R.drawable.stage_card_complete_predator_05_01_image, R.drawable.stage_card_complete_predator_05_02_image, R.drawable.stage_card_complete_predator_05_03_image,
+            R.drawable.stage_card_complete_predator_05_04_image, R.drawable.stage_card_complete_predator_05_05_image, R.drawable.stage_card_complete_predator_05_06_image,
+            R.drawable.stage_card_complete_predator_05_07_image
+    };
+
+    //
+    final private static int[] STAGE_CARD_COMPLETE_PREDATOR_05_TITLE_STRINGS = {
+
+            //
+            R.string.stage_card_complete_predator_05_01_title, R.string.stage_card_complete_predator_05_02_title, R.string.stage_card_complete_predator_05_03_title,
+            R.string.stage_card_complete_predator_05_04_title, R.string.stage_card_complete_predator_05_05_title, R.string.stage_card_complete_predator_05_06_title,
+            R.string.stage_card_complete_predator_05_07_title
+    };
+
+    //
+    final private static int[] STAGE_CARD_COMPLETE_PREDATOR_STATUS_STRINGS = {
+
+            //
+            R.string.stage_card_complete_predator_status_A, R.string.stage_card_complete_predator_status_B, R.string.stage_card_complete_predator_status_C,
+            R.string.stage_card_complete_predator_status_D, R.string.stage_card_complete_predator_status_E
+    };
+
+    //
+    final private static int[] STAGE_CARD_COMPLETE_FOODCHAIN_TITLE_STRINGS = {
+
+            //
+            R.string.stage_card_complete_foodchain_01_title, R.string.stage_card_complete_foodchain_02_title, R.string.stage_card_complete_foodchain_03_title,
+            R.string.stage_card_complete_foodchain_04_title, R.string.stage_card_complete_foodchain_05_title, R.string.stage_card_complete_foodchain_06_title,
+            R.string.stage_card_complete_foodchain_07_title
+    };
+
+    //
+    final private static int[] STAGE_CARD_COMPLETE_FOODCHAIN_STATUS_STRINGS = {
+
+            //
+            R.string.stage_card_complete_foodchain_status_A, R.string.stage_card_complete_foodchain_status_B, R.string.stage_card_complete_foodchain_status_C,
+            R.string.stage_card_complete_foodchain_status_D, R.string.stage_card_complete_foodchain_status_E
     };
 
     //
@@ -9539,12 +9682,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     };
 
     //
+    final private static int[] GAME_PREDATOR_01_THUMBNAIL_IMAGES = {
+
+            //
+            R.drawable.game_predator_01_01_thumbnail_image, R.drawable.game_predator_01_02_thumbnail_image, R.drawable.game_predator_01_03_thumbnail_image,
+            R.drawable.game_predator_01_04_thumbnail_image, R.drawable.game_predator_01_05_thumbnail_image, R.drawable.game_predator_01_06_thumbnail_image,
+            R.drawable.game_predator_01_07_thumbnail_image
+    };
+
+    //
     final private static int[] GAME_PREDATOR_02_IMAGES = {
 
             //
             R.drawable.game_predator_02_01_image, R.drawable.game_predator_02_02_image, R.drawable.game_predator_02_03_image,
             R.drawable.game_predator_02_04_image, R.drawable.game_predator_02_05_image, R.drawable.game_predator_02_06_image,
             R.drawable.game_predator_02_07_image
+    };
+
+    //
+    final private static int[] GAME_PREDATOR_02_THUMBNAIL_IMAGES = {
+
+            //
+            R.drawable.game_predator_02_01_thumbnail_image, R.drawable.game_predator_02_02_thumbnail_image, R.drawable.game_predator_02_03_thumbnail_image,
+            R.drawable.game_predator_02_04_thumbnail_image, R.drawable.game_predator_02_05_thumbnail_image, R.drawable.game_predator_02_06_thumbnail_image,
+            R.drawable.game_predator_02_07_thumbnail_image
     };
 
     //
@@ -9557,6 +9718,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     };
 
     //
+    final private static int[] GAME_PREDATOR_03_THUMBNAIL_IMAGES = {
+
+            //
+            R.drawable.game_predator_03_01_thumbnail_image, R.drawable.game_predator_03_02_thumbnail_image, R.drawable.game_predator_03_03_thumbnail_image,
+            R.drawable.game_predator_03_04_thumbnail_image, R.drawable.game_predator_03_05_thumbnail_image, R.drawable.game_predator_03_06_thumbnail_image,
+            R.drawable.game_predator_03_07_thumbnail_image
+    };
+
+    //
     final private static int[] GAME_PREDATOR_04_IMAGES = {
 
             //
@@ -9566,12 +9736,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     };
 
     //
+    final private static int[] GAME_PREDATOR_04_THUMBNAIL_IMAGES = {
+
+            //
+            R.drawable.game_predator_04_01_thumbnail_image, R.drawable.game_predator_04_02_thumbnail_image, R.drawable.game_predator_04_03_thumbnail_image,
+            R.drawable.game_predator_04_04_thumbnail_image, R.drawable.game_predator_04_05_thumbnail_image, R.drawable.game_predator_04_06_thumbnail_image,
+            R.drawable.game_predator_04_07_thumbnail_image
+    };
+
+    //
     final private static int[] GAME_PREDATOR_05_IMAGES = {
 
             //
             R.drawable.game_predator_05_01_image, R.drawable.game_predator_05_02_image, R.drawable.game_predator_05_03_image,
             R.drawable.game_predator_05_04_image, R.drawable.game_predator_05_05_image, R.drawable.game_predator_05_06_image,
             R.drawable.game_predator_05_07_image
+    };
+
+    //
+    final private static int[] GAME_PREDATOR_05_THUMBNAIL_IMAGES = {
+
+            //
+            R.drawable.game_predator_05_01_thumbnail_image, R.drawable.game_predator_05_02_thumbnail_image, R.drawable.game_predator_05_03_thumbnail_image,
+            R.drawable.game_predator_05_04_thumbnail_image, R.drawable.game_predator_05_05_thumbnail_image, R.drawable.game_predator_05_06_thumbnail_image,
+            R.drawable.game_predator_05_07_thumbnail_image
     };
 
     //
@@ -9600,6 +9788,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             R.drawable.game_disaster_thumbnail_04_image, R.drawable.game_disaster_thumbnail_05_image, R.drawable.game_disaster_thumbnail_06_image,
             R.drawable.game_disaster_thumbnail_07_image
     };
+
+    //
+    final private static int[] GAME_POWERS_IMAGES = {
+
+            //
+            R.drawable.game_power_01_image, R.drawable.game_power_02_image, R.drawable.game_power_03_image,
+            R.drawable.game_power_04_image, R.drawable.game_power_05_image
+    };
+
+
 
     // RESOURCE : INTEGER - Array list of level marker views [creature capture image]
     final private static int[] GAME_BOARD_CAPTURE_IMAGE_VIEWS = {
@@ -9631,6 +9829,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             R.id.game_splatter_01_image_view, R.id.game_splatter_02_image_view, R.id.game_splatter_03_image_view,
             R.id.game_splatter_04_image_view, R.id.game_splatter_05_image_view
     };
+
+
+
 
     //
     final private static boolean[] STAGE_COMPLETE_SCORE_ARRAY = {

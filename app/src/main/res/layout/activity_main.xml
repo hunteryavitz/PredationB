@@ -2080,7 +2080,7 @@
         android:layout_height="match_parent"
         android:background="@drawable/stage_card_bg_01_image"
         android:orientation="vertical"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -2976,7 +2976,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:visibility="visible">
+                android:visibility="gone">
 
                 <LinearLayout
                     android:id="@+id/stage_card_complete_title_layout"
@@ -3024,10 +3024,9 @@
 
                         <ImageView
                             android:id="@+id/stage_card_complete_boss_image_view"
-                            android:layout_width="64dp"
-                            android:layout_height="64dp"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
                             android:layout_margin="6dp"
-                            android:background="@drawable/stage_card_content_boss_01_image"
                             android:contentDescription="@string/stage_card_stagescore_boss_image_view" />
 
                         <TextView
@@ -3070,7 +3069,6 @@
                                 android:layout_width="32dp"
                                 android:layout_height="32dp"
                                 android:layout_margin="6dp"
-                                android:background="@drawable/stage_card_disaster_01"
                                 android:contentDescription="@string/stage_card_stagescore_disaster_01_image_view" />
 
                             <ImageView
@@ -3078,7 +3076,6 @@
                                 android:layout_width="32dp"
                                 android:layout_height="32dp"
                                 android:layout_margin="6dp"
-                                android:background="@drawable/stage_card_disaster_01"
                                 android:contentDescription="@string/stage_card_stagescore_disaster_02_image_view" />
 
                             <ImageView
@@ -3086,7 +3083,6 @@
                                 android:layout_width="32dp"
                                 android:layout_height="32dp"
                                 android:layout_margin="6dp"
-                                android:background="@drawable/stage_card_disaster_01"
                                 android:contentDescription="@string/stage_card_stagescore_disaster_03_image_view" />
 
                             <ImageView
@@ -3094,7 +3090,6 @@
                                 android:layout_width="32dp"
                                 android:layout_height="32dp"
                                 android:layout_margin="6dp"
-                                android:background="@drawable/stage_card_disaster_01"
                                 android:contentDescription="@string/stage_card_stagescore_disaster_04_image_view" />
 
                             <ImageView
@@ -3102,7 +3097,6 @@
                                 android:layout_width="32dp"
                                 android:layout_height="32dp"
                                 android:layout_margin="6dp"
-                                android:background="@drawable/stage_card_disaster_01"
                                 android:contentDescription="@string/stage_card_stagescore_disaster_05_image_view" />
                         </LinearLayout>
 
@@ -3143,40 +3137,40 @@
 
                             <ImageView
                                 android:id="@+id/stage_card_complete_predator_01_image_view"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
                                 android:layout_margin="6dp"
                                 android:background="@drawable/stage_card_creature_01_01"
                                 android:contentDescription="@string/stage_card_stagescore_predators_01_image_view" />
 
                             <ImageView
                                 android:id="@+id/stage_card_complete_predator_02_image_view"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
                                 android:layout_margin="6dp"
                                 android:background="@drawable/stage_card_creature_02_01"
                                 android:contentDescription="@string/stage_card_stagescore_predators_02_image_view" />
 
                             <ImageView
                                 android:id="@+id/stage_card_complete_predator_03_image_view"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
                                 android:layout_margin="6dp"
                                 android:background="@drawable/stage_card_creature_03_01"
                                 android:contentDescription="@string/stage_card_stagescore_predators_03_image_view" />
 
                             <ImageView
                                 android:id="@+id/stage_card_complete_predator_04_image_view"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
                                 android:layout_margin="6dp"
                                 android:background="@drawable/stage_card_creature_04_01"
                                 android:contentDescription="@string/stage_card_stagescore_predators_04_image_view" />
 
                             <ImageView
                                 android:id="@+id/stage_card_complete_predator_05_image_view"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
                                 android:layout_margin="6dp"
                                 android:background="@drawable/stage_card_creature_05_01"
                                 android:contentDescription="@string/stage_card_stagescore_predators_05_image_view" />
@@ -3550,7 +3544,7 @@
         android:layout_height="match_parent"
         android:gravity="center_vertical|center_horizontal"
         android:orientation="vertical"
-        android:visibility="gone"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -3590,7 +3584,7 @@
                         android:id="@+id/game_main_stage_image_view"
                         android:layout_width="wrap_content"
                         android:layout_height="64dp"
-                        android:background="@drawable/stage_card_title_01"
+                        android:background="@drawable/stage_card_title_01_image"
                         android:contentDescription="@string/game_main_stage_image_view" />
 
                     <ImageView
